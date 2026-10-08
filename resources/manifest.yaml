@@ -1,0 +1,294 @@
+schema_version: 1
+installation_command: bash scripts/setup.sh
+acquisition_command: .venv/bin/python scripts/download_resources.py --all
+installation_guide: docs/dependencies.md
+checked_on: '2026-10-08'
+resources:
+  phonitalia_wordforms:
+    kind: lexicon_source
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: PhonItalia 1.10
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data-raw/phonItalia-1.10/phonItalia-1.10-wordforms.tsv
+    path: resources/ita/lexicon/phonItalia-1.10-wordforms.tsv
+    format: original TSV; ASCII phone encoding, not Unicode IPA
+    license: original noncommercial research terms; phonItaliaR declares CC-BY-4.0;
+      discrepancy unresolved
+    license_url: https://linguistlist.org/issues/24/3960/
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    git_blob_sha1: 46c4189c50e38c27a6420e070687cd1cbe7be8a4
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: 22d22409c1fc3ad2844f47543f3017c50ef9d3f95f5196093ff2203d7f071b17
+    size_bytes: 46276243
+  phonitalia_ipa:
+    kind: lexicon
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: author-provided italian.dict derived from PhonItalia 1.10
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data-raw/italian.dict
+    path: resources/ita/lexicon/italian.dict
+    format: UTF-8 headerless TSV; word and space-separated IPA phones
+    license: phonItaliaR CC-BY-4.0; inherited original noncommercial terms require
+      clarification
+    license_url: https://github.com/stefanocoretta/phonItaliaR/blob/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    sha256: 10336fb3caf8cfdcc429bbf84f88a3143616ee6c8404b3744be69ac6a563ab8d
+    checksum_note: SHA-256 measured from pinned upstream bytes during initialization
+      research. SHA-256 measured from the pinned official source on 2026-10-08.
+    expected_rows: 94356
+    expected_vocabulary: 94290
+    size_bytes: 2699644
+  phonitalia_rda:
+    kind: lexicon_source
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: PhonItaliaR data snapshot
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data/phonitalia.rda
+    path: resources/ita/lexicon/phonitalia.rda
+    format: R serialized data; original author-provided IPA-enriched table
+    license: phonItaliaR CC-BY-4.0; inherited original noncommercial terms require
+      clarification
+    license_url: https://github.com/stefanocoretta/phonItaliaR/blob/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    git_blob_sha1: c1483801b9cb880046531570f4291989f4e6dcf2
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: f89b2d24f6a689ce8a1ff24439843fd20124e503c1904771828060d0d99030a2
+    size_bytes: 10698980
+  phonitalia_information:
+    kind: documentation
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: PhonItalia 1.10
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data-raw/phonItalia-1.10/phonItalia-1.10-Information.pdf
+    path: resources/ita/lexicon/phonItalia-1.10-Information.pdf
+    format: PDF
+    license: preserved original documentation; see PhonItalia licensing discrepancy
+    license_url: https://linguistlist.org/issues/24/3960/
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    git_blob_sha1: 53c1762f5f3362c62be9c7113de50fcaaf5126a9
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: 29d0ef25da461ff8fdbc97bd51f8b1da9223b7488326cedf0ad97745a9bae7c8
+    size_bytes: 185973
+  phonitalia_license:
+    kind: documentation
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: package license snapshot
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    path: resources/ita/lexicon/phonItaliaR-LICENSE.md
+    format: Markdown
+    license: CC-BY-4.0 declaration; does not resolve inherited corpus terms
+    license_url: https://github.com/stefanocoretta/phonItaliaR/blob/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    citation: https://github.com/stefanocoretta/phonItaliaR
+    git_blob_sha1: 0fb847eb09afc05734c2f1aa34bc3ebd995a072a
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: 2a82ac9bbc3e3ee066908381e8d373896db5a6025d083fbd59692fe9ccfb9111
+    size_bytes: 18651
+  zipa_source:
+    kind: source
+    language: mul
+    status: available
+    source_url: https://github.com/lingjzhu/zipa
+    revision: 21e9e8aa4cc6c130cb05d836a1979886f9245302
+    version: Git snapshot
+    url: https://codeload.github.com/lingjzhu/zipa/tar.gz/21e9e8aa4cc6c130cb05d836a1979886f9245302
+    path: .cache/downloads/zipa-21e9e8aa.tar.gz
+    extract_to: .cache/external/zipa
+    format: tar.gz source archive
+    license: MIT at repository root; Apache-2.0 notices in inherited Icefall files
+    license_url: https://github.com/lingjzhu/zipa/blob/21e9e8aa4cc6c130cb05d836a1979886f9245302/LICENSE
+    citation: https://aclanthology.org/2025.acl-long.961/
+    checksum_note: No publisher archive checksum; immutable Git revision and locally
+      measured SHA-256 receipt. SHA-256 measured from the pinned official source on
+      2026-10-08.
+    sha256: beb67e7015f84938955d3ffe3b092592f069bf743bbeeeab502ec8669dbaae5e
+    size_bytes: 586472
+  icefall_source:
+    kind: source
+    language: mul
+    status: available
+    source_url: https://github.com/k2-fsa/icefall
+    revision: c1eda5427c46502b2cfdcbeb910bf35f2134a0d4
+    version: Git snapshot
+    url: https://codeload.github.com/k2-fsa/icefall/tar.gz/c1eda5427c46502b2cfdcbeb910bf35f2134a0d4
+    path: .cache/downloads/icefall-c1eda542.tar.gz
+    extract_to: .cache/external/icefall
+    format: tar.gz source archive
+    license: Apache-2.0
+    license_url: https://github.com/k2-fsa/icefall/blob/c1eda5427c46502b2cfdcbeb910bf35f2134a0d4/LICENSE
+    citation: https://github.com/k2-fsa/icefall
+    checksum_note: No publisher archive checksum; immutable Git revision and locally
+      measured SHA-256 receipt. SHA-256 measured from the pinned official source on
+      2026-10-08.
+    sha256: 8bc7f187f1b343351ccc7d31eef7bb938706034ff56a73f4861f9795ea5fbd4b
+    size_bytes: 11991863
+  zipa_checkpoint:
+    kind: checkpoint
+    language: mul
+    status: available
+    source_url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k
+    revision: 861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a
+    version: ZIPA-CR-NS large; 800k; averaged final ten checkpoints
+    url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k/resolve/861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a/zipa_large_crctc_0.5_scale_800000_avg10.pth
+    path: .cache/models/zipa-cr-ns-large-800k/zipa_large_crctc_0.5_scale_800000_avg10.pth
+    format: PyTorch state_dict
+    license: CC-BY-NC-SA-4.0
+    license_url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k/blob/861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a/README.md
+    citation: https://aclanthology.org/2025.acl-long.961/
+    size_bytes: 1200537906
+    sha256: dcf8d4b507d0eacbac40735dd742a4c85071c52aab35255cc27da644f68b8584
+    checksum_note: Publisher Git LFS SHA-256 from Hugging Face model API.
+  zipa_tokens:
+    kind: acoustic_vocabulary
+    language: mul
+    status: available
+    source_url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k
+    revision: 861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a
+    version: checkpoint token inventory; 127 labels
+    url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k/resolve/861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a/tokens.txt
+    path: .cache/models/zipa-cr-ns-large-800k/tokens.txt
+    format: UTF-8 token and integer ID
+    license: CC-BY-NC-SA-4.0 model repository declaration
+    license_url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k/blob/861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a/README.md
+    citation: https://aclanthology.org/2025.acl-long.961/
+    git_blob_sha1: 9a2a315cdea10b01c59893ad42d211237813ea2e
+    checksum_note: Git blob identity from pinned model repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: f8e042a0c9130532b22d03ec7cae2f75a23fbec70c450c31a8efb51787b2b8fe
+    size_bytes: 769
+  zipa_tokenizer:
+    kind: acoustic_vocabulary
+    language: mul
+    status: available
+    source_url: https://github.com/lingjzhu/zipa
+    revision: 21e9e8aa4cc6c130cb05d836a1979886f9245302
+    version: unigram_127.model
+    url: https://raw.githubusercontent.com/lingjzhu/zipa/21e9e8aa4cc6c130cb05d836a1979886f9245302/ipa_simplified/unigram_127.model
+    path: .cache/models/zipa-cr-ns-large-800k/unigram_127.model
+    format: SentencePiece model
+    license: ZIPA repository MIT declaration; retain model attribution separately
+    license_url: https://github.com/lingjzhu/zipa/blob/21e9e8aa4cc6c130cb05d836a1979886f9245302/LICENSE
+    citation: https://aclanthology.org/2025.acl-long.961/
+    checksum_note: Immutable Git revision; SHA-256 recorded on acquisition. SHA-256
+      measured from the pinned official source on 2026-10-08.
+    sha256: 37c8bacbf1b7cf25793789e1c014e00555b183c0bf963817e470a883b82c62b5
+    size_bytes: 1530
+  zipa_model_card:
+    kind: documentation
+    language: mul
+    status: available
+    source_url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k
+    revision: 861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a
+    version: model card snapshot
+    url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k/resolve/861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a/README.md
+    path: .cache/models/zipa-cr-ns-large-800k/README.md
+    format: Markdown
+    license: CC-BY-NC-SA-4.0
+    license_url: https://huggingface.co/anyspeech/zipa-large-crctc-ns-800k/blob/861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a/README.md
+    citation: https://aclanthology.org/2025.acl-long.961/
+    git_blob_sha1: 604a0c0b923ce7ccce49022be8f6771a0136a6db
+    checksum_note: Git blob identity from pinned model repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: 251b88c4b275fb863680d70d0e7b663469813e3ade14cc9c265c58cf5fb5a0b8
+    size_bytes: 968
+  fbk_ita_lm:
+    kind: language_model
+    language: ita
+    status: unavailable
+    source_url: https://github.com/SpeechTechLab/FBK_ASR_public
+    revision: 9845fffdb8eb6e5f51a20e870bd9acb5f9000c84
+    version: February 2023 documentation; actual model revision unverified
+    path: null
+    directory: resources/ita/lm
+    format: unknown; documentation describes ready-to-use LMs and ARPA construction
+    license: unknown; no resource license established
+    license_url: null
+    citation: https://github.com/SpeechTechLab/FBK_ASR_public
+    checksum_note: No accessible artifact; checksum cannot be established.
+    reason: Official Google Drive folder returned HTTP 404 on 2026-10-08; no replacement
+      located in the official SpeechTek Hugging Face organization.
+    access_instructions: Request the pretrained pruned Italian trigram, vocabulary,
+      ARPA if available, and license from matasso@fbk.eu or gretter@fbk.eu; do not
+      execute adaptation/training scripts.
+    download_page: https://drive.google.com/drive/folders/10kL8G-SU5meqXw0H3b0OLEOVhSvIyk5q
+    documented_bundle: wavlm-large-it-cv10.zip
+    documented_variant: wavlm-large-it-cv10_tutto.3.256K.msb.p2
+    documented_order: 3
+    documented_vocabulary: 256K nominal label; exact vocabulary not artifact-verified
+    documented_training_sources: News texts labelled EN20*, 2018 Italian Wikipedia
+      dump, and dictionary material; complete composition unverified.
+  scn_dos24:
+    kind: orthography
+    language: scn
+    status: planned
+    source_url: null
+    revision: null
+    version: DOS24 requested; reference not acquired
+    path: null
+    directory: resources/scn/orthography
+    format: pending
+    license: unknown; reference material not acquired
+    license_url: null
+    citation: Cademia Siciliana DOS24; exact bibliographic reference pending
+    checksum_note: No artifact exists in this repository.
+    reason: Documentation placeholder only; acquisition deferred by project scope.
+  scn_lexicon:
+    kind: lexicon
+    language: scn
+    status: planned
+    source_url: null
+    revision: null
+    version: not developed
+    path: null
+    directory: resources/scn/lexicon
+    format: pending
+    license: undecided; future project resource
+    license_url: null
+    citation: Future DOS24-aligned Sicilian pronunciation lexicon
+    checksum_note: No artifact exists in this repository.
+    reason: No pronunciations will be generated during initialization; G2P excluded.
+  scn_vocabulary:
+    kind: vocabulary
+    language: scn
+    status: planned
+    source_url: null
+    revision: null
+    version: not developed
+    path: null
+    directory: resources/scn/lexicon
+    format: pending
+    license: undecided; future project resource
+    license_url: null
+    citation: Future DOS24-aligned Sicilian vocabulary
+    checksum_note: No artifact exists in this repository.
+    reason: Vocabulary curation and corpus ingestion are deferred.
+  scn_lm:
+    kind: language_model
+    language: scn
+    status: planned
+    source_url: null
+    revision: null
+    version: not developed
+    path: null
+    directory: resources/scn/lm
+    format: ARPA intended; no model exists
+    license: undecided; future project resource
+    license_url: null
+    citation: Future Sicilian trigram language model
+    checksum_note: No artifact exists in this repository.
+    intended_order: 3
+    reason: No corpus acquisition or LM training during initialization.
