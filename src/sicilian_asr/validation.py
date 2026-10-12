@@ -83,5 +83,17 @@ def validate_resources(root: Path, config_name: str = "ita") -> dict:
         required.update(value for key, value in section.items() if key.endswith("_resource"))
     report["required_missing"] = sorted(name for name in required if report["resources"][name]["status"] != "ok")
     report["resource_ready"] = not report["errors"] and not report["required_missing"]
-    report["pipeline_implemented"] = False
+    report["pipeline_implemented"] = selected["languages"] == ["ita"] and selected["decoder"]["enabled"]
+    report["graph_ready"] = False
+    if report["pipeline_implemented"] and report["resource_ready"]:
+        from sicilian_asr.preparation import identity, verify_cache
+
+        try:
+            key, _ = identity(root, selected, manifest)
+            directory = local_path(root, selected["decoder"]["graph_path"]) / key
+            verify_cache(directory, key)
+            report["graph_ready"] = True
+            report["graph_directory"] = str(directory)
+        except (ResourceError, OSError) as error:
+            report["graph_error"] = str(error)
     return report

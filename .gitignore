@@ -15,10 +15,13 @@ resources/ita/lm/*
 !resources/ita/lm/README.md
 resources/scn/lexicon/*
 !resources/scn/lexicon/README.md
+!resources/scn/lexicon/ipa-compatibility.json
 resources/scn/lm/*
 !resources/scn/lm/README.md
+!resources/scn/lm/diagnostics.json
 resources/scn/orthography/*
 !resources/scn/orthography/README.md
+!resources/scn/orthography/compatibility.json
 *.pt
 *.pth
 *.onnx
@@ -28,3 +31,6 @@ resources/scn/orthography/*
 *.arpa
 *.arpa.gz
 *.klm
+data/
+outputs/
+!tests/fixtures/*.arpa

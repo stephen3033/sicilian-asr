@@ -1,0 +1,2924 @@
+{
+  "schema_version": 1,
+  "rules_version": "dos24-v2.2-checklist-1",
+  "reviewer": "Codex contextual linguistic review; no external certification claimed",
+  "selection": "Targeted, not a probability sample: direct DOS examples in LiITA, complete short prose/UI units, mixed Wikipedia contexts, historical and transcript counterexamples, and visually checked PDF blocks. No extrapolation of verified rate.",
+  "decisions": [
+    {
+      "id": "scn_liita_lemmabank:4d9259b5ec4dff0966405a27",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "d17be27a41f55a20e5e5d286cbe76dc2824b6a58ab9f17ea8a56342022770fcf",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Month lemma and variants inspected; current compatibility requires lexical choice among regional forms, not just absence of pattern hits.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:bc8a1f461f9417a56b5eac1e",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "ca31b8e45ab28f71b3a35209123a34d7e63ab490e8c6ac4b2b6914ffb9eaa049",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Variant of December; final vowel and lexical regional choice remain unresolved after context inspection.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:675fd4f9bb71c7c93191482a",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "792b2273f188588061b81866cc94334aa480779c34c95bb15e1d829caf12dcba",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "December variant in lemma/1 uses initial rhotic r corresponding to etymological d; DOS24 pp13-14 retains d. This is a present-spelling judgment, not rejection for age.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:9e1dcf33bfeee33dd6237b69",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "edeed231c57d510e5b2cdad47b8e330b46c8280a3350c24c1036d1b41a8ab990",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "December variant in lemma/1 uses initial rhotic r corresponding to etymological d; DOS24 pp13-14 retains d. Regional original preserved.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:711d8881a17202a9a55bede1",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "7fdd1ed4e4c30db0ebf1de2add08ceb7d791267f0dca148913b1fa635f6783a9",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Borrowing from Japanese can legitimately retain k under DOS24 p7; flag is not a violation. Borrowing spelling/stress not independently settled.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/12486",
+        "canonical_label": "kimonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:22e20bf551c3e1f5970a4c1a",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "ac0634e1b74b57af65ecbc2c4a7d5987498311a5bf8a403127b0134c6ae9710c",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 explicitly admits bonu and initial single b, pp14/17; lemma POS variants do not alter spelling.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/2916",
+        "canonical_label": "bonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14,
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:8aee4ae753036add356d9f44",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "ac0634e1b74b57af65ecbc2c4a7d5987498311a5bf8a403127b0134c6ae9710c",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 explicitly admits bonu and initial single b, pp14/17; lemma POS variants do not alter spelling.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/2917",
+        "canonical_label": "bonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14,
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:5396951207ec6ee29255fb86",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "ac0634e1b74b57af65ecbc2c4a7d5987498311a5bf8a403127b0134c6ae9710c",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 explicitly admits bonu and initial single b, pp14/17; lemma POS variants do not alter spelling.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/2918",
+        "canonical_label": "bonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14,
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:e4dc94abefea3b400ee915b8",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "8123c452f101e0b32e516749f40d393421e76d18b9e2ee79cf0ce8d4c58f8846",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Direct DOS24 example, p9: ca-ni, penultimate stress without accent; dental c, terminal i; noun context confirmed by lemma URI.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/3844",
+        "canonical_label": "cani",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:798fd673a332aa16eced1c78",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "ab323b88500d9c1bcad634c2db7b4005fbefa4914fdb6505992bad7d70f95aeb",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p9 explicitly requires accent for final hiatus in ma-ga-rì-a; retained here.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/424",
+        "canonical_label": "magarìa",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:b8e07f7f99d4414327375344",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "0578ee7ac72673fb9bb5bdbfbfd1b962ea2989d4e9219cf3757541e7caf0a846",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p17 specifies cchiù, retaining doubled c and grave accent. Adverb lexical identity reviewed.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/4547",
+        "canonical_label": "cchiù",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:360be206bb9837a6198c4f27",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "3911fb31f95a63fe563837ce908b240704b42c625bda2d2fb6f22f3ac6146bee",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Adverb variant of cchiù in the same lemma node; DOS24 p17 requires doubled c.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/4547",
+        "canonical_label": "cchiù",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:fa8d9cce90925c7dd0ca9d42",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "8ee9e02b37cd462ac66655b981caee38251f9cb32c672ba70e9b6664b713b87c",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "In the see-verb context, stress is marked on a different syllable from DOS24 example vìdiri, p13.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7748",
+        "canonical_label": "vidìri",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:5a89ebcd736408f9cc0c1778",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "d265195a5ae565e6960c05250ab76fd82f265d1dad097ad4970dc16cb728a763",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p13 explicitly gives vìdiri: etymological d, initial antepenultimate stress marked grave.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7748",
+        "canonical_label": "vidìri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:edb5fc08308b6d3858af300d",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "96ae50da2092a7f3f48a0cb23c297842ab59b6829ade2158aae78da9a83ed080",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "This variant shares the see-verb lemma; DOS24 p13 explicitly rejects rhotic vìriri for written vìdiri.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7748",
+        "canonical_label": "vidìri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:1a2c18ab2f6cd02b09e10559",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "011043bd5ab2381cb0b7e710f681089ca0560fdf977791743aca1c827bc3b114",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p17 explicitly contrasts legitimate dental dd in friddu with retroflex ḍḍ. No blanket dd substitution.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7868",
+        "canonical_label": "friddu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:bcd5dcfad69f6b3cbd654f68",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "011043bd5ab2381cb0b7e710f681089ca0560fdf977791743aca1c827bc3b114",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p17 explicitly contrasts legitimate dental dd in friddu with retroflex ḍḍ. No blanket dd substitution.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7869",
+        "canonical_label": "friddu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:67a91d63e5e0b17c15c7e0b7",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "3a2e07ff868f60442911bbdb4a7483872876bd4dd92bcc9e24204581fbe33d53",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Direct DOS24 example, p14: etymological p and vowels; penultimate stress. Lexical noun context, not a sentence.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/8781",
+        "canonical_label": "pani",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "scn_liita_lemmabank:7e23722fbace0a78484f5afa",
+      "source_id": "scn_liita_lemmabank",
+      "source_sha256": "cabcc8df1c0e0f81ebcfa0934a15f939b5079851a289c113293fedc6755d810f",
+      "text_sha256": "ea67df8a4c40ddc155671013d198b3aff4871853ed0737b85b299d93f06a4b60",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "In the horse lemma context, DOS24 p17 explicitly contrasts cavaddu with required cavaḍḍu. Original retained.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/8960",
+        "canonical_label": "cavaddu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoLemmabank.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:d679c45e2d8e7e601eaffa04",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "d17be27a41f55a20e5e5d286cbe76dc2824b6a58ab9f17ea8a56342022770fcf",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Month lemma and variants inspected; current compatibility requires lexical choice among regional forms, not just absence of pattern hits.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:3ee3d8878542c5336a0744f8",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "ca31b8e45ab28f71b3a35209123a34d7e63ab490e8c6ac4b2b6914ffb9eaa049",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Variant of December; final vowel and lexical regional choice remain unresolved after context inspection.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:451b25d65f7668437b3ea818",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "792b2273f188588061b81866cc94334aa480779c34c95bb15e1d829caf12dcba",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "December variant in lemma/1 uses initial rhotic r corresponding to etymological d; DOS24 pp13-14 retains d. This is a present-spelling judgment, not rejection for age.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:d4742f8f04e27bda20eb26ae",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "edeed231c57d510e5b2cdad47b8e330b46c8280a3350c24c1036d1b41a8ab990",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "December variant in lemma/1 uses initial rhotic r corresponding to etymological d; DOS24 pp13-14 retains d. Regional original preserved.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/1",
+        "canonical_label": "dicembri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:2645a21c799ba69bfc777821",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "7fdd1ed4e4c30db0ebf1de2add08ceb7d791267f0dca148913b1fa635f6783a9",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Borrowing from Japanese can legitimately retain k under DOS24 p7; flag is not a violation. Borrowing spelling/stress not independently settled.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/12486",
+        "canonical_label": "kimonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:8a25b9334d5240291531c0f0",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "ac0634e1b74b57af65ecbc2c4a7d5987498311a5bf8a403127b0134c6ae9710c",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 explicitly admits bonu and initial single b, pp14/17; lemma POS variants do not alter spelling.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/2916",
+        "canonical_label": "bonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14,
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:ad7683ff5373c5dc829df88d",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "ac0634e1b74b57af65ecbc2c4a7d5987498311a5bf8a403127b0134c6ae9710c",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 explicitly admits bonu and initial single b, pp14/17; lemma POS variants do not alter spelling.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/2917",
+        "canonical_label": "bonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14,
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:08ffacd964b63e093579d839",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "ac0634e1b74b57af65ecbc2c4a7d5987498311a5bf8a403127b0134c6ae9710c",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 explicitly admits bonu and initial single b, pp14/17; lemma POS variants do not alter spelling.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/2918",
+        "canonical_label": "bonu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14,
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:0653e09ce401b1f52b750ece",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "8123c452f101e0b32e516749f40d393421e76d18b9e2ee79cf0ce8d4c58f8846",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Direct DOS24 example, p9: ca-ni, penultimate stress without accent; dental c, terminal i; noun context confirmed by lemma URI.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/3844",
+        "canonical_label": "cani",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:7b9e1068ef76c515b628fc18",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "ab323b88500d9c1bcad634c2db7b4005fbefa4914fdb6505992bad7d70f95aeb",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p9 explicitly requires accent for final hiatus in ma-ga-rì-a; retained here.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/424",
+        "canonical_label": "magarìa",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:11b95c680d504a0fdc568f9a",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "0578ee7ac72673fb9bb5bdbfbfd1b962ea2989d4e9219cf3757541e7caf0a846",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p17 specifies cchiù, retaining doubled c and grave accent. Adverb lexical identity reviewed.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/4547",
+        "canonical_label": "cchiù",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:0d3ade1b604f482194d47b3a",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "3911fb31f95a63fe563837ce908b240704b42c625bda2d2fb6f22f3ac6146bee",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Adverb variant of cchiù in the same lemma node; DOS24 p17 requires doubled c.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/4547",
+        "canonical_label": "cchiù",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:1e866846858bfe3ce9526011",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "8ee9e02b37cd462ac66655b981caee38251f9cb32c672ba70e9b6664b713b87c",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "In the see-verb context, stress is marked on a different syllable from DOS24 example vìdiri, p13.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7748",
+        "canonical_label": "vidìri",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:359d4799ad57668fe3cc0563",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "d265195a5ae565e6960c05250ab76fd82f265d1dad097ad4970dc16cb728a763",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p13 explicitly gives vìdiri: etymological d, initial antepenultimate stress marked grave.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7748",
+        "canonical_label": "vidìri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:ac258dffeaff5ceebf78adeb",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "96ae50da2092a7f3f48a0cb23c297842ab59b6829ade2158aae78da9a83ed080",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "This variant shares the see-verb lemma; DOS24 p13 explicitly rejects rhotic vìriri for written vìdiri.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7748",
+        "canonical_label": "vidìri",
+        "form_kind": "variant",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:e8d197d56a8d82417bedbea1",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "011043bd5ab2381cb0b7e710f681089ca0560fdf977791743aca1c827bc3b114",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p17 explicitly contrasts legitimate dental dd in friddu with retroflex ḍḍ. No blanket dd substitution.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7868",
+        "canonical_label": "friddu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:5d1a7a3760824e0a46ded5f9",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "011043bd5ab2381cb0b7e710f681089ca0560fdf977791743aca1c827bc3b114",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "DOS24 p17 explicitly contrasts legitimate dental dd in friddu with retroflex ḍḍ. No blanket dd substitution.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/7869",
+        "canonical_label": "friddu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:bcaed73b36af3af9d680f182",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "3a2e07ff868f60442911bbdb4a7483872876bd4dd92bcc9e24204581fbe33d53",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Direct DOS24 example, p14: etymological p and vowels; penultimate stress. Lexical noun context, not a sentence.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/8781",
+        "canonical_label": "pani",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "scn_liita_glossary:8a4e83996d7e3dc4724eb3c5",
+      "source_id": "scn_liita_glossary",
+      "source_sha256": "ecb263e31016f8e1a8d9bd371a5f9e41524ab7289805bbfb62b88b260985c533",
+      "text_sha256": "ea67df8a4c40ddc155671013d198b3aff4871853ed0737b85b299d93f06a4b60",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "In the horse lemma context, DOS24 p17 explicitly contrasts cavaddu with required cavaḍḍu. Original retained.",
+      "context": {
+        "lemma_uri": "http://liita.it/data/id/DialettoSiciliano/lemma/8960",
+        "canonical_label": "cavaddu",
+        "form_kind": "canonical",
+        "method": "Written form reviewed as an individual lexical form, in lemma/variant context, against cited DOS24 examples."
+      },
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/LiITA-LOD/LocalVarieties/87775784e285ca081385cf372fd2066c5befe25e/Siciliano/rdf/sicilianoGlossary.ttl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:c8a9a0f3d490c4caab0e14ad",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "44aa8a78bf6350a4f02fc28957b77cbae332b149783fbb21469e3797f0b0056f",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Full Jinnaru opening reviewed in raw revision 772287. Grave è distinguishes copula; misi/annu and occasional article elision l’annu are compatible; no stress or consonant change required.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:1481",
+        "locator": "0",
+        "metadata": {
+          "page_id": "1481",
+          "title": "Jinnaru",
+          "namespace": "0",
+          "revision_id": "772287",
+          "revision_timestamp": "2025-10-01T17:03:24Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=772287",
+          "wikitext_sha256": "5a771f3ed98b98e8057ff078b356e84cdcefbe693cf94d2d1c8f9f60f671fa74",
+          "removed": {
+            "templates": 2,
+            "headings": 1
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=772287",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:e5161ac523f8a47dc139eca6",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "65c3215d86c250dc6abe55ab9e3ef8eb16f73a76c3f4ce8566a5c8a45f4b1b55",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Two complete sentences read with the Jinnaru opening and proverb section. dû contracts di+lu; cumponi/jorna have ordinary penultimate stress. Latin Januarius is an explicit etymological quotation; original spelling retained.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:1481",
+        "locator": "1",
+        "metadata": {
+          "page_id": "1481",
+          "title": "Jinnaru",
+          "namespace": "0",
+          "revision_id": "772287",
+          "revision_timestamp": "2025-10-01T17:03:24Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=772287",
+          "wikitext_sha256": "5a771f3ed98b98e8057ff078b356e84cdcefbe693cf94d2d1c8f9f60f671fa74",
+          "removed": {
+            "templates": 2,
+            "headings": 1
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=772287",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:352db0d89dcbeafb02203a0c",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "e4c42492ac0567e3ad540ddda274e5693e12768cd3b39fedd1aa071c242caa83",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Raw proverb section read. saru and dicèmmiru require lexical/prosodic judgment; no inference from article date or neighboring verified sentences.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:1481",
+        "locator": "2",
+        "metadata": {
+          "page_id": "1481",
+          "title": "Jinnaru",
+          "namespace": "0",
+          "revision_id": "772287",
+          "revision_timestamp": "2025-10-01T17:03:24Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=772287",
+          "wikitext_sha256": "5a771f3ed98b98e8057ff078b356e84cdcefbe693cf94d2d1c8f9f60f671fa74",
+          "removed": {
+            "templates": 2,
+            "headings": 1
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=772287",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:6efc8c93e04569a5ad097399",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "018331fc35f0ab496aa617cbe4cddd64d082d47314416f0fd61bc1f34a35b1c6",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Full Alivu proverb read with Pitre citation and following paraphrase in revision 718844. Elision l’aliva/l’ancilina, grave nè, and consonants jinchi/visazza/sacchittina are compatible. This decision covers the proverb only.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:28693",
+        "locator": "1",
+        "metadata": {
+          "page_id": "28693",
+          "title": "Alivu",
+          "namespace": "0",
+          "revision_id": "718844",
+          "revision_timestamp": "2017-11-11T10:10:46Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=718844",
+          "wikitext_sha256": "ab7d2f93437bb28da5264b8c26f005b32a062dcb097411b9f9aa0f934bc2c622",
+          "removed": {
+            "reference_sections": 1,
+            "nonprose_tags": 1,
+            "namespace_links": 1,
+            "headings": 1
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=718844",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:15a13b5d697846bea579ecec",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "a53927548eced07f72b560bc8b91531890b56436bd4241dde6a1ee7691f63820",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Following paraphrase in Alivu uses nuddu (none) with dental dd for retroflex ḍḍ; context distinguishes it from legitimate dental dd. Other local spellings remain unchanged.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:28693",
+        "locator": "2",
+        "metadata": {
+          "page_id": "28693",
+          "title": "Alivu",
+          "namespace": "0",
+          "revision_id": "718844",
+          "revision_timestamp": "2017-11-11T10:10:46Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=718844",
+          "wikitext_sha256": "ab7d2f93437bb28da5264b8c26f005b32a062dcb097411b9f9aa0f934bc2c622",
+          "removed": {
+            "reference_sections": 1,
+            "nonprose_tags": 1,
+            "namespace_links": 1,
+            "headings": 1
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=718844",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:efb864b8b3dbfb12aa40e766",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "874f92314c880376836c365530afb86592fd9a51048bc78dc20133384967db71",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Alivu definition read in full. Spaced article elision and sviluppu/cummistìbbuli need lexical and boundary judgment beyond the small screen.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:28693",
+        "locator": "0",
+        "metadata": {
+          "page_id": "28693",
+          "title": "Alivu",
+          "namespace": "0",
+          "revision_id": "718844",
+          "revision_timestamp": "2017-11-11T10:10:46Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=718844",
+          "wikitext_sha256": "ab7d2f93437bb28da5264b8c26f005b32a062dcb097411b9f9aa0f934bc2c622",
+          "removed": {
+            "reference_sections": 1,
+            "nonprose_tags": 1,
+            "namespace_links": 1,
+            "headings": 1
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=718844",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:8be161eaf63454117b750388",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "39c48ce892321fd9824fb61c706ca21d7ec410133919611f3da7291ac6cb490d",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Cavaddu definition describes the horse. DOS24 explicitly requires cavaḍḍu for this lexical identity (p17); source cavaddu is preserved.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:1616",
+        "locator": "0",
+        "metadata": {
+          "page_id": "1616",
+          "title": "Cavaddu",
+          "namespace": "0",
+          "revision_id": "718516",
+          "revision_timestamp": "2017-11-10T07:02:09Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=718516",
+          "wikitext_sha256": "8dc165038ff100dbd5fe50bc0495fc1a1ffacd17fb0a71559fee8ece337719ea",
+          "removed": {
+            "templates": 14,
+            "namespace_links": 2
+          },
+          "body_records": 1,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=718516",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:c8aaf316fb6dad598bb1b6d5",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "650181e15b637d5b720874db430ebd7f372f94c827e502f760bfa69d31f7b510",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Cademia Siciliana opening in revision 776400 uses e' for the copula instead of è. DOS24 pp7-8 separates grave stress/disambiguation from apostrophe elision. This miss was not detected by the current mechanical rules.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:63186",
+        "locator": "0",
+        "metadata": {
+          "page_id": "63186",
+          "title": "Cademia Siciliana",
+          "namespace": "0",
+          "revision_id": "776400",
+          "revision_timestamp": "2026-01-28T23:12:03Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=776400",
+          "wikitext_sha256": "512671c154feff6d61a591f0b589d0677549ba418b6fe7270c0235a499145047",
+          "removed": {
+            "reference_sections": 3,
+            "templates": 1,
+            "nonprose_tags": 5
+          },
+          "body_records": 4,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=776400",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:fca90e0bc5d6f93affd04585",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "15d672f546e11777f1915557f9e41f3c1db5afdb986c61707daa1b16b2fdd99d",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Full Jazzarìa body and raw wikitext reviewed. Proper toponyms retain local names; grave final hiatus and è, contracted dâ, abbitanti/pruvincia consonants are compatible. Numeric population is source content, not independently verified.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:24213",
+        "locator": "0",
+        "metadata": {
+          "page_id": "24213",
+          "title": "Jazzarìa",
+          "namespace": "0",
+          "revision_id": "698119",
+          "revision_timestamp": "2015-01-10T16:53:08Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=698119",
+          "wikitext_sha256": "969318913349c8a813315b46071a276618144aa9f749ec000b9c135ea553611b",
+          "removed": {
+            "reference_sections": 1,
+            "templates": 2,
+            "headings": 2
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=698119",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:402dadbb2909b25b2f832a0f",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "18986602d53b9050b1f96172cf8e0a20c571f855bcb9b55dc5538fe16bc010c2",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Explicit alternative local name under Àutri noma calabbrisi; proper-name form with marked final hiatus. Reviewed as a one-word body label, not a prose sentence.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:24213",
+        "locator": "1",
+        "metadata": {
+          "page_id": "24213",
+          "title": "Jazzarìa",
+          "namespace": "0",
+          "revision_id": "698119",
+          "revision_timestamp": "2015-01-10T16:53:08Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=698119",
+          "wikitext_sha256": "969318913349c8a813315b46071a276618144aa9f749ec000b9c135ea553611b",
+          "removed": {
+            "reference_sections": 1,
+            "templates": 2,
+            "headings": 2
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=698119",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_wikipedia_20261001:10c5f3060dd7e4dc6ab8cb7d",
+      "source_id": "scn_wikipedia_20261001",
+      "source_sha256": "3983debe391a91a39eb2ae93eddce64a3e219a0647c665b3d4d12bcbd442e132",
+      "text_sha256": "d40c9491cef56aef8471f89b1f7b9be0f1764a3bb80e823b67c4746d2f0c1896",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Full Jazzarìa dialect paragraph reviewed: famigghia, lingua, calabbrisi and miridiunali spellings; è and name hiatus are marked. Uncontracted a la/di la are legitimate. Linguistic taxonomy asserted by Wikipedia is outside this spelling decision.",
+      "context": {
+        "document_id": "scn_wikipedia_20261001:24213",
+        "locator": "2",
+        "metadata": {
+          "page_id": "24213",
+          "title": "Jazzarìa",
+          "namespace": "0",
+          "revision_id": "698119",
+          "revision_timestamp": "2015-01-10T16:53:08Z",
+          "url": "https://scn.wikipedia.org/w/index.php?oldid=698119",
+          "wikitext_sha256": "969318913349c8a813315b46071a276618144aa9f749ec000b9c135ea553611b",
+          "removed": {
+            "reference_sections": 1,
+            "templates": 2,
+            "headings": 2
+          },
+          "body_records": 3,
+          "exclusion": null
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/w/index.php?oldid=698119",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "7030737bc08514e60b7c8491",
+      "source_id": "scn_firefox_l10n",
+      "source_sha256": "362da5dcbf9db2f15fa61d80b35663499a5d31de77cdd046d1fc8662b8f2beea",
+      "text_sha256": "b44b78e1dfc14ec840373adf7022be84b814d506ab63e3b736856803e545ab30",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Complete Firefox warning-button instruction reviewed at its Fluent key: imperative accetta/cuntinua and antepenultimate rìsicu; article u and conjunction e used in context.",
+      "context": {
+        "document_id": "scn_firefox_l10n:scn/toolkit/toolkit/about/config.ftl",
+        "locator": "about-config-intro-warning-button.value.0.0",
+        "metadata": {},
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/mozilla-l10n/firefox-l10n/tar.gz/c83737e89bcb9786325ee52c59d7dd1a4b2a6311",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "b5e738f29b68a404d95a0b2d",
+      "source_id": "scn_firefox_l10n",
+      "source_sha256": "362da5dcbf9db2f15fa61d80b35663499a5d31de77cdd046d1fc8662b8f2beea",
+      "text_sha256": "9a55e8f0241a0aa16faec3b05a10176153af87cf583814e24eac7fe5fcf29f1a",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Complete settings label Furmatu e prifirenzi reviewed in source key context; unstressed u/i and conjunction e compatible. Counted as UI fragment, not sentence.",
+      "context": {
+        "document_id": "scn_firefox_l10n:scn/toolkit/toolkit/printing/printDialogs.ftl",
+        "locator": "basic-tab.label.0.0",
+        "metadata": {},
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/mozilla-l10n/firefox-l10n/tar.gz/c83737e89bcb9786325ee52c59d7dd1a4b2a6311",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "fb90a9d13b3700406daa66f7",
+      "source_id": "scn_android_l10n",
+      "source_sha256": "1b981be4056b38fbc80018dd2b08805c699d4f8774f49e562b58478ca6a7374a",
+      "text_sha256": "bc18c115b278d9f031f714f768c1bba1d75e312e75824de395eaf286f60f0a5f",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Android send-action label MANNA reviewed with locator; uppercase does not change ordinary penultimate stress or doubled n. UI fragment only.",
+      "context": {
+        "document_id": "scn_android_l10n:mozilla-mobile/fenix/app/src/main/res/values-scn/strings.xml",
+        "locator": "unsubmitted_crash_dialog_positive_button_2.0.0",
+        "metadata": {},
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/mozilla-l10n/android-l10n/tar.gz/5c24ea587ff36ea25f35d67e0312471f093c693e",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "9ceb0d50b9c33c979e2968fc",
+      "source_id": "scn_common_voice",
+      "source_sha256": "d17aa13f57c716dbdeb396ce5199818de164c81dd59ac8078cda0a94cc64a8d8",
+      "text_sha256": "aa60622501e727920bbb4ad82bdf7a2c148d98cf62c5da02d980fe9bc26dde5c",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Common Voice length instruction reviewed in source key context: cchiù has required doubled c and grave; picca/palori and di compatible; numeral retained. UI fragment only.",
+      "context": {
+        "document_id": "scn_common_voice:web/locales/common-voice/scn/pages/contribute/write.ftl",
+        "locator": "new-sentence-rule-2.value.0.0",
+        "metadata": {},
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/common-voice/common-voice/tar.gz/469c46a7552d93003c876a3daf0e47bb78542d84",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "9cd3346d6980ed572b336ce6",
+      "source_id": "scn_common_voice",
+      "source_sha256": "d17aa13f57c716dbdeb396ce5199818de164c81dd59ac8078cda0a94cc64a8d8",
+      "text_sha256": "8cc84bfe76ba48bcfa30f4d7476ef526c3967138ae31e9b93644f2bd668cd413",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Complete Common Voice voting instruction reviewed, including both sentences. chiḍḍu retroflex; sauta a frasi uses feminine article a, not an infinitive construction; â riggistrazzioni contraction and doubled gg/zz compatible. No silent spelling changes.",
+      "context": {
+        "document_id": "scn_common_voice:web/locales/common-voice/scn/pages/contribute/common.ftl",
+        "locator": "contribution-just-unsure-description.value.0.0",
+        "metadata": {},
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/common-voice/common-voice/tar.gz/469c46a7552d93003c876a3daf0e47bb78542d84",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_unesco_2018_4:9c6a564a333e1d9270f440d0",
+      "source_id": "scn_unesco_2018_4",
+      "source_sha256": "e435349593873f53dd497896a449aa3be1c94606eb55cf5baf0dcc2107df6355",
+      "text_sha256": "456181b461b40404601db7d3d01db88a6e141b7e010e0ba59ac96c4ce123ce68",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Full interview question checked against rendered PDF p56, bottom-right column. Quannu, vinni, pinzata and archivi spellings; stress on spiràriti and article elision reviewed. Page image confirms intact extraction boundaries.",
+      "context": {
+        "document_id": "scn_unesco_2018_4:issue",
+        "locator": "page-56:block-3",
+        "metadata": {
+          "page": 56,
+          "bbox": [
+            388.3445129394531,
+            649.9527587890625,
+            520.6168823242188,
+            671.94873046875
+          ],
+          "quality": "block_extraction_requires_review",
+          "linebreak_hyphen": false
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e6/2018.4_265904scn.pdf",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "51396e2d43024a1f006490b1",
+      "source_id": "scn_tatoeba",
+      "source_sha256": "6d18105e7229b8eedd35cb2c20daf4e63d6f526cfb05c3fc7339a2cc06577c3d",
+      "text_sha256": "4ff3b52b99a90d346e88c470f9e902ccd45e853b87d5ac5719eb96825fa01312",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Complete Tatoeba sentence reviewed: narrative criau, silent unstressed vowels in virdura/muntagni, double l in vallati and coordination. No stress mark is required on regular penultimate syllables.",
+      "context": {
+        "document_id": "scn_tatoeba:9188116",
+        "locator": "9188116",
+        "metadata": {
+          "attribution": [
+            "ErykWdowiak",
+            "2020-10-24 22:24:21",
+            "2020-11-29 20:37:00"
+          ]
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://downloads.tatoeba.org/exports/per_language/scn/scn_sentences_detailed.tsv.bz2",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "66797085e6574b4b5f102d01",
+      "source_id": "scn_tatoeba",
+      "source_sha256": "6d18105e7229b8eedd35cb2c20daf4e63d6f526cfb05c3fc7339a2cc06577c3d",
+      "text_sha256": "a250c5cf19630efae5cfaaaef2bc4fd75a87d16582094490c8d4a6d0b8cb3596",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Short regional Easter formula reviewed; esti is not automatically Italian or a violation, but the lexical form arrivisciutu remains unverified.",
+      "context": {
+        "document_id": "scn_tatoeba:1533130",
+        "locator": "1533130",
+        "metadata": {
+          "attribution": [
+            "Balamax",
+            "2012-04-15 06:11:47",
+            "2012-04-15 06:11:47"
+          ]
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://downloads.tatoeba.org/exports/per_language/scn/scn_sentences_detailed.tsv.bz2",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "e2814342df3cec2b7234a6ae",
+      "source_id": "scn_tatoeba",
+      "source_sha256": "6d18105e7229b8eedd35cb2c20daf4e63d6f526cfb05c3fc7339a2cc06577c3d",
+      "text_sha256": "d56333c9d86391b7408b0ccd7afae47b7c9f224525b4bd629305e2e796776df7",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Proverb reviewed; Oggi may be regional or Italian-influenced. Context and similarity alone do not establish DOS24 conformity.",
+      "context": {
+        "document_id": "scn_tatoeba:9188267",
+        "locator": "9188267",
+        "metadata": {
+          "attribution": [
+            "ErykWdowiak",
+            "2020-10-25 00:13:19",
+            "2020-10-25 00:13:19"
+          ]
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://downloads.tatoeba.org/exports/per_language/scn/scn_sentences_detailed.tsv.bz2",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "2fcd2a03b056b9664c8808f6",
+      "source_id": "scn_omni_train_0000",
+      "source_sha256": "d47e9823188246f195aedd1fd37edca53fa1fea6d0e461e421f31a342143742c",
+      "text_sha256": "572e84bb1be90816d9b6951127ebfb391db1860d18f1d7339a45ad6856e938e2",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Complete spoken-transcript sentence reviewed: macari, putemu, farlu, ni piaci in grammatical context; ordinary stress and clitic spelling compatible. No claim about audio accuracy.",
+      "context": {
+        "document_id": "scn_omni_train_0000:spk01:r013",
+        "locator": "92:5",
+        "metadata": {
+          "language": "scn_Latn",
+          "speaker_id": "spk01",
+          "prompt_id": "r013",
+          "prompt": "Pretend you are a teacher and your students are distracted. How do you keep their attention?",
+          "segment_id": "s01",
+          "duration": 38.52,
+          "iso_639_3": "scn",
+          "glottocode": "sici1248",
+          "iso_15924": "Latn"
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://datasets-server.huggingface.co/rows?dataset=facebook%2Fomnilingual-asr-corpus&config=scn_Latn&split=train&offset=0&length=100",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "808f991dea3c12bc282ae8a5",
+      "source_id": "scn_omni_train_0000",
+      "source_sha256": "d47e9823188246f195aedd1fd37edca53fa1fea6d0e461e421f31a342143742c",
+      "text_sha256": "e78195b4ec39a6467e4360bbbb1bd4212c517907679df58ff56f0b35fdbf01f2",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Transcript sentence inspected; Quinni and energia require lexical/stress review. Absence of screen hits does not validate.",
+      "context": {
+        "document_id": "scn_omni_train_0000:spk01:h001",
+        "locator": "32:0",
+        "metadata": {
+          "language": "scn_Latn",
+          "speaker_id": "spk01",
+          "prompt_id": "h001",
+          "prompt": "Can you describe the main components of a car?",
+          "segment_id": "s01",
+          "duration": 32.464,
+          "iso_639_3": "scn",
+          "glottocode": "sici1248",
+          "iso_15924": "Latn"
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://datasets-server.huggingface.co/rows?dataset=facebook%2Fomnilingual-asr-corpus&config=scn_Latn&split=train&offset=0&length=100",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "441636aa67ced016754513cb",
+      "source_id": "scn_omni_train_0000",
+      "source_sha256": "d47e9823188246f195aedd1fd37edca53fa1fea6d0e461e421f31a342143742c",
+      "text_sha256": "dc71495b4d7e3d01361e86486ddf79dd315238162a3f0b59234a8e2bcf55b2b5",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Transcript contains protiniini in a diet context. Could be transcription/segmentation error; audio was not collected and no automatic correction made.",
+      "context": {
+        "document_id": "scn_omni_train_0000:spk01:f029",
+        "locator": "31:0",
+        "metadata": {
+          "language": "scn_Latn",
+          "speaker_id": "spk01",
+          "prompt_id": "f029",
+          "prompt": "How can you ensure you’re getting enough protein in a vegetarian diet?",
+          "segment_id": "s01",
+          "duration": 62.47825,
+          "iso_639_3": "scn",
+          "glottocode": "sici1248",
+          "iso_15924": "Latn"
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://datasets-server.huggingface.co/rows?dataset=facebook%2Fomnilingual-asr-corpus&config=scn_Latn&split=train&offset=0&length=100",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "aa6faaec40869eeb2131ff01",
+      "source_id": "scn_ud_stb",
+      "source_sha256": "fe18acd47541cf03c6bcae8e485dfc9e0356dcf301317c4c0b95650aaca4e58a",
+      "text_sha256": "3a1295823bb69888b3acf46fd7bff9b4166a079a48219c33bfb901580016aea0",
+      "category": "mixed_nonconforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Historical St Agata passage inspected in its UD context. ddu' for two and other apostrophe/transcription conventions differ from DOS24; original is retained. The judgment uses spellings, not 1904 date.",
+      "context": {
+        "document_id": "scn_ud_stb:scn_stb-ud-test.conllu:colapisci",
+        "locator": "colapisci_44",
+        "metadata": {
+          "sent_id": "colapisci_44",
+          "text": "Lu 'nnumani matina la Riggina iju supra locu; jittò a mari la coppa: ddoppu ddu' uri si jittò Cola Pisci, e finu a st'ura s'aspetta chi torna 'n summa. (S. Agata di Militello)",
+          "translation": "L’indomani mattina la Regina andò sul luogo; gettò in mare la coppa: dopo due ore si gettò Cola Pisci, e da allora si aspetta che torni in superficie. (S. Agata di Militello)"
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/UniversalDependencies/UD_Sicilian-STB/tar.gz/c9668c551499e562d263fb6d5e8bc59302fc8ca9",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "854156462f1bfd7bd1885f2e",
+      "source_id": "scn_ud_stb",
+      "source_sha256": "fe18acd47541cf03c6bcae8e485dfc9e0356dcf301317c4c0b95650aaca4e58a",
+      "text_sha256": "397486f4c7950cf2cdaa93ffb4e2fb1425957f9788cc87ad579766cacb4cf3ff",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Historical Colapisci regional witness read; Jeni and truncated assà'/'ranni need context-specific lexical review. No modernization applied.",
+      "context": {
+        "document_id": "scn_ud_stb:scn_stb-ud-test.conllu:colapisci",
+        "locator": "colapisci_145",
+        "metadata": {
+          "sent_id": "colapisci_145",
+          "doc_info": "Mazzara_1904",
+          "text": "Jeni nu nni sàcciu nenti di stu Piscicola, ma mè nannu, ca morsi vecchiu assà', mi cuntava cosi 'ranni di stu Piscicola.",
+          "translation": "Io non ne so niente di questo Piscicola, ma mio nonno, che morì molto vecchio, mi raccontava cose grandi di questo Piscicola."
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/UniversalDependencies/UD_Sicilian-STB/tar.gz/c9668c551499e562d263fb6d5e8bc59302fc8ca9",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "eb3976ea2913a2e696389902",
+      "source_id": "scn_ud_stb",
+      "source_sha256": "fe18acd47541cf03c6bcae8e485dfc9e0356dcf301317c4c0b95650aaca4e58a",
+      "text_sha256": "711a02dcd8273e81aaed21baa7a0b0e6561dc3647cbd78584126c7079cbff88f",
+      "category": "verified_conforming",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Complete contemporary quoted address plus narration inspected in UD source context: vucijau preserves j, iḍḍu retroflex, dû contraction. Personal name Nardu and quote punctuation retained.",
+      "context": {
+        "document_id": "scn_ud_stb:scn_stb-ud-test.conllu:amarasapi",
+        "locator": "amarasapi_46",
+        "metadata": {
+          "sent_id": "amarasapi_46",
+          "text": "«Cumpari Nardu», vucijau iḍḍu dû postu di guida.",
+          "translation": "«Cugino Nardu», gridò lui dal posto di guida."
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://codeload.github.com/UniversalDependencies/UD_Sicilian-STB/tar.gz/c9668c551499e562d263fb6d5e8bc59302fc8ca9",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "63d5bfa12b04aba6a221a126",
+      "source_id": "scn_google_smoldoc",
+      "source_sha256": "263f2ed9ae6773bbf876a173e7b5311a997f6d8e99f951cfa2dd9229a5410679",
+      "text_sha256": "f92dce3a0a1229f9599a820e23b8f194bcf8ffd5b56905fbb986d1ab8e443bc8",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Google translation sentence read; siravi in this context needs morphology review; loan ban itself is not automatic failure.",
+      "context": {
+        "document_id": "scn_google_smoldoc:stt_165__yyyyatwwit",
+        "locator": "5",
+        "metadata": {
+          "source_row": 21,
+          "target_index": 5,
+          "human_translation": true
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://huggingface.co/datasets/google/smol/resolve/fdaff3a1a019f89fa30a562a85d7c1d3e9150444/smoldoc/en_scn.jsonl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "569ab84706360601e042c80a",
+      "source_id": "scn_google_smoldoc",
+      "source_sha256": "263f2ed9ae6773bbf876a173e7b5311a997f6d8e99f951cfa2dd9229a5410679",
+      "text_sha256": "562598377a3c5827ca75161e9a0e96a319b435df9a2abc411eeffeac242c9e38",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Google translation sentence read; nirbusu and aspittàrimi require regional lexical and stress judgment; no blanket translation quality inference.",
+      "context": {
+        "document_id": "scn_google_smoldoc:topic_530__miwtwssisiwmtiasw",
+        "locator": "1",
+        "metadata": {
+          "source_row": 49,
+          "target_index": 1,
+          "human_translation": true
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://huggingface.co/datasets/google/smol/resolve/fdaff3a1a019f89fa30a562a85d7c1d3e9150444/smoldoc/en_scn.jsonl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "6671e2c782d5b702c4387d61",
+      "source_id": "scn_google_smoldoc",
+      "source_sha256": "263f2ed9ae6773bbf876a173e7b5311a997f6d8e99f951cfa2dd9229a5410679",
+      "text_sha256": "d6adbdacfc1a97e9405b2dc6212b9c2d4dce8facedfbede3b3b7c318a924f979",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Google translation political sentence read; aḍḍijuti lexical choice unresolved. Named persons do not require Sicilian respelling.",
+      "context": {
+        "document_id": "scn_google_smoldoc:ivory_coast__itghihgitth",
+        "locator": "2",
+        "metadata": {
+          "source_row": 77,
+          "target_index": 2,
+          "human_translation": true
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://huggingface.co/datasets/google/smol/resolve/fdaff3a1a019f89fa30a562a85d7c1d3e9150444/smoldoc/en_scn.jsonl",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "9f436a2d1788312ee718df37",
+      "source_id": "scn_wikipedia_20231101",
+      "source_sha256": "30305f40c61092a4186dd7054bf0b282aefba1ca5ab5fa228eff222f1b205c10",
+      "text_sha256": "f333cf8149582a95985c07a4ba34874c74cd477e6cc72ea039389d1b9515f9d2",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Older Wikipedia snapshot kept separate. Capilunghu is explicitly a proper-name variant; agreement and lexical items remain unverified.",
+      "context": {
+        "document_id": "scn_wikipedia_20231101:58834",
+        "locator": "0",
+        "metadata": {
+          "url": "https://scn.wikipedia.org/wiki/Capilungo",
+          "title": "Capilungo"
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/wiki/Capilungo",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "3a3c4476ee68e6f78fcef8a1",
+      "source_id": "scn_wikipedia_20231101",
+      "source_sha256": "30305f40c61092a4186dd7054bf0b282aefba1ca5ab5fa228eff222f1b205c10",
+      "text_sha256": "c9dbc5687c694e1a2a150373730b0584ea270f2e107cb194cec18046488f2683",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Older Wikipedia full sentence inspected; lexically dense passage needs stress/morphology review beyond this pass, despite Sicilian function words.",
+      "context": {
+        "document_id": "scn_wikipedia_20231101:9933",
+        "locator": "5",
+        "metadata": {
+          "url": "https://scn.wikipedia.org/wiki/Pena%20di%20morti",
+          "title": "Pena di morti"
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/wiki/Pena%20di%20morti",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "95cd36b1bf7d8013149e4167",
+      "source_id": "scn_wikipedia_20231101",
+      "source_sha256": "30305f40c61092a4186dd7054bf0b282aefba1ca5ab5fa228eff222f1b205c10",
+      "text_sha256": "a246d0c1e3fb8b15ea4b3f3cf68157c6151d0d2297fed237accb4b6c3c3bb1a8",
+      "category": "unresolved",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Older Wikipedia art-history sentence inspected; foreign place names are permitted context, pittiannu/other lexical forms remain unverified.",
+      "context": {
+        "document_id": "scn_wikipedia_20231101:38968",
+        "locator": "5",
+        "metadata": {
+          "url": "https://scn.wikipedia.org/wiki/Giuvanni%20Segantini",
+          "title": "Giuvanni Segantini"
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://scn.wikipedia.org/wiki/Giuvanni%20Segantini",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_unesco_2019_1:a86d5d136fcbab3ee36f64d0",
+      "source_id": "scn_unesco_2019_1",
+      "source_sha256": "c56006a406787c811dd34547e2400d6200462d9c8fd0244df12400b4f8745d4f",
+      "text_sha256": "f0f7f97057e6bc261bf46676c2955bd622e12440d9112d0e89dceec8e0fd4549",
+      "category": "supported_inferred",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Photo caption checked against rendered p8. Extraction is intact and Cademia translation credit supports compatibility; Cilibbrazziuna/curdigghieri still need lexical review.",
+      "context": {
+        "document_id": "scn_unesco_2019_1:issue",
+        "locator": "page-8:block-12",
+        "metadata": {
+          "page": 8,
+          "bbox": [
+            405.902099609375,
+            516.9133911132812,
+            521.0286254882812,
+            560.7404174804688
+          ],
+          "quality": "block_extraction_requires_review",
+          "linebreak_hyphen": false
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/15/2019.1_366654scn.pdf",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_unesco_2019_1:16f0c55cf6ede82e7b618eb5",
+      "source_id": "scn_unesco_2019_1",
+      "source_sha256": "c56006a406787c811dd34547e2400d6200462d9c8fd0244df12400b4f8745d4f",
+      "text_sha256": "ccb64248b8be0792ae5d59aabdf4541233c6b84d0cec87cf20ade60a976225cb",
+      "category": "not_applicable",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Subscription URL is metadata, not Sicilian prose.",
+      "context": {
+        "document_id": "scn_unesco_2019_1:issue",
+        "locator": "page-2:block-24",
+        "metadata": {
+          "page": 2,
+          "bbox": [
+            323.5928039550781,
+            170.5299072265625,
+            463.871826171875,
+            183.6968994140625
+          ],
+          "quality": "block_extraction_requires_review",
+          "linebreak_hyphen": false
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/15/2019.1_366654scn.pdf",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "scn_unesco_2019_2:774050f04458ef9c78f99a45",
+      "source_id": "scn_unesco_2019_2",
+      "source_sha256": "eca7d4bd28c493a9bfa53de9c75f249ab6ebff17a9b73b329aeeeea0766e2fc7",
+      "text_sha256": "01f741fd246f23046971b1ea0322ae4063f2e4515e2c8cd0a4c51a5f145d6ea0",
+      "category": "not_applicable",
+      "rules_version": "dos24-v2.2-checklist-1",
+      "reviewer": "Codex contextual linguistic review",
+      "checked_on": "2026-10-11",
+      "explanation": "Translator credit names are attribution metadata; excluded from compatible prose totals.",
+      "context": {
+        "document_id": "scn_unesco_2019_2:issue",
+        "locator": "page-2:block-19",
+        "metadata": {
+          "page": 2,
+          "bbox": [
+            341.93609619140625,
+            403.1368103027344,
+            494.0750427246094,
+            414.726806640625
+          ],
+          "quality": "block_extraction_requires_review",
+          "linebreak_hyphen": false
+        },
+        "method": "Read entire extracted unit and its source locator; unresolved questions retained."
+      },
+      "evidence_urls": [
+        "https://upload.wikimedia.org/wikipedia/commons/4/41/2019.2_367693scn.pdf",
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_rules": [
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11"
+      ],
+      "flag_dispositions": {},
+      "reference_pdf_pages": [
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  ]
+}

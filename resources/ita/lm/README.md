@@ -1,5 +1,5 @@
 # Italian language model
 
-The existing FBK Italian trigram is the intended resource. Its official Drive download currently returns HTTP 404. No LM artifact exists here, and configurations deliberately use `lm_path: null`.
+The implemented decoder uses the **pretrained MLS Italian trigram**, released through [OpenSLR 94](https://www.openslr.org/94/) under CC BY 4.0. `prepare` verifies the archive's published MD5 and pinned SHA-256, then extracts the original `mls/3-gram_lm.arpa`, README, LICENSE, book list, and vocabulary counts. The original ARPA is never edited.
 
-The [manifest](../../manifest.yaml) records the official source, documented nominal 256K vocabulary, intended pruned variant, and unresolved format/license. See [access instructions](../../../docs/resources.md#italian-language-model). Do not substitute vocabulary lists, raw counts, dummy ARPA data, or a newly trained LM.
+The [manifest](../../manifest.yaml) pins the academic archive; [resource provenance](../../../docs/resources.md) records training information and measured counts. Graph preparation writes the selected-vocabulary ARPA under `.cache/graphs/`, preserving retained probabilities and backoff weights. No LM training or PAISÀ fallback is implemented. The earlier unavailable FBK entry remains historical only.

@@ -1,0 +1,50 @@
+{
+  "target": "DOS24-v2.2",
+  "target_date": "2024-04-09",
+  "sources": {
+    "scn_dos24": {
+      "url": "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf",
+      "sha256": "56c15f88898c3a86edc3cc4f912c279f7f32cd24917c04f0f1c116ece732a181"
+    },
+    "scn_orthography_2017": {
+      "url": "https://cademiasiciliana.org/wp-content/uploads/2017/10/Proposta-di-normalizzazione-ortografica-comune-della-lingua-siciliana-I-edizione-2017.pdf",
+      "sha256": "e0369cc72d4ff624a4bdac55ec6649256e2a763e9849e1f4a8d06d880fabe250"
+    }
+  },
+  "historical_conversion_applied": false,
+  "verified_dos24_text_documents": 0,
+  "categories": [
+    "dos24",
+    "cademia_pre2024",
+    "other_sicilian",
+    "uncertain_mixed"
+  ],
+  "unicode_normalization": "NFC and apostrophe character equivalence; preserve lexical diacritics",
+  "differences": [
+    {
+      "feature": "grave/acute accent",
+      "2017_pages": "12–15",
+      "dos24_pages": "7–9",
+      "action": "word/context review; no blind substitution"
+    },
+    {
+      "feature": "medial geminate syllabification",
+      "2017_pages": "10–11",
+      "dos24_pages": "8",
+      "action": "new syllabification rules required"
+    },
+    {
+      "feature": "retroflex spelling fallbacks",
+      "2017_pages": "22",
+      "dos24_pages": "17",
+      "action": "lexically distinguish dental dd from retroflex ḍḍ"
+    },
+    {
+      "feature": "optional accents on inflected have",
+      "2017_pages": null,
+      "dos24_pages": "7–8",
+      "action": "retain accepted variants"
+    }
+  ],
+  "report": "docs/scn-orthography-analysis.md"
+}

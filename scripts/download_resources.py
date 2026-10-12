@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 
-from sicilian_asr.resources import download_resource, extract_source, load_manifest, write_json
+from sicilian_asr.resources import download_resource, extract_members, extract_source, load_manifest, write_json
 
 
 def main() -> int:
@@ -38,11 +38,17 @@ def main() -> int:
         if args.dry_run:
             print(f"{name}: {spec['url']} -> {spec['path']}")
             continue
+        if spec.get("acquisition_handler") == "scn_reviewed":
+            from sicilian_asr.scn_acquisition import acquire
+            failures += bool(acquire(root, [name]))
+            continue
         print(f"Checking/downloading {name} -> {spec['path']}", flush=True)
         try:
             actual = download_resource(root, spec, receipts.get(name))
             if spec.get("extract_to"):
                 extract_source(root, spec, actual["sha256"])
+            if spec.get("members"):
+                extract_members(root, spec, actual)
             receipts[name] = {
                 **actual, "revision": spec["revision"], "source_url": spec["url"],
                 "path": spec["path"], "verified_at": datetime.now(timezone.utc).isoformat(),

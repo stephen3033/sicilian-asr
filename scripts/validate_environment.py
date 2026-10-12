@@ -39,7 +39,7 @@ def external_paths(root: Path, manifest: dict) -> None:
 
 def dependency_check(root: Path, manifest: dict) -> dict:
     result = {"status": "ok", "packages": {}, "external_sources": {}}
-    for name in ("sicilian_asr", "yaml", "numpy", "torch", "torchaudio", "k2", "kenlm", "lhotse", "sentencepiece", "soundfile"):
+    for name in ("sicilian_asr", "yaml", "numpy", "torch", "torchaudio", "k2", "kaldilm", "kenlm", "lhotse", "sentencepiece", "soundfile"):
         try:
             importlib.import_module(name)
             distribution = {"sicilian_asr": "sicilian-asr", "yaml": "pyyaml"}.get(name, name)

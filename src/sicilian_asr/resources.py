@@ -54,11 +54,25 @@ def load_manifest(path: Path) -> dict:
             for field in ("source_url", "url", "license_url"):
                 if not str(spec.get(field, "")).startswith("https://"):
                     raise ResourceError(f"Missing HTTPS {field}: {name}")
-            if not re.fullmatch(r"[0-9a-f]{40}", str(spec["revision"])) or not spec["path"]:
-                raise ResourceError(f"Available resource needs a pinned revision and path: {name}")
+            provenance = spec.get("provenance", "git")
+            if provenance == "git":
+                if not re.fullmatch(r"[0-9a-f]{40}", str(spec["revision"])):
+                    raise ResourceError(f"Available resource needs a pinned revision: {name}")
+            elif provenance == "academic_archive":
+                if not spec.get("revision") or not (spec.get("md5") or spec.get("sha256")):
+                    raise ResourceError(f"Academic archive needs a release and checksum: {name}")
+            elif provenance == "http_snapshot":
+                if not all(spec.get(k) for k in ("revision", "sha256", "acquired_at", "final_url")):
+                    raise ResourceError(f"HTTP snapshot needs identity, checksum and acquisition receipt: {name}")
+                if not str(spec["final_url"]).startswith("https://"):
+                    raise ResourceError(f"HTTP snapshot has insecure final URL: {name}")
+            else:
+                raise ResourceError(f"Unknown provenance type: {name}")
+            if not spec["path"]:
+                raise ResourceError(f"Available resource needs a path: {name}")
         elif not spec.get("reason"):
             raise ResourceError(f"Missing unavailable/planned explanation: {name}")
-        for field, length in (("sha256", 64), ("git_blob_sha1", 40)):
+        for field, length in (("sha256", 64), ("git_blob_sha1", 40), ("md5", 32)):
             if spec.get(field) and not re.fullmatch(rf"[0-9a-f]{{{length}}}", spec[field]):
                 raise ResourceError(f"Invalid {field}: {name}")
     return manifest
@@ -67,19 +81,21 @@ def load_manifest(path: Path) -> dict:
 def fingerprints(path: Path) -> dict:
     size = path.stat().st_size
     sha256 = hashlib.sha256()
+    md5 = hashlib.md5()
     git_blob = hashlib.sha1(f"blob {size}\0".encode())
     with path.open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             sha256.update(chunk)
+            md5.update(chunk)
             git_blob.update(chunk)
-    return {"size_bytes": size, "sha256": sha256.hexdigest(), "git_blob_sha1": git_blob.hexdigest()}
+    return {"size_bytes": size, "sha256": sha256.hexdigest(), "md5": md5.hexdigest(), "git_blob_sha1": git_blob.hexdigest()}
 
 
 def verify_file(path: Path, spec: dict, receipt: dict | None = None) -> dict:
     if not path.is_file() or path.stat().st_size == 0:
         raise ResourceError(f"Missing or empty artifact: {path}")
     actual = fingerprints(path)
-    for field in ("size_bytes", "sha256", "git_blob_sha1"):
+    for field in ("size_bytes", "sha256", "git_blob_sha1", "md5"):
         expected = spec.get(field)
         if expected is not None and actual[field] != expected:
             raise ResourceError(f"{field} mismatch: {path.name}; expected {expected}, got {actual[field]}")
@@ -156,3 +172,42 @@ def extract_source(root: Path, spec: dict, sha256: str) -> Path:
         write_json(entries[0] / marker.name, stamp)
         os.replace(entries[0], destination)
     return destination
+
+
+def extract_members(root: Path, spec: dict, actual: dict) -> dict:
+    """Extract only named regular files and verify derived bytes on every reuse."""
+    import shutil
+
+    receipt_path = local_path(root, spec["path"] + ".members.json")
+    expected = json.loads(receipt_path.read_text()) if receipt_path.exists() else None
+    if expected and expected["archive_sha256"] != actual["sha256"]:
+        raise ResourceError("Derived artifacts have a different source archive")
+    results = {}
+    with tarfile.open(local_path(root, spec["path"]), "r:gz") as archive:
+        for member, relative in spec["members"].items():
+            path = local_path(root, relative)
+            if not path.exists():
+                info = archive.getmember(member)
+                if not info.isfile():
+                    raise ResourceError(f"Not a regular archive member: {member}")
+                path.parent.mkdir(parents=True, exist_ok=True)
+                with archive.extractfile(info) as src, tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as dst:
+                    temporary = Path(dst.name)
+                    try:
+                        shutil.copyfileobj(src, dst)
+                    except BaseException:
+                        temporary.unlink(missing_ok=True)
+                        raise
+                os.replace(temporary, path)
+            results[relative] = fingerprints(path)
+            if expected and results[relative] != expected["artifacts"].get(relative):
+                raise ResourceError(f"Derived artifact checksum mismatch: {path}")
+            if not expected:
+                # Existing files cannot establish their own provenance: compare archive bytes.
+                with archive.extractfile(member) as stream:
+                    digest = hashlib.file_digest(stream, "sha256").hexdigest()
+                if digest != results[relative]["sha256"]:
+                    raise ResourceError(f"Derived artifact differs from archive: {path}")
+    receipt = {"archive_sha256": actual["sha256"], "artifacts": results}
+    write_json(receipt_path, receipt)
+    return receipt

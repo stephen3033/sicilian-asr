@@ -1,0 +1,392 @@
+{
+  "analyzed_sha256": "9b71a301aec136086286892bed337ddd2f2bc122c5c22b1ae6a6b05ed599890c",
+  "method": "Interpolated Witten-Bell orders 1-4; uniform base over train words count>=2 plus UNK/EOS; train-only vocabulary; EOS scored",
+  "split": "SHA256(document/duplicate-connected group) mod 10: development=0, test=1, train=2..9; short exact duplicates removed but do not connect documents",
+  "selection": "Lowest order within 1% of best development perplexity; test perplexity computed for selected order only",
+  "final_lm_trained": false,
+  "excluded_records": {
+    "exact_duplicate": 40450,
+    "markup_or_list_review_pending": 464,
+    "italian_screen_pending": 107,
+    "non_text_role": 9819,
+    "pdf_layout_validation_pending": 4079,
+    "transcript_validation_pending": 3933
+  },
+  "cohorts": {
+    "dos24": {
+      "status": "insufficient_independent_splits",
+      "splits": {
+        "train": {
+          "records": 0,
+          "documents": 0,
+          "tokens": 0,
+          "groups": 0
+        },
+        "development": {
+          "records": 0,
+          "documents": 0,
+          "tokens": 0,
+          "groups": 0
+        },
+        "test": {
+          "records": 0,
+          "documents": 0,
+          "tokens": 0,
+          "groups": 0
+        }
+      },
+      "selected_order": null
+    },
+    "cademia_pre2024": {
+      "status": "insufficient_independent_splits",
+      "splits": {
+        "train": {
+          "records": 0,
+          "documents": 0,
+          "tokens": 0,
+          "groups": 0
+        },
+        "development": {
+          "records": 0,
+          "documents": 0,
+          "tokens": 0,
+          "groups": 0
+        },
+        "test": {
+          "records": 0,
+          "documents": 0,
+          "tokens": 0,
+          "groups": 0
+        }
+      },
+      "selected_order": null
+    },
+    "other_sicilian": {
+      "status": "auxiliary_diagnostic_only",
+      "splits": {
+        "train": {
+          "records": 102132,
+          "documents": 18116,
+          "tokens": 1804140,
+          "groups": 13408
+        },
+        "development": {
+          "records": 16581,
+          "documents": 3616,
+          "tokens": 257503,
+          "groups": 1733
+        },
+        "test": {
+          "records": 10799,
+          "documents": 2222,
+          "tokens": 194631,
+          "groups": 1703
+        }
+      },
+      "training_vocabulary_types_min_count_2": 73621,
+      "training_raw_word_types": 169024,
+      "training_singleton_word_types": 95403,
+      "ngram_sparsity": {
+        "1": {
+          "types": 73623,
+          "singleton_types": 0,
+          "singleton_fraction": 0.0
+        },
+        "2": {
+          "types": 762001,
+          "singleton_types": 564704,
+          "singleton_fraction": 0.7410803922829498
+        },
+        "3": {
+          "types": 1361447,
+          "singleton_types": 1205647,
+          "singleton_fraction": 0.8855629341428641
+        },
+        "4": {
+          "types": 1586551,
+          "singleton_types": 1492711,
+          "singleton_fraction": 0.9408528310782319
+        }
+      },
+      "development": {
+        "records": 16581,
+        "tokens": 257503,
+        "oov_tokens": 27443,
+        "oov_rate": 0.10657351564836137,
+        "predictions_including_eos": 274084,
+        "orders": {
+          "1": {
+            "perplexity": 1188.3412190925706,
+            "unseen_ngram_rate_after_unk_mapping": 0.0
+          },
+          "2": {
+            "perplexity": 413.46015518818257,
+            "unseen_ngram_rate_after_unk_mapping": 0.25836239984822174
+          },
+          "3": {
+            "perplexity": 372.8418925109831,
+            "unseen_ngram_rate_after_unk_mapping": 0.5924497599276134
+          },
+          "4": {
+            "perplexity": 404.3726074565742,
+            "unseen_ngram_rate_after_unk_mapping": 0.7546846952029305
+          }
+        }
+      },
+      "selected_order": 3,
+      "selected_order_test": {
+        "records": 10799,
+        "tokens": 194631,
+        "oov_tokens": 17522,
+        "oov_rate": 0.0900267686031516,
+        "predictions_including_eos": 205430,
+        "orders": {
+          "3": {
+            "perplexity": 443.2848685783725,
+            "unseen_ngram_rate_after_unk_mapping": 0.6239838387771991
+          }
+        }
+      },
+      "coverage_by_top_training_words": {
+        "500": {
+          "actual_vocabulary": 500,
+          "development_token_coverage": 0.5187240537003452
+        },
+        "1000": {
+          "actual_vocabulary": 1000,
+          "development_token_coverage": 0.5778651122511194
+        },
+        "5000": {
+          "actual_vocabulary": 5000,
+          "development_token_coverage": 0.7149392434262902
+        },
+        "10000": {
+          "actual_vocabulary": 10000,
+          "development_token_coverage": 0.7700725816786601
+        },
+        "25000": {
+          "actual_vocabulary": 25000,
+          "development_token_coverage": 0.8366737474903205
+        },
+        "50000": {
+          "actual_vocabulary": 50000,
+          "development_token_coverage": 0.8772790996609748
+        }
+      },
+      "pronunciation_candidate_coverage": {
+        "unvalidated_wikipron_word_types": 1488,
+        "development_token_coverage": 0.28297534397657503,
+        "development_type_coverage": 0.01655298442447037,
+        "dos24_or_pronunciation_correctness_verified": false
+      },
+      "largest_document_group_records": 5390,
+      "source_distribution": {
+        "scn_ud_stb": 505,
+        "scn_napizia_wikimatrix": 514,
+        "scn_wikipedia_20231101": 128493
+      }
+    },
+    "uncertain_mixed": {
+      "status": "auxiliary_diagnostic_only",
+      "splits": {
+        "train": {
+          "records": 7955,
+          "documents": 365,
+          "tokens": 57435,
+          "groups": 283
+        },
+        "development": {
+          "records": 289,
+          "documents": 34,
+          "tokens": 2696,
+          "groups": 32
+        },
+        "test": {
+          "records": 600,
+          "documents": 50,
+          "tokens": 5832,
+          "groups": 46
+        }
+      },
+      "training_vocabulary_types_min_count_2": 3260,
+      "training_raw_word_types": 7092,
+      "training_singleton_word_types": 3832,
+      "ngram_sparsity": {
+        "1": {
+          "types": 3262,
+          "singleton_types": 0,
+          "singleton_fraction": 0.0
+        },
+        "2": {
+          "types": 24577,
+          "singleton_types": 15611,
+          "singleton_fraction": 0.6351873703055703
+        },
+        "3": {
+          "types": 41982,
+          "singleton_types": 33984,
+          "singleton_fraction": 0.8094897813348578
+        },
+        "4": {
+          "types": 48679,
+          "singleton_types": 42722,
+          "singleton_fraction": 0.8776269027712155
+        }
+      },
+      "development": {
+        "records": 289,
+        "tokens": 2696,
+        "oov_tokens": 548,
+        "oov_rate": 0.2032640949554896,
+        "predictions_including_eos": 2985,
+        "orders": {
+          "1": {
+            "perplexity": 210.8825564236616,
+            "unseen_ngram_rate_after_unk_mapping": 0.0
+          },
+          "2": {
+            "perplexity": 110.87711806703656,
+            "unseen_ngram_rate_after_unk_mapping": 0.24321608040201004
+          },
+          "3": {
+            "perplexity": 119.19681180536672,
+            "unseen_ngram_rate_after_unk_mapping": 0.5765494137353434
+          },
+          "4": {
+            "perplexity": 136.93444128926143,
+            "unseen_ngram_rate_after_unk_mapping": 0.7654941373534339
+          }
+        }
+      },
+      "selected_order": 2,
+      "selected_order_test": {
+        "records": 600,
+        "tokens": 5832,
+        "oov_tokens": 1032,
+        "oov_rate": 0.17695473251028807,
+        "predictions_including_eos": 6432,
+        "orders": {
+          "2": {
+            "perplexity": 134.34800461489502,
+            "unseen_ngram_rate_after_unk_mapping": 0.2776741293532338
+          }
+        }
+      },
+      "coverage_by_top_training_words": {
+        "500": {
+          "actual_vocabulary": 500,
+          "development_token_coverage": 0.6268545994065282
+        },
+        "1000": {
+          "actual_vocabulary": 1000,
+          "development_token_coverage": 0.6995548961424333
+        },
+        "5000": {
+          "actual_vocabulary": 5000,
+          "development_token_coverage": 0.8082344213649851
+        },
+        "10000": {
+          "actual_vocabulary": 7092,
+          "development_token_coverage": 0.8516320474777448
+        },
+        "25000": {
+          "actual_vocabulary": 7092,
+          "development_token_coverage": 0.8516320474777448
+        },
+        "50000": {
+          "actual_vocabulary": 7092,
+          "development_token_coverage": 0.8516320474777448
+        }
+      },
+      "pronunciation_candidate_coverage": {
+        "unvalidated_wikipron_word_types": 1488,
+        "development_token_coverage": 0.32603857566765576,
+        "development_type_coverage": 0.14142427281845538,
+        "dos24_or_pronunciation_correctness_verified": false
+      },
+      "largest_document_group_records": 2905,
+      "source_distribution": {
+        "scn_firefox_l10n": 2114,
+        "scn_android_l10n": 1359,
+        "scn_firefoxios_l10n": 646,
+        "scn_focusios_l10n": 108,
+        "scn_www_l10n": 735,
+        "scn_www_firefox_l10n": 18,
+        "scn_mozilla_vpn_client_l10n": 581,
+        "scn_mozilla_vpn_extension_l10n": 63,
+        "scn_fxa_content_server_l10n": 875,
+        "scn_common_voice": 1063,
+        "scn_google_smoldoc": 1247,
+        "scn_tatoeba": 35
+      }
+    }
+  },
+  "source_holdouts": {
+    "scn_google_smoldoc": {
+      "train_records": 6989,
+      "excluded_groups": 99,
+      "evaluation": {
+        "records": 1247,
+        "tokens": 17569,
+        "oov_tokens": 6529,
+        "oov_rate": 0.37162046786954295,
+        "predictions_including_eos": 18816,
+        "orders": {
+          "1": {
+            "perplexity": 131.60482067515625,
+            "unseen_ngram_rate_after_unk_mapping": 0.0
+          },
+          "2": {
+            "perplexity": 115.93599874406611,
+            "unseen_ngram_rate_after_unk_mapping": 0.2528167517006803
+          },
+          "3": {
+            "perplexity": 137.9582593729163,
+            "unseen_ngram_rate_after_unk_mapping": 0.6236181972789115
+          },
+          "4": {
+            "perplexity": 163.4933546347796,
+            "unseen_ngram_rate_after_unk_mapping": 0.8401360544217688
+          }
+        }
+      }
+    },
+    "scn_firefox_l10n": {
+      "train_records": 4127,
+      "excluded_groups": 131,
+      "evaluation": {
+        "records": 2114,
+        "tokens": 11467,
+        "oov_tokens": 2037,
+        "oov_rate": 0.17764018487834657,
+        "predictions_including_eos": 13581,
+        "orders": {
+          "1": {
+            "perplexity": 203.13495731286065,
+            "unseen_ngram_rate_after_unk_mapping": 0.0
+          },
+          "2": {
+            "perplexity": 118.53991441485343,
+            "unseen_ngram_rate_after_unk_mapping": 0.30100876224136663
+          },
+          "3": {
+            "perplexity": 141.55383013917395,
+            "unseen_ngram_rate_after_unk_mapping": 0.6360356380237095
+          },
+          "4": {
+            "perplexity": 166.5516797612999,
+            "unseen_ngram_rate_after_unk_mapping": 0.747073116854429
+          }
+        }
+      }
+    }
+  },
+  "dos24_recommendation": "No empirical order selection possible until licensed, validated DOS24 text yields independent splits.",
+  "limitations": [
+    "Auxiliary orthographies are never DOS24 substitutes",
+    "Perplexities across different vocabularies/cohorts are not comparable",
+    "These are count probes, not the existing Italian LM estimator",
+    "Lexical screening cannot establish language purity",
+    "MinHash duplicate detection is approximate"
+  ]
+}

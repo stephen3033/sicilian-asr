@@ -1,74 +1,96 @@
 # sicilian-asr
 
-Python research scaffolding for Italian (`ita`) and Sicilian (`scn`) ASR:
+Italian CPU ASR: **audio/video → ZIPA frame probabilities → Compact CTC–lexicon–MLS trigram WFST → words**.
 
-**Audio → CTC IPA acoustic model → CTC/WFST decoder → orthographic transcription.**
+The Italian pipeline is implemented and has completed a real MP4 transcription and evaluation. Sicilian (`scn`) and Italian–Sicilian configurations remain unsupported scaffolds. Acoustic training, G2P, MPS, code-switching, and word-level alignment are outside this milestone.
 
-The repository initializes the resources and environment for the requested CLiC-it 2026 architecture. It does **not** implement the transcription pipeline, training, graph composition, G2P, language switching, or corpus ingestion.
+## Install and prepare
 
-ZIPA-CR-NS large and the Italian lexicon are available locally after setup. **The FBK Italian LM is unavailable at its published download link. CPU inference works; ZIPA Metal validation failed on the pinned stack.** See the [initialization report](docs/initialization-report.md).
+The frozen environment targets native macOS ARM64, Python 3.12.12. Install [uv](https://docs.astral.sh/uv/getting-started/installation/), Apple's Command Line Tools, and FFmpeg/FFprobe first. CPU inference uses four threads. Allow at least 20 GB of free disk space; the repaired default graph alone is 6.22 GB. Graph compilation and decoding are intended for a machine with at least the validated 32 GB memory budget.
 
-## Setup
+```bash
+uv sync --frozen --extra research
+uv run --frozen --extra research python -m sicilian_asr prepare \
+  --config configs/ita.yaml
+```
 
-Target: native **macOS ARM64**, Python **3.12.12**, with no CUDA. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and Apple's Command Line Tools (`xcode-select --install`) first. The compiler is needed for KenLM. Allow several GB of disk space; the checkpoint alone is 1.2 GB.
+Preparation verifies or acquires the pinned ZIPA checkpoint, tokenizer, source trees, PhonItalia IPA dictionary, and pretrained MLS Italian LM. It extracts the original trigram and documentation, audits the lexicon, selects vocabulary, and caches `T`, disambiguated `L`, `G`, `LG`, `TLG`, symbol tables, and diagnostics. It neither trains an LM nor uses PAISÀ. The old unavailable FBK entry remains historical provenance only.
+
+The default vocabulary comprises the 20,000 highest-unigram-probability words shared by the supported lexicon and MLS. Set `decoder.vocabulary_size: null` for the full shared vocabulary (78,883 words with contraction derivation enabled), which requires a new, potentially much larger compilation. Retained LM probabilities and backoff weights are unchanged. Compilation errors produce diagnostics without reducing vocabulary or changing topology.
+
+## Transcribe and evaluate
 
 From the repository root:
 
-```sh
-bash scripts/setup.sh
+```bash
+uv run --frozen --extra research python -m sicilian_asr transcribe \
+  --config configs/ita.yaml \
+  --input data/video.mp4 \
+  --reference data/reference.srt \
+  --output outputs/ita_test/
 ```
 
-This syncs the frozen dependencies, retrieves pinned resources, runs the offline tests, verifies artifact checksums, and probes ZIPA on CPU and MPS. Repeating it reuses verified downloads. It reports known unavailable resources without inventing replacements. MPS probes run in separate processes with CPU fallback disabled; failure does not invalidate the working CPU setup.
+Transcription uses local prepared artifacts and requires an empty output directory. WAV and FFmpeg-supported audio/video containers are accepted. The first audio stream is selected by default; `--audio-stream N` selects an absolute FFprobe stream index. References may be SRT, VTT, or corrected UTF-8 `.txt`; omit `--reference` to transcribe without scoring.
 
-The installation is intentionally restricted to this platform. It does not install CUDA, emulate Intel wheels, or modify system Python. The [dependency notes](docs/dependencies.md) explain the selected versions, source installations, and deferred OpenFst/OpenGrm tools.
+Outputs include:
 
-## Commands
+- `transcription.txt`, `ipa_greedy.txt`, `reference_normalized.txt`, `comparison.txt`, `metrics.json`, and `run_metadata.json`.
+- `segments.json`, parsed `reference_cues.json` when supplied, and extracted `audio.wav`.
+- Original valid probability frames with token IDs only when `--export-probabilities` is requested.
+- `--diagnostics` also exports probabilities and `diagnostics.json`: the chosen pronunciation, acoustic/grammar score contributions, sampled competing paths, and OOV causes. Candidates come from the decoding lattice, never the reference. Sampled candidates are not an exhaustive N-best list.
 
-```sh
-# Preview acquisition without network access or file writes.
-.venv/bin/python scripts/download_resources.py --all --dry-run
+Audio is resampled to 16 kHz mono and segmented contiguously: 20-second target, 24-second maximum, with silence of at least 300 ms preferred. Forced low-energy cuts are flagged. Sample offsets and source timestamps describe segment boundaries, not word alignment. Thresholds, beams, active-state bounds, and scales are configurable in [configs/ita.yaml](configs/ita.yaml).
 
-# Default acquisition excludes the large checkpoint; --all includes it.
-.venv/bin/python scripts/download_resources.py
-.venv/bin/python scripts/download_resources.py zipa_checkpoint
+Hypothesis and reference share a versioned normalizer: NFC, lowercase, standardized apostrophes, punctuation removal, and collapsed whitespace. Existing top-level WER/CER remain strict: accents, digits, and internal apostrophes remain. The separate `spoken_form` metrics verbalize standalone Italian integers from 0 through 999999 and record each transformation. Decimals, dates, signed numbers, leading zeros, and identifiers are not guessed. Both views include edit counts and denominators; CER excludes spaces. Empty references have undefined rates. `<unk>` remains visible and scored, but cannot guarantee recognition of arbitrary OOV words. Subtitle omissions, paraphrases, and synchronization errors can inflate measured errors. No PER is reported without an IPA reference.
 
-# Unit tests need no downloaded data, weights, or network.
-.venv/bin/python -m pytest
+The optional `decoder.pronunciation_variants` and `decoder.contractions` settings add audited Italian pronunciation alternatives and LM-attested `l'`/`c'` elisions. Original dictionary pronunciations and language-model weights remain intact. Changes to either setting invalidate the graph cache. See [linguistic conversion](docs/linguistic-conversion.md) for the exact rules.
 
-# Offline accessibility, provenance, dictionary, and vocabulary checks.
-.venv/bin/python scripts/validate_resources.py
+The repair benchmark reuses original WAV posteriors across all graph and scale comparisons, tunes on the publisher's neutral development split, and freezes its choice before evaluating the neutral test split. The previously inspected acceptance clip is excluded from test. It keeps the original graph, removes only its own temporary ablation graphs, and retains the combined graph:
+
+```bash
+.venv/bin/python scripts/benchmark_italian.py \
+  --baseline .cache/graphs/ita/13dfce46bb2839d35f441e05af7ee364b5050372ce433a70f04880f7dc95e4d1 \
+  --output outputs/ita_repair_study_new
+```
+
+Completed rows can be resumed with identical code/configuration. Results include per-recording JSONL, aggregate and per-speaker/per-sentence metrics, graph receipts, frozen selection, and an explicit adoption gate. The dataset repeats 18 acted sentences, so this measures regression performance, not general Italian ASR quality.
+
+## Validation and observed result
+
+```bash
+.venv/bin/python -m pytest -q
+.venv/bin/python scripts/validate_environment.py
 .venv/bin/python scripts/validate_resources.py --strict --config ita
 
-# Dependency imports; optionally repeat bounded acoustic compatibility tests.
-.venv/bin/python scripts/validate_environment.py
-.venv/bin/python scripts/validate_environment.py --acoustic
-.venv/bin/python scripts/validate_environment.py --require-mps
+# Fixed neutral test-split selection, publisher reference, then MP4 acceptance.
+.venv/bin/python scripts/acceptance_italian.py --run --output outputs/ita_acceptance_new/
 ```
 
-`--strict --config ita` currently exits **1** because the FBK LM is absent. Default resource validation still fails on corrupt artifacts, but reports missing resources as warnings. `--require-mps` exits **1** unless the scripted MPS output passes both CPU comparisons. A process sandbox can hide the GPU; run the acoustic check from an ordinary Terminal process when assessing hardware support.
+The original fixed Emozionalmente sample `1612969363951.wav` produced **WER 66.67% (4/6)** and **CER 25.93% (7/27)**. Its artifacts remain unchanged. See the [historical implementation report](docs/implementation-report.md) for those results.
 
-To install only the lightweight package and offline tests, use `uv sync --frozen`. Restore the complete research environment with `uv sync --frozen --extra research` before resource inventory or acoustic validation.
+The repaired default was selected on 165 neutral development recordings and passed the adoption gate on 202 held-out neutral recordings: **strict WER 30.69% → 17.47%**, **spoken-form WER 29.57% → 16.35%**, and **spoken-form CER 10.58% → 6.03%**. ZIPA, the WFST topology, the 20,000-word limit, and acoustic/LM scales 1/1 remain unchanged. This corpus repeats 18 acted sentences; the result is a regression benchmark, not a broad Italian accuracy estimate. See the [repair report](docs/italian-repair-report.md).
 
-## Configuration and resources
+All tests require the research extra; the tokenizer-specific test skips when its pinned resource is absent. Synthetic graph tests require no checkpoint or network. `scripts/setup.sh` retains the original full acquisition and device-probe workflow; `prepare` is the narrower Italian setup command. MPS remains unsupported on the pinned stack.
 
-- `configs/ita.yaml`: Italian lexicon and unavailable FBK LM reference.
-- `configs/scn.yaml`: DOS24, vocabulary, lexicon, and trigram LM placeholders.
-- `configs/ita_scn.yaml`: references both languages; bilingual output and switching are reserved.
+## Architecture, provenance, and licensing
 
-Paths are relative to the repository root. `null` means an artifact or implementation does not exist yet. Acoustic and decoder devices are separate; both default to CPU. Decoder topology, graphs, and phone-inventory mappings are unset. The configuration's backend identifier describes the intended future adapter; there is no backend registry or transcription API yet.
+- [Technical architecture](docs/architecture.md) and [linguistic conversion](docs/linguistic-conversion.md)
+- [Acoustic interface](docs/acoustic-model.md), [dependency pins](docs/dependencies.md), and [resource provenance](docs/resources.md)
+- [Historical initialization report](docs/initialization-report.md) and [Sicilian scaffolds](docs/sicilian-resources.md)
 
-The tracked [resource manifest](resources/manifest.yaml) contains official URLs, immutable revisions, license evidence, and SHA-256 checksums. The downloader stores receipts in `.cache/resource-status.json`. Validation reports and synthetic probe outputs go into `.cache/validation/`. These machine-specific files are ignored by Git.
+The [manifest](resources/manifest.yaml) pins Git revisions or academic release checksums. Acquired resources, graphs, recordings, and run outputs are ignored by Git. Original ARPA and dictionary bytes are preserved. The supplied [CLiC-it paper](docs/93_main_long.pdf), Sections 3.3/4.1, motivates static Compact CTC–lexicon–trigram composition; this implementation uses ZIPA/PhonItalia/MLS and does not claim to reproduce that paper's trained models or experiments.
 
-Original Italian data live under `resources/ita/`; weights and external source archives live under `.cache/`. No third-party repositories are copied into `src/`. Sicilian directories contain documentation only.
+Project code uses MIT; [adaptation notices](docs/third-party-notices.md) and resource licenses remain separate. ZIPA-CR-NS weights are CC BY-NC-SA 4.0. MLS and Emozionalmente are CC BY 4.0. PhonItaliaR declares CC BY 4.0, while the original corpus announcement specifies noncommercial research use; that discrepancy remains recorded and unresolved.
 
-Read the [resource provenance](docs/resources.md), [acoustic interface and compatibility notes](docs/acoustic-model.md), and [Sicilian preparation notes](docs/sicilian-resources.md) before adding pipeline code.
+## Sicilian resource preparation
 
-## Licensing and academic references
-
-The project code uses the existing MIT license. That license does **not** cover downloaded third-party resources. ZIPA-CR-NS weights are CC BY-NC-SA 4.0. PhonItaliaR declares CC BY 4.0, while the original corpus announcement specifies noncommercial research use; both statements are recorded. FBK LM licensing could not be established. Downloaded data and weights are not included in the Python package or committed to Git.
-
-- Zhu, Samir, Chodroff, and Mortensen (2025), [ZIPA: A family of efficient models for multilingual phone recognition](https://aclanthology.org/2025.acl-long.961/).
-- Goslin, Galluzzi, and Romani (2014), [PhonItalia: a phonological lexicon for Italian](https://doi.org/10.3758/s13428-013-0400-8), with [Stefano Coretta's IPA additions](https://github.com/stefanocoretta/phonItaliaR).
-- Matassoni and Gretter, [FBK Italian ASR and LM resources](https://github.com/SpeechTechLab/FBK_ASR_public), February 2023.
-
-The exact CLiC-it 2026 proceedings citation remains to be added; this initialization follows the architecture specified for the project and does not claim experimental reproduction.
+The resource discovery and corpus preparation phase is documented in
+[the Sicilian resource inventory](docs/scn-resource-inventory.md). It includes
+source-specific permissions, ignored original downloads, corpus measurements,
+DOS24 compatibility, pronunciation requirements and auxiliary n-gram probes.
+The [expanded DOS24 audit](docs/scn-dos24-audit.md) separates collection and training
+rights from spelling conformity, with current Wikipedia/LiITA measurements,
+versioned rules, contextual decisions and explicit unreviewed coverage.
+[Reproduction commands](resources/scn/sources/README.md) use the optional `corpus`
+extra. Sicilian and bilingual decoding remain disabled; no final Sicilian LM,
+G2P or acoustic model was trained.

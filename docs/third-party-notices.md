@@ -1,0 +1,7 @@
+# Algorithm adaptation notices
+
+The static composition sequence in `src/sicilian_asr/decoding/graph.py` adapts Icefall's `compile_hlg.py` and pronunciation-disambiguation approach. Upstream: [k2-fsa/icefall](https://github.com/k2-fsa/icefall/tree/c1eda5427c46502b2cfdcbeb910bf35f2134a0d4), copyright 2021 Xiaomi Corp. (author Fangjun Kuang), [Apache License 2.0](https://github.com/k2-fsa/icefall/blob/c1eda5427c46502b2cfdcbeb910bf35f2134a0d4/LICENSE). The local implementation changes topology, token IDs, prefix treatment, provenance, and artifact handling; it does not copy or modify the cached upstream source tree.
+
+Compact CTC topology/frame construction in `src/sicilian_asr/decoding/compact.py` follows [NVIDIA NeMo v1.23.0](https://github.com/NVIDIA/NeMo/blob/v1.23.0/nemo/collections/asr/parts/k2/topologies.py) and its [padded DenseFsaVec adapter](https://github.com/NVIDIA/NeMo/blob/v1.23.0/nemo/collections/asr/parts/k2/utils.py), copyright 2022 NVIDIA CORPORATION, [Apache License 2.0](https://github.com/NVIDIA/NeMo/blob/v1.23.0/LICENSE). The local implementation preserves the published topology and adds contract validation and original-frame preservation.
+
+The full [Apache License 2.0](../licenses/Apache-2.0.txt) is included in this repository. These notices concern upstream code/algorithm adaptations, not model or corpus licenses. Dataset and model licenses are recorded separately in the resource manifest and documentation.

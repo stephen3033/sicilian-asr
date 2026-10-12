@@ -1,5 +1,7 @@
 # Initialization report — 2026-10-08
 
+> Historical initialization snapshot. The Italian pipeline is now implemented; see [implementation report](implementation-report.md) for current status and real-audio evidence.
+
 The repository scaffold and native Mac research environment are initialized. No transcription pipeline has been implemented.
 
 | Component | Result |

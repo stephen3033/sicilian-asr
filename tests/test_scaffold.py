@@ -25,7 +25,10 @@ def test_manifest_is_complete_and_all_downloads_are_pinned():
     for spec in specs.values():
         if spec["status"] == "available":
             assert len(spec["sha256"]) == 64
-            assert spec["revision"] in spec["url"]
+            if spec.get("provenance", "git") == "git":
+                assert spec["revision"] in spec["url"]
+            else:
+                assert spec["md5"]
         else:
             assert spec["path"] is None
             assert spec["reason"]
@@ -36,7 +39,7 @@ def test_configurations_reference_manifest(name, languages):
     manifest = load_manifest(ROOT / "resources/manifest.yaml")
     config = load_config(ROOT / f"configs/{name}.yaml", ROOT, manifest)
     assert config["languages"] == languages
-    assert not config["decoder"]["enabled"]
+    assert config["decoder"]["enabled"] == (name == "ita")
     assert not config["language_switching"]["enabled"]
     assert config["acoustic"]["blank_id"] == 0
 

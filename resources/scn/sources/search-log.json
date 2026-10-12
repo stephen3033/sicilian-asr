@@ -1,0 +1,323 @@
+{
+  "checked_on_local": "2026-10-08",
+  "timezone": "America/Los_Angeles",
+  "acquisition_times": "ISO UTC in individual receipts (may be 2026-10-09)",
+  "scope": "Bounded multi-source discovery sweep; negative findings are not proof of absence. Do not equate a language tag with a DOS24 corpus.",
+  "searches": [
+    {
+      "area": "Cademia",
+      "query_or_endpoints": "official home, orthographic version history, Curreri, Scola, library, GitHub organization, Telegram",
+      "disposition": "Standards and three pre-2024 licensed issues acquired; site-wide corpus rights unresolved."
+    },
+    {
+      "area": "Localization",
+      "query_or_endpoints": "Pontoon scn project list; Mozilla GitHub scn subtrees; Common Voice UI",
+      "disposition": "Ten upstream archives acquired; Pontoon crawler exclusion honored; extra projects without separately established scn exports not assumed eligible."
+    },
+    {
+      "area": "Academic",
+      "query_or_endpoints": "CSFLS ARTESIA/VSM/ALS/Vocabolario; Catania CORSIT; UD STB; phonology references; Alfonzetti and SoPhISM",
+      "disposition": "UD acquired. Most institutional corpora are queryable, print, or have unverified bulk access."
+    },
+    {
+      "area": "HF",
+      "query_or_endpoints": "https://huggingface.co/api/datasets?filter=language%3Ascn&limit=100",
+      "disposition": "First 100 language-tag hits inspected by family, not exhaustive pagination. Prioritized original producers; mirrors, synthetic translations and unverified web-source rights excluded."
+    },
+    {
+      "area": "Pronunciation",
+      "query_or_endpoints": "WikiPron scn broad/narrow; pinned eSpeak NG and goruut trees",
+      "disposition": "WikiPron acquired as unvalidated evidence; no verified DOS24 G2P established."
+    },
+    {
+      "area": "Literature",
+      "query_or_endpoints": "Cademia library; Dieli Meli; Project Gutenberg Pitrè; poetry/prose",
+      "disposition": "Modern edition/translation rights unresolved; Gutenberg author hits are predominantly Italian, not whole-work scn."
+    },
+    {
+      "area": "Transcripts",
+      "query_or_endpoints": "Omnilingual ASR scn_Latn; Tatoeba per-language export; Common Voice; OPUS QED/Amara/subtitles",
+      "disposition": "Omnilingual transcript JSON and Tatoeba acquired. No separate audio. Rights/locale coverage unresolved for remaining subtitle candidates."
+    },
+    {
+      "area": "Archives",
+      "query_or_endpoints": "Sicilian corpus queries across Zenodo and CLARIN/VLO",
+      "disposition": "I.Sicily excluded as ancient inscriptions; no additional verified open DOS24 corpus found in this sweep."
+    }
+  ],
+  "repositories": [
+    {
+      "repository": "CUNY-CL/wikipron",
+      "revision": "d282e848a211ea31cfd730f0ced8bc8cdab9e83d",
+      "commit_date": "2026-07-23T14:15:13Z",
+      "license_api": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "36f685cff456d15eb49f399fb6c230ac346f898f9ef231f5c325f154358ca26e",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py CUNY-CL/wikipron"
+    },
+    {
+      "repository": "cademia/AnySoftKeyboard-LanguagePack",
+      "revision": "0480a68b3be68a15fda877fea1dcc72a91cc026c",
+      "commit_date": "2017-08-23T15:00:57Z",
+      "license_api": null,
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "a6104a790ab52aa3130d367b1a3b5112b2ffdc76d3f572d36ff845528ea4d192",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py cademia/AnySoftKeyboard-LanguagePack"
+    },
+    {
+      "repository": "cademia/atlanti",
+      "revision": "93db57da67db0ba76e5ffbba98a9fe19821951e0",
+      "commit_date": "2025-06-12T14:22:37Z",
+      "license_api": {
+        "key": "eupl-1.2",
+        "name": "European Union Public License 1.2",
+        "spdx_id": "EUPL-1.2",
+        "url": "https://api.github.com/licenses/eupl-1.2",
+        "node_id": "MDc6TGljZW5zZTM0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "ffb4b6b86f1f4a2c260f8b5d9290e0eb52d4871403fc8c4eb9913da456a033d5",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py cademia/atlanti"
+    },
+    {
+      "repository": "cademia/cchiu-da-palora",
+      "revision": "df1206aaebccdb6649b39bee6d8ce72e2f3b8774",
+      "commit_date": "2020-12-22T15:58:06Z",
+      "license_api": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "a569659e532cc5249fab719243112dac8d7fe442f5fd6aa595c2b8baa18e6b9d",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py cademia/cchiu-da-palora"
+    },
+    {
+      "repository": "cademia/finaiti",
+      "revision": "adc3ddb87cf34346b7c65e141f27583a9a8c4e82",
+      "commit_date": "2026-05-22T15:36:27Z",
+      "license_api": {
+        "key": "eupl-1.2",
+        "name": "European Union Public License 1.2",
+        "spdx_id": "EUPL-1.2",
+        "url": "https://api.github.com/licenses/eupl-1.2",
+        "node_id": "MDc6TGljZW5zZTM0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "910b0e548f689fff5c4430aa1d11af20d5de63714172b3b5577f445b10f36ca8",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py cademia/finaiti"
+    },
+    {
+      "repository": "cademia/it-dgc-verificaC19-android",
+      "revision": "ad982263b16cd56c595fd7c5db78f294c58e23be",
+      "commit_date": "2021-06-26T12:00:51Z",
+      "license_api": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "d7371f01a1d9126f7bfbcd98ab2fd58e8fe4b87c875db29ef9404046ed1d395f",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py cademia/it-dgc-verificaC19-android"
+    },
+    {
+      "repository": "common-voice/common-voice",
+      "revision": "469c46a7552d93003c876a3daf0e47bb78542d84",
+      "commit_date": "2026-10-08T22:30:20Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "75b01bebccfdc1154be6b56a82360effd262d1fb29405d03931543bbac377306",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py common-voice/common-voice"
+    },
+    {
+      "repository": "espeak-ng/espeak-ng",
+      "revision": "ba90c8e9f440ad544f674a790bb5f53878b6ffc5",
+      "commit_date": "2026-09-22T10:55:14Z",
+      "license_api": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "2f8ee74a04bafe50d8d8536176535b3e19803f675f06cb0fa3671208dfcd08a8",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py espeak-ng/espeak-ng"
+    },
+    {
+      "repository": "mozilla/fxa-content-server-l10n",
+      "revision": "a43fd934b2cb503696a1bd08dd1cf81f810dbdce",
+      "commit_date": "2026-10-08T22:40:12Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "4c76d392c691bd5f83818a4f228fbc8858df1f1b78b2c5df098a0817d354e1c5",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla/fxa-content-server-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/android-l10n",
+      "revision": "5c24ea587ff36ea25f35d67e0312471f093c693e",
+      "commit_date": "2026-10-08T22:00:35Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "43610da7b2a60cf6dfe254b9aae3adbaacda936f6537dbecd1640e53047dc572",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/android-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/firefox-l10n",
+      "revision": "c83737e89bcb9786325ee52c59d7dd1a4b2a6311",
+      "commit_date": "2026-10-09T00:00:19Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "720ba2a339c7834a4402f6ea61115462cfa492a3ca37c83c047dfb5fde621472",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/firefox-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/firefoxios-l10n",
+      "revision": "245afd9def7d089c03d22e1f38418cf4bcac8d98",
+      "commit_date": "2026-10-08T22:40:15Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "dffdb0daca831a1ccac9d96f8450a1659a6b583f83c956a52b2a67c732b89d16",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/firefoxios-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/focusios-l10n",
+      "revision": "b07c60bb474a2b1e4ccb08be7029c4159334138b",
+      "commit_date": "2026-10-07T16:00:25Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "87bd96f56b1963575b6b05e55a3743146d203665dc53e3a5f61994686d6fae96",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/focusios-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/mozilla-vpn-client-l10n",
+      "revision": "3b061de274c5495ba45c505deb07819a13aef57a",
+      "commit_date": "2026-10-05T11:10:27Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "e12ab943c893647d1e2fa75b2a6d17c07fee6b1e643660497ffefb2430d890ff",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/mozilla-vpn-client-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/mozilla-vpn-extension-l10n",
+      "revision": "04e94266daa8b5d6680fdb0d9546bc28ad2663c0",
+      "commit_date": "2026-09-10T11:00:37Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "ae1ed5ea7c97649fd3fe991cf82ba57094cdd9a67cbfb3e5a6b5049f5f1b2e68",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/mozilla-vpn-extension-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/www-firefox-l10n",
+      "revision": "13b0f58c3673d18e994ac3d73f98773185786487",
+      "commit_date": "2026-10-07T16:00:40Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "a2d9db97e82ee983b1398186ba01001aad84969ddfabca06914b49783f3dd68d",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/www-firefox-l10n"
+    },
+    {
+      "repository": "mozilla-l10n/www-l10n",
+      "revision": "8a79c1feb670b3d3585b41c70e5e3caab9409c39",
+      "commit_date": "2026-10-08T22:30:24Z",
+      "license_api": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdx_id": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0",
+        "node_id": "MDc6TGljZW5zZTE0"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "4a20b0c42baef2282b25e13383b76fdcd3472710e2f216ebfd43176387292d30",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py mozilla-l10n/www-l10n"
+    },
+    {
+      "repository": "neurlang/goruut",
+      "revision": "b224bde02151f8f86d0fe260804e4ca743bda620",
+      "commit_date": "2026-10-02T18:21:25Z",
+      "license_api": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "recursive_tree_truncated": false,
+      "metadata_sha256": "1eacd8e6d128cad88d211058ec05390d22537347809e451913dbc4d5199fb7e9",
+      "reproduce": ".venv/bin/python scripts/scn_discover.py neurlang/goruut"
+    }
+  ],
+  "robots_evidence": ".cache/scn/robots-evidence.json",
+  "metadata_files": {
+    "smol-api.json": "33bac31bec8d1be76925cb3db774d4238f9a66a12c24e9e377b9e4ce31ef7b73",
+    "flores-api.json": "cf3eec34c39be3cf7ff1034be9101439400145faa7b66d066dbd0a93112b2a5a",
+    "wikimedia-api.json": "40074f6a2b33714473ab523076620f0f1bc302f026dfbe8830b24ad46c29efd8",
+    "napizia-api.json": "046742ed0d671f6647c91ee585de89af4cdd32588588330eafaff025163709fe",
+    "omni-api.json": "09940aba7226511192815f70533e9e559afead4fa030e2ec9dccd7cd917d9732"
+  },
+  "unreviewed_long_tail": "Other HF language-tag hits may need future source-specific rights and content checks; not authorized by aggregator license alone."
+}

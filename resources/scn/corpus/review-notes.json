@@ -1,0 +1,64 @@
+{
+  "reviewer": "Codex qualitative triage, not a certified native-speaker annotation",
+  "method": "Review all six lexical-marker switching candidates and three clearly informative Italian-screen candidates. Purposive, not a prevalence estimate.",
+  "reviewed_records": 9,
+  "expert_validated": false,
+  "dos24_promotions": 0,
+  "notes": [
+    {
+      "record_id": "006c7aa170a92c796f1beab5",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "quoted_or_titled_material",
+      "note": "Italian titles or attributed quotations within Sicilian exposition; not established spontaneous word-level switching."
+    },
+    {
+      "record_id": "48afc6ff585f37caeb9cf81b",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "quoted_or_titled_material",
+      "note": "Italian titles or attributed quotations within Sicilian exposition; not established spontaneous word-level switching."
+    },
+    {
+      "record_id": "5eeb5f1dd3979d4785b261df",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "quoted_or_titled_material",
+      "note": "Italian titles or attributed quotations within Sicilian exposition; not established spontaneous word-level switching."
+    },
+    {
+      "record_id": "d36655fd0d6603f8bbeb3cd2",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "quoted_or_titled_material",
+      "note": "Italian titles or attributed quotations within Sicilian exposition; not established spontaneous word-level switching."
+    },
+    {
+      "record_id": "e8caa854db72df27784463c9",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "quoted_or_titled_material",
+      "note": "Italian titles or attributed quotations within Sicilian exposition; not established spontaneous word-level switching."
+    },
+    {
+      "record_id": "f3297fd22373bbe727c753b1",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "quoted_or_titled_material",
+      "note": "Italian titles or attributed quotations within Sicilian exposition; not established spontaneous word-level switching."
+    },
+    {
+      "record_id": "02640d678f46235b088fb2cb",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "italian_prose",
+      "note": "Italian sentence embedded in source-declared Sicilian Wikipedia."
+    },
+    {
+      "record_id": "1542f31ae50d424457dc602d",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "italian_prose",
+      "note": "Italian descriptive sentence embedded in source-declared Sicilian Wikipedia."
+    },
+    {
+      "record_id": "02a01c189c25c7c0cd974b15",
+      "source_id": "scn_wikipedia_20231101",
+      "review": "written_language_mixing",
+      "note": "Italian clause followed by a Sicilian clause; attested written mixing, not transcribed spontaneous speech."
+    }
+  ],
+  "conclusion": "Written mixing and Italian contamination exist. Automatic switching flags were quoted/title material. Authentic spontaneous speech switching remains unvalidated; no automatic language-rate estimate."
+}

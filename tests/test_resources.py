@@ -87,8 +87,9 @@ def test_missing_downloads_are_not_resource_ready(tmp_path):
     shutil.copytree(ROOT / "configs", tmp_path / "configs")
     report = validate_resources(tmp_path)
     assert not report["resource_ready"]
-    assert not report["pipeline_implemented"]
-    assert {"fbk_ita_lm", "phonitalia_ipa", "zipa_checkpoint"} <= set(report["required_missing"])
+    assert report["pipeline_implemented"]
+    assert not report["graph_ready"]
+    assert {"mls_ita_lm", "phonitalia_ipa", "zipa_checkpoint"} <= set(report["required_missing"])
     assert report["resources"]["scn_lexicon"]["status"] == "planned"
 
 

@@ -7,7 +7,8 @@ Validated on 2026-10-08: Apple M5, 32 GB unified memory, macOS 27.0.1 ARM64, Pyt
 | PyTorch / torchaudio | 2.4.0 / 2.4.0 | Native ARM64; ZIPA CPU output passes |
 | NumPy | 1.26.4 | Matches the older PyTorch baseline; avoids NumPy 2 ABI assumptions |
 | k2 | 1.24.4.dev20260625+cpu.torch2.4.0 | Primary WFST stack; native CPU kernel and PyTorch version checks pass |
-| KenLM | 0.3.0 | Native Python extension builds and imports; no real Italian LM available to load |
+| KenLM | 0.3.0 | Native Python extension; controlled ARPA path scores checked against k2 |
+| kaldilm | 1.15.4 | Established Kaldi ARPA-to-FST conversion; native Python 3.12 universal2 wheel |
 | Lhotse | 1.33.0 | Upstream 80-bin Fbank extraction |
 | SentencePiece | 0.2.2 | Checkpoint inventory and tokenizer agree at all 127 IDs |
 | SoundFile | 0.14.0 | Audio dependency installed and import-checked |
@@ -33,7 +34,7 @@ The installed `kaldialign`, `pypinyin`, `tensorboard`, and `wandb` satisfy upstr
 | [OpenFst](https://www.openfst.org/twiki/bin/view/FST/FstDownload) | 1.8.5 | Not installed; k2 is the selected decoding stack, and no OpenFst graph tools are needed by the smoke tests |
 | [OpenGrm NGram](https://www.opengrm.org/twiki/bin/view/GRM/NGramDownload) | 1.3.17, C++17 | Not installed; needs OpenFst and would add an unused LM/WFST toolchain at this stage |
 
-KenLM handles the intended ARPA/binary LM inspection role. A KenLM binary is not a k2 graph; future graph construction will need a deliberate LM conversion path. No compatibility between those formats has been assumed or implemented.
+The implementation adds only `kaldilm==1.15.4`; all prior direct/transitive dependency versions and ZIPA/Icefall revisions remain unchanged. kaldilm converts ARPA to OpenFst text, imported by k2 with natural-log scores. KenLM independently validates controlled fixture scores; a KenLM binary is never treated as a k2 graph. FFmpeg and FFprobe are external runtime requirements for media extraction and metadata.
 
 ## Licenses and upgrades
 

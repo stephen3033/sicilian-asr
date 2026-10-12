@@ -1,17 +1,15 @@
 # Sicilian resource preparation
 
-Language code: **`scn`**. Orthographic target: **Cademia Siciliana DOS24**.
+Language code: **scn**. Target: **Cademia Siciliana DOS24 v2.2**.
 
-This initialization creates locations and provenance placeholders only. No Sicilian reference materials, corpora, vocabularies, pronunciations, or models have been downloaded, scraped, or generated.
+The reviewed acquisition set has licensed originals in an ignored cache, source-preserving extraction, corpus statistics, pronunciation-inventory checks and auxiliary n-gram diagnostics. The expanded audit adds a small contextually verified DOS24 lower bound, a separate supported/inferred pool, and explicit unreviewed coverage. No final Sicilian lexicon, LM, WFST or bilingual decoder has been built.
 
-| Future resource | Location | Work reserved for a later task |
-| --- | --- | --- |
-| DOS24 reference materials | `resources/scn/orthography/` | Identify the exact authoritative edition and permitted use; record citation, source, version, and checksum |
-| Pronunciation lexicon | `resources/scn/lexicon/` | Develop a reviewed lexicon aligned with DOS24 and an explicit IPA inventory |
-| Written vocabulary | `resources/scn/lexicon/` | Curate accepted DOS24 forms separately from pronunciations |
-| Trigram LM | `resources/scn/lm/` | Document approved corpus sources, vocabulary and tokenization, then plan model training separately |
-| Corpus ingestion | Not implemented | Establish source permissions, attribution, versioning, normalization, and evaluation separation before building ingestion tools |
+- [Resource inventory and corpus measurements](scn-resource-inventory.md)
+- [Expanded source, rights and DOS24 audit](scn-dos24-audit.md)
+- [DOS24 and earlier orthographies](scn-orthography-analysis.md)
+- [Pronunciation lexicon strategy](scn-pronunciation-strategy.md)
+- [N-gram feasibility](scn-lm-feasibility.md)
+- [Compatibility matrix, code switching and implementation plan](scn-implementation-plan.md)
+- [Acquisition and reproduction commands](../resources/scn/sources/README.md)
 
-The manifest has separate IDs for DOS24, lexicon, vocabulary, and LM. Actual artifact paths are null; directories are not evidence that data exists. No empty `.arpa`, lexicon, or vocabulary file stands in for a real resource.
-
-`scn.yaml` references these placeholders. `ita_scn.yaml` references both Italian and Sicilian resources, but does not implement language identification or switching. G2P development is explicitly excluded, including automatic Sicilian pronunciation generation through another library or Italian resource.
+`configs/scn.yaml` and `configs/ita_scn.yaml` remain disabled. The existing Italian acoustic recognizer, lexical resources, LM and decoder behavior are preserved. Further implementation starts with a reviewed DOS24 corpus slice and gold pronunciations, while ZIPA remains fixed.

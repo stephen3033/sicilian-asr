@@ -27,6 +27,7 @@ def main() -> int:
     for error in report["errors"]:
         print(f"ERROR {error}")
     print(f"Resources ready for {args.config}: {report['resource_ready']}; missing: {report['required_missing']}")
+    print(f"Prepared decoder ready: {report['graph_ready']}")
     output = args.root.resolve() / ".cache/validation/resources.json"
     write_json(output, report)
     print(f"Report: {output}")

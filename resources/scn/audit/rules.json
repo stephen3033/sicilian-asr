@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "version": "dos24-v2.2-checklist-1",
+  "checked_on": "2026-10-11",
+  "reference": {
+    "url": "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf",
+    "sha256": "56c15f88898c3a86edc3cc4f912c279f7f32cd24917c04f0f1c116ece732a181",
+    "edition": "DOS24 v2.2, 9 April 2024"
+  },
+  "policy": "Screen every record. Only a hashed contextual review may verify. All pattern hits need context; absence of hits is not proof. Original spellings are preserved.",
+  "rules": [
+    {
+      "id": "D01",
+      "kind": "mechanical_candidate",
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "explanation": "Grave accents mark stress; acute accents in ordinary Sicilian words need review. Names and foreign quotations can retain foreign spelling.",
+      "pattern": "[áéíóúÁÉÍÓÚ]",
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D02",
+      "kind": "mechanical_candidate",
+      "pdf_pages": [
+        7,
+        15
+      ],
+      "explanation": "Foreign letters (ç k w x y) require a borrowing, proper-name or quotation explanation. They are candidates, never automatic failures.",
+      "pattern": "[çkwxyÇKWXY]",
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D03",
+      "kind": "mechanical_candidate",
+      "pdf_pages": [
+        17
+      ],
+      "explanation": "Retroflex ḍ is written doubled; a single ḍ requires inspection, including damaged extraction.",
+      "pattern": "(?<![ḍḌ])[ḍḌ](?![ḍḌ])",
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D04",
+      "kind": "mechanical_candidate",
+      "pdf_pages": [
+        7,
+        17
+      ],
+      "explanation": "Known retroflex spellings need ḍḍ. Dental dd is legitimate (friddu, addisijari); never replace dd globally.",
+      "pattern": "(?i)\\b(?:cavadd(?:u|ru|hu)|beddu|bedda|beddi|chiddu|chidda|chiddi|ddh\\w*)\\b",
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D05",
+      "kind": "mechanical_candidate",
+      "pdf_pages": [
+        8,
+        12
+      ],
+      "explanation": "An apostrophe marks occasional loss, not permanently lost in- in nzirtari or nnuccenti. The preposition ’n is an explicit exception.",
+      "pattern": "(?i)['’](?:nzirt\\w*|nnuccent\\w*|mmidi\\w*)",
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D06",
+      "kind": "mechanical_candidate",
+      "pdf_pages": [
+        17
+      ],
+      "explanation": "The adverb cchiù retains doubled c and written stress; detect likely alternative chiu/cchiu/chiù forms for context.",
+      "pattern": "(?i)\\b(?:cchiu|chiu|chiù)\\b",
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D07",
+      "kind": "contextual",
+      "pdf_pages": [
+        7,
+        8,
+        9
+      ],
+      "explanation": "Check stress and final hiatus in context. aju/àju, ai/ài, avi/àvi, annu/ànnu are permitted alternatives. Do not infer stress from letter count alone.",
+      "pattern": null,
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D08",
+      "kind": "contextual",
+      "pdf_pages": [
+        8,
+        18
+      ],
+      "explanation": "Check contractions (circumflex), elisions (apostrophe), and word boundaries. Preserve lexical form across syntactic doubling.",
+      "pattern": null,
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D09",
+      "kind": "contextual",
+      "pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "explanation": "Check etymological vowels, regional variants, i/j and hiatus. Regional pronunciation is not an automatic written error.",
+      "pattern": null,
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D10",
+      "kind": "contextual",
+      "pdf_pages": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "explanation": "Check etymological d/r, v/b, g/j and lexical consonant exceptions. Neither date nor use of ḍḍ establishes conformity.",
+      "pattern": null,
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "D11",
+      "kind": "contextual",
+      "pdf_pages": [
+        17,
+        18
+      ],
+      "explanation": "Distinguish cci/ci and nni/ni by grammatical function; inspect initial consonants and external doubling in the actual phrase.",
+      "pattern": null,
+      "evidence_urls": [
+        "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+      ],
+      "checked_on": "2026-10-11"
+    },
+    {
+      "id": "E01",
+      "kind": "extraction_candidate",
+      "pdf_pages": [],
+      "explanation": "Replacement characters, NUL, private-use characters and hard linebreak hyphenation can indicate extraction damage. Review original; never silently respell.",
+      "pattern": "[\\ufffd\\x00\\ue000-\\uf8ff]|\\w-\\s*\\n\\s*\\w",
+      "evidence_urls": [
+        "https://pymupdf.readthedocs.io/en/latest/app1.html"
+      ],
+      "checked_on": "2026-10-11"
+    }
+  ]
+}

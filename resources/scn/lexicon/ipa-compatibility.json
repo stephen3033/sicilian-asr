@@ -1,0 +1,554 @@
+{
+  "labels_sha256": "f8e042a0c9130532b22d03ec7cae2f75a23fbec70c450c31a8efb51787b2b8fe",
+  "candidate_inventory": [
+    {
+      "ipa": "a",
+      "token_ids": [
+        4
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɛ",
+      "token_ids": [
+        51
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "i",
+      "token_ids": [
+        12
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɔ",
+      "token_ids": [
+        45
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "u",
+      "token_ids": [
+        24
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "e",
+      "token_ids": [
+        8
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "o",
+      "token_ids": [
+        18
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɪ",
+      "token_ids": [
+        63
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʊ",
+      "token_ids": [
+        88
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "p",
+      "token_ids": [
+        19
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "b",
+      "token_ids": [
+        5
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "t",
+      "token_ids": [
+        23
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "d",
+      "token_ids": [
+        7
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɖ",
+      "token_ids": [
+        47
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʈ",
+      "token_ids": [
+        86
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "c",
+      "token_ids": [
+        6
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɟ",
+      "token_ids": [
+        54
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "k",
+      "token_ids": [
+        14
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɡ",
+      "token_ids": [
+        2
+      ],
+      "lossless": false,
+      "projection": "g"
+    },
+    {
+      "ipa": "g",
+      "token_ids": [
+        10
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "f",
+      "token_ids": [
+        9
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "v",
+      "token_ids": [
+        25
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "s",
+      "token_ids": [
+        22
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "z",
+      "token_ids": [
+        29
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʃ",
+      "token_ids": [
+        84
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʒ",
+      "token_ids": [
+        96
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ç",
+      "token_ids": [
+        31
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʝ",
+      "token_ids": [
+        103
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "x",
+      "token_ids": [
+        27
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "χ",
+      "token_ids": [
+        124
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "r",
+      "token_ids": [
+        21
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɾ",
+      "token_ids": [
+        80
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɽ",
+      "token_ids": [
+        79
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʂ",
+      "token_ids": [
+        83
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʐ",
+      "token_ids": [
+        94
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "m",
+      "token_ids": [
+        16
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "n",
+      "token_ids": [
+        17
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɲ",
+      "token_ids": [
+        70
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ŋ",
+      "token_ids": [
+        35
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɳ",
+      "token_ids": [
+        71
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɱ",
+      "token_ids": [
+        69
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "l",
+      "token_ids": [
+        15
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʎ",
+      "token_ids": [
+        92
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "j",
+      "token_ids": [
+        13
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "w",
+      "token_ids": [
+        26
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "h",
+      "token_ids": [
+        11
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɣ",
+      "token_ids": [
+        57
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "β",
+      "token_ids": [
+        122
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ð",
+      "token_ids": [
+        32
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ː",
+      "token_ids": [
+        111
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ˈ",
+      "token_ids": [
+        2
+      ],
+      "lossless": false,
+      "projection": "metadata_only"
+    },
+    {
+      "ipa": "ˌ",
+      "token_ids": [
+        2
+      ],
+      "lossless": false,
+      "projection": "metadata_only"
+    },
+    {
+      "ipa": "͡",
+      "token_ids": [
+        2
+      ],
+      "lossless": false,
+      "projection": "requires_review"
+    },
+    {
+      "ipa": "̪",
+      "token_ids": [
+        119
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "̠",
+      "token_ids": [
+        2
+      ],
+      "lossless": false,
+      "projection": "requires_review"
+    },
+    {
+      "ipa": "̝",
+      "token_ids": [
+        2
+      ],
+      "lossless": false,
+      "projection": "requires_review"
+    },
+    {
+      "ipa": "̯",
+      "token_ids": [
+        2
+      ],
+      "lossless": false,
+      "projection": "requires_review"
+    },
+    {
+      "ipa": "tʃ",
+      "token_ids": [
+        23,
+        84
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "dʒ",
+      "token_ids": [
+        7,
+        96
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ts",
+      "token_ids": [
+        23,
+        22
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "dz",
+      "token_ids": [
+        7,
+        29
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ʈɽ",
+      "token_ids": [
+        86,
+        79
+      ],
+      "lossless": true,
+      "projection": "identity"
+    },
+    {
+      "ipa": "ɖɽ",
+      "token_ids": [
+        47,
+        79
+      ],
+      "lossless": true,
+      "projection": "identity"
+    }
+  ],
+  "source_lexicons": {
+    "scn_wikipron_broad": {
+      "rows": 1599,
+      "word_forms": 1397,
+      "representable_after_g_projection": 1431,
+      "unsupported_characters": {
+        "̯": 3,
+        "͡": 151,
+        "̟": 8,
+        "̞": 13,
+        "ũ": 3,
+        "̠": 1,
+        "ì": 1,
+        "̝": 2
+      },
+      "validated_authoritative_pairs": 0
+    },
+    "scn_wikipron_narrow": {
+      "rows": 1187,
+      "word_forms": 801,
+      "representable_after_g_projection": 919,
+      "unsupported_characters": {
+        "ä": 80,
+        "̝": 36,
+        "̟": 43,
+        "͡": 155,
+        "̠": 62,
+        "̯": 11,
+        "‿": 5,
+        "ɫ": 1,
+        "̬": 11,
+        "ã": 10,
+        "̞": 5
+      },
+      "validated_authoritative_pairs": 0
+    }
+  },
+  "acoustic_accuracy_validated": false,
+  "scope": "Candidate broad and regional phones; review cited linguistic descriptions before implementing pronunciation rules."
+}

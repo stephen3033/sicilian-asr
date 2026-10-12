@@ -1,0 +1,787 @@
+{
+  "rules": "scn-nfc-apostrophes-preserve-diacritics-no-spelling-conversion-v1",
+  "records_sha256": "3c9d343ed72e011a614ae683bac15e15f11d4ccf1ab3829bc52d37c570e875a8",
+  "analyzed_sha256": "9b71a301aec136086286892bed337ddd2f2bc122c5c22b1ae6a6b05ed599890c",
+  "total": {
+    "documents": 36278,
+    "records": 197208,
+    "sentence_units": 177573,
+    "localization_fragments": 11921,
+    "lexical_entries": 7714,
+    "tokens": 2707013,
+    "unique_word_forms": 209859,
+    "exact_duplicate_records": 43213,
+    "deduplicated_tokens": 2549247,
+    "screening": {
+      "unresolved": 197094,
+      "possible_italian": 108,
+      "possible_switching": 6
+    },
+    "confirmed_italian_records": null,
+    "confirmed_switching_records": null
+  },
+  "text_only": {
+    "documents": 28605,
+    "records": 187389,
+    "sentence_units": 175468,
+    "localization_fragments": 11921,
+    "lexical_entries": 0,
+    "tokens": 2669468,
+    "unique_word_forms": 207894,
+    "exact_duplicate_records": 40450,
+    "deduplicated_tokens": 2514538,
+    "screening": {
+      "unresolved": 187275,
+      "possible_italian": 108,
+      "possible_switching": 6
+    },
+    "confirmed_italian_records": null,
+    "confirmed_switching_records": null
+  },
+  "categories": {
+    "dos24": {
+      "documents": 0,
+      "records": 0,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 0,
+      "unique_word_forms": 0,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 0,
+      "screening": {},
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "cademia_pre2024": {
+      "documents": 3,
+      "records": 4156,
+      "sentence_units": 4156,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 88438,
+      "unique_word_forms": 13357,
+      "exact_duplicate_records": 77,
+      "deduplicated_tokens": 88191,
+      "screening": {
+        "unresolved": 4156
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "other_sicilian": {
+      "documents": 27047,
+      "records": 166009,
+      "sentence_units": 166009,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 2430330,
+      "unique_word_forms": 199225,
+      "exact_duplicate_records": 35934,
+      "deduplicated_tokens": 2289968,
+      "screening": {
+        "unresolved": 165895,
+        "possible_italian": 108,
+        "possible_switching": 6
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "uncertain_mixed": {
+      "documents": 1555,
+      "records": 17224,
+      "sentence_units": 5303,
+      "localization_fragments": 11921,
+      "lexical_entries": 0,
+      "tokens": 150700,
+      "unique_word_forms": 15298,
+      "exact_duplicate_records": 4439,
+      "deduplicated_tokens": 136379,
+      "screening": {
+        "unresolved": 17224
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    }
+  },
+  "sources": {
+    "scn_android_l10n": {
+      "documents": 37,
+      "records": 2123,
+      "sentence_units": 0,
+      "localization_fragments": 2123,
+      "lexical_entries": 0,
+      "tokens": 10244,
+      "unique_word_forms": 1449,
+      "exact_duplicate_records": 759,
+      "deduplicated_tokens": 8323,
+      "screening": {
+        "unresolved": 2123
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_cchiu_adj": {
+      "documents": 29,
+      "records": 29,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 29,
+      "tokens": 29,
+      "unique_word_forms": 29,
+      "exact_duplicate_records": 16,
+      "deduplicated_tokens": 13,
+      "screening": {
+        "unresolved": 29
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_cchiu_noun": {
+      "documents": 141,
+      "records": 141,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 141,
+      "tokens": 142,
+      "unique_word_forms": 140,
+      "exact_duplicate_records": 81,
+      "deduplicated_tokens": 61,
+      "screening": {
+        "unresolved": 141
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_cchiu_other": {
+      "documents": 5,
+      "records": 5,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 5,
+      "tokens": 5,
+      "unique_word_forms": 4,
+      "exact_duplicate_records": 4,
+      "deduplicated_tokens": 1,
+      "screening": {
+        "unresolved": 5
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_cchiu_verb": {
+      "documents": 24,
+      "records": 24,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 24,
+      "tokens": 24,
+      "unique_word_forms": 23,
+      "exact_duplicate_records": 10,
+      "deduplicated_tokens": 14,
+      "screening": {
+        "unresolved": 24
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_common_voice": {
+      "documents": 33,
+      "records": 1322,
+      "sentence_units": 0,
+      "localization_fragments": 1322,
+      "lexical_entries": 0,
+      "tokens": 7026,
+      "unique_word_forms": 1701,
+      "exact_duplicate_records": 257,
+      "deduplicated_tokens": 6474,
+      "screening": {
+        "unresolved": 1322
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_finaiti_toponyms": {
+      "documents": 249,
+      "records": 380,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 380,
+      "tokens": 482,
+      "unique_word_forms": 383,
+      "exact_duplicate_records": 51,
+      "deduplicated_tokens": 422,
+      "screening": {
+        "unresolved": 380
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_firefox_l10n": {
+      "documents": 176,
+      "records": 2925,
+      "sentence_units": 0,
+      "localization_fragments": 2925,
+      "lexical_entries": 0,
+      "tokens": 13393,
+      "unique_word_forms": 1985,
+      "exact_duplicate_records": 810,
+      "deduplicated_tokens": 11471,
+      "screening": {
+        "unresolved": 2925
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_firefoxios_l10n": {
+      "documents": 1,
+      "records": 1469,
+      "sentence_units": 0,
+      "localization_fragments": 1469,
+      "lexical_entries": 0,
+      "tokens": 5900,
+      "unique_word_forms": 1016,
+      "exact_duplicate_records": 823,
+      "deduplicated_tokens": 3696,
+      "screening": {
+        "unresolved": 1469
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_focusios_l10n": {
+      "documents": 1,
+      "records": 262,
+      "sentence_units": 0,
+      "localization_fragments": 262,
+      "lexical_entries": 0,
+      "tokens": 1287,
+      "unique_word_forms": 417,
+      "exact_duplicate_records": 154,
+      "deduplicated_tokens": 747,
+      "screening": {
+        "unresolved": 262
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_fxa_content_server_l10n": {
+      "documents": 6,
+      "records": 1389,
+      "sentence_units": 0,
+      "localization_fragments": 1389,
+      "lexical_entries": 0,
+      "tokens": 8768,
+      "unique_word_forms": 1082,
+      "exact_duplicate_records": 514,
+      "deduplicated_tokens": 6900,
+      "screening": {
+        "unresolved": 1389
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_google_gatitos": {
+      "documents": 3997,
+      "records": 4349,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 4349,
+      "tokens": 4935,
+      "unique_word_forms": 3351,
+      "exact_duplicate_records": 837,
+      "deduplicated_tokens": 4037,
+      "screening": {
+        "unresolved": 4349
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_google_smoldoc": {
+      "documents": 100,
+      "records": 1256,
+      "sentence_units": 1256,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 17627,
+      "unique_word_forms": 4362,
+      "exact_duplicate_records": 9,
+      "deduplicated_tokens": 17569,
+      "screening": {
+        "unresolved": 1256
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_mozilla_vpn_client_l10n": {
+      "documents": 25,
+      "records": 741,
+      "sentence_units": 0,
+      "localization_fragments": 741,
+      "lexical_entries": 0,
+      "tokens": 5209,
+      "unique_word_forms": 1095,
+      "exact_duplicate_records": 160,
+      "deduplicated_tokens": 4726,
+      "screening": {
+        "unresolved": 741
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_mozilla_vpn_extension_l10n": {
+      "documents": 1,
+      "records": 89,
+      "sentence_units": 0,
+      "localization_fragments": 89,
+      "lexical_entries": 0,
+      "tokens": 688,
+      "unique_word_forms": 226,
+      "exact_duplicate_records": 26,
+      "deduplicated_tokens": 611,
+      "screening": {
+        "unresolved": 89
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_napizia_wikimatrix": {
+      "documents": 514,
+      "records": 514,
+      "sentence_units": 514,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 8346,
+      "unique_word_forms": 2925,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 8346,
+      "screening": {
+        "unresolved": 514
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_dev_0000": {
+      "documents": 100,
+      "records": 454,
+      "sentence_units": 454,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 5051,
+      "unique_word_forms": 1388,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 5051,
+      "screening": {
+        "unresolved": 454
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_dev_0100": {
+      "documents": 97,
+      "records": 445,
+      "sentence_units": 445,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 5833,
+      "unique_word_forms": 1893,
+      "exact_duplicate_records": 4,
+      "deduplicated_tokens": 5829,
+      "screening": {
+        "unresolved": 445
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_dev_0200": {
+      "documents": 96,
+      "records": 402,
+      "sentence_units": 402,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 7110,
+      "unique_word_forms": 2434,
+      "exact_duplicate_records": 16,
+      "deduplicated_tokens": 7094,
+      "screening": {
+        "unresolved": 402
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_test_0000": {
+      "documents": 99,
+      "records": 547,
+      "sentence_units": 547,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 7417,
+      "unique_word_forms": 2200,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 7417,
+      "screening": {
+        "unresolved": 547
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_test_0100": {
+      "documents": 50,
+      "records": 257,
+      "sentence_units": 257,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 3731,
+      "unique_word_forms": 1262,
+      "exact_duplicate_records": 1,
+      "deduplicated_tokens": 3727,
+      "screening": {
+        "unresolved": 257
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0000": {
+      "documents": 99,
+      "records": 394,
+      "sentence_units": 394,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 6802,
+      "unique_word_forms": 1857,
+      "exact_duplicate_records": 1,
+      "deduplicated_tokens": 6801,
+      "screening": {
+        "unresolved": 394
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0100": {
+      "documents": 99,
+      "records": 412,
+      "sentence_units": 412,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 6645,
+      "unique_word_forms": 1676,
+      "exact_duplicate_records": 5,
+      "deduplicated_tokens": 6640,
+      "screening": {
+        "unresolved": 412
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0200": {
+      "documents": 100,
+      "records": 339,
+      "sentence_units": 339,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 4959,
+      "unique_word_forms": 1488,
+      "exact_duplicate_records": 3,
+      "deduplicated_tokens": 4956,
+      "screening": {
+        "unresolved": 339
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0300": {
+      "documents": 99,
+      "records": 345,
+      "sentence_units": 345,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 7672,
+      "unique_word_forms": 1737,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 7672,
+      "screening": {
+        "unresolved": 345
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0400": {
+      "documents": 100,
+      "records": 374,
+      "sentence_units": 374,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 7076,
+      "unique_word_forms": 1738,
+      "exact_duplicate_records": 2,
+      "deduplicated_tokens": 7074,
+      "screening": {
+        "unresolved": 374
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0500": {
+      "documents": 100,
+      "records": 356,
+      "sentence_units": 356,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 6160,
+      "unique_word_forms": 1701,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 6160,
+      "screening": {
+        "unresolved": 356
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0600": {
+      "documents": 100,
+      "records": 456,
+      "sentence_units": 456,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 7638,
+      "unique_word_forms": 1805,
+      "exact_duplicate_records": 7,
+      "deduplicated_tokens": 7628,
+      "screening": {
+        "unresolved": 456
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0700": {
+      "documents": 100,
+      "records": 352,
+      "sentence_units": 352,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 5991,
+      "unique_word_forms": 1722,
+      "exact_duplicate_records": 3,
+      "deduplicated_tokens": 5988,
+      "screening": {
+        "unresolved": 352
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0800": {
+      "documents": 100,
+      "records": 343,
+      "sentence_units": 343,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 5400,
+      "unique_word_forms": 1588,
+      "exact_duplicate_records": 1,
+      "deduplicated_tokens": 5399,
+      "screening": {
+        "unresolved": 343
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_0900": {
+      "documents": 100,
+      "records": 377,
+      "sentence_units": 377,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 7509,
+      "unique_word_forms": 1797,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 7509,
+      "screening": {
+        "unresolved": 377
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_omni_train_1000": {
+      "documents": 58,
+      "records": 264,
+      "sentence_units": 264,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 5382,
+      "unique_word_forms": 1273,
+      "exact_duplicate_records": 57,
+      "deduplicated_tokens": 4482,
+      "screening": {
+        "unresolved": 264
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_tatoeba": {
+      "documents": 35,
+      "records": 35,
+      "sentence_units": 35,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 229,
+      "unique_word_forms": 163,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 229,
+      "screening": {
+        "unresolved": 35
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_ud_stb": {
+      "documents": 3,
+      "records": 505,
+      "sentence_units": 505,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 8699,
+      "unique_word_forms": 2341,
+      "exact_duplicate_records": 0,
+      "deduplicated_tokens": 8699,
+      "screening": {
+        "unresolved": 505
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_unesco_2018_4": {
+      "documents": 1,
+      "records": 1449,
+      "sentence_units": 1449,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 32089,
+      "unique_word_forms": 6399,
+      "exact_duplicate_records": 23,
+      "deduplicated_tokens": 32058,
+      "screening": {
+        "unresolved": 1449
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_unesco_2019_1": {
+      "documents": 1,
+      "records": 1193,
+      "sentence_units": 1193,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 25188,
+      "unique_word_forms": 5724,
+      "exact_duplicate_records": 29,
+      "deduplicated_tokens": 25100,
+      "screening": {
+        "unresolved": 1193
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_unesco_2019_2": {
+      "documents": 1,
+      "records": 1514,
+      "sentence_units": 1514,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 31161,
+      "unique_word_forms": 6941,
+      "exact_duplicate_records": 25,
+      "deduplicated_tokens": 31033,
+      "screening": {
+        "unresolved": 1514
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_wikipedia_20231101": {
+      "documents": 26530,
+      "records": 164990,
+      "sentence_units": 164990,
+      "localization_fragments": 0,
+      "lexical_entries": 0,
+      "tokens": 2413285,
+      "unique_word_forms": 198572,
+      "exact_duplicate_records": 35934,
+      "deduplicated_tokens": 2272923,
+      "screening": {
+        "unresolved": 164876,
+        "possible_italian": 108,
+        "possible_switching": 6
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_wikipron_broad": {
+      "documents": 1599,
+      "records": 1599,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 1599,
+      "tokens": 1599,
+      "unique_word_forms": 1379,
+      "exact_duplicate_records": 633,
+      "deduplicated_tokens": 966,
+      "screening": {
+        "unresolved": 1599
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_wikipron_narrow": {
+      "documents": 1187,
+      "records": 1187,
+      "sentence_units": 0,
+      "localization_fragments": 0,
+      "lexical_entries": 1187,
+      "tokens": 1187,
+      "unique_word_forms": 792,
+      "exact_duplicate_records": 1110,
+      "deduplicated_tokens": 77,
+      "screening": {
+        "unresolved": 1187
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_www_firefox_l10n": {
+      "documents": 33,
+      "records": 543,
+      "sentence_units": 0,
+      "localization_fragments": 543,
+      "lexical_entries": 0,
+      "tokens": 3021,
+      "unique_word_forms": 768,
+      "exact_duplicate_records": 525,
+      "deduplicated_tokens": 132,
+      "screening": {
+        "unresolved": 543
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    },
+    "scn_www_l10n": {
+      "documents": 52,
+      "records": 1058,
+      "sentence_units": 0,
+      "localization_fragments": 1058,
+      "lexical_entries": 0,
+      "tokens": 6074,
+      "unique_word_forms": 1230,
+      "exact_duplicate_records": 323,
+      "deduplicated_tokens": 5192,
+      "screening": {
+        "unresolved": 1058
+      },
+      "confirmed_italian_records": null,
+      "confirmed_switching_records": null
+    }
+  },
+  "near_duplicate_pairs": 371,
+  "near_duplicate_method": "16 deterministic MinHash values, 4 bands; verify 5-token Jaccard >=0.85; >=10 tokens; candidate search is not exhaustive",
+  "sentence_method": "Source sentence IDs when available; otherwise punctuation/newline heuristic; UI fragments and lexical entries counted separately",
+  "language_screen_method": "Versioned lexical markers identify review candidates only, never verified language labels"
+}
