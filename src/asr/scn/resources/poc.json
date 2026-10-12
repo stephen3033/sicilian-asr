@@ -1,0 +1,18 @@
+{
+  "version": "scn-dos24-poc-v1",
+  "channel_id": "UC8D6eDXH2p80wuJ28fTUDcg",
+  "splits": {
+    "train": ["lWem78sOVh0", "MeeT_-q_I-g", "9QkFAt0Hr08", "PmILQZ1ijkM", "tNobRaYqerI", "fIz5symu9jU"],
+    "development": ["mDrR25umUpE"],
+    "test": ["sctItzC2xgw", "C2xRDIuT1Dw"]
+  },
+  "uncaptioned": ["2VjPodUggzQ", "4Ne5p-rjnic", "_oX8OAyNgYY"],
+  "checkpoints": [10000, 25000, 50000, 100000, 200000],
+  "orders": [2, 3],
+  "acoustic_scales": [0.5, 1.0, 1.5],
+  "target_oov": 0.05,
+  "wer_tolerance": 0.01,
+  "preferred_sources": ["scn_unesco_2018_4", "scn_unesco_2019_1", "scn_unesco_2019_2", "scn_firefox_l10n", "scn_android_l10n", "scn_firefoxios_l10n", "scn_common_voice"],
+  "expansion_sources": ["scn_wikipedia_20261001", "scn_liita_lemmabank", "scn_liita_glossary"],
+  "note": "Test captions are reserved for final reference preparation and scoring; newer uncaptioned videos are excluded. Supported/inferred audit rows require a recorded review before training."
+}

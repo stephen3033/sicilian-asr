@@ -1,0 +1,28 @@
+# Paths are relative to the repository root. Null means unavailable or unimplemented.
+languages:
+- ita
+output_language: ita
+resources:
+  ita:
+    lexicon_resource: phonitalia_ipa
+    lexicon_path: src/asr/ita/resources/lexicon/italian.dict
+    lexicon_format: phonitaliar_ipa_tsv
+    lm_resource: mls_ita_lm
+    lm_path: .cache/downloads/mls_lm_italian.tar.gz
+    arpa_path: src/asr/ita/resources/lm/mls/3-gram_lm.arpa
+    lm_directory: src/asr/ita/resources/lm
+    lm_status: pretrained
+decoder:
+  enabled: true
+  graph_path: .cache/graphs/ita
+  vocabulary_size: 20000
+  ctc_topology: compact
+  inventory_compatibility: phonitalia_zipa_v1
+  pronunciation_variants: true
+  contractions: true
+  acoustic_scale: 1.0
+  lm_scale: 1.0
+  search_beam: 20.0
+  output_beam: 8.0
+  min_active_states: 30
+  max_active_states: 10000

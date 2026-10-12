@@ -1,6 +1,6 @@
 # Dependency stack
 
-Validated on 2026-10-08: Apple M5, 32 GB unified memory, macOS 27.0.1 ARM64, Python 3.12.12, uv 0.12.23. The committed lock targets macOS ARM64/Python 3.12 only.
+Initial validation on 2026-10-08: Apple M5, 32 GB unified memory, macOS 27.0.1 ARM64, Python 3.12.12, uv 0.12.23. The committed lock targets macOS ARM64/Python 3.12 only. [Current validation](validation.md) records the reproduced results.
 
 | Component | Pin | Role and observed result |
 | --- | --- | --- |
@@ -21,11 +21,11 @@ The [official k2 wheel](https://huggingface.co/csukuangfj2/k2/blob/566a071486bde
 
 ## Installation mechanics
 
-`uv sync --frozen --extra research` installs the Python dependencies. Direct dependencies are pinned in `pyproject.toml`; transitive dependencies and artifact hashes are frozen in `uv.lock`. KenLM builds in isolation with CMake 3.31.6, setuptools 75.8.2, and wheel 0.45.1 constrained in the project configuration. These build dependencies are separate from runtime dependencies. This installs KenLM's native Python binding, not a separate collection of LM-training command-line executables.
+`uv sync --frozen --extra research --extra corpus` installs the Python dependencies. Direct dependencies are pinned in `pyproject.toml`; transitive dependencies and artifact hashes are frozen in `uv.lock`. KenLM builds in isolation with CMake 3.31.6, setuptools 75.8.2, and wheel 0.45.1 constrained in the project configuration. These build dependencies are separate from runtime dependencies. This installs KenLM's native Python binding, not a separate collection of LM-training command-line executables.
 
 `scripts/download_resources.py` retrieves commit-pinned ZIPA/Icefall source archives into `.cache/downloads/` and extracts them under `.cache/external/`. Validation adds those directories to `sys.path` only within its process. There are no editable copies in `src/`, global `PYTHONPATH` edits, or upstream source patches. Archive hashes and extraction revision markers are checked before importing these sources.
 
-The installed `kaldialign`, `pypinyin`, `tensorboard`, and `wandb` satisfy upstream import-time requirements, even though this project performs no training, Mandarin processing, or experiment uploads. Validation sets `WANDB_MODE=disabled`. Lhotse may initialize its normal `~/.lhotse/tools` directory on import. No full Icefall recipe dependency set is installed.
+The installed `kaldialign`, `pypinyin`, `tensorboard`, and `wandb` satisfy upstream import-time requirements, even though this project performs no acoustic training, Mandarin processing, or experiment uploads. Validation sets `WANDB_MODE=disabled`. Lhotse may initialize its normal `~/.lhotse/tools` directory on import. No full Icefall recipe dependency set is installed.
 
 ## Investigated and deferred
 
@@ -34,10 +34,14 @@ The installed `kaldialign`, `pypinyin`, `tensorboard`, and `wandb` satisfy upstr
 | [OpenFst](https://www.openfst.org/twiki/bin/view/FST/FstDownload) | 1.8.5 | Not installed; k2 is the selected decoding stack, and no OpenFst graph tools are needed by the smoke tests |
 | [OpenGrm NGram](https://www.opengrm.org/twiki/bin/view/GRM/NGramDownload) | 1.3.17, C++17 | Not installed; needs OpenFst and would add an unused LM/WFST toolchain at this stage |
 
-The implementation adds only `kaldilm==1.15.4`; all prior direct/transitive dependency versions and ZIPA/Icefall revisions remain unchanged. kaldilm converts ARPA to OpenFst text, imported by k2 with natural-log scores. KenLM independently validates controlled fixture scores; a KenLM binary is never treated as a k2 graph. FFmpeg and FFprobe are external runtime requirements for media extraction and metadata.
+The layer refactor changes no dependency pins or upstream revisions. kaldilm converts ARPA to OpenFst text, imported by k2 with natural-log scores. KenLM independently validates controlled fixture scores; a KenLM binary is never treated as a k2 graph. FFmpeg and FFprobe are external runtime requirements for media extraction and metadata.
 
 ## Licenses and upgrades
 
-k2 and Icefall declare Apache-2.0. ZIPA declares MIT at its root, with Apache-2.0 notices in inherited source files. KenLM is predominantly LGPL-2.1-or-later with file-specific exceptions; see its [license](https://github.com/kpu/kenlm/blob/master/LICENSE). Preserve these notices in the source cache. Model and dataset licenses are recorded separately in the resource manifest.
+k2 and Icefall declare Apache-2.0. ZIPA declares MIT at its root, with Apache-2.0 notices in inherited source files. KenLM is predominantly LGPL-2.1-or-later with file-specific exceptions; see its [license](https://github.com/kpu/kenlm/blob/master/LICENSE). Preserve these notices in the source cache. Model and dataset licenses are recorded separately in the [layer manifests](resources.md#manifests).
 
 For an upgrade, change the PyTorch/torchaudio/k2 combination together, select a matching ARM64 wheel, regenerate the lock deliberately, and repeat dependency and CPU/MPS probes. Current Metal failures do not establish that every future version or model will fail. The initial setup does not silently upgrade dependencies to seek a different result.
+
+## Sicilian LM tools
+
+The corpus extra pins yt-dlp 2026.8.19 for public audio/uploaded captions and CMake 3.31.6 for local builds. Run `.venv/bin/python scripts/setup_scn_tools.py` to build `lmplz` and `build_binary` from KenLM 0.3.0 with Boost 1.85.0. Download hashes and executable receipts are stored under `.cache/scn/tools`; no system Boost installation is needed. The tools require the compiler from Apple Command Line Tools. See the [POC workflow](../src/asr/scn/README.md).

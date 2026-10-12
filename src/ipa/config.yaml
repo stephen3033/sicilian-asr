@@ -1,0 +1,15 @@
+acoustic:
+  backend: zipa_pytorch
+  model_id: anyspeech/zipa-large-crctc-ns-800k
+  revision: 861eed23d6dbffd72c80e3d3fb12caefc0bf2f1a
+  checkpoint_resource: zipa_checkpoint
+  checkpoint_path: .cache/models/zipa-cr-ns-large-800k/zipa_large_crctc_0.5_scale_800000_avg10.pth
+  vocabulary_resource: zipa_tokens
+  vocabulary_path: .cache/models/zipa-cr-ns-large-800k/tokens.txt
+  tokenizer_resource: zipa_tokenizer
+  tokenizer_path: .cache/models/zipa-cr-ns-large-800k/unigram_127.model
+  vocabulary_size: 127
+  blank_id: 0
+  feature_bins: 80
+  mps_status: failed_validation_on_pinned_stack
+  inventory_mapping_path: null

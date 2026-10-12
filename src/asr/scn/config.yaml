@@ -1,0 +1,21 @@
+# Paths are relative to the repository root. Null means unavailable or unimplemented.
+languages:
+- scn
+output_language: scn
+resources:
+  scn:
+    orthography: DOS24
+    orthography_resource: scn_dos24
+    model_receipt_path: .cache/scn/selected.json
+decoder:
+  enabled: true
+  graph_path: .cache/graphs/scn
+  ctc_topology: compact
+  inventory_compatibility: scn_dos24_zipa_v1
+  vocabulary_size: null
+  acoustic_scale: 1.0
+  lm_scale: 1.0
+  search_beam: 20.0
+  output_beam: 8.0
+  min_active_states: 30
+  max_active_states: 10000

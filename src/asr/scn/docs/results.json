@@ -1,0 +1,315 @@
+{
+  "status": "functional_poc_accuracy_limited",
+  "date": "2026-10-12",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "recipe": "src/asr/scn/resources/poc.json",
+  "normalization": "scn-dos24-nfc-apostrophes-preserve-edge-elisions-v1",
+  "selected": {
+    "receipt": ".cache/scn/models/8fe8ae1b48db9254940580230f1208c4970232a566bb848b2382fc92f7a47094/model.json",
+    "order": 3,
+    "tokens": 11441,
+    "vocabulary_size": 3318,
+    "graph": ".cache/graphs/scn/7195dfc9752002e3a54d95edb10a356fe3feca932449f7790bee65af6d7f6ba0",
+    "acoustic_scale": 1.0,
+    "graph_bytes": 14953456,
+    "arpa_bytes": 747644,
+    "training_seconds": 0.03446083300514147
+  },
+  "corpus": {
+    "sentences": 663,
+    "tokens": 11441,
+    "tokens_by_source": {
+      "scn_android_l10n": 6,
+      "scn_firefox_l10n": 34,
+      "scn_unesco_2018_4": 977,
+      "scn_unesco_2019_1": 14,
+      "scn_unesco_2019_2": 77,
+      "scn_wikipedia_20261001": 5260,
+      "youtube:9QkFAt0Hr08": 665,
+      "youtube:MeeT_-q_I-g": 1064,
+      "youtube:PmILQZ1ijkM": 399,
+      "youtube:fIz5symu9jU": 312,
+      "youtube:lWem78sOVh0": 2060,
+      "youtube:tNobRaYqerI": 573
+    },
+    "reviews_sha256": "ba87c0af5ebb48a24d97cca8345fcaf0f3d3b953a90d971cdc66821f2bc46aa4",
+    "training_sha256": "95207ec3a375851cb12e7818c7e9795b28a338c476df9830caf7da534414155d",
+    "held_out_duplicate_screen": {
+      "policy": "Remove training sentences sharing 12 normalized consecutive words with held-out captions; expose only fingerprints, never vocabulary or reference text to training.",
+      "source_sha256": {
+        "sctItzC2xgw": "b00dc6e7708afc38c88d58744a12248a6c06e48269c66ffbf57309b97449803c",
+        "C2xRDIuT1Dw": "57b8c4a8fd4969e252741647b373e838f559b7db7f3f9bd75e86c23ea07ff7f4"
+      }
+    },
+    "exclusions": {
+      "duplicate_sentence": 4
+    }
+  },
+  "coverage_target_met": false,
+  "development": {
+    "wer": 0.5623268698060941,
+    "cer": 0.23370964547435136,
+    "oov_rate": 0.060941828254847646,
+    "oov_tokens": 66,
+    "reference_words": 1083
+  },
+  "lm_candidates": [
+    {
+      "receipt": ".cache/scn/models/fa74f83d032e945bcfc3eb0f17c4e83c0e7c3c1572dff7b524a23c08dd5bd080/model.json",
+      "order": 2,
+      "tokens": 5073,
+      "vocabulary_size": 1219,
+      "perplexity": 438.76953256842074,
+      "development_tokens": 1083,
+      "oov_tokens": 215,
+      "oov_rate": 0.19852262234533702,
+      "arpa_bytes": 123658,
+      "training_seconds": 0.022178041021106765
+    },
+    {
+      "receipt": ".cache/scn/models/70b5789bf8a5fe73b4345e4406e6d43f16c927e0d0300f24adbaf36891516a01/model.json",
+      "order": 3,
+      "tokens": 5073,
+      "vocabulary_size": 1219,
+      "perplexity": 424.8615955146293,
+      "development_tokens": 1083,
+      "oov_tokens": 215,
+      "oov_rate": 0.19852262234533702,
+      "arpa_bytes": 298948,
+      "training_seconds": 0.02123675000621006
+    },
+    {
+      "receipt": ".cache/scn/models/d2bbef3f1f61747bdea725fbde6b6b8fa7b5964b708f0e9c37bb93102167510b/model.json",
+      "order": 2,
+      "tokens": 10046,
+      "vocabulary_size": 2880,
+      "perplexity": 531.2828612048736,
+      "development_tokens": 1083,
+      "oov_tokens": 90,
+      "oov_rate": 0.08310249307479224,
+      "arpa_bytes": 280020,
+      "training_seconds": 0.03012112498981878
+    },
+    {
+      "receipt": ".cache/scn/models/839664848f4507f4d7b82cc8c68fdc67ab798a7f38b085b693384fbbb2af2462/model.json",
+      "order": 3,
+      "tokens": 10046,
+      "vocabulary_size": 2880,
+      "perplexity": 515.3452697257201,
+      "development_tokens": 1083,
+      "oov_tokens": 90,
+      "oov_rate": 0.08310249307479224,
+      "arpa_bytes": 651474,
+      "training_seconds": 0.03159625001717359
+    },
+    {
+      "receipt": ".cache/scn/models/3800d92b54cf930402f4e67f0b3a4c72eb4ae070f01a85d4b746cb5bf522a176/model.json",
+      "order": 2,
+      "tokens": 11441,
+      "vocabulary_size": 3318,
+      "perplexity": 553.9327930169052,
+      "development_tokens": 1083,
+      "oov_tokens": 66,
+      "oov_rate": 0.060941828254847646,
+      "arpa_bytes": 325214,
+      "training_seconds": 0.03254183300305158
+    },
+    {
+      "receipt": ".cache/scn/models/8fe8ae1b48db9254940580230f1208c4970232a566bb848b2382fc92f7a47094/model.json",
+      "order": 3,
+      "tokens": 11441,
+      "vocabulary_size": 3318,
+      "perplexity": 537.6926059897506,
+      "development_tokens": 1083,
+      "oov_tokens": 66,
+      "oov_rate": 0.060941828254847646,
+      "arpa_bytes": 747644,
+      "training_seconds": 0.03446083300514147
+    }
+  ],
+  "decoding_learning_curve": [
+    {
+      "tokens": 5073,
+      "order": 3,
+      "vocabulary_size": 1219,
+      "acoustic_scale": 0.5,
+      "wer": 0.7128347183748845,
+      "cer": 0.4184987126163597,
+      "oov_rate": 0.19852262234533702,
+      "decode_seconds": 35.0229387920117,
+      "graph_bytes": 5622192
+    },
+    {
+      "tokens": 5073,
+      "order": 3,
+      "vocabulary_size": 1219,
+      "acoustic_scale": 1.0,
+      "wer": 0.6472760849492152,
+      "cer": 0.2725292137056843,
+      "oov_rate": 0.19852262234533702,
+      "decode_seconds": 7.4497703749802895,
+      "graph_bytes": 5622192
+    },
+    {
+      "tokens": 5073,
+      "order": 3,
+      "vocabulary_size": 1219,
+      "acoustic_scale": 1.5,
+      "wer": 0.778393351800554,
+      "cer": 0.2493563081798376,
+      "oov_rate": 0.19852262234533702,
+      "decode_seconds": 1.7683249170077033,
+      "graph_bytes": 5622192
+    },
+    {
+      "tokens": 10046,
+      "order": 3,
+      "vocabulary_size": 2880,
+      "acoustic_scale": 0.5,
+      "wer": 0.6971375807940905,
+      "cer": 0.3939393939393939,
+      "oov_rate": 0.08310249307479224,
+      "decode_seconds": 38.0117501670029,
+      "graph_bytes": 12915632
+    },
+    {
+      "tokens": 10046,
+      "order": 3,
+      "vocabulary_size": 2880,
+      "acoustic_scale": 1.0,
+      "wer": 0.5724838411819021,
+      "cer": 0.2345018815607051,
+      "oov_rate": 0.08310249307479224,
+      "decode_seconds": 10.347558417008258,
+      "graph_bytes": 12915632
+    },
+    {
+      "tokens": 10046,
+      "order": 3,
+      "vocabulary_size": 2880,
+      "acoustic_scale": 1.5,
+      "wer": 0.6657433056325023,
+      "cer": 0.21766686472568825,
+      "oov_rate": 0.08310249307479224,
+      "decode_seconds": 2.3362158340169117,
+      "graph_bytes": 12915632
+    },
+    {
+      "tokens": 11441,
+      "order": 3,
+      "vocabulary_size": 3318,
+      "acoustic_scale": 0.5,
+      "wer": 0.6749769159741459,
+      "cer": 0.3759160229748465,
+      "oov_rate": 0.060941828254847646,
+      "decode_seconds": 41.33058941701893,
+      "graph_bytes": 14953456
+    },
+    {
+      "tokens": 11441,
+      "order": 3,
+      "vocabulary_size": 3318,
+      "acoustic_scale": 1.0,
+      "wer": 0.5623268698060941,
+      "cer": 0.23370964547435136,
+      "oov_rate": 0.060941828254847646,
+      "decode_seconds": 11.438941999978852,
+      "graph_bytes": 14953456
+    },
+    {
+      "tokens": 11441,
+      "order": 3,
+      "vocabulary_size": 3318,
+      "acoustic_scale": 1.5,
+      "wer": 0.6629732225300092,
+      "cer": 0.2162804515745692,
+      "oov_rate": 0.060941828254847646,
+      "decode_seconds": 2.438189833017532,
+      "graph_bytes": 14953456
+    }
+  ],
+  "test": {
+    "wer": 0.7160377358490566,
+    "cer": 0.3220723040477907,
+    "oov_rate": 0.180188679245283,
+    "oov_tokens": 382,
+    "word_errors": 1518,
+    "reference_words": 2120,
+    "character_errors": 3127,
+    "reference_characters": 9709,
+    "decode_seconds": 21.376165291992947,
+    "acoustic_seconds": 44.31748379196506,
+    "process_peak_rss_bytes": 2696953856,
+    "selection_sha256": "fdb51f5490685bc44fddd6b566328c2abd292a973d44bf24613da58405470561",
+    "reference_ledger_sha256": "2862569c4cc8e8d095308239463b2b854ad7273f77f2be897c8b779b3ddd3c0f"
+  },
+  "videos": [
+    {
+      "video_id": "sctItzC2xgw",
+      "url": "https://www.youtube.com/watch?v=sctItzC2xgw",
+      "wer": 0.6754807692307693,
+      "cer": 0.28748353096179186,
+      "reference_words": 832,
+      "oov_tokens": 133,
+      "oov_rate": 0.15985576923076922,
+      "caption_coverage": 0.9847830616096013,
+      "audio_seconds": 417.2858125,
+      "comparison": "outputs/scn_poc/decodes/c6888f92a59b4e7f5be47bed1be6899fb5cc71d5feeceed40e14c6408fb82757/comparison.txt",
+      "transcription": "outputs/scn_poc/decodes/c6888f92a59b4e7f5be47bed1be6899fb5cc71d5feeceed40e14c6408fb82757/transcription.txt",
+      "decode_seconds": 8.410168375005014,
+      "acoustic_seconds": 17.32226287497906
+    },
+    {
+      "video_id": "C2xRDIuT1Dw",
+      "url": "https://www.youtube.com/watch?v=C2xRDIuT1Dw",
+      "wer": 0.7422360248447205,
+      "cer": 0.3442678390260399,
+      "reference_words": 1288,
+      "oov_tokens": 249,
+      "oov_rate": 0.19332298136645962,
+      "caption_coverage": 0.9605754389290678,
+      "audio_seconds": 611.9155,
+      "comparison": "outputs/scn_poc/decodes/c872df27a05ada8ccc4f5dad2234f577e6f29b46159a9a4e01be99c228ef5e83/comparison.txt",
+      "transcription": "outputs/scn_poc/decodes/c872df27a05ada8ccc4f5dad2234f577e6f29b46159a9a4e01be99c228ef5e83/transcription.txt",
+      "decode_seconds": 12.965996916987933,
+      "acoustic_seconds": 26.995220916986
+    }
+  ],
+  "verification": {
+    "pytest": {
+      "passed": 131,
+      "seconds": 11.1,
+      "log": ".cache/scn/tests-final.log"
+    },
+    "italian_exact_acceptance_regression": {
+      "baseline": "outputs/ita_layout_acceptance_repaired",
+      "current": "outputs/ita_scn_poc_regression",
+      "transcript_equal": true,
+      "metrics_equal": true,
+      "probabilities_equal": true,
+      "segments_equal": true
+    },
+    "scn_full_video_cli_matches_study": true,
+    "wheel_build_and_isolated_import": "passed",
+    "scn_resources_and_graph_ready": true,
+    "ita_resources_and_graph_ready": true,
+    "ruff": "F/I checks and formatting passed",
+    "documentation_links": "No broken local Markdown links"
+  },
+  "limitations": [
+    "Development 5% OOV gate missed; admitted reviewed corpus exhausted at 11,441 tokens; 25k–200k checkpoints not reached.",
+    "Single learning channel; caption authorship and verbatim audio correspondence not independently established.",
+    "Full audio includes foreign quotations, false starts, names, numbers and subtitle gaps. No audio intervals excluded.",
+    "Generated pronunciations and contextual DOS24 corrections are provisional; no independently validated gold lexicon or IPA reference.",
+    "Final OOV is 18.02%; this is not reliable general Sicilian ASR.",
+    "First acoustic/decode wall times were measured during other validation work; RSS is a process high-water mark."
+  ],
+  "artifact_sha256": {
+    "corpus.json": "2895a26f5ebce2ad6e0350f9752e9e0fcff293a8bc3b01455991c19f8a8dca49",
+    "candidates.json": "e8003f4b1d0f20516370fceb21d88d8bef5800e6652d7fdfaf5bd8c83c6294a1",
+    "selection.json": "3f686726431b0504954b888b2c59c4046f8f4082f427c6cf64ce899387210916",
+    "test-references.json": "b4870794d7510ef8a31d3fdc46d8c29ee708b078d7a15f06862a9639f5d4c3f9",
+    "test.json": "89c0c86eaa3a0ac68adbe95e1548a2476fe977f829a3e422da8c0a1104c64c9a",
+    "report.json": "04949e447b04ae5aa3b9623b922422245190707d96684c4d1cc2b1cdfb5d5d28"
+  }
+}

@@ -17,7 +17,7 @@ if ! xcrun --find clang++ >/dev/null 2>&1; then
   exit 1
 fi
 
-uv sync --frozen --extra research
+uv sync --frozen --extra research --extra corpus
 .venv/bin/python scripts/download_resources.py --all
 .venv/bin/python -m pytest
 .venv/bin/python scripts/validate_resources.py

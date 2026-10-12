@@ -1,0 +1,1954 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex contextual review; no external certification",
+  "evidence": [
+    "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+  ],
+  "replacements": {
+    "iddu": {
+      "replacement": "iḍḍu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "idda": {
+      "replacement": "iḍḍa",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "iddi": {
+      "replacement": "iḍḍi",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "chiddi": {
+      "replacement": "chiḍḍi",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "nuddu": {
+      "replacement": "nuḍḍu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "picciriddu": {
+      "replacement": "picciriḍḍu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "picciriddi": {
+      "replacement": "picciriḍḍi",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "coddu": {
+      "replacement": "coḍḍu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "liveddu": {
+      "replacement": "liveḍḍu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "sicilanu": {
+      "replacement": "sicilianu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "apesttati": {
+      "replacement": "aspittati",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "cchiiù": {
+      "replacement": "cchiù",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "cchiu": {
+      "replacement": "cchiù",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "accusi": {
+      "replacement": "accussì",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "accusì": {
+      "replacement": "accussì",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "acussì": {
+      "replacement": "accussì",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "accussi": {
+      "replacement": "accussì",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "paijsi": {
+      "replacement": "paisi",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "pajisi": {
+      "replacement": "paisi",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "schegghiri": {
+      "replacement": "scègghiri",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "schegghiemu": {
+      "replacement": "scigghiemu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "scivemu": {
+      "replacement": "scrivemu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "scrìrviri": {
+      "replacement": "scrìviri",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "travaghhiari": {
+      "replacement": "travagghiari",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "pistirari": {
+      "replacement": "pistiari",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "conjugatu": {
+      "replacement": "cunjugatu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "conjugati": {
+      "replacement": "cunjugati",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "conjugazzioni": {
+      "replacement": "cunjugazzioni",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "conjuga": {
+      "replacement": "cunjuga",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "congiuntivu": {
+      "replacement": "cungiuntivu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "mfurmaziuni": {
+      "replacement": "nfurmazziuni",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "cunjugaziuni": {
+      "replacement": "cunjugazzioni",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "amâ": {
+      "replacement": "âm'a",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "atâ": {
+      "replacement": "ât'a",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "âtâ": {
+      "replacement": "ât'a",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "avemo": {
+      "replacement": "avemu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "siciliano": {
+      "replacement": "sicilianu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "sùbbito": {
+      "replacement": "sùbbitu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "sùlitu": {
+      "replacement": "sòlitu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "diffìcile": {
+      "replacement": "diffìcili",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "prununza": {
+      "replacement": "prununzia",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "nzignare": {
+      "replacement": "nzignari",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "studiare": {
+      "replacement": "studiari",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "usare": {
+      "replacement": "usari",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "canciare": {
+      "replacement": "canciari",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "sèntire": {
+      "replacement": "sèntiri",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "èssere": {
+      "replacement": "èssiri",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "pùbblico": {
+      "replacement": "pùbblicu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "dialèttico": {
+      "replacement": "dialètticu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "minoritari": {
+      "replacement": "minuritari",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "sòlito": {
+      "replacement": "sòlitu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "mumento": {
+      "replacement": "mumentu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "cummirsazzione": {
+      "replacement": "cummirsazzioni",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "famiglia": {
+      "replacement": "famigghia",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "ingua": {
+      "replacement": "lingua",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "quarchinic": {
+      "replacement": "quarchi nicu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "voghiu": {
+      "replacement": "vogghiu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "quanno": {
+      "replacement": "quannu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "maparamu": {
+      "replacement": "mparamu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "ubbietivu": {
+      "replacement": "ubbiettivu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "curreziuni": {
+      "replacement": "currezzioni",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "urìgini": {
+      "replacement": "urìggini",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "l'ìsola": {
+      "replacement": "l'ìsula",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "allora": {
+      "replacement": "allura",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "futuro": {
+      "replacement": "futuru",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "praci": {
+      "replacement": "piaci",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "pracìu": {
+      "replacement": "piacìu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    }
+  },
+  "decisions": {
+    "youtube:lWem78sOVh0": {
+      "decision": "include",
+      "text_sha256": "6229c76ee074c61642e65c5ffd75b5b6f29c868d6d7f8f2f5c779f6b22d57bf6",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read complete caption transcript in context. Retain Sicilian morphology and valid regional choices; apply recorded DOS24 lexical corrections. Training excludes identified foreign demonstration and non-speech cues. Proper names remain source spellings. Not a verified verbatim acoustic transcript.",
+      "excluded_cues": [
+        78,
+        79,
+        80,
+        103,
+        151,
+        159,
+        160
+      ],
+      "edits": []
+    },
+    "youtube:MeeT_-q_I-g": {
+      "decision": "include",
+      "text_sha256": "639c418c4e722c2591d85aa98140f8d6f11f7c1fbad883a21a9f9d68cb773745",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read complete caption transcript in context. Retain Sicilian morphology and valid regional choices; apply recorded DOS24 lexical corrections. Training excludes identified foreign demonstration and non-speech cues. Proper names remain source spellings. Not a verified verbatim acoustic transcript.",
+      "excluded_cues": [
+        3,
+        144,
+        145
+      ],
+      "edits": []
+    },
+    "youtube:9QkFAt0Hr08": {
+      "decision": "include",
+      "text_sha256": "cae23eabe40a671c65d6f1ed980824c98092028c7a6fa659d18df272ce135652",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read complete caption transcript in context. Retain Sicilian morphology and valid regional choices; apply recorded DOS24 lexical corrections. Training excludes identified foreign demonstration and non-speech cues. Proper names remain source spellings. Not a verified verbatim acoustic transcript.",
+      "excluded_cues": [
+        18,
+        19,
+        21,
+        64,
+        68,
+        69,
+        79,
+        84
+      ],
+      "edits": []
+    },
+    "youtube:PmILQZ1ijkM": {
+      "decision": "include",
+      "text_sha256": "c71fd6a7af755bd46a1b7cde58d6b0012893f64825d6391443ed5aa8cd9f47ec",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read complete caption transcript in context. Retain Sicilian morphology and valid regional choices; apply recorded DOS24 lexical corrections. Training excludes identified foreign demonstration and non-speech cues. Proper names remain source spellings. Not a verified verbatim acoustic transcript.",
+      "excluded_cues": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "edits": []
+    },
+    "youtube:tNobRaYqerI": {
+      "decision": "include",
+      "text_sha256": "a4518f3809eec4a57aab331fdc61797c308713c52547d1be5c0330592d6dc08f",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read complete caption transcript in context. Retain Sicilian morphology and valid regional choices; apply recorded DOS24 lexical corrections. Training excludes identified foreign demonstration and non-speech cues. Proper names remain source spellings. Not a verified verbatim acoustic transcript.",
+      "excluded_cues": [
+        12
+      ],
+      "edits": []
+    },
+    "youtube:fIz5symu9jU": {
+      "decision": "include",
+      "text_sha256": "6aca911f4c9fb7adb04cda530464f40cac5bc964c4bd0de25e2e27bbd8fddd51",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read complete caption transcript in context. Retain Sicilian morphology and valid regional choices; apply recorded DOS24 lexical corrections. Training excludes identified foreign demonstration and non-speech cues. Proper names remain source spellings. Not a verified verbatim acoustic transcript.",
+      "excluded_cues": [
+        1,
+        2
+      ],
+      "edits": []
+    },
+    "youtube:mDrR25umUpE": {
+      "decision": "include",
+      "text_sha256": "58675b8abf0c006e50fb2ec4ef959d233135a3405906ac7c763767a89b72f9ea",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read complete caption transcript in context. Retain Sicilian morphology and valid regional choices; apply recorded DOS24 lexical corrections. Training excludes identified foreign demonstration and non-speech cues. Proper names remain source spellings. Not a verified verbatim acoustic transcript.",
+      "excluded_cues": [],
+      "edits": [
+        {
+          "old": "Ma chistu e veru",
+          "new": "Ma chistu è veru"
+        },
+        {
+          "old": "E chistu e sempri",
+          "new": "E chistu è sempri"
+        },
+        {
+          "old": "Nostru ubbietivu e di",
+          "new": "Nostru ubbietivu è di"
+        },
+        {
+          "old": "[vuci scimunita]",
+          "new": ""
+        }
+      ]
+    },
+    "scn_unesco_2018_4:cef2cac2a9af74fd71bbc1d6": {
+      "decision": "include",
+      "text_sha256": "d8c7927ee960f8f51edb9a5df6330ec76b3069a7720a44fabe3d43f2cff19169",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:ab3cf653babb5141df8aa45d": {
+      "decision": "include",
+      "text_sha256": "5fdee61ceee172b629e226f6ad832f1afb3e4d891b4535bd010d801b5715f265",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:8e91a6b64823be0c1049549b": {
+      "decision": "include",
+      "text_sha256": "dda6db0d902c327a4a3cb15ed6e7119e4a5f5787c9d1762b3af66698c1a118e6",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:b8f5bb936098073c9851f25b": {
+      "decision": "include",
+      "text_sha256": "315c452e0f17d3847304833598bbf0c15bd90ff84b98d7d7fdb422f2575e97a5",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:94ca14ae51ac961c5317ff43": {
+      "decision": "include",
+      "text_sha256": "595369dc48f62b0b6bd3537c44136b2c5f8e91f824d9535a129f61ad21158b46",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:cd949fac4b8453972d57e3c0": {
+      "decision": "include",
+      "text_sha256": "45d07aca27b66ba378ae989743feaa1db028da10014e5aabe7a39027886f429b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:a69f451f00ff6736e2275c17": {
+      "decision": "include",
+      "text_sha256": "796aff71e40ce65c49d659ecac28386b254f6acf3812314422bde7f26f23ccba",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:57b8b1fda081c0deffcdf82d": {
+      "decision": "include",
+      "text_sha256": "d40b3262aeb8dff1aaad918462b6ea9937cfbc6caf9a6bd66fb1064ce2bbc212",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:bdd81012a3e709c945bf758f": {
+      "decision": "include",
+      "text_sha256": "ec23dec7e968b8e360838be892114060cd8d1feb891647979a0b64c433264504",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:218ac9bea577216de64be834": {
+      "decision": "include",
+      "text_sha256": "eca9d7497147e5994f874a113a85576ff3dfcf4cd410416193426b28d896794d",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:d6d4e5adfbfbf32eb3b27a0d": {
+      "decision": "include",
+      "text_sha256": "fbb5097b6f5d141e716e7978667b1bd9adc32457b4e3cbd871658b4360834565",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:2991e85ad2a786ee2369fb97": {
+      "decision": "include",
+      "text_sha256": "ed0376ba555fb778693ee6ae5219a86eaa88cff3ba23cacdfc6596bf4f8580cf",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:d764cb4189bb12b6ed54c249": {
+      "decision": "include",
+      "text_sha256": "6e1b994175e1e9f0292bcce1025154605137af24c6c575d264c1f1a79c9f1f4b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:c77ce2b8bc98815848429631": {
+      "decision": "include",
+      "text_sha256": "4a383f35d5f435b07da410af6c327515f13c5f308d65b629853b80d5ae542328",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:7cc17b606a6d49bcb39ce8e4": {
+      "decision": "include",
+      "text_sha256": "592dd50367c09e78c1140bf5805b6756bb8f9a63fce3e2d4585ae1febd65f667",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:9a2ab23ec04f97c96633c2d5": {
+      "decision": "include",
+      "text_sha256": "3243263d14a4c0a7b76b1ff4f7a6802f466ee29753d2b12b522baf98dbcc4943",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_unesco_2018_4:5d8e13fcb4789fa0f6c7821f": {
+      "decision": "include",
+      "text_sha256": "960bd97b9b62e0425c81c799b258a75703fac0e23e0dbf5932490db92e214194",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete extracted prose block read in context; no interleaved columns or broken word join in this block. DOS24 accents, contractions, doubled consonants and lexical forms checked; historic date numerals and cited names retained. Block is a sentence boundary, not joined to neighboring columns."
+    },
+    "scn_wikipedia_20261001:b3e5b6c9f8d486e1154b5e7c": {
+      "decision": "include",
+      "text_sha256": "ac426ea404d7adfd9cd7b2762a55aadd3233852695ff03ca6fa391476adc36ef",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "dô",
+          "new": "dû",
+          "mode": "word"
+        },
+        {
+          "old": "cô",
+          "new": "cû",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:ddc3ad8a5059e588a4d3ad90": {
+      "decision": "include",
+      "text_sha256": "c57e5c5a3a5482325a80498a5991ab1a7a29d7c5b2d0c9624c8eb98ee32ca088",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:e43c53bb16ce65cedcf041e4": {
+      "decision": "include",
+      "text_sha256": "c6e437129c3eb23c777e34fcb826f69c1b12ceb2202edb0ea3d6c949b2837652",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sturiarisilla",
+          "new": "studiarisilla",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:9f35bf23ee3dd63da9aaebff": {
+      "decision": "include",
+      "text_sha256": "875035bc784ca56e585023708467e8f1c4d04470967293792b70010cf3526fb2",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:350d0fb82c2159cfc40b5fb9": {
+      "decision": "include",
+      "text_sha256": "83c68d08f814cca7211586db6e812b67ac394262073f8d22c6b911d96a5a5091",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:23e18b599fdde4e582a2b36a": {
+      "decision": "include",
+      "text_sha256": "c45b39d1d1e903a7cf107dd7a8f23a342285fafde29602eb332f99e15f935507",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "E' ",
+          "new": "È "
+        },
+        {
+          "old": " n ",
+          "new": " 'n "
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:0c1b79e26d5a69d96610befc": {
+      "decision": "include",
+      "text_sha256": "d8bd68955fcb6a66d43d4d025465fbbc2ecf8f10ecaad664f60fd148e3cbc0ec",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:3023406c4acf349a5753e953": {
+      "decision": "include",
+      "text_sha256": "abe6058eeafd4104caaaf1519fc9a845fe881add3b3741f54eb41352037c8d28",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:a7b98c71ad0835792cecab1a": {
+      "decision": "include",
+      "text_sha256": "57e04dff06fc7cb8dfa599786ad5a36d552769049eb4b488abf3c185c47a2663",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "nò",
+          "new": "ntô",
+          "mode": "word"
+        },
+        {
+          "old": "Nò",
+          "new": "Ntô",
+          "mode": "word"
+        },
+        {
+          "old": "pussibbili",
+          "new": "pussìbbili",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:af144b8f4dab4e0d4e487a1b": {
+      "decision": "include",
+      "text_sha256": "45391edae2194bfa94649bea7d27f1fe37ebd51c411fcc495278faf7b13f9d16",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:51365b51d0f1f159c96e8196": {
+      "decision": "include",
+      "text_sha256": "6e83a9ead3933bf62436c2a32d72582d862c3f9c0596fa58fc08c7d21fa4f545",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:20463f24b3f54b1d341b87a3": {
+      "decision": "include",
+      "text_sha256": "db49970691af205bfe9720940b5d4d91b9f2f4cc80ab2d3ebd354b97322604ac",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:adef1ff6cbdbe283d85688de": {
+      "decision": "include",
+      "text_sha256": "96304fe6a6a89e00b1b95466d67c6787ae6e04136a91e1a71354c6b6d6b81af2",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:c4d455c5b6fb0c781f5ee8e4": {
+      "decision": "include",
+      "text_sha256": "08396a47289fa250d4c6f3c4b03d37683653e2ce7401613cb339a5dbb4caec70",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:bd490dd7db4d2b50d3cea617": {
+      "decision": "include",
+      "text_sha256": "6f592f2ea5e7be5a164da0fa6a2dadba611065e054c18d85096d4fc8d3e19329",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "liveddu",
+          "new": "liveḍḍu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:3626a124d77f433206771184": {
+      "decision": "include",
+      "text_sha256": "388b190a9d78598d9d0c2b4edc42c56270fc2309b3b429b8ea7621a456e8d165",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:4a9f38ef7f4359ba58c0e071": {
+      "decision": "include",
+      "text_sha256": "2bc9f8d6f6598ec39d31829dabbc0c26235c9af52b7af5d01a58ca154adce26f",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:78a4ed2ab419d78b73541d2e": {
+      "decision": "include",
+      "text_sha256": "4ee239ad7e4b40866391b00f29ec744001d10932b670af774540b9f311c15843",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:1751cf948321cf635775552c": {
+      "decision": "include",
+      "text_sha256": "e773e02a9466f2951e72f0143139cf541785075260b8904bea0947f9c9f1dd13",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "dô",
+          "new": "dû",
+          "mode": "word"
+        },
+        {
+          "old": "dê",
+          "new": "dî",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:14c6f059ad49d253c42c3832": {
+      "decision": "include",
+      "text_sha256": "60173bf4b7993669f5d5d6232d80c2b7aab7e3cc4ed68f33510b3c13b320ccd8",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:cdb28b280a316e5f11c21850": {
+      "decision": "include",
+      "text_sha256": "a3118492c7e3123d4772043671ef830a55317721f5d76e49a9c7bf90f7c4b8a5",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "e' ",
+          "new": "è "
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:b9ffc62146af2e8c575d516f": {
+      "decision": "include",
+      "text_sha256": "94d9f7bae6ff7861b0fb371a7593e3d5d9e4faff33a7634669e350b93c707b4c",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:dd0c7d991d2f9c9483e76dff": {
+      "decision": "include",
+      "text_sha256": "295f06818ce47943baf81b2c776152294e565b99479a2418c1383506a2230ebf",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:7d82d997e05f2ab8a6bcbc3c": {
+      "decision": "include",
+      "text_sha256": "901bf016e1b6f866837bb472fa66962f982cb6afaaecf6773a863c12f28319b3",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "cunziddirata",
+          "new": "cunzidirata",
+          "mode": "word"
+        },
+        {
+          "old": "(सनातन धर्म; Sanātana Dharma = \"Eterna liggi murali\")",
+          "new": ""
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:901cbddfb020ded61cf07fe0": {
+      "decision": "include",
+      "text_sha256": "d801e977ac5f4debbb75dee32f15df329676cd3093e7521b892b8a86b57cfea4",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:edf36136f32f00ca53404153": {
+      "decision": "include",
+      "text_sha256": "a237c2603f674c94fa1771e6cbe73fb246733fb141ef72d0b42ade6e806861c7",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:1d61cc3fc5297226c91d2e82": {
+      "decision": "include",
+      "text_sha256": "0654edfd2a35a07aeab15f8505f706d67fe42a801ae469be09fecdfff978dc59",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "ammiragliu",
+          "new": "ammiragghiu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:60bbe701cc57ea26c7aed121": {
+      "decision": "include",
+      "text_sha256": "47dc95d1c30e7de3d7564aad32a39abea0fb231c8d23f71f4e4f2c48c49b562f",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:16dd56929d3a69771165c0b8": {
+      "decision": "include",
+      "text_sha256": "9dd00dacfaf629d8f061188e27fb3a87fa2d194ef360c8a358c6789fafd66e7d",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "E' ",
+          "new": "È "
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:56c505986c39684722cf59cb": {
+      "decision": "include",
+      "text_sha256": "e81d6ea30926b7adf7aad43f78143b2c536263a46dde092049cf519431bfcdaa",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:6773de465900c30e07ddf370": {
+      "decision": "include",
+      "text_sha256": "1472206282f2ffd8ce73e032273b2f4338bcce1820ab35b429785c900d692e16",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:02fa8dd6e963182187233504": {
+      "decision": "include",
+      "text_sha256": "e8ac35fde7f2be393af24fee8f5df3f01cfcb231d2107c8cfbfd02c77435a8c8",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:10070d89c4c5b660a9cf60ae": {
+      "decision": "include",
+      "text_sha256": "f183d318126bcd018d03cc7ec4a00c13885b2c2227cfa7fb759e0b4ba05115ff",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:2fae58115276be745c50eeef": {
+      "decision": "include",
+      "text_sha256": "c824834614aad020626d901b03ce8171f219823d42333cb623c474dd95894035",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sô",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "àutru",
+          "new": "autru",
+          "mode": "word"
+        },
+        {
+          "old": "cunziddiratu",
+          "new": "cunzidiratu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:03331160f76f8c5e7c9759f5": {
+      "decision": "include",
+      "text_sha256": "6834fd921a44456798e01970126505941a96114e8a6a3fbeaadb4cdad2c47c91",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "moddi",
+          "new": "moḍḍi",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:388f8d45284f647d9d3b8133": {
+      "decision": "include",
+      "text_sha256": "c8796200199951ff7bd4870cc42559565d1a3e93c4ea9ed1d4e7f89db3f3298a",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        },
+        {
+          "old": "lonca",
+          "new": "longa",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:b962d8840430f9d351256cc2": {
+      "decision": "include",
+      "text_sha256": "15dc53b7729a4b300ca712fe2bdbdc43e51a579278ce410d7ebb3f2a784b8935",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "dô",
+          "new": "dû",
+          "mode": "word"
+        },
+        {
+          "old": "dê",
+          "new": "dî",
+          "mode": "word"
+        },
+        {
+          "old": "pê",
+          "new": "pî",
+          "mode": "word"
+        },
+        {
+          "old": "chê",
+          "new": "chî",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:3c1ee46446502a840f865f33": {
+      "decision": "include",
+      "text_sha256": "ff64cb43b77243ec3c23aae05eb6e16381300b89460808af5363101dc6df5be1",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:5e2e68b904937e52e410097d": {
+      "decision": "include",
+      "text_sha256": "5e6793389c6fa20139ef56b76b817a34f346ab786a6bf6794c79a0fae2cb832e",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        },
+        {
+          "old": " n ",
+          "new": " 'n "
+        },
+        {
+          "old": "ammunziddari",
+          "new": "ammunziḍḍari",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:137cbc4db4c7a3c0060991a2": {
+      "decision": "include",
+      "text_sha256": "48a6fb7807427815fb67599d1f2df02ca23ead8773c249799b488e83b196d037",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:46c64ae0530087dc7f734e42": {
+      "decision": "include",
+      "text_sha256": "9266759586d23ea4966da50bc59fa934a8a15be576bbd98eb896041d6613f326",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:94ce575e27aa9068f4a1c131": {
+      "decision": "include",
+      "text_sha256": "548988da443bb70128ca5a6e79b4e88aa8655b9238d3d58462373cfc2d77fbd2",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        },
+        {
+          "old": "liveddu",
+          "new": "liveḍḍu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:fd6699d8c2eac2910384b248": {
+      "decision": "include",
+      "text_sha256": "85109074cbba9738d5516b1a858d86097bfae48a06f1e73680671bf142711b1b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": " n ",
+          "new": " 'n "
+        },
+        {
+          "old": "poddu",
+          "new": "poḍḍu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:5724dd32901c5f08bee78ff3": {
+      "decision": "include",
+      "text_sha256": "75a81aca7b9b0fd3c187ec471ae02df866e06a3daa5b487dab7d48e317742943",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:f3eced435f5111e55574a98c": {
+      "decision": "include",
+      "text_sha256": "b255e60d479ae18e39097313a68a25ba258b94e6573a017fa4e38cfaeac6c1bf",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "dô",
+          "new": "dû",
+          "mode": "word"
+        },
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:a26732440bb6709e96fab456": {
+      "decision": "include",
+      "text_sha256": "d8b1add3681355ab56bb18cc05246b831983089b189cee437fa1ed800328d0f5",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "cunziddirata",
+          "new": "cunzidirata",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:d1e19fb4575216273c31a637": {
+      "decision": "include",
+      "text_sha256": "70241c89db40652d386175df876461f87c7e1a24f054fc585484f17cd4027987",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:5e5d150358b3aa72ae942335": {
+      "decision": "include",
+      "text_sha256": "c307e0fabdb94abd3b54ec6738a02f08efcbf84cfc7850705ee6b94f50791e21",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:09a41b3e6760329010d29767": {
+      "decision": "include",
+      "text_sha256": "178cbd2969d9d0648176f10b428d7d44d1981b853a802801ac0f4052b2990719",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:0281d64e61eb9007e7f86f1a": {
+      "decision": "include",
+      "text_sha256": "199554619ef41c15bf6b9c5ff18e5dcbbf1b4389bceeb1975986c451e4f5d037",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:fc969e68a4b59c835449102f": {
+      "decision": "include",
+      "text_sha256": "c7adca002bd73a3173acb50d3504d979d71e28fdce9a587fd10522de8814905e",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:368ce524253873a1cf38f299": {
+      "decision": "include",
+      "text_sha256": "45ca945e1c92f0956452406afd350a44205c07021038c0a53748592f46164a9b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:d111b973066fcd3cf2f2f5c7": {
+      "decision": "include",
+      "text_sha256": "a8dab75d92e831976203dcfc60f769989ac4131cc611c57ccc07697836c763df",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "nudda",
+          "new": "nuḍḍa",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:85e9f76a66dfda331079df97": {
+      "decision": "include",
+      "text_sha256": "b400cfbf1185b3396e70c608f73ce5e063e0d2e89fd6dc0695b600d67db1e61c",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:4e888e8ca52eccc2e1974a51": {
+      "decision": "include",
+      "text_sha256": "bb94ad47d4fb001de50780a63e2aab239e419d3eca7fac3e6129f3a129687e96",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:5cb2fbe43d67841364ed6418": {
+      "decision": "include",
+      "text_sha256": "80f18e356183209076a9f67285099fa1c65a35d1a8494b8dbe9ad1fa4f9954f4",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:a52d88266cc3159269eb5f17": {
+      "decision": "include",
+      "text_sha256": "1a78ec65fb5d24755198bc82d9b847778490305c64b21774efed180e33c05ec1",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutri",
+          "new": "autri",
+          "mode": "word"
+        },
+        {
+          "old": " n ",
+          "new": " 'n "
+        },
+        {
+          "old": "macàri",
+          "new": "macari",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:d550f262406107c51b478eac": {
+      "decision": "include",
+      "text_sha256": "617861c102d0423e910ceac7b0c431919e5b982285d2887f421ea85c2fabc0ce",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "chê",
+          "new": "chî",
+          "mode": "word"
+        },
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:0c4a7397514d7199ca76368f": {
+      "decision": "include",
+      "text_sha256": "bdfc783ac43169bc27ca78a822577eb585263edc6bf0962984f389b351d1fc05",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sô",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:041bd6b5f16cfa9c4be37b24": {
+      "decision": "include",
+      "text_sha256": "8aedb056f1a6c7a446390a379fe2c24f7638597a52e9aa3cef9d511de5701d23",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutru",
+          "new": "autru",
+          "mode": "word"
+        },
+        {
+          "old": " n ",
+          "new": " 'n "
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:927e770974a6f004254e2fae": {
+      "decision": "include",
+      "text_sha256": "b2a5fea875084015bc637fa47034c351197ab0af310b28a4831964ad13998a24",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:b76a52a0de1107a5416b4d8c": {
+      "decision": "include",
+      "text_sha256": "7281fce5bddd26e36249d9e8f45f590ee63d4b2a3f043cf32fa1f379df78b573",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:a3ca79a97420386e86112366": {
+      "decision": "include",
+      "text_sha256": "d84fef967d328b0deffd53bbcc144d04ae4465ff9dbfad4dd35becacb18de588",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:523cfe0f8e888d5364b3d084": {
+      "decision": "include",
+      "text_sha256": "c9c7f2509e56e701db42d64611567f2fdb56d6e1aec26170e5613a4dae5e62e5",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:8e05fe54b53e9f0e9ae341f2": {
+      "decision": "include",
+      "text_sha256": "f5d6b91b9ce1ac4b9c3b2c79f7137126b50f090367cdc64521f54156ce7989a8",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:70cc4df1a40a633c5c670dd9": {
+      "decision": "include",
+      "text_sha256": "ca6c0b13979b7975924b9dc2aa2b962449440da92ec427b20e7282d1448f8d4a",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:8a3d82c1a0a49537e54597da": {
+      "decision": "include",
+      "text_sha256": "dbd7fed1790aab1d476fd75de27ba34d17d4e803e4896b1a14d4ac7e8c4d2c00",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:ca62120326f0df484367eaba": {
+      "decision": "include",
+      "text_sha256": "b70dda306e3334850eedd0779b5710a8f99ed8bfa947a11c05ca89deb7e0c4fb",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "sedda",
+          "new": "seḍḍa",
+          "mode": "word"
+        },
+        {
+          "old": "vaddi",
+          "new": "vaḍḍi",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:fb5dca439a99a2272927c886": {
+      "decision": "include",
+      "text_sha256": "b467dc45e9864e03756cac8671cd575f163d60f38068f32c47366ce428d2fa45",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:6cd80cadfa0dc264eded9f15": {
+      "decision": "include",
+      "text_sha256": "e211d749daa6bf88c7269e0f780f6fab8c3d91b93c6301c72831fab4e2c38c04",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:c306c4c0e2e753d50923783c": {
+      "decision": "include",
+      "text_sha256": "7e98e1fcead597c6d864b2fb38827f0048f31afccbd7f72cefb7f110b3f650f9",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "liveddu",
+          "new": "liveḍḍu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:15d476c5fafb3501c0b0d1cd": {
+      "decision": "include",
+      "text_sha256": "800878e320a5836fc7bd9c0bd6ee7c49f74af9385450e5e7c89376bb0e7ac8de",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:164bb6e6e291170af5c95273": {
+      "decision": "include",
+      "text_sha256": "f767da9a2a83396bc546480bcde79d37c7a549bb4a50165c1d5d41e44e8b957e",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:c741e3fc43173c9348729b40": {
+      "decision": "include",
+      "text_sha256": "a8adb5b13fff1d5015b529852383a6b9018f5ccff639196d3d2c9b092e8e84db",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "sô",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "cunziddiratu",
+          "new": "cunzidiratu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:9dd8871e20d513c6a1be07eb": {
+      "decision": "include",
+      "text_sha256": "7d7bcb0b84fe2a4b45494b694a44d10ff3efbef0dbb27e7d24194c221e69b803",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "àutru",
+          "new": "autru",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:1eca6d28e2687f497bf1aeb1": {
+      "decision": "include",
+      "text_sha256": "db7549451566b09c46add7bb20c3e25c56a02b632031f3b9576e384e3bb58f5a",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "Ddocu",
+          "new": "Ḍḍocu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:4e5a5fa8afcec087f31935ae": {
+      "decision": "include",
+      "text_sha256": "95f2a17a60583fe25e750372a04beff235ceb4370f3b61c76adbaca8fffb89ff",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:a1d36ea15130cb9b54a20272": {
+      "decision": "include",
+      "text_sha256": "cfdb9a4fbef967a4a8da25f56067773046de1495691bc4c58ee712de1e71004a",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "addàuru",
+          "new": "aḍḍàuru",
+          "mode": "word"
+        },
+        {
+          "old": "addauru",
+          "new": "aḍḍàuru",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:3ae7996a61546191c52c2286": {
+      "decision": "include",
+      "text_sha256": "f77c87cc3f4bd870b04e0795315341feee0fa0ac739bc66f009fe7d343e10f71",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "jiornu",
+          "new": "jornu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:d9abacc29eebde287cd926f8": {
+      "decision": "include",
+      "text_sha256": "04583a3cf429affb651c6ced5348fb9d446dd0fadc998de69efda94c42f499da",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Targeted development-vocabulary passage read in full. Sicilian prose checked for coherent extraction, stress/diacritics, contractions, retroflex spellings, and source-specific exceptions; recorded edits resolve inspected variants. Proper names retained. Not an external linguistic certification. Selection used development gaps only.",
+      "edits": [
+        {
+          "old": "e' ",
+          "new": "è "
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:01bb2a04579037721f2b2baa": {
+      "decision": "exclude",
+      "text_sha256": "49f6f4c6c1a62bc945adfa29c2cd826c39b60684e33177ff78b1ebd6081b6fdd",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:99c48e4953325557d845f1b4": {
+      "decision": "exclude",
+      "text_sha256": "307acace9b6343e445207b54e433604231a78e1071dcb97b35af159fb15bd6eb",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:bf558088792f2f3efa6a0ebe": {
+      "decision": "exclude",
+      "text_sha256": "02b713c9801eed21abd8dc67ee67211fa4ad05777ae15c1eafbd64e6adc3601f",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:8ff9374a390b07d259f21f07": {
+      "decision": "exclude",
+      "text_sha256": "6e50dffe54dabe3a863d1b7df3ab46eaafa7271f87102d365e018efc07ea8a01",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:2aded5f31a5d2ce1581282a4": {
+      "decision": "exclude",
+      "text_sha256": "52c101a9791e8341ea08ba1e0058fc696ec5ac1efedb17d2770733ddf408ee93",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:81ae256d99e7444fd2c702b5": {
+      "decision": "exclude",
+      "text_sha256": "6ce6a9dd84521ad5a64152bb08d1573683138601f8acc47a5b34b331af6b010c",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:01ed5d662ca19210ea4fc9fe": {
+      "decision": "exclude",
+      "text_sha256": "95e17a97d35ea3975946e375b41d5553993770aa0e81f1e01f254da52bc0fe71",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:6f6c21bcb5f124d894d92352": {
+      "decision": "exclude",
+      "text_sha256": "ae96289ecb8f18a21c2aadba0a19c905faafbeb85e59f253d7bae2831d99af30",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:afab3bd4649bb79c0ad93836": {
+      "decision": "exclude",
+      "text_sha256": "6ed9ee0ac856b97f97498ba6797f360a045e774f9dce71a785fac932fb9bfd85",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:1a5d279a5b1bcbc904a9982a": {
+      "decision": "include",
+      "text_sha256": "e32dd22cda34a778e1ff8515a2a68edddde9c80ca693eeebd986d7198ee88322",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": [
+        {
+          "old": "iddu",
+          "new": "iḍḍu",
+          "mode": "word"
+        },
+        {
+          "old": "iddi",
+          "new": "iḍḍi",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:59c7ede63aea17b30125a27f": {
+      "decision": "exclude",
+      "text_sha256": "e798dcb4f4e80a3703a8dd7ab693da25999efe50845721791dbca6ddbea20f5b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:53af12565fcaad3d8bfe80f0": {
+      "decision": "exclude",
+      "text_sha256": "aedcd5ce722dc2eda4d31d893ac6ed27cdc8d8fa18d1dee095d018aae5f6498e",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:5ea6c08f86208683ef920ee0": {
+      "decision": "exclude",
+      "text_sha256": "a156718db65cd2520975590dd6f50ad6ed566d8be62148d4dada243efb946285",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:5e505a43b3bba2034e62acf6": {
+      "decision": "exclude",
+      "text_sha256": "db9dd136981c699d945f22a99127a3676a11aa8b97a09fc88325b4293f7d6e6e",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:3092aaa2d128d216729b77ad": {
+      "decision": "exclude",
+      "text_sha256": "48635fbf7f4e75abe1d25b31d5a1e8adc07ba73169a44b3b1a2cc26115e12c12",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:a0b0d4bb2c72822d31a86a7a": {
+      "decision": "exclude",
+      "text_sha256": "e4120e26a6265452f005c8b00c478abe79b49e126fdf0df03a12401f0fec8b7d",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:47e79cf4b9dc3b14f4ddae73": {
+      "decision": "exclude",
+      "text_sha256": "8ce7cee7fb48b40a2b935693bf68929208690841800c2f36beccb42e0011cf36",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:b429a5d36789341a15008355": {
+      "decision": "exclude",
+      "text_sha256": "4d2604f356170277e2f4daa7514aecfa8dd625f5485c3867e4f105d746906b6b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:ee1b71f43338430a91c347a0": {
+      "decision": "exclude",
+      "text_sha256": "4903d3ba625e85e571c3964a02a57569c83f35fcc7dcfa19cfc4c027435d4f89",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:36dcb5c43cd9de8ca9ebf947": {
+      "decision": "exclude",
+      "text_sha256": "cb14484c4e5311c5a740e157f6fa179dbf5f3d33d74a8c7b489bdd709144bc78",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:0b0a26ea252360be8cec026c": {
+      "decision": "exclude",
+      "text_sha256": "2aaa897da69099b1f477154ed238fc2eb57aac9c9163beefe59e0cdc8e36d5bc",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:f0056b67d7b641df9e202925": {
+      "decision": "exclude",
+      "text_sha256": "726788fd3613c7c049447a2108c48014df88d558161ec3ef761a353941cafeae",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:5c58977c63b156705c260fd4": {
+      "decision": "exclude",
+      "text_sha256": "ca94225195fe0f9db7aa938f48ae4f2cdc807418217df377f8313f1f3637bac8",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:32c2a9f607bddb9868b1322c": {
+      "decision": "exclude",
+      "text_sha256": "6feb5d6e184c2c168414041338756fe5daad0e6f261671d5a753f7e4713f13b7",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:8bb09f5bedd22c7eb97406ff": {
+      "decision": "exclude",
+      "text_sha256": "e6a0fbfc435a93bbfc687ffa30333734e1d32b348a932e5d4c87499c2621ce5b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:38357c1407021fb1a12cb704": {
+      "decision": "exclude",
+      "text_sha256": "df8f3bacfa279d4edbcd41a619701abceab048d23917ca0c74d280c0c1b28bd0",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected passage has unresolved mixed-language text, dialect transcription, fragmentary extraction or spelling choices; excluded rather than admitted by pattern screening."
+    },
+    "scn_wikipedia_20261001:c228c6c8969580bedb25df89": {
+      "decision": "include",
+      "text_sha256": "3386e4da18345650e11ba0f0d185278781ae1055c1f5d43c20929c4ad3e66860",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "9158cbfafa324146b0757b1f": {
+      "decision": "include",
+      "text_sha256": "3946abe29f8364c5396cccb9357c0d86ee024148111a391bf218dc3b55d5671e",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "1ca2a27b727a486235cf545d": {
+      "decision": "include",
+      "text_sha256": "e7372415838f8e14e748514659039cabfaaef462507416cd0ebc51d713c0c513",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:23068c63e1569c4b9b78a5c5": {
+      "decision": "include",
+      "text_sha256": "345c1087b861b30e75ffbd9b2a958b98471aa50b3bfa36a7c7e4dee1acfad3b2",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": [
+        {
+          "old": "iddi",
+          "new": "iḍḍi",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:94abbc916ef01a7a4bff1944": {
+      "decision": "include",
+      "text_sha256": "79c0749c3dba8d1c9dbb257cf72b23eef30ef6be0391df33e196b7979e2d86c1",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": [
+        {
+          "old": "1908. 28 dicèmmiru. H. 5:20 ",
+          "new": ""
+        },
+        {
+          "old": "comu û",
+          "new": "comu u"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:a998630326e83c3c664ff2c7": {
+      "decision": "include",
+      "text_sha256": "7f7d38833150daf6898c6e54e209e8774a1b226187ab48cd0d81cac0fd29f632",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:c28f93d7b62c37b44047c7ab": {
+      "decision": "include",
+      "text_sha256": "649bc9c69d3676ea566f7a98c35caea71c3f480b8d2721f50f33e231707374e7",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": [
+        {
+          "old": "ddo",
+          "new": "dû",
+          "mode": "word"
+        },
+        {
+          "old": "ntâ la",
+          "new": "ntâ"
+        },
+        {
+          "old": "orientali",
+          "new": "urientali"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:6e8acd99954be0b9974e3153": {
+      "decision": "include",
+      "text_sha256": "3103c03b97db4c45112e7baa5883a237a1f44ebad5a46608d44592971d204406",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:06bd104b20d6a373a2a41781": {
+      "decision": "include",
+      "text_sha256": "e2ab8b08de1ee08e7d1e56fcf4e77ff1c0e5d7984b0151c67e03840762dbdd64",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:276798e2be2a25badceff1cf": {
+      "decision": "include",
+      "text_sha256": "5b1f17b9dc4488ae8c882f5d001ef76cd006f354296292981afeee5469c44c69",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_unesco_2019_1:22cfc795b3e74408ad63ab51": {
+      "decision": "include",
+      "text_sha256": "fdc7b3791dcc1a5b6436a75bcbc273fb49c6beb401d04b5b05740853a2348c44",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:0a990aa99ef7d855bde5994b": {
+      "decision": "include",
+      "text_sha256": "27e8e5d142db2c256da532240c086bde216df4edfdb65e91a24686c89c74f791",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": [
+        {
+          "old": "probblemi",
+          "new": "prubblemi",
+          "mode": "word"
+        },
+        {
+          "old": "L' Ùrtimu",
+          "new": "L'ùrtimu"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:9a2c989a640ee3610c1fca97": {
+      "decision": "include",
+      "text_sha256": "e2938aba2f156c05f85e808d1eed031538b60420cf2e2f3d46a9b46f54b43224",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "70eaf8f86672a95848de6f49": {
+      "decision": "include",
+      "text_sha256": "a5b8c2205552b4fa0e122230e75fa4a9aafefc1a682b9d323475ded7363680c9",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:6c51c5f0447710676d760eef": {
+      "decision": "include",
+      "text_sha256": "c877b0857c24390f5b909addf0d0d20397d7247601f9366040d151af69905dcd",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": [
+        {
+          "old": "dô",
+          "new": "dû",
+          "mode": "word"
+        },
+        {
+          "old": "sò",
+          "new": "so",
+          "mode": "word"
+        },
+        {
+          "old": "strummentai",
+          "new": "strumenti",
+          "mode": "word"
+        },
+        {
+          "old": "stessu",
+          "new": "stissu",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_wikipedia_20261001:968c1753d507fda223a85700": {
+      "decision": "include",
+      "text_sha256": "29a74a374a43fc9ae76d2e48c4b393cea3db2f3bc0c0e1019d1f820f4b5d799c",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:6bc79533913ef9745aa73f2e": {
+      "decision": "include",
+      "text_sha256": "bf225bdba069789fb59cfba66da58c3e76a47db01da1d8398dcb057ef2c5095f",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": [
+        {
+          "old": "pruggettu",
+          "new": "prujettu",
+          "mode": "word"
+        },
+        {
+          "old": "disposizzioni",
+          "new": "dispusizzioni",
+          "mode": "word"
+        }
+      ]
+    },
+    "scn_unesco_2019_2:de8c6438134e61f7960ff2c9": {
+      "decision": "include",
+      "text_sha256": "4cf7e324b5937c26300738448b2693c4393a7afeff06dea27f2a415a4e552ec4",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Read targeted passage in context; complete Sicilian prose or attested grammatical examples, not synthetic sentences. Source-specific edits reconcile inspected spellings with DOS24. Localization units contain no unresolved interpolation slots. Lexical and quotation exceptions retained explicitly.",
+      "edits": []
+    },
+    "scn_wikipedia_20261001:b558bd121a4cd176fc28c86f": {
+      "decision": "exclude",
+      "text_sha256": "8552b75823f2c0c0154726d82b34fd6c09d69597a7743790e370d419b7656d71",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:0fdf07db7da0db0486b45404": {
+      "decision": "exclude",
+      "text_sha256": "b9511f6f5999ce0ac7eef77442fc6590ffd270757ed34339e44f194612bac468",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:400672c000b1209d3a54eb3d": {
+      "decision": "exclude",
+      "text_sha256": "45d9f397e86e4402753eb076ad23102ba7567865de4f92d6f10006b1ea396c6b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:d121d6e54daaa446c8ced061": {
+      "decision": "exclude",
+      "text_sha256": "6ce3e6709cd1378c264f98b8486aba2ef13bd9b207620c8e942c1b19a97f6c23",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:0564a1ceb0087c96b8250ce5": {
+      "decision": "exclude",
+      "text_sha256": "bdd99dff7e31191d429b9dec53bce3d7d85c65319075a0371806262f4b2e1a59",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:0c5e11bf95be764dcb6b982b": {
+      "decision": "exclude",
+      "text_sha256": "12e0d8dfb7b638c43675f8f049ef9bce241839cb4914f2f1fe381f68c921c3b0",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:bbf1499ea4e89e899af56b34": {
+      "decision": "exclude",
+      "text_sha256": "5fe86665f9cb1ef75a6707142c028d863f8cb45bccc38ca6e1b008814962e123",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:6ccec447703a2f376d49047d": {
+      "decision": "exclude",
+      "text_sha256": "4e015ca3f2d5e908ff7ccb2d8dd9de000c811e433c3c7fc9b083dab79f0b18a2",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_unesco_2018_4:62ff46b30910208530e0c142": {
+      "decision": "exclude",
+      "text_sha256": "691e038b00d4704a48c095b8d16d59514d1f1eb3b06e64b0c4c31c3021c03ff0",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:368f761c5032900a0564b810": {
+      "decision": "exclude",
+      "text_sha256": "5d1c9261eb9d29683af06dff11915c9b8a620bd85ab6d80fa0027122ad3a8fc1",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:af7887485ff391fc376e0cf3": {
+      "decision": "exclude",
+      "text_sha256": "eb941cce5a9798c683f3f0ecca1ff93c259f525b2797ada3614bb89d47dc046b",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:9171643a7f181b413bc737b7": {
+      "decision": "exclude",
+      "text_sha256": "35b77d805cfe5907e6620b1ec1613a2cdcec119951394cb5d38e81d6b791b8b2",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    },
+    "scn_wikipedia_20261001:817d16516f5dfb0b05457879": {
+      "decision": "exclude",
+      "text_sha256": "86cc55be35ded37d05ef6af5cfebe29ac07a0a22add6e7552169293cea379504",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Inspected context is a fragment, foreign name/domain collision, mixed-language text or unresolved nonstandard dialect transcription; not admitted just to cover a development word."
+    }
+  }
+}

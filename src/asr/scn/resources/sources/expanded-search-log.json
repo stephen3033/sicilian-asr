@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-11",
+  "timezone": "America/New_York; HTTP probe timestamps use UTC",
+  "scope": "All 83 original entries reclassified using existing pinned source/license evidence and a new landing URL/robots probe. Bounded follow-up of institutional directories, project exports, publications and selected searches; not an exhaustive web census.",
+  "access_log": "src/asr/scn/resources/sources/access-audit.json",
+  "prior_log": "src/asr/scn/resources/sources/search-log.json",
+  "searches": [
+    {
+      "family": "Current Wikimedia",
+      "query": "\"scnwiki\" \"20261001\"",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "Official primary dump endpoint returned HTTP 403. Wikimedia documented mirrors: Your.org and C3SL expose 20261001; Umea and PDApps robots excluded the client. Your.org completed XML export acquired and verified against published MD5/SHA1."
+    },
+    {
+      "family": "LiITA",
+      "query": "\"LiITA\" \"Ciallabacialla\"",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "Official paper, LiITA data page, GitHub Siciliano folder, pinned recursive tree (not truncated), RDF dataset license declarations and treebank wrapper inspected. All relevant RDF files acquired individually; no API pagination."
+    },
+    {
+      "family": "Cademia affiliation",
+      "query": "site:cademiasiciliana.org \"Mozilla\"",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "Project description, organizational history, and presentation PDF explicitly identify Firefox, Android/iOS and Common Voice translation. Supports inference only; other Mozilla products remain unresolved."
+    },
+    {
+      "family": "Cademia educational publications",
+      "query": "site:cademiasiciliana.org nzignamuni libri calannariu",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "Calendar sales page and education project hub added. Scola and library access failures retained; no course login or purchase."
+    },
+    {
+      "family": "VAMS",
+      "query": "site:csfls.it VAMS \"https\"",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "2026 official catalogue supplies live VAMS site URL and two 2023 module DOIs; public consultation observed, no corpus export permission established."
+    },
+    {
+      "family": "Academic repositories",
+      "query": "site:zenodo.org Sicilian corpus text license",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "I.Sicily ancient-language releases found; not a modern scn corpus. No claim that other Zenodo records do not exist."
+    },
+    {
+      "family": "Academic repositories",
+      "query": "site:iris.unipa.it siciliano corpus download",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "ALS, Alcamo 1918, Camilleri 70-book study and other research records found; request-a-copy restrictions recorded. Did not request copies or contact authors."
+    },
+    {
+      "family": "Subtitles",
+      "query": "site:opus.nlpl.eu \"scn\" \"QED\"",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "No additional scn-specific licensed export established by returned results. Existing Helsinki-NLP QED/Amara card landing reachable by HEAD, raw card web access failed; exact scn extent unresolved."
+    },
+    {
+      "family": "Transcriptions",
+      "query": "site:lfsag.unito.it \"Sicilia\" \"trascrizione\"",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "LFSAG root reachable; guessed sicilia.html returned tool access failure. Scholarly phonetic references found, no verified licensed full transcript export established."
+    },
+    {
+      "family": "Localization",
+      "query": "site:github.com/cademia \"Unicode\" \"cldr-custom\"",
+      "checked_on": "2026-10-11",
+      "limit": "One returned web-search result batch, no pagination; ranked search is not exhaustive",
+      "outcome": "Current official CLDR and Cademia organization confirmed. Existing custom-fork file-level license question retained; no claim that lack of repository API license is prohibition."
+    }
+  ],
+  "followups": [
+    {
+      "url": "https://www.csfls.it/res/ricerche/",
+      "checked_on": "2026-10-11",
+      "outcome": "Followed ARTESIA, VSM, Vocabolario, ALS, parlate, VAMS, DASES, ASES, DATOS, ATOS, popular writing, Gallo-Italic, diachronic word formation and ALM links.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://artesia.unict.it/vocabolario",
+      "checked_on": "2026-10-11",
+      "outcome": "Public medieval dictionary description; follows Scobar/Valla references. Linked /lexicad/lemmario shows dynamic query shell with page 1 of 0 to text browser; not evidence of zero entries. No bulk copying or pagination.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://artesia.ovi.cnr.it/",
+      "checked_on": "2026-10-11",
+      "outcome": "Direct web tool access failed; CSFLS documents freely queryable corpus and 737 texts for 2021. Publisher-reported, not measured.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://artesia.unict.it/biblioteca",
+      "checked_on": "2026-10-11",
+      "outcome": "Guessed library route failed; actual portal bibliography/texts links retained as unresolved export leads.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://archivio-ases.it/",
+      "checked_on": "2026-10-11",
+      "outcome": "Live consultation, nickname and map sections observed; supersedes directory under-construction text. Copyright notice, no bulk grant found in inspected pages.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://archivio-atos.it/",
+      "checked_on": "2026-10-11",
+      "outcome": "Live toponyms, municipality pages and maps observed; data export and licenses unresolved.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.vocabolarioatlantemultimediale.com/",
+      "checked_on": "2026-10-11",
+      "outcome": "Digital VAMS consultation reached; two Madonie modules and mixed Italian editorial/Sicilian ethnographic scope. Not bulk collected.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.csfls.it/res/ricerche/scritture-semicolti/",
+      "checked_on": "2026-10-11",
+      "outcome": "Collection explicitly describes italiano popolare. Author/donor PDF/Word links are administrative forms, not text corpus downloads.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.csfls.it/res/ricerche/progetto-galloitalici/",
+      "checked_on": "2026-10-11",
+      "outcome": "Canonical URL corrected after guessed /galloitalici/ failure; varieties distinct from scn.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.csfls.it/res/ricerche/formazione-parole-siciliano-diacronia/",
+      "checked_on": "2026-10-11",
+      "outcome": "Additional diachronic morphology publication lead; no standalone corpus release established.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.csfls.it/res/ricerche/alm/",
+      "checked_on": "2026-10-11",
+      "outcome": "Mediterranean multilingual nautical atlas publication lead, not a homogeneous Sicilian text release.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://huggingface.co/datasets/openlanguagedata/flores_plus",
+      "checked_on": "2026-10-11",
+      "outcome": "CC-BY-SA-4.0 card plus login/acceptance gate and explicit evaluation-only usage policy; model training marked prohibited by project policy, collection conditional. No terms acceptance.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.gutenberg.org/ebooks/author/39005?sort_order=title",
+      "checked_on": "2026-10-11",
+      "outcome": "Public browser metadata reached; direct robots policy prevents acquisition. Italian catalogue works can contain useful Sicilian spans; mixed language no longer an exclusion.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q18199165",
+      "checked_on": "2026-10-11",
+      "outcome": "Resolved LiITA RDF license URI to CC-BY-SA-4.0.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q42553662",
+      "checked_on": "2026-10-11",
+      "outcome": "Resolved LiITA treebank RDF license URI to CC-BY-NC-SA-4.0; existing UD pinned LICENSE.txt separately declares CC-BY-SA-4.0.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    },
+    {
+      "url": "https://meta.wikimedia.org/wiki/Mirroring_Wikimedia_project_XML_dumps",
+      "checked_on": "2026-10-11",
+      "outcome": "Official mirror directory verified; permitted mirrors used as published export routes.",
+      "limit": "One landing page and stated links; no authenticated access or corpus scraping"
+    }
+  ],
+  "metadata_receipts": [
+    {
+      "path": ".cache/scn/discovery/LiITA-LOD--LocalVarieties.json",
+      "sha256": "8e1e3655e6761276f3cd09f50e80433f9ddbaaef71a12e88fb90527b3ebbb9b8"
+    },
+    {
+      "path": ".cache/scn/discovery/wiki-status.txt",
+      "sha256": "7d89f62cc7ffd33c21b9d44c9dea24e9578a0a6a57a00ca3410a59212723883f"
+    },
+    {
+      "path": ".cache/scn/discovery/wiki-sha1.txt",
+      "sha256": "e13a45716382facdec1827be236682def273743f9521d82e2bdfcbfc72b569ce"
+    },
+    {
+      "path": ".cache/scn/discovery/expanded-attempts.json",
+      "sha256": "3a3422508a2ae0d0e18673e20a4d5aa0016c1b1fa3f40896264c3bf4a7afe776"
+    }
+  ],
+  "original_entries": [
+    "scn_dos24",
+    "scn_orthography_2017",
+    "scn_firefox_l10n",
+    "scn_android_l10n",
+    "scn_firefoxios_l10n",
+    "scn_focusios_l10n",
+    "scn_www_l10n",
+    "scn_www_firefox_l10n",
+    "scn_mozilla_vpn_client_l10n",
+    "scn_mozilla_vpn_extension_l10n",
+    "scn_fxa_content_server_l10n",
+    "scn_common_voice",
+    "scn_ud_stb",
+    "scn_napizia_wikimatrix",
+    "scn_wikipedia_20231101",
+    "scn_google_smoldoc",
+    "scn_google_gatitos",
+    "scn_wikipron_broad",
+    "scn_wikipron_narrow",
+    "scn_cchiu_adj",
+    "scn_cchiu_noun",
+    "scn_cchiu_other",
+    "scn_cchiu_verb",
+    "scn_unesco_2018_4",
+    "scn_unesco_2019_1",
+    "scn_unesco_2019_2",
+    "scn_tatoeba",
+    "scn_flores200",
+    "scn_omni_train_0000",
+    "scn_omni_train_0100",
+    "scn_omni_train_0200",
+    "scn_omni_train_0300",
+    "scn_omni_train_0400",
+    "scn_omni_train_0500",
+    "scn_omni_train_0600",
+    "scn_omni_train_0700",
+    "scn_omni_train_0800",
+    "scn_omni_train_0900",
+    "scn_omni_train_1000",
+    "scn_omni_dev_0000",
+    "scn_omni_dev_0100",
+    "scn_omni_dev_0200",
+    "scn_omni_test_0000",
+    "scn_omni_test_0100",
+    "scn_finaiti_toponyms",
+    "scn_website",
+    "scn_scola",
+    "scn_biblioteca",
+    "scn_pontoon",
+    "scn_telegram",
+    "scn_omegat",
+    "scn_keyboards",
+    "scn_verificac19",
+    "scn_cldr",
+    "scn_atlanti",
+    "scn_artesia",
+    "scn_vsm",
+    "scn_vocabolario",
+    "scn_corsit",
+    "scn_als",
+    "scn_sophism",
+    "scn_alfonzetti",
+    "scn_bonner",
+    "scn_phonology_overview",
+    "scn_lfsag",
+    "scn_napizia_nllb",
+    "scn_siciliannmt",
+    "scn_arbasicula",
+    "scn_dieli",
+    "scn_gutenberg",
+    "scn_subtitles",
+    "scn_flores_plus",
+    "scn_common_voice_prompts",
+    "scn_fineweb",
+    "scn_hplt",
+    "scn_oscar",
+    "scn_isicily",
+    "scn_clarin",
+    "scn_g2p_tools",
+    "scn_bonner_grammar",
+    "scn_privitera_grammar",
+    "scn_cipolla_sound",
+    "scn_oxford_romance"
+  ]
+}

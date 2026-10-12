@@ -84,6 +84,15 @@ wheels = [
 ]
 
 [[package]]
+name = "cmake"
+version = "3.31.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/00/95/ed1ad3763da30c963a941d3c641c9ec9f1397742407a3ab00f94263a5d9d/cmake-3.31.6.tar.gz", hash = "sha256:8edddfbf367fa1bcf4b9f3064470bc0e1022f70609c0cf69c863961897826205", size = 34370, upload-time = "2025-02-28T00:16:15.693Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/09/516b0d709672bc430eb13278f0316acd34869269447744f5d136daeef689/cmake-3.31.6-py3-none-macosx_10_10_universal2.whl", hash = "sha256:da9d4fd9abd571fd016ddb27da0428b10277010b23bb21e3678f8b9e96e1686e", size = 47224338, upload-time = "2025-02-28T00:14:40.995Z" },
+]
+
+[[package]]
 name = "cytoolz"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -663,6 +672,7 @@ dependencies = [
 
 [package.optional-dependencies]
 corpus = [
+    { name = "cmake" },
     { name = "fluent-syntax" },
     { name = "mwparserfromhell" },
     { name = "polib" },
@@ -670,6 +680,7 @@ corpus = [
     { name = "pymupdf" },
     { name = "pypdf" },
     { name = "rdflib" },
+    { name = "yt-dlp" },
 ]
 research = [
     { name = "k2" },
@@ -694,6 +705,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "cmake", marker = "extra == 'corpus'", specifier = "==3.31.6" },
     { name = "fluent-syntax", marker = "extra == 'corpus'", specifier = "==0.19.0" },
     { name = "k2", marker = "extra == 'research'", url = "https://huggingface.co/csukuangfj2/k2/resolve/566a071486bde284bedcf41a8e3dc92340ec81bc/macos/1.24.4.dev20260625/k2-1.24.4.dev20260625+cpu.torch2.4.0-cp312-cp312-macosx_11_0_arm64.whl" },
     { name = "kaldialign", marker = "extra == 'research'", specifier = "==0.12.0" },
@@ -715,6 +727,7 @@ requires-dist = [
     { name = "torch", marker = "extra == 'research'", specifier = "==2.4.0" },
     { name = "torchaudio", marker = "extra == 'research'", specifier = "==2.4.0" },
     { name = "wandb", marker = "extra == 'research'", specifier = "==0.30.0" },
+    { name = "yt-dlp", marker = "extra == 'corpus'", specifier = "==2026.8.19" },
 ]
 provides-extras = ["corpus", "research"]
 
@@ -914,4 +927,13 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/75/c9/cf736f6db8c3273af18925061572db0d4357818a9ce425f4b5fb0021918e/xxhash-4.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:515a822c73abbf6a0b7c70976d9662be342835c9d78b8dc7c023411f39c35dbc", size = 36195, upload-time = "2026-08-17T08:35:13.004Z" },
     { url = "https://files.pythonhosted.org/packages/8f/fb/0b04b68d6c5bc71c7a2c344f1287327b67e607f28fbcfd937697caca64b6/xxhash-4.0.1-cp312-cp312-pyemscripten_2024_0_wasm32.whl", hash = "sha256:0163b5d259de23ae9e07b7eabf435ce4704f6f205589a2b154e6af4be985ce1b", size = 20767, upload-time = "2026-08-17T08:21:00.806Z" },
     { url = "https://files.pythonhosted.org/packages/0a/e6/f238693bfdd642adb59c99683964d46d9947fe721ff44d3bd850ae675407/xxhash-4.0.1-graalpy312-graalpy250_312_native-macosx_11_0_arm64.whl", hash = "sha256:4a76345f5aceb4ec404918edf9c7f2b5507db864dc0d7455982009ac0890b57b", size = 34453, upload-time = "2026-08-17T08:23:49.795Z" },
+]
+
+[[package]]
+name = "yt-dlp"
+version = "2026.8.19"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/e0/832fa4ca334b766a06933a196066edc3dba37cdb6f14cd98d59bcc69a4b4/yt_dlp-2026.8.19.tar.gz", hash = "sha256:9e213e48cea35c66b378e4447903f118f6392a5fa380a2b6d7070ec86f4e0af1", size = 3052025, upload-time = "2026-08-19T23:48:59.291Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/69/b2/8cd1613f56eed7ceb64fbd4df3f1c01246bfb098e6f398228bafda22b80b/yt_dlp-2026.8.19-py3-none-any.whl", hash = "sha256:1d57897e94c6665a0a6f9bc54b34e584284e32c034ffab3a7df25d8f7b24eedf", size = 3185533, upload-time = "2026-08-19T23:48:56.925Z" },
 ]

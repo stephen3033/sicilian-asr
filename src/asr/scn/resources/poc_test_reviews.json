@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex contextual review; no external certification",
+  "evidence": [
+    "https://cademiasiciliana.org/wp-content/uploads/Cademia-Siciliana-DOS24-v.2.2.pdf"
+  ],
+  "review_policy": "Complete caption text read after development selection and before decoding. Retain foreign quotations, regional morphology, names, false starts and numerical spellings. Correct only recorded spelling/typographic issues; remove non-speech annotations. No audio intervals excluded. Caption-based references are not independently verified verbatim audio transcripts.",
+  "replacements": {
+    "atâ": {
+      "replacement": "ât'a",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "siciliano": {
+      "replacement": "sicilianu",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "prununza": {
+      "replacement": "prununzia",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    },
+    "praci": {
+      "replacement": "piaci",
+      "reason": "Lexical spelling/typographic correction in the reviewed source context; no global dd replacement.",
+      "evidence": "DOS24 v2.2 pp.7–18; source transcript context; corrections are spelling, not grammatical repair"
+    }
+  },
+  "decisions": {
+    "youtube:sctItzC2xgw": {
+      "decision": "include",
+      "text_sha256": "4e086ed420bd7dc36129690675042a6e19b9158e54cf632a4d11eafbb0e17a60",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete caption text read after development selection and before decoding. Retain foreign quotations, regional morphology, names, false starts and numerical spellings. Correct only recorded spelling/typographic issues; remove non-speech annotations. No audio intervals excluded. Caption-based references are not independently verified verbatim audio transcripts.",
+      "edits": [
+        {
+          "old": "n sicilianu",
+          "new": "'n sicilianu",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "diffìficili",
+          "new": "diffìcili",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "cuzigghiu",
+          "new": "cunzigghiu",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "âta",
+          "new": "ât'a",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "E na traduzzioni",
+          "new": "È na traduzzioni",
+          "mode": "literal",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "[Scrusciu d'agunìa]",
+          "new": "",
+          "mode": "literal",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "scitturi",
+          "new": "scritturi",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "puisija",
+          "new": "puisìa",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "ortografìa",
+          "new": "ortugrafìa",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        }
+      ],
+      "excluded_cues": []
+    },
+    "youtube:C2xRDIuT1Dw": {
+      "decision": "include",
+      "text_sha256": "c6b1993fc9e1454062c8be861918f2921b6d446254d83083ddc14ed2684a37d7",
+      "reviewer": "Codex contextual review; no external certification",
+      "reason": "Complete caption text read after development selection and before decoding. Retain foreign quotations, regional morphology, names, false starts and numerical spellings. Correct only recorded spelling/typographic issues; remove non-speech annotations. No audio intervals excluded. Caption-based references are not independently verified verbatim audio transcripts.",
+      "edits": [
+        {
+          "old": "Ê sìmplici",
+          "new": "È sìmplici",
+          "mode": "literal",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "Sintìsitvu",
+          "new": "Sintìstivu",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "risora",
+          "new": "risorsa",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "Mpraramu",
+          "new": "Mparamu",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "Araba Sìcula",
+          "new": "Arba Sìcula",
+          "mode": "literal",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "*Santia 'ngrisi*",
+          "new": "",
+          "mode": "literal",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "Lègggiri",
+          "new": "Lèggiri",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "mfurmazzioni",
+          "new": "nfurmazzioni",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "Spiramo",
+          "new": "Spiramu",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        },
+        {
+          "old": "Alluru",
+          "new": "Allura",
+          "mode": "word",
+          "reason": "Contextual spelling/typographic correction or non-speech annotation removal; no grammatical repair."
+        }
+      ],
+      "excluded_cues": []
+    }
+  }
+}
