@@ -10,8 +10,8 @@ from pipeline.migration import migrate
 
 
 def fixture(root):
-    relative = "src/asr/ita/resources/lm/model.arpa"
-    old = root / "resources/ita/lm/model.arpa"
+    relative = "resources/ita/lm/model.arpa"
+    old = root / "src/asr/ita/resources/lm/model.arpa"
     old.parent.mkdir(parents=True)
     old.write_bytes(b"original weights\n")
     archive = root / "model.tar.gz"
@@ -41,7 +41,8 @@ def test_dry_run_apply_and_idempotence_preserve_verified_bytes(tmp_path):
     migrate(tmp_path, apply=True, manifest=manifest)
     assert not old.exists() and new.read_bytes() == b"original weights\n"
     preserved = (
-        tmp_path / ".cache/layout-migration/original-receipts/model.tar.gz.members.json"
+        tmp_path
+        / ".cache/code-only-migration/original-receipts/model.tar.gz.members.json"
     )
     assert json.loads(preserved.read_text()) == receipt
     second = migrate(tmp_path, apply=True, manifest=manifest)
@@ -62,4 +63,34 @@ def test_conflicts_and_corruption_fail_before_any_move(tmp_path, corruption):
         migrate(tmp_path, apply=True, manifest=manifest)
     assert old.exists()
     assert json.loads((tmp_path / "model.tar.gz.members.json").read_text()) == receipt
-    assert not (tmp_path / ".cache/layout-migration").exists()
+    assert not (tmp_path / ".cache/code-only-migration").exists()
+
+
+def test_unknown_source_file_blocks_every_move(tmp_path):
+    manifest, old, new, receipt = fixture(tmp_path)
+    unknown = tmp_path / "src/notes.txt"
+    unknown.write_text("Keep this user file")
+    with pytest.raises(ResourceError, match="Unmapped"):
+        migrate(tmp_path, apply=True, manifest=manifest)
+    assert old.exists() and not new.exists()
+    assert unknown.read_text() == "Keep this user file"
+
+
+def test_original_root_document_layout_is_supported(tmp_path):
+    old = tmp_path / "resources/ita/lexicon/phonItaliaR-LICENSE.md"
+    old.parent.mkdir(parents=True)
+    old.write_text("Original license bytes")
+    manifest = {
+        "resources": {
+            "license": {
+                "status": "available",
+                "path": "docs/ita/references/phonItaliaR-LICENSE.md",
+                **fingerprints(old),
+            }
+        }
+    }
+    migrate(tmp_path, apply=True, manifest=manifest)
+    assert not old.exists()
+    assert (
+        tmp_path / manifest["resources"]["license"]["path"]
+    ).read_text() == "Original license bytes"

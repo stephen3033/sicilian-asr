@@ -1,0 +1,168 @@
+schema_version: 1
+installation_command: bash scripts/setup.sh
+acquisition_command: .venv/bin/python scripts/download_resources.py --all
+installation_guide: docs/usage.md
+checked_on: '2026-10-08'
+resources:
+  emozionalmente:
+    kind: acceptance_speech_archive
+    language: ita
+    status: available
+    provenance: academic_archive
+    source_url: https://www.openslr.org/161/
+    revision: zenodo-12616095-v1.1
+    version: Emozionalmente 1.1, 2024-07-01
+    url: https://zenodo.org/records/12616095/files/emozionalmente.zip
+    path: .cache/downloads/emozionalmente.zip
+    format: ZIP, WAV recordings and independent CSV sentence references
+    license: CC-BY-4.0
+    license_url: https://www.openslr.org/161/
+    citation: https://doi.org/10.1109/TASLPRO.2025.3540662
+    md5: 398c6502dd2b0e1e810f927c12897547
+    sha256: 6a1fed885668374e2802ae4cfd27c6cdf1db652b8856c6e91e74fe61add3d2b9
+    size_bytes: 558910248
+    checksum_note: Published Zenodo MD5 verified; SHA-256 measured on 2026-10-08.
+  mls_ita_lm:
+    kind: language_model_archive
+    language: ita
+    status: available
+    provenance: academic_archive
+    source_url: https://www.openslr.org/94/
+    revision: SLR94-single-release-2020
+    version: MLS Italian pretrained trigram, academic single release
+    url: https://dl.fbaipublicfiles.com/mls/mls_lm_italian.tar.gz
+    path: .cache/downloads/mls_lm_italian.tar.gz
+    format: tar.gz with original ARPA and publisher documentation
+    license: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    citation: https://arxiv.org/abs/2012.03411
+    md5: c2f4d28ffcb60be7ac3ac3012a9abb09
+    sha256: 758feb0965eec33be2e04dbe0388e77be4ef4877b9cc2ea82e2f0110c1aa9a91
+    size_bytes: 1795621889
+    checksum_note: Published MD5 from https://dl.fbaipublicfiles.com/mls/md5sum.txt; SHA-256 measured after verifying MD5 on 2026-10-08.
+    members:
+      mls_lm_italian/3-gram_lm.arpa: resources/ita/lm/mls/3-gram_lm.arpa
+      mls_lm_italian/README: docs/ita/references/mls/README
+      mls_lm_italian/LICENSE: docs/ita/references/mls/LICENSE
+      mls_lm_italian/books.txt: resources/ita/lm/mls/books.txt
+      mls_lm_italian/vocab_counts.txt: resources/ita/lm/mls/vocab_counts.txt
+  phonitalia_wordforms:
+    kind: lexicon_source
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: PhonItalia 1.10
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data-raw/phonItalia-1.10/phonItalia-1.10-wordforms.tsv
+    path: resources/ita/lexicon/phonItalia-1.10-wordforms.tsv
+    format: original TSV; ASCII phone encoding, not Unicode IPA
+    license: original noncommercial research terms; phonItaliaR declares CC-BY-4.0;
+      discrepancy unresolved
+    license_url: https://linguistlist.org/issues/24/3960/
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    git_blob_sha1: 46c4189c50e38c27a6420e070687cd1cbe7be8a4
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: 22d22409c1fc3ad2844f47543f3017c50ef9d3f95f5196093ff2203d7f071b17
+    size_bytes: 46276243
+  phonitalia_ipa:
+    kind: lexicon
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: author-provided italian.dict derived from PhonItalia 1.10
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data-raw/italian.dict
+    path: resources/ita/lexicon/italian.dict
+    format: UTF-8 headerless TSV; word and space-separated IPA phones
+    license: phonItaliaR CC-BY-4.0; inherited original noncommercial terms require
+      clarification
+    license_url: https://github.com/stefanocoretta/phonItaliaR/blob/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    sha256: 10336fb3caf8cfdcc429bbf84f88a3143616ee6c8404b3744be69ac6a563ab8d
+    checksum_note: SHA-256 measured from pinned upstream bytes during initialization
+      research. SHA-256 measured from the pinned official source on 2026-10-08.
+    expected_rows: 94356
+    expected_vocabulary: 94290
+    size_bytes: 2699644
+  phonitalia_rda:
+    kind: lexicon_source
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: PhonItaliaR data snapshot
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data/phonitalia.rda
+    path: resources/ita/lexicon/phonitalia.rda
+    format: R serialized data; original author-provided IPA-enriched table
+    license: phonItaliaR CC-BY-4.0; inherited original noncommercial terms require
+      clarification
+    license_url: https://github.com/stefanocoretta/phonItaliaR/blob/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    git_blob_sha1: c1483801b9cb880046531570f4291989f4e6dcf2
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: f89b2d24f6a689ce8a1ff24439843fd20124e503c1904771828060d0d99030a2
+    size_bytes: 10698980
+  phonitalia_information:
+    kind: documentation
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: PhonItalia 1.10
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/data-raw/phonItalia-1.10/phonItalia-1.10-Information.pdf
+    path: docs/ita/references/phonItalia-1.10-Information.pdf
+    format: PDF
+    license: preserved original documentation; see PhonItalia licensing discrepancy
+    license_url: https://linguistlist.org/issues/24/3960/
+    citation: https://doi.org/10.3758/s13428-013-0400-8
+    git_blob_sha1: 53c1762f5f3362c62be9c7113de50fcaaf5126a9
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: 29d0ef25da461ff8fdbc97bd51f8b1da9223b7488326cedf0ad97745a9bae7c8
+    size_bytes: 185973
+  phonitalia_license:
+    kind: documentation
+    language: ita
+    status: available
+    source_url: https://github.com/stefanocoretta/phonItaliaR
+    revision: 2ee9d610e806bba6d9268d544eeb9295d5d13a78
+    version: package license snapshot
+    url: https://raw.githubusercontent.com/stefanocoretta/phonItaliaR/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    path: docs/ita/references/phonItaliaR-LICENSE.md
+    format: Markdown
+    license: CC-BY-4.0 declaration; does not resolve inherited corpus terms
+    license_url: https://github.com/stefanocoretta/phonItaliaR/blob/2ee9d610e806bba6d9268d544eeb9295d5d13a78/LICENSE.md
+    citation: https://github.com/stefanocoretta/phonItaliaR
+    git_blob_sha1: 0fb847eb09afc05734c2f1aa34bc3ebd995a072a
+    checksum_note: Git blob identity from pinned official repository; SHA-256 recorded
+      on acquisition. SHA-256 measured from the pinned official source on 2026-10-08.
+    sha256: 2a82ac9bbc3e3ee066908381e8d373896db5a6025d083fbd59692fe9ccfb9111
+    size_bytes: 18651
+  fbk_ita_lm:
+    kind: language_model
+    language: ita
+    status: unavailable
+    source_url: https://github.com/SpeechTechLab/FBK_ASR_public
+    revision: 9845fffdb8eb6e5f51a20e870bd9acb5f9000c84
+    version: February 2023 documentation; actual model revision unverified
+    path: null
+    directory: resources/ita/lm
+    format: unknown; documentation describes ready-to-use LMs and ARPA construction
+    license: unknown; no resource license established
+    license_url: null
+    citation: https://github.com/SpeechTechLab/FBK_ASR_public
+    checksum_note: No accessible artifact; checksum cannot be established.
+    reason: Official Google Drive folder returned HTTP 404 on 2026-10-08; no replacement
+      located in the official SpeechTek Hugging Face organization.
+    access_instructions: Request the pretrained pruned Italian trigram, vocabulary,
+      ARPA if available, and license from matasso@fbk.eu or gretter@fbk.eu; do not
+      execute adaptation/training scripts.
+    download_page: https://drive.google.com/drive/folders/10kL8G-SU5meqXw0H3b0OLEOVhSvIyk5q
+    documented_bundle: wavlm-large-it-cv10.zip
+    documented_variant: wavlm-large-it-cv10_tutto.3.256K.msb.p2
+    documented_order: 3
+    documented_vocabulary: 256K nominal label; exact vocabulary not artifact-verified
+    documented_training_sources: News texts labelled EN20*, 2018 Italian Wikipedia
+      dump, and dictionary material; complete composition unverified.

@@ -21,7 +21,7 @@ import torch
 import yaml
 
 from asr.ita.evaluation import evaluate
-from asr.wfst.cache import verify_cache
+from asr.wfst.cache import load_graph, verify_cache
 from common.errors import ResourceError
 from common.resources import verify_file
 from common.text import normalize
@@ -209,8 +209,6 @@ def read_rows(path):
 
 
 def run_decode(directory, settings, rows, output, variant, split, scales):
-    import k2
-
     from asr.wfst.compact import decode
 
     prepared = json.loads((directory / "prepared.json").read_text())
@@ -222,17 +220,7 @@ def run_decode(directory, settings, rows, output, variant, split, scales):
     ]
     if not pending_scales:
         return
-    graph = k2.Fsa.from_dict(
-        torch.load(directory / "TLG.pt", weights_only=False, map_location="cpu")
-    )
-    graph = k2.create_fsa_vec([graph])
-    words = {
-        int(i): w
-        for w, i in (
-            line.rsplit(" ", 1)
-            for line in (directory / "words.txt").read_text().splitlines()
-        )
-    }
+    graph, words = load_graph(directory)
     full = set(json.loads((directory / "lexicon_full.json").read_text()))
     selected = set(words.values()) - {"<eps>", "<s>", "</s>", "#0"}
     for scale in pending_scales:

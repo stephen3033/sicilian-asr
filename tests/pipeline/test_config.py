@@ -76,5 +76,32 @@ def test_layer_defaults_and_explicit_overrides_are_independent(tmp_path):
 def test_configuration_path_and_builtin_name_resolve_identically():
     manifest = load_resources(ROOT)
     assert load_config("ita", ROOT, manifest) == load_config(
-        ROOT / "src/asr/ita/config.yaml", ROOT, manifest
+        ROOT / "configs/ita.yaml", ROOT, manifest
+    )
+
+
+def test_legacy_config_and_resource_paths_resolve(tmp_path):
+    manifest = load_resources(ROOT)
+    expected = load_config("ita", ROOT, manifest)
+    assert load_config("src/asr/ita/config.yaml", ROOT, manifest) == expected
+    assert load_config(ROOT / "src/asr/ita/config.yaml", ROOT, manifest) == expected
+    custom = tmp_path / "legacy.yaml"
+    custom.write_text(
+        "languages: [ita]\nresources:\n  ita:\n    lexicon_path: src/asr/ita/resources/lexicon/italian.dict\n    arpa_path: src/asr/ita/resources/lm/mls/3-gram_lm.arpa\n"
+    )
+    assert load_config(custom, ROOT, manifest) == expected
+
+
+def test_existing_legacy_named_override_is_not_replaced(tmp_path):
+    from tests.support import copy_configuration
+
+    copy_configuration(tmp_path)
+    custom = tmp_path / "src/asr/ita/config.yaml"
+    custom.parent.mkdir(parents=True)
+    custom.write_text("languages: [ita]\naudio:\n  target_seconds: 18\n")
+    assert (
+        load_config("src/asr/ita/config.yaml", tmp_path, load_resources(tmp_path))[
+            "audio"
+        ]["target_seconds"]
+        == 18
     )

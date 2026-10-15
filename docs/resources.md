@@ -1,14 +1,10 @@
-# Resource integrity
+# Resource integrity and licensing
 
 ## Manifests
 
-Each resource has one owner:
+[IPA](../resources/ipa/manifest.yaml), [Italian](../resources/ita/manifest.yaml) and [Sicilian](../resources/scn/manifest.yaml) each own a manifest. `load_resources` validates and combines them, rejecting duplicate IDs. Available entries retain pinned identities, URLs, checksums and license evidence; unavailable/planned entries retain their reasons.
 
-- [IPA manifest](../src/ipa/resources/manifest.yaml): ZIPA weights, tokenizer, and upstream model code.
-- [Italian manifest](../src/asr/ita/resources/manifest.yaml): PhonItalia, MLS, and acceptance speech.
-- [Sicilian manifest](../src/asr/scn/resources/manifest.yaml): linguistic references and reviewed research sources, including multilingual sources used by Sicilian research.
-
-`common.resources.load_resources(root)` validates and combines them, rejecting duplicate IDs. Available resources retain official URLs, revisions or release identities, checksums, formats, citations, and license evidence. Planned or unavailable entries retain their reasons. Sicilian catalog synchronization updates only its own manifest.
+The Sicilian [catalog](../resources/scn/sources/catalog.json) is authoritative for detailed source assessments. `sync-manifest` copies acquisition fields and a catalog reference, preserving unrelated entries. Detailed assessments are not duplicated in the manifest. [Italian provenance](ita/resources.md) and [Sicilian provenance](scn/resources.md) explain language inputs.
 
 ## Acquisition
 
@@ -17,27 +13,23 @@ Each resource has one owner:
 .venv/bin/python scripts/download_resources.py --all
 ```
 
-Pass resource IDs for individual downloads. Without `--all`, the default selection excludes the large checkpoint. Sicilian entries use their reviewed acquisition handler; see [its workflow](../src/asr/scn/resources/sources/README.md).
+Pass resource IDs for individual downloads. Without `--all`, the default excludes the large checkpoint. Sicilian entries use their reviewed acquisition handler. Downloads use temporary files, HTTP length checks and fingerprints before installation. Existing bytes are verified; corrupt inputs are not silently replaced. Source archives use restrictive extraction and revision markers; acquisition does not execute downloaded setup scripts.
 
-Downloads go to temporary files, with HTTP length and fingerprint checks before atomic installation. Existing bytes are verified and corrupt files are never silently replaced. Source archives use Python's restrictive tar `data` filter and revision markers; downloaded setup code is never executed. Named LM members remain bound to their verified archive through checksummed receipts.
-
-The ZIPA checksum comes from published Git LFS metadata. Git blob identities are checked where available; other hashes record pinned official bytes and are integrity pins, not publisher signatures. Acquisition dates and receipts live in `.cache/resource-status.json` or the Sicilian acquisition cache.
-
-Tracked configuration, manifests, and research metadata are packaged with the code. Acquired language data, weights, archives, and graphs are ignored and excluded from the wheel. Test fixtures never become linguistic resources.
+Named archive members remain bound to original bytes through checksummed receipts. Published Git LFS hashes and Git blob identities are checked where available; other hashes pin observed bytes, not publisher signatures. Acquisition receipts stay in `.cache`. Acquired dictionaries/LMs are ignored under `resources`; original upstream documentation is ignored under `docs/ita/references`. Raw source trees and downloaded documents inside `.cache` remain intact.
 
 ## Migration
-
-After reinstalling the project with `uv sync`, existing checkouts can move resources without downloading them again:
 
 ```sh
 .venv/bin/python scripts/migrate_layout.py --dry-run
 .venv/bin/python scripts/migrate_layout.py --apply
 ```
 
-The migration verifies all affected files before moving them from the former root resource directories into their language folders. It checks archive members against original archive bytes, preserves old receipts under `.cache/layout-migration/original-receipts`, and rejects conflicting destinations. Repeating it is safe.
+After updating/reinstalling the checkout, migration moves verified artifacts from former source-resource directories to the new locations without downloading them again. It checks destinations and archive members before any move, rejects unknown non-code files, updates operational receipts, and preserves their originals in `.cache/code-only-migration`. Repeating it is safe. Resources already at the original root layout are also recognized.
 
-Old graph caches remain available as historical evidence. Source fingerprints change during the refactor, so run `prepare --config ita` to build a current graph. Transcription never silently adopts an old graph.
+Old graphs and run outputs remain evidence. Code fingerprints deliberately change during refactoring: run `prepare` for a current graph and use fresh study/output directories. Migration does not rewrite frozen study receipts or relax cache checks.
 
-## Licensing and provenance
+## Licenses and attribution
 
-[Italian provenance](../src/asr/ita/docs/resources.md) records original bytes, corpus counts, MLS training evidence, the unavailable FBK lead, and the unresolved PhonItalia licensing discrepancy. [IPA](../src/ipa/README.md) describes the CC BY-NC-SA model. [Sicilian research](../src/asr/scn/docs/resources.md) retains source-specific permissions, copyright layers, and uncertainty. A source repository's code license does not automatically cover its data or weights.
+Code is MIT. ZIPA weights declare CC BY-NC-SA 4.0; source-code licenses do not automatically cover data or weights. PhonItalia's original noncommercial terms conflict with its wrapper's CC BY declaration; that discrepancy remains unresolved. Sicilian collection, analysis, training and redistribution assessments are separate. Preserve source-specific conditions and attribution before sharing derived artifacts.
+
+Code adaptation credits are preserved in [NOTICE](NOTICE), with the full [Apache License 2.0](licenses/Apache-2.0.txt). Both are included in built distributions.

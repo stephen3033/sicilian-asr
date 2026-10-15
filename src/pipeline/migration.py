@@ -1,4 +1,4 @@
-"""Move verified local resources from the former layout without downloading data."""
+"""Move verified resources out of source directories without downloading data."""
 
 import argparse
 import hashlib
@@ -9,72 +9,83 @@ from pathlib import Path
 
 from common.errors import ResourceError
 from common.resources import load_resources, verify_file
+from common.settings import RESOURCE_RELOCATIONS
 from common.utils import local_path, write_json
 
 
-def old_resource_path(relative: str) -> str:
+def legacy_paths(relative: str) -> list[str]:
+    """Return resource locations used before configuration and code were separated."""
+    previous = next(
+        (old for old, new in RESOURCE_RELOCATIONS if new == relative), relative
+    )
+    paths = [previous]
     for language in ("ita", "scn"):
-        relative = relative.replace(
-            f"src/asr/{language}/resources/", f"resources/{language}/"
-        )
-    return relative
+        prefix = f"resources/{language}/"
+        if previous.startswith(prefix):
+            paths.insert(0, f"src/asr/{language}/resources/" + previous[len(prefix) :])
+    if relative == ".cache/scn/acquired/orthography-2024.pdf":
+        paths += ["src/asr/scn/resources/orthography/Cademia-Siciliana-DOS24-v.2.2.pdf"]
+    return [p for p in paths if p != relative]
 
 
 def migrate(root: Path, *, apply: bool = False, manifest: dict | None = None) -> dict:
-    """Preflight all bytes and receipts before any move; repeated runs are safe."""
+    """Preflight every move and receipt; reject conflicts before changing anything."""
     root = root.resolve()
     manifest = load_resources(root) if manifest is None else manifest
-    moves = {}
-    updates = {}
-    verified = {}
+    moves, updates, verified = {}, {}, {}
 
     def candidate(relative, spec):
         destination = local_path(root, relative)
-        old = local_path(root, old_resource_path(relative))
-        existing = destination if destination.exists() else old
-        if not existing.exists():
+        previous = [local_path(root, p) for p in legacy_paths(relative)]
+        present = [p for p in [destination, *previous] if p.exists()]
+        if not present:
             return None
-        actual = verify_file(existing, spec)
-        if old != destination and old.exists():
-            previous = verify_file(old, spec)
-            if previous != actual:
+        actual = verify_file(present[0], spec)
+        for path in present[1:]:
+            if verify_file(path, spec) != actual:
                 raise ResourceError(f"Conflicting migration destinations: {relative}")
-            moves[old] = destination
+        moves.update({p: destination for p in previous if p.exists()})
         verified[relative] = actual
-        return actual
+        return present[0], actual
 
     for spec in manifest["resources"].values():
         if spec["status"] != "available" or not spec.get("path"):
             continue
         relative = spec["path"]
-        # Archives are verified below when their member receipts need migration.
-        if old_resource_path(relative) != relative:
+        found = (
             candidate(relative, spec)
-        if not spec.get("members"):
+            if legacy_paths(relative) or spec.get("members")
+            else None
+        )
+        if not spec.get("members") or found is None:
             continue
+        archive, actual = found
         receipt_path = local_path(root, relative + ".members.json")
-        if not receipt_path.exists():
+        if not receipt_path.is_file():
             continue
         receipt = json.loads(receipt_path.read_text())
-        archive = local_path(root, relative)
-        actual = verify_file(archive, spec)
         if receipt["archive_sha256"] != actual["sha256"]:
             raise ResourceError(f"Stale archive receipt: {archive}")
         artifacts = {}
         with tarfile.open(archive, "r:gz") as stream:
             for member, target in spec["members"].items():
-                expected = receipt["artifacts"].get(target)
-                if expected is None:
-                    expected = receipt["artifacts"].get(old_resource_path(target))
+                expected = next(
+                    (
+                        receipt["artifacts"][p]
+                        for p in [target, *legacy_paths(target)]
+                        if p in receipt["artifacts"]
+                    ),
+                    None,
+                )
                 if expected is None:
                     raise ResourceError(f"Unrecorded archive member: {member}")
-                derived = candidate(target, expected)
-                if derived is None:
+                found = candidate(target, expected)
+                if found is None:
                     raise ResourceError(f"Missing derived artifact: {target}")
-                info = stream.getmember(member)
-                if not info.isfile():
+                _, derived = found
+                if not stream.getmember(member).isfile():
                     raise ResourceError(f"Not a regular archive member: {member}")
-                with stream.extractfile(info) as data:
+                with stream.extractfile(member) as data:
                     checksum = hashlib.file_digest(data, "sha256").hexdigest()
                 if checksum != derived["sha256"]:
                     raise ResourceError(
@@ -85,6 +96,18 @@ def migrate(root: Path, *, apply: bool = False, manifest: dict | None = None) ->
         if updated != receipt:
             updates[receipt_path] = updated
 
+    unknown = [
+        str(p.relative_to(root))
+        for p in (root / "src").rglob("*")
+        if p.is_file()
+        and p.suffix not in {".py", ".pyc"}
+        and p.name != ".DS_Store"
+        and p not in moves
+    ]
+    if unknown:
+        raise ResourceError(
+            f"Unmapped non-code files in src; preserve and relocate explicitly: {unknown}"
+        )
     status_path = root / ".cache/resource-status.json"
     if status_path.exists():
         receipts = json.loads(status_path.read_text())
@@ -97,7 +120,6 @@ def migrate(root: Path, *, apply: bool = False, manifest: dict | None = None) ->
                 receipt["path"] = spec["path"]
         if updated != receipts:
             updates[status_path] = updated
-
     report = {
         "applied": apply,
         "moves": {
@@ -108,8 +130,7 @@ def migrate(root: Path, *, apply: bool = False, manifest: dict | None = None) ->
     }
     if not apply:
         return report
-
-    backup = root / ".cache/layout-migration/original-receipts"
+    backup = root / ".cache/code-only-migration/original-receipts"
     for path in updates:
         saved = backup / path.relative_to(root)
         if not saved.exists():
@@ -118,14 +139,12 @@ def migrate(root: Path, *, apply: bool = False, manifest: dict | None = None) ->
     for source, destination in moves.items():
         destination.parent.mkdir(parents=True, exist_ok=True)
         if destination.exists():
-            # Both copies passed the same integrity checks above.
-            source.unlink()
+            source.unlink()  # Both copies passed the same integrity checks.
         else:
             source.rename(destination)
     for path, value in updates.items():
         write_json(path, value)
-    # Keep the first migration receipt; a subsequent no-op must not replace it.
-    report_path = root / ".cache/layout-migration/migration.json"
+    report_path = root / ".cache/code-only-migration/migration.json"
     if not report_path.exists() or moves or updates:
         write_json(report_path, report)
     return report

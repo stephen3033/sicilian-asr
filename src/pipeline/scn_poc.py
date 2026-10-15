@@ -5,14 +5,14 @@ import subprocess
 from pathlib import Path
 
 from common.errors import ResourceError
-from common.settings import SCN_RESOURCES
+from common.settings import SCN_RECIPE
 from common.utils import write_json
 
 
 def run(root: Path, output: Path, stage: str):
     output = output if output.is_absolute() else root / output
     output.mkdir(parents=True, exist_ok=True)
-    recipe = json.loads((root / SCN_RESOURCES / "poc.json").read_text())
+    recipe = json.loads((root / SCN_RECIPE).read_text())
     stages = (
         ["acquire", "corpus", "train", "development", "test", "report"]
         if stage == "all"

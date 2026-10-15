@@ -22,7 +22,7 @@ from asr.scn.audit import (
 from common.errors import ResourceError
 from tests.support import ROOT
 
-RULES = json.loads((ROOT / "src/asr/scn/resources/audit/rules.json").read_text())
+RULES = json.loads((ROOT / "resources/scn/audit/rules.json").read_text())
 
 
 def row(text="Na frasi.", kind="sentence", category="unresolved"):

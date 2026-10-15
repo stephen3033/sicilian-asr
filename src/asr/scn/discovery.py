@@ -7,11 +7,12 @@ from urllib.parse import urlsplit
 from urllib.request import Request
 
 from asr.scn.acquisition import PoliteHTTP, load_catalog
+from common.settings import SCN_EVIDENCE
 from common.utils import write_json
 
 
 def probe(root, *, refresh=False):
-    path = root / "src/asr/scn/resources/sources/access-audit.json"
+    path = root / SCN_EVIDENCE / "sources/access-audit.json"
     previous = json.loads(path.read_text()) if path.exists() else {"sources": {}}
     sources = load_catalog(root)["sources"]
     hosts = {}

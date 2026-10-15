@@ -14,7 +14,7 @@ import torch
 from asr.scn.dataset import digest, reviewed_text, video_record
 from asr.scn.evaluation import evaluate
 from asr.scn.prepare import prepare
-from asr.wfst.cache import verify_cache
+from asr.wfst.cache import load_graph, verify_cache
 from asr.wfst.compact import decode
 from audio.segmentation import segment_audio
 from common.environment import package_versions
@@ -163,19 +163,8 @@ def posteriors(root, video, config, manifest):
 
 
 def decode_video(directory, acoustic_dir, acoustic, settings):
-    import k2
-
     started = time.perf_counter()
-    graph = k2.Fsa.from_dict(
-        torch.load(directory / "TLG.pt", map_location="cpu", weights_only=False)
-    )
-    words = {
-        int(i): w
-        for w, i in (
-            line.rsplit(" ", 1)
-            for line in (directory / "words.txt").read_text().splitlines()
-        )
-    }
+    graph, words = load_graph(directory)
     results = []
     for segment in acoustic["segments"]:
         with np.load(acoustic_dir / segment["path"], allow_pickle=False) as saved:
@@ -320,182 +309,196 @@ def evaluate_candidate(root, output, config, manifest, candidate, references, sc
     return trials
 
 
-def study(root, output, recipe, stage):
-    manifest = load_resources(root)
-    config = load_config("scn", root, manifest)
-    torch.set_num_threads(config["acoustic"].get("threads", 4))
-    if stage == "development":
-        if (output / "test.json").exists():
-            raise ResourceError(
-                "Final tests already run in this study; start a new output directory for another development experiment"
-            )
-        candidates = json.loads((output / "candidates.json").read_text())
-        references = json.loads((output / "development.json").read_text())
-        by_size = defaultdict(list)
-        for candidate in candidates:
-            by_size[candidate["tokens"]].append(candidate)
-        trials, flat = [], 0
-        previous = None
-        for size, group in sorted(by_size.items()):
-            best_ppl = min(c["perplexity"] for c in group)
-            candidate = min(
-                (c for c in group if c["perplexity"] <= 1.01 * best_ppl),
-                key=lambda c: c["order"],
-            )
-            current = evaluate_candidate(
-                root,
-                output,
-                config,
-                manifest,
-                candidate,
-                references,
-                recipe["acoustic_scales"],
-            )
-            trials.extend(current)
-            write_json(output / "development-results.json", trials)
-            best = min(current, key=lambda r: (r["wer"], r["cer"]))
-            if (
-                previous
-                and previous["oov_rate"] - best["oov_rate"] < 0.005
-                and previous["wer"] - best["wer"] < 0.01
-            ):
-                flat += 1
-            else:
-                flat = 0
-            previous = best
-            if flat >= 2 and best["oov_rate"] <= recipe["target_oov"]:
-                break
-        eligible = [t for t in trials if t["oov_rate"] <= recipe["target_oov"]]
-        pool = eligible or trials
-        best_wer = min(t["wer"] for t in pool)
-        selected = min(
-            (t for t in pool if t["wer"] <= best_wer + recipe["wer_tolerance"]),
-            key=lambda t: (
-                t["tokens"],
-                t["graph_bytes"],
-                t["wer"],
-                abs(t["acoustic_scale"] - 1),
-            ),
+def development_study(root, output, recipe, config, manifest):
+    if (output / "test.json").exists():
+        raise ResourceError(
+            "Final tests already run in this study; start a new output directory for another development experiment"
         )
-        selection = {
-            "model_receipt": selected["receipt"],
-            "acoustic_scale": selected["acoustic_scale"],
-            "candidate": selected,
-            "coverage_target_met": bool(eligible),
-            "recipe_sha256": digest(recipe),
-            "training_sha256": fingerprints(output / "training.jsonl")["sha256"],
-            "development_sha256": fingerprints(output / "development.json")["sha256"],
-            "configuration": {
-                **config,
-                "decoder": {
-                    **config["decoder"],
-                    "acoustic_scale": selected["acoustic_scale"],
-                },
-            },
-            "selection_basis": "development only; smallest within one absolute WER point of best tested eligible candidate",
-        }
-        write_json(output / "selection.json", selection)
-        write_json(root / ".cache/scn/selected.json", selection)
-    elif stage == "test":
-        selection = json.loads((output / "selection.json").read_text())
-        config = deepcopy(selection["configuration"])
-        if selection["recipe_sha256"] != digest(recipe):
-            raise ResourceError("Recipe changed after model selection")
-        for name in ("training", "development"):
-            suffix = ".jsonl" if name == "training" else ".json"
-            if (
-                fingerprints(output / (name + suffix))["sha256"]
-                != selection[name + "_sha256"]
-            ):
-                raise ResourceError("Development inputs changed after selection")
-        # Final references have a separate review ledger and cannot affect training.
-        ledger_path = root / SCN_RESOURCES / "poc_test_reviews.json"
-        review = (
-            json.loads(ledger_path.read_text())
-            if ledger_path.exists()
-            else {"decisions": {}}
+    candidates = json.loads((output / "candidates.json").read_text())
+    references = json.loads((output / "development.json").read_text())
+    by_size = defaultdict(list)
+    for candidate in candidates:
+        by_size[candidate["tokens"]].append(candidate)
+    trials, flat = [], 0
+    previous = None
+    for size, group in sorted(by_size.items()):
+        best_ppl = min(c["perplexity"] for c in group)
+        candidate = min(
+            (c for c in group if c["perplexity"] <= 1.01 * best_ppl),
+            key=lambda c: c["order"],
         )
-        references, pending = [], []
-        for video in recipe["splits"]["test"]:
-            record = video_record(root, video)
-            value = reviewed_text(record, review)
-            if value is None:
-                pending.append(record)
-            else:
-                references.append(
-                    {**record, "normalized": value[0], "corrections": value[1]}
-                )
-        write_json(output / "test-review-queue.json", pending)
-        if pending:
-            raise ResourceError(
-                "Final reference review incomplete; selected model remains frozen"
-            )
-        write_json(output / "test-references.json", references)
-        result = evaluate_candidate(
+        current = evaluate_candidate(
             root,
             output,
             config,
             manifest,
-            selection["candidate"],
+            candidate,
             references,
-            [selection["acoustic_scale"]],
-        )[0]
-        result["selection_sha256"] = digest(selection)
-        result["reference_ledger_sha256"] = fingerprints(ledger_path)["sha256"]
-        write_json(output / "test.json", result)
-    elif stage == "report":
-        selection = json.loads((output / "selection.json").read_text())
-        results = json.loads((output / "development-results.json").read_text())
-        test = (
-            json.loads((output / "test.json").read_text())
-            if (output / "test.json").exists()
-            else None
+            recipe["acoustic_scales"],
         )
-        lines = [
-            "# Sicilian DOS24 POC",
+        trials.extend(current)
+        write_json(output / "development-results.json", trials)
+        best = min(current, key=lambda r: (r["wer"], r["cer"]))
+        if (
+            previous
+            and previous["oov_rate"] - best["oov_rate"] < 0.005
+            and previous["wer"] - best["wer"] < 0.01
+        ):
+            flat += 1
+        else:
+            flat = 0
+        previous = best
+        if flat >= 2 and best["oov_rate"] <= recipe["target_oov"]:
+            break
+    eligible = [t for t in trials if t["oov_rate"] <= recipe["target_oov"]]
+    pool = eligible or trials
+    best_wer = min(t["wer"] for t in pool)
+    selected = min(
+        (t for t in pool if t["wer"] <= best_wer + recipe["wer_tolerance"]),
+        key=lambda t: (
+            t["tokens"],
+            t["graph_bytes"],
+            t["wer"],
+            abs(t["acoustic_scale"] - 1),
+        ),
+    )
+    selection = {
+        "model_receipt": selected["receipt"],
+        "acoustic_scale": selected["acoustic_scale"],
+        "candidate": selected,
+        "coverage_target_met": bool(eligible),
+        "recipe_sha256": digest(recipe),
+        "training_sha256": fingerprints(output / "training.jsonl")["sha256"],
+        "development_sha256": fingerprints(output / "development.json")["sha256"],
+        "configuration": {
+            **config,
+            "decoder": {
+                **config["decoder"],
+                "acoustic_scale": selected["acoustic_scale"],
+            },
+        },
+        "selection_basis": "development only; smallest within one absolute WER point of best tested eligible candidate",
+    }
+    write_json(output / "selection.json", selection)
+    write_json(root / ".cache/scn/selected.json", selection)
+
+
+def test_study(root, output, recipe, config, manifest):
+    selection = json.loads((output / "selection.json").read_text())
+    config = deepcopy(selection["configuration"])
+    if selection["recipe_sha256"] != digest(recipe):
+        raise ResourceError("Recipe changed after model selection")
+    for name in ("training", "development"):
+        suffix = ".jsonl" if name == "training" else ".json"
+        if (
+            fingerprints(output / (name + suffix))["sha256"]
+            != selection[name + "_sha256"]
+        ):
+            raise ResourceError("Development inputs changed after selection")
+    # Final references have a separate review ledger and cannot affect training.
+    ledger_path = root / SCN_RESOURCES / "poc_test_reviews.json"
+    review = (
+        json.loads(ledger_path.read_text())
+        if ledger_path.exists()
+        else {"decisions": {}}
+    )
+    references, pending = [], []
+    for video in recipe["splits"]["test"]:
+        record = video_record(root, video)
+        value = reviewed_text(record, review)
+        if value is None:
+            pending.append(record)
+        else:
+            references.append(
+                {**record, "normalized": value[0], "corrections": value[1]}
+            )
+    write_json(output / "test-review-queue.json", pending)
+    if pending:
+        raise ResourceError(
+            "Final reference review incomplete; selected model remains frozen"
+        )
+    write_json(output / "test-references.json", references)
+    result = evaluate_candidate(
+        root,
+        output,
+        config,
+        manifest,
+        selection["candidate"],
+        references,
+        [selection["acoustic_scale"]],
+    )[0]
+    result["selection_sha256"] = digest(selection)
+    result["reference_ledger_sha256"] = fingerprints(ledger_path)["sha256"]
+    write_json(output / "test.json", result)
+
+
+def report_study(root, output, recipe, config, manifest):
+    selection = json.loads((output / "selection.json").read_text())
+    results = json.loads((output / "development-results.json").read_text())
+    test = (
+        json.loads((output / "test.json").read_text())
+        if (output / "test.json").exists()
+        else None
+    )
+    lines = [
+        "# Sicilian DOS24 POC",
+        "",
+        "Fixed ZIPA acoustic model; development-selected word n-gram WFST.",
+        "",
+        "| Training tokens | Order | Vocabulary | Dev OOV | Acoustic scale | Dev WER | Dev CER | Graph MiB |",
+        "| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for r in results:
+        lines.append(
+            f"| {r['tokens']:,} | {r['order']} | {r['vocabulary_size']:,} | {r['oov_rate']:.2%} | {r['acoustic_scale']} | {r['wer']:.2%} | {r['cer']:.2%} | {r['graph_bytes'] / 2**20:.1f} |"
+        )
+    lines += [
+        "",
+        f"Development coverage target met: **{selection['coverage_target_met']}**.",
+        f"Selected: {selection['candidate']['tokens']:,} training tokens, order {selection['candidate']['order']}, {selection['candidate']['vocabulary_size']:,} words; acoustic scale {selection['acoustic_scale']}.",
+        "",
+        f"Largest evaluated training slice: {max(r['tokens'] for r in results):,} tokens. "
+        f"Recipe checkpoints reached: {sum(n <= max(r['tokens'] for r in results) for n in recipe['checkpoints'])}/{len(recipe['checkpoints'])}. "
+        f"Development OOV target: {recipe['target_oov']:.0%}.",
+        "",
+        "The caption authorship and native-speaker representativeness are not independently established. Generated pronunciations remain provisional. DOS24 reviews are contextual project reviews, not external certification.",
+    ]
+    if test:
+        lines += [
             "",
-            "Fixed ZIPA acoustic model; development-selected word n-gram WFST.",
+            f"Final {len(test['results'])}-video WER: **{test['wer']:.2%}**; CER: **{test['cer']:.2%}**; decoding-vocabulary OOV: **{test['oov_rate']:.2%}**.",
+            f"First acoustic inference: {test['acoustic_seconds']:.2f} s; decoding cached posteriors: {test['decode_seconds']:.2f} s; process peak RSS: {test['process_peak_rss_bytes'] / 2**30:.2f} GiB. These exclude acquisition and tool builds.",
             "",
-            "| Training tokens | Order | Vocabulary | Dev OOV | Acoustic scale | Dev WER | Dev CER | Graph MiB |",
-            "| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+            "| Video | WER | CER | Caption time coverage | Comparison |",
+            "| --- | ---: | ---: | ---: | --- |",
         ]
-        for r in results:
+        for row in test["results"]:
+            m = row["metrics"]
             lines.append(
-                f"| {r['tokens']:,} | {r['order']} | {r['vocabulary_size']:,} | {r['oov_rate']:.2%} | {r['acoustic_scale']} | {r['wer']:.2%} | {r['cer']:.2%} | {r['graph_bytes'] / 2**20:.1f} |"
+                f"| {row['video']} | {m['wer']['rate']:.2%} | {m['cer']['rate']:.2%} | {row['coverage']['fraction']:.2%} | {row['path']}/comparison.txt |"
             )
         lines += [
             "",
-            f"Development coverage target met: **{selection['coverage_target_met']}**.",
-            f"Selected: {selection['candidate']['tokens']:,} training tokens, order {selection['candidate']['order']}, {selection['candidate']['vocabulary_size']:,} words; acoustic scale {selection['acoustic_scale']}.",
-            "",
-            "The admitted reviewed corpus was exhausted below 25k tokens. The 25k–200k checkpoints and two-flat-expansion stopping rule were not reached. A missed 5% OOV gate remains an explicit limitation; no unreviewed bulk text was added to meet it.",
-            "",
-            "The caption authorship and native-speaker representativeness are not independently established. Generated pronunciations remain provisional. DOS24 reviews are contextual project reviews, not external certification.",
+            "Scoring uses full audio, including subtitle gaps and foreign examples. No audio intervals were excluded. Caption omissions/paraphrases and provisional pronunciations limit interpretation. Timing-gap details are in each result.json.",
         ]
-        if test:
-            lines += [
-                "",
-                f"Final two-video WER: **{test['wer']:.2%}**; CER: **{test['cer']:.2%}**; decoding-vocabulary OOV: **{test['oov_rate']:.2%}**.",
-                f"First acoustic inference: {test['acoustic_seconds']:.2f} s; decoding cached posteriors: {test['decode_seconds']:.2f} s; process peak RSS: {test['process_peak_rss_bytes'] / 2**30:.2f} GiB. These exclude acquisition and tool builds.",
-                "",
-                "| Video | WER | CER | Caption time coverage | Comparison |",
-                "| --- | ---: | ---: | ---: | --- |",
-            ]
-            for row in test["results"]:
-                m = row["metrics"]
-                lines.append(
-                    f"| {row['video']} | {m['wer']['rate']:.2%} | {m['cer']['rate']:.2%} | {row['coverage']['fraction']:.2%} | {row['path']}/comparison.txt |"
-                )
-            lines += [
-                "",
-                "Scoring uses full audio, including subtitle gaps and foreign examples. No audio intervals were excluded. Caption omissions/paraphrases and provisional pronunciations limit interpretation. Timing-gap details are in each result.json.",
-            ]
-        (output / "report.md").write_text("\n".join(lines) + "\n")
-        write_json(
-            output / "report.json",
-            {
-                "selection": selection,
-                "development": results,
-                "test": test,
-            },
-        )
+    (output / "report.md").write_text("\n".join(lines) + "\n")
+    write_json(
+        output / "report.json",
+        {
+            "selection": selection,
+            "development": results,
+            "test": test,
+        },
+    )
+
+
+def study(root, output, recipe, stage):
+    manifest = load_resources(root)
+    config = load_config("scn", root, manifest)
+    torch.set_num_threads(config["acoustic"].get("threads", 4))
+    stages = {
+        "development": development_study,
+        "test": test_study,
+        "report": report_study,
+    }
+    stages[stage](root, output, recipe, config, manifest)

@@ -58,7 +58,7 @@ def fixture_catalog(
         **fingerprints(path),
     )
     catalog = {"schema_version": 1, "sources": {"scn_fixture": source}}
-    write_json(root / "src/asr/scn/resources/sources/catalog.json", catalog)
+    write_json(root / "resources/scn/sources/catalog.json", catalog)
     return path, catalog
 
 
@@ -148,7 +148,7 @@ def test_checksum_tampering_rejected_offline_and_before_extraction(tmp_path):
 def test_unlicensed_source_cannot_download(tmp_path, monkeypatch):
     _, catalog = fixture_catalog(tmp_path)
     catalog["sources"]["scn_fixture"]["permissions"]["acquisition"] = "unclear"
-    write_json(tmp_path / "src/asr/scn/resources/sources/catalog.json", catalog)
+    write_json(tmp_path / "resources/scn/sources/catalog.json", catalog)
     monkeypatch.setattr(
         "asr.scn.acquisition.download_resource",
         lambda *a, **k: pytest.fail("network must not be reached"),
@@ -158,10 +158,8 @@ def test_unlicensed_source_cannot_download(tmp_path, monkeypatch):
 
 def test_catalog_cannot_escape_ignored_directory(tmp_path):
     _, catalog = fixture_catalog(tmp_path)
-    catalog["sources"]["scn_fixture"]["path"] = (
-        "src/asr/ita/resources/lexicon/overwrite.tsv"
-    )
-    write_json(tmp_path / "src/asr/scn/resources/sources/catalog.json", catalog)
+    catalog["sources"]["scn_fixture"]["path"] = "resources/ita/lexicon/overwrite.tsv"
+    write_json(tmp_path / "resources/scn/sources/catalog.json", catalog)
     with pytest.raises(ResourceError, match="SCN originals"):
         load_catalog(tmp_path)
 
@@ -180,12 +178,12 @@ def test_robots_agent_specific_disallow_is_respected():
 def test_manifest_sync_preserves_unrelated_bytes_and_is_idempotent(tmp_path):
     fixture_catalog(tmp_path)
     copy_configuration(tmp_path)
-    path = tmp_path / "src/asr/scn/resources/manifest.yaml"
+    path = tmp_path / "resources/scn/manifest.yaml"
     unrelated = {
         p: p.read_bytes()
         for p in (
-            tmp_path / "src/ipa/resources/manifest.yaml",
-            tmp_path / "src/asr/ita/resources/manifest.yaml",
+            tmp_path / "resources/ipa/manifest.yaml",
+            tmp_path / "resources/ita/manifest.yaml",
         )
     }
     original = path.read_text()
@@ -220,7 +218,7 @@ def test_duplicate_documents_share_split_and_are_not_promoted_to_dos24(tmp_path)
     assert rows[0]["split_group"] == rows[1]["split_group"]
     assert rows[0]["split"] == rows[1]["split"]
     statistics = json.loads(
-        (tmp_path / "src/asr/scn/resources/corpus/statistics.json").read_text()
+        (tmp_path / "docs/scn/audits/evidence/corpus/statistics.json").read_text()
     )
     assert statistics["categories"]["dos24"]["tokens"] == 0
 
@@ -253,3 +251,11 @@ def test_no_italian_manifest_or_config_activation():
     assert (
         manifest["scn_lm"]["status"] == manifest["scn_lexicon"]["status"] == "planned"
     )
+
+
+def test_manifest_keeps_assessments_only_in_catalog():
+    catalog = load_catalog(ROOT)
+    manifest = load_resources(ROOT)["resources"]
+    for name, source in catalog["sources"].items():
+        assert "audit" in source and "audit" not in manifest[name]
+        assert manifest[name]["catalog"] == "resources/scn/sources/catalog.json"

@@ -13,10 +13,11 @@ from urllib.robotparser import RobotFileParser
 
 from common.errors import ResourceError
 from common.resources import download_resource, verify_file
+from common.settings import SCN_CATALOG
 from common.utils import local_path, write_json
 
 USER_AGENT = "sicilian-asr-resource-research/0.1"
-CATALOG = "src/asr/scn/resources/sources/catalog.json"
+CATALOG = str(SCN_CATALOG)
 
 
 def load_catalog(root: Path) -> dict:
@@ -65,7 +66,7 @@ def sync_manifest(root: Path):
     from common.resources import load_manifest
 
     catalog = load_catalog(root)
-    path = root / "src/asr/scn/resources/manifest.yaml"
+    path = root / "resources/scn/manifest.yaml"
     original = path.read_text()
     before = load_manifest(path)["resources"]
     fields = (
@@ -91,7 +92,6 @@ def sync_manifest(root: Path):
         "final_url",
         "reason",
         "acquisition_status",
-        "audit",
     )
     result = original
     for name, spec in catalog["sources"].items():
@@ -100,7 +100,7 @@ def sync_manifest(root: Path):
             entry["path"] = None
         entry.update(
             acquisition_handler="scn_reviewed",
-            catalog="src/asr/scn/resources/sources/catalog.json",
+            catalog=CATALOG,
         )
         block = "".join(
             "  " + line if line.strip() else line

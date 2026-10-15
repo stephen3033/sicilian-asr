@@ -17,10 +17,12 @@ from asr.scn.acquisition import load_catalog
 from asr.scn.corpus import language_flags, sentences, tokens
 from common.errors import ResourceError
 from common.resources import verify_file
+from common.settings import SCN_CATALOG, SCN_EVIDENCE, SCN_RESOURCES
 from common.utils import fingerprints, local_path, write_json
 
 VERSION = "scn-dos24-audit-v1"
-DATA = "src/asr/scn/resources/audit"
+DATA = SCN_RESOURCES / "audit"
+EVIDENCE = SCN_EVIDENCE / "audit"
 CACHE = ".cache/scn/audit"
 CATEGORIES = (
     "verified_conforming",
@@ -267,7 +269,7 @@ def extract_records(root, catalog):
     """Reuse checksummed legacy extraction; replace PDF boundaries and add exports."""
     sources = catalog["sources"]
     legacy_path = root / ".cache/scn/corpus/records.jsonl"
-    legacy_receipt = read_json(root, "src/asr/scn/resources/corpus/extraction.json")
+    legacy_receipt = read_json(root, SCN_EVIDENCE / "corpus/extraction.json")
     if fingerprints(legacy_path)["sha256"] != legacy_receipt["records_sha256"]:
         raise ResourceError(
             "Legacy extraction checksum mismatch; run extract for the original catalog first"
@@ -402,12 +404,10 @@ def extract_records(root, catalog):
         "repeated_legacy_locator_occurrences": sum(n - 1 for n in occurrences.values()),
         "sources": dict(counts),
         "artifacts": acquired,
-        "catalog_sha256": fingerprints(
-            root / "src/asr/scn/resources/sources/catalog.json"
-        )["sha256"],
+        "catalog_sha256": fingerprints(root / SCN_CATALOG)["sha256"],
         "legacy_records_sha256": legacy_receipt["records_sha256"],
     }
-    write_json(root / DATA / "extraction.json", receipt)
+    write_json(root / EVIDENCE / "extraction.json", receipt)
     return path
 
 
@@ -582,80 +582,44 @@ def _surface_key(text):
     return tuple(tokens(re.sub(r"(['’])\s+", r"\1", text)))
 
 
-def audit(root):
-    catalog = load_catalog(root)
-    validate_catalog(catalog)
-    rules, reviews = (
-        read_json(root, DATA + "/rules.json"),
-        read_json(root, DATA + "/reviews.json"),
-    )
-    path = extract_records(root, catalog)
-    rows = [json.loads(line) for line in path.open(encoding="utf-8")]
-    ids = {r["id"] for r in rows}
-    if len(ids) != len(rows):
-        raise ResourceError("Duplicate audit record IDs")
-    decisions = {d["id"]: d for d in reviews["decisions"]}
-    if len(decisions) != len(reviews["decisions"]) or decisions.keys() - ids:
-        raise ResourceError("Duplicate or unknown review IDs")
-    ud = {
-        _surface_key(r["text"]): r["id"] for r in rows if r["source_id"] == "scn_ud_stb"
-    }
-    ud_words = {
-        w for r in rows if r["source_id"] == "scn_ud_stb" for w in tokens(r["text"])
-    }
-    by_source, by_category, documents = (
-        defaultdict(list),
-        defaultdict(list),
-        defaultdict(list),
-    )
-    for row in rows:
-        row["tokens"] = tokens(row["text"])
-        row["flags"] = screen(row["text"], rules)
-        if row.get("metadata", {}).get("linebreak_hyphen"):
-            row["flags"].append(
-                {"rule": "E01", "matches": ["linebreak hyphen retained"]}
-            )
-        row["language_screen"] = language_flags(row["tokens"])
-        spec = catalog["sources"][row["source_id"]]
-        category = spec["audit"]["dos24"]["value"]
-        if category == "verified_conforming":
-            category = "unresolved"  # A source label cannot replace individual review.
-        # Source affiliation supports inference; machine silence alone does not.
-        if category == "supported_inferred" and (
-            row["flags"] or row["language_screen"]["screen"] != "unresolved"
-        ):
-            category = "unresolved"
-        if row["unit_kind"] == "pdf_block" and len(row["tokens"]) < 8:
-            category = (
-                "unresolved"  # Short headings, names and credits lack prose context.
-            )
-        if all(not any(c.isalpha() for c in w) for w in row["tokens"]) or re.fullmatch(
-            r"https?://\S+", row["text"].strip()
-        ):
-            category = "not_applicable"
-        row.update(category=category, reviewed=False)
-        if row["id"] in decisions:
-            apply_review(row, decisions[row["id"]], rules)
-        if row["source_id"].startswith("scn_liita_stb_"):
-            row["treebank_overlap"] = ud.get(_surface_key(row["text"]))
-            row["provenance_duplicate"] = spec.get("overlaps_source")
-        if (
-            row["source_id"].startswith("scn_liita_")
-            and row["unit_kind"] == "lexical_entry"
-        ):
-            row["treebank_overlap"] = (
-                "UD surface vocabulary"
-                if len(row["tokens"]) == 1 and row["tokens"][0] in ud_words
-                else None
-            )
-        by_source[row["source_id"]].append(row)
-        by_category[row["category"]].append(row)
-        if row["source_id"] == "scn_wikipedia_20261001":
-            documents[row["document_id"]].append(row)
-    output = root / CACHE / "screened.jsonl"
-    with output.open("w", encoding="utf-8") as stream:
-        for row in rows:
-            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+def classify_record(row, spec, decision, rules, ud, ud_words):
+    row["tokens"] = tokens(row["text"])
+    row["flags"] = screen(row["text"], rules)
+    if row.get("metadata", {}).get("linebreak_hyphen"):
+        row["flags"].append({"rule": "E01", "matches": ["linebreak hyphen retained"]})
+    row["language_screen"] = language_flags(row["tokens"])
+    category = spec["audit"]["dos24"]["value"]
+    if category == "verified_conforming":
+        category = "unresolved"  # A source label cannot replace individual review.
+    # Source affiliation supports inference; machine silence alone does not.
+    if category == "supported_inferred" and (
+        row["flags"] or row["language_screen"]["screen"] != "unresolved"
+    ):
+        category = "unresolved"
+    if row["unit_kind"] == "pdf_block" and len(row["tokens"]) < 8:
+        category = "unresolved"  # Short headings, names and credits lack prose context.
+    if all(not any(c.isalpha() for c in w) for w in row["tokens"]) or re.fullmatch(
+        r"https?://\S+", row["text"].strip()
+    ):
+        category = "not_applicable"
+    row.update(category=category, reviewed=False)
+    if decision is not None:
+        apply_review(row, decision, rules)
+    if row["source_id"].startswith("scn_liita_stb_"):
+        row["treebank_overlap"] = ud.get(_surface_key(row["text"]))
+        row["provenance_duplicate"] = spec.get("overlaps_source")
+    if (
+        row["source_id"].startswith("scn_liita_")
+        and row["unit_kind"] == "lexical_entry"
+    ):
+        row["treebank_overlap"] = (
+            "UD surface vocabulary"
+            if len(row["tokens"]) == 1 and row["tokens"][0] in ud_words
+            else None
+        )
+
+
+def article_summary(documents):
     # Article verification requires every retained body unit to have contextual review.
     article_rows, article_counts = [], Counter()
     for doc, parts in documents.items():
@@ -683,15 +647,60 @@ def audit(root):
                 ),
             }
         )
+    return article_rows, article_counts
+
+
+def audit(root):
+    catalog = load_catalog(root)
+    validate_catalog(catalog)
+    rules, reviews = (
+        read_json(root, DATA / "rules.json"),
+        read_json(root, DATA / "reviews.json"),
+    )
+    path = extract_records(root, catalog)
+    rows = [json.loads(line) for line in path.open(encoding="utf-8")]
+    ids = {r["id"] for r in rows}
+    if len(ids) != len(rows):
+        raise ResourceError("Duplicate audit record IDs")
+    decisions = {d["id"]: d for d in reviews["decisions"]}
+    if len(decisions) != len(reviews["decisions"]) or decisions.keys() - ids:
+        raise ResourceError("Duplicate or unknown review IDs")
+    ud = {
+        _surface_key(r["text"]): r["id"] for r in rows if r["source_id"] == "scn_ud_stb"
+    }
+    ud_words = {
+        w for r in rows if r["source_id"] == "scn_ud_stb" for w in tokens(r["text"])
+    }
+    by_source, by_category, documents = (
+        defaultdict(list),
+        defaultdict(list),
+        defaultdict(list),
+    )
+    for row in rows:
+        classify_record(
+            row,
+            catalog["sources"][row["source_id"]],
+            decisions.get(row["id"]),
+            rules,
+            ud,
+            ud_words,
+        )
+        by_source[row["source_id"]].append(row)
+        by_category[row["category"]].append(row)
+        if row["source_id"] == "scn_wikipedia_20261001":
+            documents[row["document_id"]].append(row)
+    output = root / CACHE / "screened.jsonl"
+    with output.open("w", encoding="utf-8") as stream:
+        for row in rows:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+    article_rows, article_counts = article_summary(documents)
     write_json(root / CACHE / "wikipedia-articles.json", {"articles": article_rows})
     stats = {
         "version": VERSION,
         "rules_version": rules["version"],
         "checked_on": catalog["checked_on"],
         "implementation_sha256": fingerprints(Path(__file__))["sha256"],
-        "catalog_sha256": fingerprints(
-            root / "src/asr/scn/resources/sources/catalog.json"
-        )["sha256"],
+        "catalog_sha256": fingerprints(root / SCN_CATALOG)["sha256"],
         "rules_sha256": fingerprints(root / DATA / "rules.json")["sha256"],
         "reviews_sha256": fingerprints(root / DATA / "reviews.json")["sha256"],
         "screened_sha256": fingerprints(output)["sha256"],
@@ -790,7 +799,7 @@ def audit(root):
             "wiki": "Main-namespace nonredirect static article body; no rendered templates, tables, media captions or references. 2023 snapshot is a separate source, not current revisions.",
         },
     }
-    write_json(root / DATA / "statistics.json", stats)
+    write_json(root / EVIDENCE / "statistics.json", stats)
     # Deterministic contextual review queue, not a representative certification sample.
     queue = []
     for name, subset in by_source.items():
@@ -830,16 +839,16 @@ def audit(root):
 def validate(root):
     catalog = load_catalog(root)
     validate_catalog(catalog)
-    path = root / DATA / "statistics.json"
+    path = root / EVIDENCE / "statistics.json"
     if not path.exists():
         return
-    stats = read_json(root, DATA + "/statistics.json")
+    stats = read_json(root, EVIDENCE / "statistics.json")
     if fingerprints(Path(__file__))["sha256"] != stats["implementation_sha256"]:
         raise ResourceError("Audit implementation changed; rerun audit")
     for relative, key in [
-        ("src/asr/scn/resources/sources/catalog.json", "catalog_sha256"),
-        (DATA + "/rules.json", "rules_sha256"),
-        (DATA + "/reviews.json", "reviews_sha256"),
+        (SCN_CATALOG, "catalog_sha256"),
+        (DATA / "rules.json", "rules_sha256"),
+        (DATA / "reviews.json", "reviews_sha256"),
         (CACHE + "/screened.jsonl", "screened_sha256"),
     ]:
         if fingerprints(root / relative)["sha256"] != stats[key]:
@@ -887,4 +896,6 @@ def report(root):
     validate(root)
     from asr.scn.report import write_report
 
-    write_report(root, load_catalog(root), read_json(root, DATA + "/statistics.json"))
+    write_report(
+        root, load_catalog(root), read_json(root, EVIDENCE / "statistics.json")
+    )

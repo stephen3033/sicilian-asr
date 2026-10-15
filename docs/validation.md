@@ -1,34 +1,34 @@
-# Validation after the layer refactor
+# Validation
 
-Reproduced on **2026-10-12**, using Python 3.12.12 on macOS-27.0.1-arm64-arm-64bit. Dependency pins, model bytes, language resources, and decoding settings are unchanged.
+The 2026-10-15 cleanup preserves measured behavior. **141 tests pass**, up from 131 before the refactor. Ruff checks and formatting pass; installed CLI entry points and package contents are verified.
 
-| Check | Observed result |
+| Check | Result |
 | --- | --- |
-| Test suite | **107 passed**; source/test layers, migration, CLI, and configuration covered |
-| Dependencies and CPU probes | Pass; ordinary and upstream TorchScript outputs are finite and agree within tolerance |
-| Metal probes | Still unsupported: ordinary ZIPA fails at the k2 activation; TorchScript returns nonfinite values |
-| Italian resources and current graph | Both ready; checksums and prepared artifacts verified |
-| Full Italian study | **367 new inferences; 1,724 decoding evaluations**; all paths and metrics match historical results |
-| Probability comparison | All 367 original-frame arrays match exactly; maximum difference **0** |
-| MP4 acceptance | Baseline and repaired transcripts/strict metrics reproduced; diagnostics and probability exports present |
-| Sicilian offline reproduction | Corpus, audit measurements, LM diagnostics, and IPA compatibility unchanged |
-| Packaging | All layer packages/configuration/manifests included; acquired corpora, weights, and graphs excluded |
+| Layout | `src` contains 66 Python files only; maintained Markdown files reduced from 37 to 11, including the root index |
+| Italian study | All 367 acoustic exports and 1,724 decoding evaluations match; aggregate report, model selection and adoption gate unchanged |
+| Italian MP4 acceptance | Baseline and repaired runs match audio, probabilities, transcripts, metrics, segment scores and diagnostics exactly |
+| Sicilian offline workflow | Extraction, audit, corpus, LM and IPA measurements unchanged; only implementation/catalog provenance hashes differ |
+| Sicilian held-out test | Both videos retain identical transcripts, metrics and scores |
+| Sicilian CLI | All 21 segment probability exports, transcripts, metrics and scores match |
+| Integrity | Both languages pass strict resource/graph validation; all 979 prior output files remain byte-identical |
+| Migration | Verified resource moves completed; a second dry run proposes no changes |
+| Packaging | Wheel contains code and license metadata; source distribution includes settings, resource inputs and docs, excluding acquired data |
 
-The [Italian report](../src/asr/ita/docs/validation.md) contains the measured accuracy and runtime results. [validation.json](validation.json) records aggregate and per-run evidence. The original **416 output files** remain byte-for-byte unchanged; new results are under `outputs/ita_layout_*`.
+The fresh study outputs are `outputs/ita_cleanup_study` and `outputs/scn_cleanup_study`; acceptance runs use `outputs/ita_cleanup_acceptance_{baseline,repaired}` and `outputs/scn_cleanup_acceptance`. Comparisons use their earlier `ita_layout_*`, `scn_poc` and `scn_poc_cli` runs. Timings, memory, relocated paths and cache fingerprints may change; measured recognition results do not. Study source hashes match all 66 current modules.
+
+CPU eager/scripted inference and their frame comparison pass. Metal remains unsupported: eager inference fails in k2 and scripted output is nonfinite. Native compilation/probes required host access after the sandbox blocked OpenMP shared memory. These are existing platform constraints; dependencies, models, scoring rules and data splits were not changed.
+
+[Current evidence](validation.json) records the checks and local artifact paths. The [earlier layout validation](audits/layout-2026-10-12.json) and [Sicilian results](scn/results.json) remain historical snapshots. See the [Italian](ita/README.md) and [Sicilian](scn/README.md) guides for measured quality and dataset limits. Source judgments retain their original evidence dates.
 
 ## Reproduce
 
 ```sh
 .venv/bin/python -m pytest -q
 .venv/bin/python scripts/validate_environment.py --acoustic
-.venv/bin/python scripts/benchmark_italian.py --output outputs/ita_study_new
 .venv/bin/python scripts/validate_resources.py --strict --config ita
+.venv/bin/python scripts/validate_resources.py --strict --config scn
+.venv/bin/python scripts/benchmark_italian.py --output outputs/ita_study_new
+uv build
 ```
 
-Run the [Sicilian offline workflow](../src/asr/scn/resources/sources/README.md) to reproduce its evidence. The refactor changes audit implementation/catalog fingerprints, not measurements or review decisions. Historical research-validation records are explicitly labeled and retained.
-
-The native checks were run with host access after the sandbox blocked OpenMP shared memory. Hardware-probe results above come from the successful host-access run. Reports and large artifacts remain local; the tracked JSON preserves their measured summary. Historical results are available in the [initialization record](history/initialization-2026-10-08.md) and the Italian report's dated comparisons.
-
-## Sicilian POC
-
-The 2026-10-12 [Sicilian study](../src/asr/scn/docs/poc.md) adds actual LM training, graph construction and final-video evaluation. Its [tracked results](../src/asr/scn/docs/results.json) record accuracy, cache identities and validation. The rebuilt Italian acceptance graph reproduces the saved transcript, metrics, posteriors and path scores exactly. Earlier full Italian study results above remain the layout-refactor baseline.
+Use fresh output directories. The language guides document the Sicilian stages and acceptance commands; `.cache/cleanup` holds this run's detailed comparison logs.

@@ -8,6 +8,7 @@ from collections import Counter
 from asr.scn.acquisition import load_catalog
 from asr.scn.corpus import CATEGORIES
 from common.errors import ResourceError
+from common.settings import SCN_EVIDENCE
 from common.utils import fingerprints, write_json
 
 
@@ -173,7 +174,7 @@ def diagnose(rows, pronunciation_candidates=None):
 def probe(root):
     path = root / ".cache/scn/corpus/analyzed.jsonl"
     statistics = json.loads(
-        (root / "src/asr/scn/resources/corpus/statistics.json").read_text()
+        (root / SCN_EVIDENCE / "corpus/statistics.json").read_text()
     )
     if fingerprints(path)["sha256"] != statistics["analyzed_sha256"]:
         raise ResourceError("Analyzed records differ from their receipt")
@@ -249,7 +250,7 @@ def probe(root):
         else:
             holdout[source] = {"status": "insufficient_independent_sources"}
     write_json(
-        root / "src/asr/scn/resources/lm/diagnostics.json",
+        root / SCN_EVIDENCE / "lm/diagnostics.json",
         {
             "analyzed_sha256": statistics["analyzed_sha256"],
             "method": "Interpolated Witten-Bell orders 1-4; uniform base over train words count>=2 plus UNK/EOS; train-only vocabulary; EOS scored",

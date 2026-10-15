@@ -1,387 +1,179 @@
 {
-  "checked_at": "2026-10-12T05:22:58.663640+00:00",
-  "test_summary": "107 passed in 11.63s",
-  "study": {
-    "selected_variant": "combined",
-    "acoustic_scale": 1.0,
-    "criterion": "Development spoken WER, then CER, then distance from scale 1; no test scores",
-    "baseline_dev": {
-      "recordings": 165,
-      "strict": {
-        "wer": {
-          "substitutions": 258,
-          "deletions": 39,
-          "insertions": 41,
-          "correct": 693,
-          "errors": 338,
-          "reference_units": 990,
-          "hypothesis_units": 992,
-          "rate": 0.3414141414141414
-        },
-        "cer": {
-          "substitutions": 219,
-          "deletions": 334,
-          "insertions": 48,
-          "correct": 3835,
-          "errors": 601,
-          "reference_units": 4388,
-          "hypothesis_units": 4102,
-          "rate": 0.1369644484958979
-        },
-        "oov": {
-          "tokens": 79,
-          "words": {
-            "2": 10,
-            "6": 11,
-            "basket": 9,
-            "c'è": 9,
-            "l'ho": 10,
-            "stellata": 12,
-            "telefonico": 7,
-            "verifica": 11
-          },
-          "rate": 0.0797979797979798
-        }
-      },
-      "spoken_form": {
-        "wer": {
-          "substitutions": 248,
-          "deletions": 39,
-          "insertions": 41,
-          "correct": 703,
-          "errors": 328,
-          "reference_units": 990,
-          "hypothesis_units": 992,
-          "rate": 0.33131313131313134
-        },
-        "cer": {
-          "substitutions": 201,
-          "deletions": 349,
-          "insertions": 21,
-          "correct": 3880,
-          "errors": 571,
-          "reference_units": 4430,
-          "hypothesis_units": 4102,
-          "rate": 0.12889390519187358
-        },
-        "oov": {
-          "tokens": 58,
-          "words": {
-            "basket": 9,
-            "c'è": 9,
-            "l'ho": 10,
-            "stellata": 12,
-            "telefonico": 7,
-            "verifica": 11
-          },
-          "rate": 0.05858585858585859
-        }
-      }
-    },
-    "selected_dev": {
-      "recordings": 165,
-      "strict": {
-        "wer": {
-          "substitutions": 155,
-          "deletions": 40,
-          "insertions": 23,
-          "correct": 795,
-          "errors": 218,
-          "reference_units": 990,
-          "hypothesis_units": 973,
-          "rate": 0.2202020202020202
-        },
-        "cer": {
-          "substitutions": 142,
-          "deletions": 205,
-          "insertions": 42,
-          "correct": 4041,
-          "errors": 389,
-          "reference_units": 4388,
-          "hypothesis_units": 4225,
-          "rate": 0.08865086599817684
-        },
-        "oov": {
-          "tokens": 60,
-          "words": {
-            "2": 10,
-            "6": 11,
-            "basket": 9,
-            "stellata": 12,
-            "telefonico": 7,
-            "verifica": 11
-          },
-          "rate": 0.06060606060606061
-        }
-      },
-      "spoken_form": {
-        "wer": {
-          "substitutions": 144,
-          "deletions": 40,
-          "insertions": 23,
-          "correct": 806,
-          "errors": 207,
-          "reference_units": 990,
-          "hypothesis_units": 973,
-          "rate": 0.20909090909090908
-        },
-        "cer": {
-          "substitutions": 124,
-          "deletions": 222,
-          "insertions": 17,
-          "correct": 4084,
-          "errors": 363,
-          "reference_units": 4430,
-          "hypothesis_units": 4225,
-          "rate": 0.081941309255079
-        },
-        "oov": {
-          "tokens": 39,
-          "words": {
-            "basket": 9,
-            "stellata": 12,
-            "telefonico": 7,
-            "verifica": 11
-          },
-          "rate": 0.03939393939393939
-        }
-      }
-    },
-    "baseline_test": {
-      "recordings": 202,
-      "strict": {
-        "wer": {
-          "substitutions": 296,
-          "deletions": 31,
-          "insertions": 56,
-          "correct": 921,
-          "errors": 383,
-          "reference_units": 1248,
-          "hypothesis_units": 1273,
-          "rate": 0.30689102564102566
-        },
-        "cer": {
-          "substitutions": 235,
-          "deletions": 339,
-          "insertions": 57,
-          "correct": 4939,
-          "errors": 631,
-          "reference_units": 5513,
-          "hypothesis_units": 5231,
-          "rate": 0.11445673861781244
-        },
-        "oov": {
-          "tokens": 77,
-          "words": {
-            "2": 14,
-            "6": 9,
-            "basket": 8,
-            "c'è": 8,
-            "l'ho": 14,
-            "stellata": 3,
-            "telefonico": 12,
-            "verifica": 9
-          },
-          "rate": 0.06169871794871795
-        }
-      },
-      "spoken_form": {
-        "wer": {
-          "substitutions": 282,
-          "deletions": 31,
-          "insertions": 56,
-          "correct": 935,
-          "errors": 369,
-          "reference_units": 1248,
-          "hypothesis_units": 1273,
-          "rate": 0.2956730769230769
-        },
-        "cer": {
-          "substitutions": 214,
-          "deletions": 351,
-          "insertions": 23,
-          "correct": 4994,
-          "errors": 588,
-          "reference_units": 5559,
-          "hypothesis_units": 5231,
-          "rate": 0.105774419859687
-        },
-        "oov": {
-          "tokens": 54,
-          "words": {
-            "basket": 8,
-            "c'è": 8,
-            "l'ho": 14,
-            "stellata": 3,
-            "telefonico": 12,
-            "verifica": 9
-          },
-          "rate": 0.04326923076923077
-        }
-      }
-    },
-    "selected_test": {
-      "recordings": 202,
-      "strict": {
-        "wer": {
-          "substitutions": 156,
-          "deletions": 31,
-          "insertions": 31,
-          "correct": 1061,
-          "errors": 218,
-          "reference_units": 1248,
-          "hypothesis_units": 1248,
-          "rate": 0.17467948717948717
-        },
-        "cer": {
-          "substitutions": 146,
-          "deletions": 173,
-          "insertions": 52,
-          "correct": 5194,
-          "errors": 371,
-          "reference_units": 5513,
-          "hypothesis_units": 5392,
-          "rate": 0.06729548340286595
-        },
-        "oov": {
-          "tokens": 55,
-          "words": {
-            "2": 14,
-            "6": 9,
-            "basket": 8,
-            "stellata": 3,
-            "telefonico": 12,
-            "verifica": 9
-          },
-          "rate": 0.044070512820512824
-        }
-      },
-      "spoken_form": {
-        "wer": {
-          "substitutions": 142,
-          "deletions": 31,
-          "insertions": 31,
-          "correct": 1075,
-          "errors": 204,
-          "reference_units": 1248,
-          "hypothesis_units": 1248,
-          "rate": 0.16346153846153846
-        },
-        "cer": {
-          "substitutions": 130,
-          "deletions": 186,
-          "insertions": 19,
-          "correct": 5243,
-          "errors": 335,
-          "reference_units": 5559,
-          "hypothesis_units": 5392,
-          "rate": 0.06026263716495773
-        },
-        "oov": {
-          "tokens": 32,
-          "words": {
-            "basket": 8,
-            "stellata": 3,
-            "telefonico": 12,
-            "verifica": 9
-          },
-          "rate": 0.02564102564102564
-        }
-      }
-    },
-    "adoption_gate_passed": true,
-    "limitations": [
-      "18 acted sentences; not a broad Italian benchmark",
-      "Publisher references were not corrected from hypotheses",
-      "Number verbalization is separate from strict scores; E’ annotation artifacts remain"
-    ]
+  "checked_at": "2026-10-15T09:44:59.054409+00:00",
+  "baseline_commit": "2babdf9a58f2bad59dc8c2aad9697bcb2dbdb07d",
+  "scope": "Documentation consolidation, code-only source layout, behavior-preserving pipeline refactor",
+  "layout": {
+    "python_source_files": 66,
+    "source_contains_only_code": true,
+    "maintained_markdown_before": 37,
+    "maintained_markdown_after": 11,
+    "markdown_scope": "Root index and maintained docs; acquired upstream snapshots excluded"
   },
-  "comparisons": {
-    "results/baseline/dev-1.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
+  "checks": {
+    "pytest": "141 passed in 3.18s",
+    "ruff_check": "F,I passed",
+    "ruff_format": "105 Python files formatted",
+    "installed_cli": "5 passed",
+    "git_diff_check": "passed",
+    "local_document_links": "passed",
+    "packaging": "Wheel and source distribution built and inspected; acquired inputs, caches and outputs excluded"
+  },
+  "italian": {
+    "baseline": "outputs/ita_layout_study",
+    "reproduction": "outputs/ita_cleanup_study",
+    "study": {
+      "decoding_evaluations": 1724,
+      "transcripts_metrics_scores_identical": true,
+      "aggregate_report_identical": true,
+      "selection_identical": true,
+      "adoption_gate_passed": true
     },
-    "results/baseline/test-1.jsonl": {
-      "recordings": 202,
-      "decoded_and_metrics_identical": true
+    "probabilities": {
+      "arrays": 367,
+      "all_fields_identical": true,
+      "maximum_difference": 0
     },
-    "results/combined/dev-0.5.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
-    },
-    "results/combined/dev-0.75.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
-    },
-    "results/combined/dev-1.5.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
-    },
-    "results/combined/dev-1.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
-    },
-    "results/combined/dev-2.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
-    },
-    "results/combined/test-1.jsonl": {
-      "recordings": 202,
-      "decoded_and_metrics_identical": true
-    },
-    "results/contractions/dev-1.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
-    },
-    "results/pronunciation/dev-1.jsonl": {
-      "recordings": 165,
-      "decoded_and_metrics_identical": true
+    "acceptance": {
+      "baseline": {
+        "segments": 1,
+        "transcript_identical": true,
+        "metrics_identical": true,
+        "segments_and_diagnostics_identical": true,
+        "probabilities_identical": true,
+        "audio_identical": true
+      },
+      "repaired": {
+        "segments": 1,
+        "transcript_identical": true,
+        "metrics_identical": true,
+        "segments_and_diagnostics_identical": true,
+        "probabilities_identical": true,
+        "audio_identical": true
+      }
     }
   },
-  "decode_rows": 1724,
-  "probabilities": {
-    "recordings": 367,
-    "differences": [],
-    "max_log_probability_difference": 0
+  "sicilian": {
+    "baseline": "outputs/scn_poc",
+    "reproduction": "outputs/scn_cleanup_study",
+    "offline_workflow": {
+      "audit/statistics.json": {
+        "measurements_match": true,
+        "changed_provenance_fields": [
+          "implementation_sha256",
+          "catalog_sha256"
+        ]
+      },
+      "corpus/statistics.json": {
+        "measurements_match": true,
+        "changed_provenance_fields": []
+      },
+      "lm/diagnostics.json": {
+        "measurements_match": true,
+        "changed_provenance_fields": []
+      },
+      "lexicon/ipa-compatibility.json": {
+        "measurements_match": true,
+        "changed_provenance_fields": []
+      },
+      "audit/extraction.json": {
+        "measurements_match": true,
+        "changed_provenance_fields": [
+          "catalog_sha256"
+        ]
+      },
+      "corpus/extraction.json": {
+        "measurements_match": true,
+        "changed_provenance_fields": [
+          "catalog_sha256"
+        ]
+      }
+    },
+    "held_out_test": {
+      "videos": 2,
+      "metrics_identical": true,
+      "transcripts_identical": true,
+      "scores_identical": true
+    },
+    "cli": {
+      "baseline": "outputs/scn_poc_cli",
+      "reproduction": "outputs/scn_cleanup_acceptance",
+      "segments": 21,
+      "transcript_identical": true,
+      "metrics_identical": true,
+      "scores_identical": true,
+      "probabilities_identical": true
+    }
   },
-  "historical_output_files_unchanged": 416,
+  "resources": {
+    "ita": {
+      "resource_ready": true,
+      "graph_ready": true,
+      "errors": []
+    },
+    "scn": {
+      "resource_ready": true,
+      "graph_ready": true,
+      "errors": []
+    }
+  },
+  "migration": {
+    "applied": true,
+    "verified_moves": 11,
+    "updated_receipts": 2,
+    "repeat_dry_run": {
+      "applied": false,
+      "moves": {},
+      "receipts": []
+    }
+  },
+  "preservation": {
+    "original_output_files": 979,
+    "all_byte_identical": true
+  },
   "source_hashes_match_frozen_study": true,
   "source_sha256": {
     "src/asr/__init__.py": "45204e27d1086b16098060023ab48b6f369223ed530d6f85e4a12ab4782abc41",
     "src/asr/ita/__init__.py": "49e2fdeac8b2de3ddd6fda43916fa874b9e563c0a39a90074774903094e403ea",
     "src/asr/ita/acceptance.py": "b4bbb49baf1be70c34ef733381f0cc42af3e7b0bb52194973915f616fc22de8c",
-    "src/asr/ita/benchmark.py": "5256560a0f69d8ba1d27fdd1d322a33d3522594b17f2f939407a784786c7ad29",
+    "src/asr/ita/benchmark.py": "b7923276a9ee0ce7d64ba5a6456f44587c04d37156573e03c9696cba0df9aebb",
     "src/asr/ita/evaluation.py": "6f92a48421b9f641910ee25902080af1a3112d4f0d209cef7327edee6430c737",
     "src/asr/ita/lexicon.py": "55d26a0f1b1f1bd72824b75bf7a22c48e32e25b10227b5390b3960749285ac69",
     "src/asr/ita/lm.py": "25f7de269f822950d310711b9e876b5a06adc188869ba1daa543edafbf14f780",
     "src/asr/ita/prepare.py": "aff1d3e86d5d92d2a33cace2a77abd1296864eb6f77db4d735cd536990c44397",
     "src/asr/ita/spoken.py": "984985d358559cfda64dfede138407cd3cff81ecbb45c38d48b8697ae1a2be5c",
     "src/asr/scn/__init__.py": "aedb1c0a904f1ba25ae7455365db18390e366cb589da9f477a011c1731d32c45",
-    "src/asr/scn/acquisition.py": "1b584156a702b41a4fb0c3004359a0b4eb02a184a5a6b92e02d6907a720f4832",
-    "src/asr/scn/audit.py": "4751afbf01251be2ebb21f230caa0ccedae3cc676c294d11c59180c26cb80ffd",
+    "src/asr/scn/acquisition.py": "05f60214ceece99c0d5c11c5ccb24d64ca0e5aa2c68214a9be0bb79a7f73e47d",
+    "src/asr/scn/audit.py": "23b91a345c9d9f88f5a50ee0440adf1b651f14ea6910047ff4113ad96cd0e410",
     "src/asr/scn/cli.py": "bef81b60cb5a702e43ac988cccb3110223729c1568d7d5808dabec48f604a65c",
-    "src/asr/scn/corpus.py": "940400c31624bb6185c4fb932275eec791302de4b59bf395349db0614ea60de8",
+    "src/asr/scn/corpus.py": "83ce57d42259ff0ef03fd8b4dcb0a04f81de1d1120e132f5747d9fecb0c51ec8",
+    "src/asr/scn/dataset.py": "5efbaabc25d18af116b98875ccd312c3e04032830ab2187101145b0845cb6269",
     "src/asr/scn/discover_repositories.py": "8b459d04aa5af92599a9446a855d856d5c669dacee80d7cd519166ab94e5e803",
-    "src/asr/scn/discovery.py": "ddb36478bd6a095f9dca3aadbf8636db94a2c2d61bd5d326bda1a9af4578444c",
-    "src/asr/scn/lm.py": "8e06474f794e6a5e4d71f731355b0c87872c0a6599d4fb7a87fdaeef4fd5d397",
-    "src/asr/scn/report.py": "daae636b7c5f903df1e8baeb1c8c352f7e97b199e69cfe29fe11577a712f8f52",
+    "src/asr/scn/discovery.py": "7690ce9d2fe8ea365c2f8c068c779254cc447cc605ebbc93216ab973255bfb54",
+    "src/asr/scn/evaluation.py": "6002c0b3f777de7a67d3302116325c719f1dc48e5331460d0941bc8970f65fab",
+    "src/asr/scn/lexicon.py": "dd63b6cd631978e1e1c28f138eee68d08a5f0186330af87a04efbcb99d3e134b",
+    "src/asr/scn/lm.py": "e6e282ba5c75aabbfc23e6b55c4acfda11d76eb427cfdfecd26e801c315ef0f8",
+    "src/asr/scn/orthography.py": "d76a0c4968f6c17fbb85ca284b30ea0e9b4bc04640caef92de6c8b7bce3f3ac6",
+    "src/asr/scn/prepare.py": "12efd16fb370a2466ed4be5da4bf19ea9412cae5e7de524aaef0605d797d9861",
+    "src/asr/scn/report.py": "c8573e5f532ca703e33d68a7324aef96401a01f3e8ff86a01e3f19be9488e7e5",
+    "src/asr/scn/toolchain.py": "823b3d9e47180bab29db3151ea75515996087cdf6e1b5484025c112297ab95fb",
+    "src/asr/scn/training.py": "38a7a399375cc13a8ff2881ce735f97d68f46ea9df98f56403192cacd99e9de3",
     "src/asr/wfst/__init__.py": "554da7cb187ade4da77cedb075d5f24d77f6d2db0254c3fa13cba336d52195d9",
     "src/asr/wfst/__main__.py": "29c6cbd80812e0ef66d6101b3b5503e576573f0571c86271f2a23404d739a4a3",
-    "src/asr/wfst/arpa.py": "636b4accc290df0cac704b1e6e28c103a2d391d38d26556658bb6f97bdcaf943",
-    "src/asr/wfst/cache.py": "21d9a847fc9a6f94d033b85e3c333327d90cff7dda7593ca898c412090fd6322",
+    "src/asr/wfst/arpa.py": "2b37bb3ed4e4719c54a9d185177250503bd86483c1304e45af72a00c79a582e1",
+    "src/asr/wfst/cache.py": "ffdf8b3b81980b6b591151a2fb93ac4feb3822382b1b78ed36de558fcffad6fb",
     "src/asr/wfst/compact.py": "b6ce489e8fc12f0028ff2703a38114fdaaaec8c71eba3a608886af637653327a",
-    "src/asr/wfst/graph.py": "ce5d25befcbf62c7edac414e18afb198892751a3375c9d7550386721ef74f9be",
+    "src/asr/wfst/graph.py": "d6137420a42f75248ec7e1c276197c4eede4d7a0aa672dc172b88ff6c45a0550",
     "src/audio/__init__.py": "b1f9fb402460590e90b32b9e4ce244f8a80da957e0ec1ad3d1a95711e02fbde5",
     "src/audio/segmentation.py": "6c94dac19a65e530ad4d5af45d41feff5607c93fc33350ee618d23dcd06e63ea",
     "src/common/__init__.py": "dc935ee5f5e77882727a8a8bf98006a1712c1babb5b61cce6b466d55dbea263a",
     "src/common/environment.py": "e86f84f7016fdbbb4d001b66eb6279df9d246660183ada41e1033f968e167af0",
     "src/common/errors.py": "35b273a94fb14741d6ad6968c82ae5f209dde23bf1d7f4586ca23800bb500d0d",
     "src/common/resources.py": "48c61e5dbe561f6ff718aa5cbf36a4a3dd109902aef968a36f89d423903a84ae",
-    "src/common/settings.py": "ca8e3dc82dbf1016dfdc6a2cb5ee10af04659c5ad14fae682edad81cd4a54c1f",
+    "src/common/settings.py": "da6fc642dc096e9dd527171e466da518ab0a8b186de637a6ff3c5a243993cb70",
     "src/common/text.py": "6d81ef829871b582bc1d7df9b77a5cb2c46a410eb72505a7507cd6a5093c5fa9",
     "src/common/utils.py": "f466f55f37371a89f52108fd9906a0f4e3b14fed715303423046fb92f007c908",
     "src/evaluation/__init__.py": "03448068c19c6f66ab654d79673280c9d795a039a24bd5b730a7b54bf8e721c5",
-    "src/evaluation/metrics.py": "25590838c284af74770d85dbd420cbe3e95cc2de7b5bab5fc63ee5815477bfd2",
+    "src/evaluation/metrics.py": "fecabd779a2e7a9956c2f259e71dcd9af35dee3534575f1cdad7cc883602149c",
     "src/ipa/__init__.py": "cbaef5f91f40267e39f4c59a0b317911e8c48a6e7e6f0813b14f425d140d0981",
     "src/ipa/diagnostics.py": "81af96bea653635fb67ae2ada75197b36f9158544439f2f654918d9ac6a65e1e",
     "src/ipa/inventory.py": "dcbff84627af76a088b5d0058567c30088072fc0434046a498cb2d9401ac2b30",
@@ -391,543 +183,26 @@
     "src/media_input/__init__.py": "f5b4907e7c9c8c05dbcbf87defacdca7867381a13cd4524678c4d34fc09ffbb9",
     "src/media_input/media.py": "6197e85fe8ec73fc7ebd9e98bd2443f67a2003255b860da2120498b977484f2f",
     "src/media_input/reference.py": "b990744191ae86468c76b7e59aa9c8a9dc57ba7e0eafe7f06cff78d480c10727",
+    "src/media_input/youtube.py": "326e7643b2a1674c7cd8797e03baa40d6ab8579705d424ae8f4edd777c1c2fad",
     "src/pipeline/__init__.py": "4a2930641acb812ae0c6262fd9228e2dba36ce98eda1e8cb79602b147ece783b",
     "src/pipeline/__main__.py": "378af85302c8e8a995ded3df0038ef3138f39f02dcea6e0fe5db21666c9ed6a8",
     "src/pipeline/acquire.py": "b6792a4eb3f8eccdb46ff9230ca84861d4f961efbefcd4634b7ef5f9e8e2cfb7",
     "src/pipeline/benchmark.py": "03e3009d7db1a60a47ccb0be2b94be3e05586f27deee9d85716f32d5fe1cd5f5",
-    "src/pipeline/cli.py": "8e6c7979867b9ba97edd861e9e6620a7bc8e15eda346681fbdea6bb1e17d76bf",
-    "src/pipeline/config.py": "4a4d5f24658cf97b24426bdedef4890872732d8fb74978b63b38f2c19b62832d",
-    "src/pipeline/migration.py": "d6251f550ce0e124ba84ffdd6e8055bb0eb51ca1abe61bdabd63d4024dc38f51",
-    "src/pipeline/transcribe.py": "af6f8462ed956fa21cd4d3a5dd64a689afcc52e349350f616a2b68d713d3b73b",
+    "src/pipeline/cli.py": "a0e8d2c1b0981e4040a75f13557b908947bd5429c55ff9e86eab539b9c328214",
+    "src/pipeline/config.py": "7d4831859f0071e7f9ca45adbb802bb46d43b2164c65f110f0c92ae3640ac5b4",
+    "src/pipeline/languages.py": "3fcc5c1021bfc3a6153739e1b8ca8966b7b58f511f6dbea5e4e692cd4768b4ef",
+    "src/pipeline/migration.py": "63ecf658c1d2a1f7e5d3cfde8b15160d7254412dcd7f6bb1f1b29bc77a9b81f0",
+    "src/pipeline/scn_poc.py": "255b21603ba1da9c63d80643d75c84e178114d3640af457c16af0ef79db62102",
+    "src/pipeline/scn_study.py": "627588e1fbaf42d4ae1540d414673420907d478c8f2fe175d0ca8b0190966439",
+    "src/pipeline/transcribe.py": "5f06be8536e441599a466b89f49e1b1a0a1baeacecf6c5b6cc034497b262f4bb",
     "src/pipeline/validate_environment.py": "ae37750710c02b664c1721ad0ffb684ebd58d3053961e62a05b2bdfdef996ae6",
     "src/pipeline/validate_resources.py": "2c4b19de2f213ce6ea24d52e605f2d4d370007215729b5dffd2fc7ec13430944",
-    "src/pipeline/validation.py": "5c85d238b47a802d82d4b9aa2f53de0046b3eda043e7656abf61c1be6de64100"
-  },
-  "acceptance": {
-    "baseline": {
-      "text": "lo ha incontrato dogi dopo due anni",
-      "metrics": {
-        "normalization": "nfc-lower-apostrophes-punctuation-v1",
-        "wer": {
-          "substitutions": 3,
-          "deletions": 0,
-          "insertions": 1,
-          "correct": 3,
-          "errors": 4,
-          "reference_units": 6,
-          "hypothesis_units": 7,
-          "rate": 0.6666666666666666,
-          "undefined_reason": null
-        },
-        "cer": {
-          "substitutions": 3,
-          "deletions": 1,
-          "insertions": 3,
-          "correct": 23,
-          "errors": 7,
-          "reference_units": 27,
-          "hypothesis_units": 29,
-          "rate": 0.25925925925925924,
-          "undefined_reason": null
-        },
-        "oov_full_supported_lexicon": {
-          "tokens": 2,
-          "types": 2,
-          "reference_tokens": 6,
-          "words": {
-            "2": 1,
-            "l'ho": 1
-          }
-        },
-        "oov_decoding_vocabulary": {
-          "tokens": 2,
-          "types": 2,
-          "reference_tokens": 6,
-          "words": {
-            "2": 1,
-            "l'ho": 1
-          }
-        },
-        "per": null,
-        "per_reason": "No IPA reference",
-        "word_alignment": [
-          {
-            "operation": "substitutions",
-            "reference": "l'ho",
-            "hypothesis": "lo"
-          },
-          {
-            "operation": "insertions",
-            "reference": null,
-            "hypothesis": "ha"
-          },
-          {
-            "operation": "correct",
-            "reference": "incontrato",
-            "hypothesis": "incontrato"
-          },
-          {
-            "operation": "substitutions",
-            "reference": "oggi",
-            "hypothesis": "dogi"
-          },
-          {
-            "operation": "correct",
-            "reference": "dopo",
-            "hypothesis": "dopo"
-          },
-          {
-            "operation": "substitutions",
-            "reference": "2",
-            "hypothesis": "due"
-          },
-          {
-            "operation": "correct",
-            "reference": "anni",
-            "hypothesis": "anni"
-          }
-        ],
-        "spoken_form": {
-          "normalization": "ita-standalone-cardinals-0-999999-v1",
-          "reference": {
-            "normalization": "ita-standalone-cardinals-0-999999-v1",
-            "text": "l'ho incontrato oggi dopo due anni",
-            "transformations": [
-              {
-                "source": "2",
-                "replacement": "due",
-                "start": 26,
-                "end": 27
-              }
-            ],
-            "unsupported_numbers": []
-          },
-          "hypothesis": {
-            "normalization": "ita-standalone-cardinals-0-999999-v1",
-            "text": "lo ha incontrato dogi dopo due anni",
-            "transformations": [],
-            "unsupported_numbers": []
-          },
-          "wer": {
-            "substitutions": 2,
-            "deletions": 0,
-            "insertions": 1,
-            "correct": 4,
-            "errors": 3,
-            "reference_units": 6,
-            "hypothesis_units": 7,
-            "rate": 0.5,
-            "undefined_reason": null
-          },
-          "cer": {
-            "substitutions": 2,
-            "deletions": 1,
-            "insertions": 1,
-            "correct": 26,
-            "errors": 4,
-            "reference_units": 29,
-            "hypothesis_units": 29,
-            "rate": 0.13793103448275862,
-            "undefined_reason": null
-          },
-          "word_alignment": [
-            {
-              "operation": "substitutions",
-              "reference": "l'ho",
-              "hypothesis": "lo"
-            },
-            {
-              "operation": "insertions",
-              "reference": null,
-              "hypothesis": "ha"
-            },
-            {
-              "operation": "correct",
-              "reference": "incontrato",
-              "hypothesis": "incontrato"
-            },
-            {
-              "operation": "substitutions",
-              "reference": "oggi",
-              "hypothesis": "dogi"
-            },
-            {
-              "operation": "correct",
-              "reference": "dopo",
-              "hypothesis": "dopo"
-            },
-            {
-              "operation": "correct",
-              "reference": "due",
-              "hypothesis": "due"
-            },
-            {
-              "operation": "correct",
-              "reference": "anni",
-              "hypothesis": "anni"
-            }
-          ],
-          "oov_full_supported_lexicon": {
-            "tokens": 1,
-            "types": 1,
-            "reference_tokens": 6,
-            "words": {
-              "l'ho": 1
-            }
-          },
-          "oov_decoding_vocabulary": {
-            "tokens": 1,
-            "types": 1,
-            "reference_tokens": 6,
-            "words": {
-              "l'ho": 1
-            }
-          }
-        },
-        "oov_causes": [
-          {
-            "word": "2",
-            "count": 1,
-            "cause": "absent_from_supported_lexicon",
-            "spoken_form": "due"
-          },
-          {
-            "word": "l'ho",
-            "count": 1,
-            "cause": "absent_from_supported_lexicon",
-            "spoken_form": "l'ho"
-          }
-        ]
-      },
-      "elapsed_seconds": 27.4863100409857,
-      "peak_rss_bytes": 9046786048,
-      "graph": ".cache/graphs/ita/1b55e62bf721ba1abde24d1a39efe95a7c460caad715aeae9332b20f24261bde"
-    },
-    "repaired": {
-      "text": "l'ho incontrato oggi dopo due anni",
-      "metrics": {
-        "normalization": "nfc-lower-apostrophes-punctuation-v1",
-        "wer": {
-          "substitutions": 1,
-          "deletions": 0,
-          "insertions": 0,
-          "correct": 5,
-          "errors": 1,
-          "reference_units": 6,
-          "hypothesis_units": 6,
-          "rate": 0.16666666666666666,
-          "undefined_reason": null
-        },
-        "cer": {
-          "substitutions": 1,
-          "deletions": 0,
-          "insertions": 2,
-          "correct": 26,
-          "errors": 3,
-          "reference_units": 27,
-          "hypothesis_units": 29,
-          "rate": 0.1111111111111111,
-          "undefined_reason": null
-        },
-        "oov_full_supported_lexicon": {
-          "tokens": 1,
-          "types": 1,
-          "reference_tokens": 6,
-          "words": {
-            "2": 1
-          }
-        },
-        "oov_decoding_vocabulary": {
-          "tokens": 1,
-          "types": 1,
-          "reference_tokens": 6,
-          "words": {
-            "2": 1
-          }
-        },
-        "per": null,
-        "per_reason": "No IPA reference",
-        "word_alignment": [
-          {
-            "operation": "correct",
-            "reference": "l'ho",
-            "hypothesis": "l'ho"
-          },
-          {
-            "operation": "correct",
-            "reference": "incontrato",
-            "hypothesis": "incontrato"
-          },
-          {
-            "operation": "correct",
-            "reference": "oggi",
-            "hypothesis": "oggi"
-          },
-          {
-            "operation": "correct",
-            "reference": "dopo",
-            "hypothesis": "dopo"
-          },
-          {
-            "operation": "substitutions",
-            "reference": "2",
-            "hypothesis": "due"
-          },
-          {
-            "operation": "correct",
-            "reference": "anni",
-            "hypothesis": "anni"
-          }
-        ],
-        "spoken_form": {
-          "normalization": "ita-standalone-cardinals-0-999999-v1",
-          "reference": {
-            "normalization": "ita-standalone-cardinals-0-999999-v1",
-            "text": "l'ho incontrato oggi dopo due anni",
-            "transformations": [
-              {
-                "source": "2",
-                "replacement": "due",
-                "start": 26,
-                "end": 27
-              }
-            ],
-            "unsupported_numbers": []
-          },
-          "hypothesis": {
-            "normalization": "ita-standalone-cardinals-0-999999-v1",
-            "text": "l'ho incontrato oggi dopo due anni",
-            "transformations": [],
-            "unsupported_numbers": []
-          },
-          "wer": {
-            "substitutions": 0,
-            "deletions": 0,
-            "insertions": 0,
-            "correct": 6,
-            "errors": 0,
-            "reference_units": 6,
-            "hypothesis_units": 6,
-            "rate": 0.0,
-            "undefined_reason": null
-          },
-          "cer": {
-            "substitutions": 0,
-            "deletions": 0,
-            "insertions": 0,
-            "correct": 29,
-            "errors": 0,
-            "reference_units": 29,
-            "hypothesis_units": 29,
-            "rate": 0.0,
-            "undefined_reason": null
-          },
-          "word_alignment": [
-            {
-              "operation": "correct",
-              "reference": "l'ho",
-              "hypothesis": "l'ho"
-            },
-            {
-              "operation": "correct",
-              "reference": "incontrato",
-              "hypothesis": "incontrato"
-            },
-            {
-              "operation": "correct",
-              "reference": "oggi",
-              "hypothesis": "oggi"
-            },
-            {
-              "operation": "correct",
-              "reference": "dopo",
-              "hypothesis": "dopo"
-            },
-            {
-              "operation": "correct",
-              "reference": "due",
-              "hypothesis": "due"
-            },
-            {
-              "operation": "correct",
-              "reference": "anni",
-              "hypothesis": "anni"
-            }
-          ],
-          "oov_full_supported_lexicon": {
-            "tokens": 0,
-            "types": 0,
-            "reference_tokens": 6,
-            "words": {}
-          },
-          "oov_decoding_vocabulary": {
-            "tokens": 0,
-            "types": 0,
-            "reference_tokens": 6,
-            "words": {}
-          }
-        },
-        "oov_causes": [
-          {
-            "word": "2",
-            "count": 1,
-            "cause": "absent_from_supported_lexicon",
-            "spoken_form": "due"
-          }
-        ]
-      },
-      "elapsed_seconds": 33.26409183299984,
-      "peak_rss_bytes": 12399738880,
-      "graph": ".cache/graphs/ita/c91e93aa9e42691b4a3c6fe81329f57f2728a1517d738ec6ea560bbfa04bde5b"
-    }
-  },
-  "graphs": {
-    "baseline": {
-      "directory": ".cache/graphs/ita/1b55e62bf721ba1abde24d1a39efe95a7c460caad715aeae9332b20f24261bde",
-      "compilation_seconds": 138.04541241700645,
-      "stages": {
-        "T": {
-          "states": 129,
-          "arcs": 382,
-          "elapsed_seconds": 0.16761225002119318
-        },
-        "L": {
-          "states": 142071,
-          "arcs": 162117,
-          "elapsed_seconds": 0.17105970901320688
-        },
-        "G": {
-          "states": 3730123,
-          "arcs": 20845518,
-          "elapsed_seconds": 25.294361875014147
-        },
-        "LG": {
-          "states": 26018997,
-          "arcs": 53910520,
-          "elapsed_seconds": 81.65894516700064
-        },
-        "TLG": {
-          "states": 78058064,
-          "arcs": 184007650,
-          "elapsed_seconds": 130.4133613750164
-        }
-      },
-      "tlg_bytes": 4511663696
-    },
-    "repaired": {
-      "directory": ".cache/graphs/ita/c91e93aa9e42691b4a3c6fe81329f57f2728a1517d738ec6ea560bbfa04bde5b",
-      "compilation_seconds": 190.83731400000397,
-      "stages": {
-        "T": {
-          "states": 129,
-          "arcs": 382,
-          "elapsed_seconds": 0.23335958301322535
-        },
-        "L": {
-          "states": 201905,
-          "arcs": 229371,
-          "elapsed_seconds": 0.2384580000070855
-        },
-        "G": {
-          "states": 3828962,
-          "arcs": 21346216,
-          "elapsed_seconds": 26.216357458004495
-        },
-        "LG": {
-          "states": 36366499,
-          "arcs": 72415456,
-          "elapsed_seconds": 108.49276379199
-        },
-        "TLG": {
-          "states": 109100799,
-          "arcs": 254250554,
-          "elapsed_seconds": 180.36704291700153
-        }
-      },
-      "tlg_bytes": 6220842088
-    }
-  },
-  "scn": {
-    "audit/statistics.json": {
-      "measurements_identical": true,
-      "changed_provenance_fields": [
-        "/catalog_sha256",
-        "/implementation_sha256"
-      ]
-    },
-    "corpus/statistics.json": {
-      "measurements_identical": true,
-      "changed_provenance_fields": []
-    },
-    "lm/diagnostics.json": {
-      "measurements_identical": true,
-      "changed_provenance_fields": []
-    },
-    "lexicon/ipa-compatibility.json": {
-      "measurements_identical": true,
-      "changed_provenance_fields": []
-    }
+    "src/pipeline/validation.py": "39945b3efd716d8ebf6cfef9c5a37c0ea2a246ac3edb20d638e16c903a8c88a8"
   },
   "environment": {
-    "checked_at": "2026-10-12T04:41:37.920672+00:00",
     "python": "3.12.12",
     "platform": "macOS-27.0.1-arm64-arm-64bit",
-    "dependencies": {
-      "status": "ok",
-      "packages": {
-        "pipeline": {
-          "status": "ok",
-          "version": "0.1.0"
-        },
-        "yaml": {
-          "status": "ok",
-          "version": "6.0.3"
-        },
-        "numpy": {
-          "status": "ok",
-          "version": "1.26.4"
-        },
-        "torch": {
-          "status": "ok",
-          "version": "2.4.0"
-        },
-        "torchaudio": {
-          "status": "ok",
-          "version": "2.4.0"
-        },
-        "k2": {
-          "status": "ok",
-          "version": "1.24.4.dev20260625+cpu.torch2.4.0"
-        },
-        "kaldilm": {
-          "status": "ok",
-          "version": "1.15.4"
-        },
-        "kenlm": {
-          "status": "ok",
-          "version": "0.3.0"
-        },
-        "lhotse": {
-          "status": "ok",
-          "version": "1.33.0"
-        },
-        "sentencepiece": {
-          "status": "ok",
-          "version": "0.2.2"
-        },
-        "soundfile": {
-          "status": "ok",
-          "version": "0.14.0"
-        }
-      },
-      "external_sources": {
-        "icefall": "c1eda5427c46502b2cfdcbeb910bf35f2134a0d4",
-        "zipa_ctc_inference": "21e9e8aa4cc6c130cb05d836a1979886f9245302"
-      },
-      "k2_torch_version": "2.4.0",
-      "mps_built": true,
-      "mps_available": true
-    },
+    "dependencies": "ok",
     "acoustic": {
       "eager_cpu": {
         "status": "ok",
@@ -948,8 +223,7 @@
         "cpu_fallback_enabled": false
       },
       "eager_mps": {
-        "status": "error",
-        "error": "Traceback (most recent call last):\n  File \"/Users/stephenmiller/dev/sicilian-asr/src/pipeline/validate_environment.py\", line 107, in main\n    result = acoustic_worker(root, manifest, args.worker, output)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/src/ipa/validation.py\", line 87, in acoustic_worker\n    encoder_out, lengths = forward(features.to(device), feature_lengths.to(device))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.cache/external/zipa/zipformer_crctc/model.py\", line 163, in forward_encoder\n    x, x_lens = self.encoder_embed(x, x_lens)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1553, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1562, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.cache/external/zipa/zipformer_crctc/subsampling.py\", line 309, in forward\n    x = self.conv(x)\n        ^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1553, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1562, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py\", line 219, in forward\n    input = module(input)\n            ^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1553, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1562, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/.cache/external/zipa/zipformer_crctc/scaling.py\", line 1478, in forward\n    return k2.swoosh_r_forward(x)\n           ^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: \n    Some bad things happened. Please read the above error messages and stack\n    trace. If you are using Python, the following command may be helpful:\n\n      gdb --args python /path/to/your/code.py\n\n    (You can use `gdb` to debug the code. Please consider compiling\n    a debug version of k2.).\n\n    If you are unable to fix it, please open an issue at:\n\n      https://github.com/k2-fsa/k2/issues/new\n    \n"
+        "status": "error"
       },
       "scripted_cpu": {
         "status": "ok",
@@ -970,8 +244,7 @@
         "cpu_fallback_enabled": false
       },
       "scripted_mps": {
-        "status": "error",
-        "error": "Traceback (most recent call last):\n  File \"/Users/stephenmiller/dev/sicilian-asr/src/pipeline/validate_environment.py\", line 107, in main\n    result = acoustic_worker(root, manifest, args.worker, output)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/stephenmiller/dev/sicilian-asr/src/ipa/validation.py\", line 93, in acoustic_worker\n    raise ResourceError(\"Nonfinite CTC frame output\")\ncommon.errors.ResourceError: Nonfinite CTC frame output\n"
+        "status": "error"
       },
       "scripted_cpu_vs_eager_cpu": {
         "status": "ok",
@@ -982,6 +255,12 @@
     },
     "mps_validated": false
   },
-  "resource_ready": true,
-  "graph_ready": true
+  "limitations": [
+    "CPU supported; eager Metal inference fails in k2 and scripted Metal output is nonfinite, as before",
+    "Native compilation/probes rerun with host access after sandbox OpenMP shared-memory failure",
+    "Timings, peak memory, relocated paths and cache fingerprints are excluded from exact recognition comparisons",
+    "Italian benchmark and Sicilian proof-of-concept results retain the dataset limits documented in their language guides"
+  ],
+  "local_logs": ".cache/cleanup",
+  "historical_evidence": "docs/audits/layout-2026-10-12.json"
 }

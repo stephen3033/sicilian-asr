@@ -5,10 +5,11 @@ build-backend = "hatchling.build"
 [project]
 name = "sicilian-asr"
 version = "0.1.0"
-description = "Research scaffolding for Italian–Sicilian speech-to-IPA-to-grapheme ASR"
+description = "Local Italian and Sicilian speech recognition through IPA and WFST decoding"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 license = "MIT"
+license-files = ["LICENSE", "docs/NOTICE", "docs/licenses/Apache-2.0.txt"]
 dependencies = ["pyyaml==6.0.3"]
 
 [project.scripts]
@@ -55,6 +56,9 @@ k2 = { url = "https://huggingface.co/csukuangfj2/k2/resolve/566a071486bde284bedc
 [tool.hatch.build.targets.wheel]
 packages = ["src/common", "src/media_input", "src/audio", "src/ipa", "src/asr", "src/evaluation", "src/pipeline"]
 exclude = ["**/__pycache__/**", "**/*.pyc", "**/.DS_Store", "**/*.arpa", "**/*.pt", "**/*.pth"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/configs", "/resources", "/docs", "/tests", "/scripts", "/README.md", "/LICENSE", "/pyproject.toml", "/uv.lock", "/.python-version"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

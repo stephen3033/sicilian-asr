@@ -1,0 +1,34 @@
+# Paths are relative to the repository root. Null means unavailable or unimplemented.
+languages:
+- ita
+- scn
+output_language: null
+resources:
+  ita:
+    lexicon_resource: phonitalia_ipa
+    lexicon_path: resources/ita/lexicon/italian.dict
+    lexicon_format: phonitaliar_ipa_tsv
+    lm_resource: fbk_ita_lm
+    lm_path: null
+    lm_directory: resources/ita/lm
+    lm_status: unavailable
+  scn:
+    orthography: DOS24
+    orthography_resource: scn_dos24
+    lexicon_resource: scn_lexicon
+    lexicon_path: null
+    lexicon_directory: resources/scn/lexicon
+    vocabulary_resource: scn_vocabulary
+    vocabulary_path: null
+    lm_resource: scn_lm
+    lm_path: null
+    lm_directory: resources/scn/lm
+    lm_order: 3
+    lm_status: planned
+decoder:
+  enabled: false
+  graph_path: null
+  ctc_topology: null
+  inventory_compatibility: unresolved
+  search_beam: null
+  output_beam: null

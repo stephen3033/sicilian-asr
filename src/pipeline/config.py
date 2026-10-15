@@ -8,7 +8,13 @@ from pathlib import Path
 import yaml
 
 from common.errors import ResourceError
-from common.settings import CONFIG_PATHS, DEFAULTS, MODEL_CONFIG
+from common.settings import (
+    CONFIG_PATHS,
+    DEFAULTS,
+    LEGACY_CONFIG_PATHS,
+    MODEL_CONFIG,
+    canonical_resource_path,
+)
 from common.utils import local_path
 
 
@@ -36,8 +42,13 @@ def load_config(path: str | Path, root: Path, manifest: dict) -> dict:
     overrides = {}
     if name not in CONFIG_PATHS:
         selected_path = Path(path)
+        relative = str(selected_path)
+        if selected_path.is_absolute() and selected_path.is_relative_to(root):
+            relative = str(selected_path.relative_to(root))
         if not selected_path.is_absolute():
             selected_path = root / selected_path
+        if relative in LEGACY_CONFIG_PATHS and not selected_path.is_file():
+            selected_path = root / LEGACY_CONFIG_PATHS[relative]
         overrides = read_settings(selected_path)
         languages = overrides.get("languages")
         names = {("ita",): "ita", ("scn",): "scn", ("ita", "scn"): "ita_scn"}
@@ -55,6 +66,12 @@ def load_config(path: str | Path, root: Path, manifest: dict) -> dict:
             if "acoustic_scale" in selection:
                 config["decoder"]["acoustic_scale"] = selection["acoustic_scale"]
     config = merge_settings(config, overrides)
+    for section in [config["acoustic"], *config["resources"].values()]:
+        for key, value in section.items():
+            if isinstance(value, str) and (
+                key.endswith("_path") or key.endswith("_directory")
+            ):
+                section[key] = canonical_resource_path(value)
     if config.get("schema_version") != 1:
         raise ResourceError(f"Unsupported configuration schema: {path}")
     languages = config.get("languages")

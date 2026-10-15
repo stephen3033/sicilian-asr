@@ -3,25 +3,19 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.ruff_cache/
 *.egg-info/
 dist/
 build/
 .DS_Store
 .env
-# Resource documents and the manifest are tracked; acquired artifacts are not.
-src/asr/ita/resources/lexicon/*
-!src/asr/ita/resources/lexicon/README.md
-src/asr/ita/resources/lm/*
-!src/asr/ita/resources/lm/README.md
-src/asr/scn/resources/lexicon/*
-!src/asr/scn/resources/lexicon/README.md
-!src/asr/scn/resources/lexicon/ipa-compatibility.json
-src/asr/scn/resources/lm/*
-!src/asr/scn/resources/lm/README.md
-!src/asr/scn/resources/lm/diagnostics.json
-src/asr/scn/resources/orthography/*
-!src/asr/scn/resources/orthography/README.md
-!src/asr/scn/resources/orthography/compatibility.json
+# Acquired language data and upstream documents are verified locally.
+resources/ita/lexicon/
+resources/ita/lm/
+resources/scn/lexicon/
+resources/scn/lm/
+resources/scn/orthography/
+docs/ita/references/
 *.pt
 *.pth
 *.onnx

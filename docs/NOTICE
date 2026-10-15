@@ -1,0 +1,17 @@
+Algorithm adaptation notices
+
+The static composition and pronunciation disambiguation in asr.wfst.graph
+adapt Icefall compile_hlg.py, copyright 2021 Xiaomi Corp., author Fangjun
+Kuang, under Apache-2.0. The local code changes topology, token IDs,
+prefix handling, provenance and artifact handling.
+https://github.com/k2-fsa/icefall/tree/c1eda5427c46502b2cfdcbeb910bf35f2134a0d4
+
+The Compact CTC topology and frame adapter in asr.wfst.compact follow
+NVIDIA NeMo v1.23.0, copyright 2022 NVIDIA CORPORATION, under Apache-2.0.
+The local code preserves the published topology and adds contract
+validation and original-frame preservation.
+https://github.com/NVIDIA/NeMo/blob/v1.23.0/nemo/collections/asr/parts/k2/topologies.py
+https://github.com/NVIDIA/NeMo/blob/v1.23.0/nemo/collections/asr/parts/k2/utils.py
+
+The full Apache-2.0 text accompanies these notices in
+licenses/Apache-2.0.txt. Model and dataset terms are separate.

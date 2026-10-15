@@ -14,6 +14,7 @@ from pathlib import Path
 from asr.scn.acquisition import load_catalog
 from common.errors import ResourceError
 from common.resources import verify_file
+from common.settings import SCN_CATALOG, SCN_EVIDENCE
 from common.utils import fingerprints, local_path, write_json
 
 RULES = "scn-nfc-apostrophes-preserve-diacritics-no-spelling-conversion-v1"
@@ -231,6 +232,237 @@ def sentences(text):
     return [s.strip() for s in re.split(r"(?<=[.!?…])\s+|\n\s*\n", text) if tokens(s)]
 
 
+def extract_archive(path, spec, emit, info):
+    parser = spec["extractor"]
+    with tarfile.open(path, "r:gz") as archive:
+        for member in archive:
+            if not member.isfile():
+                continue
+            name = member.name.split("/", 1)[-1]
+            if parser == "localization_archive":
+                if not (
+                    {"scn", "values-scn"} & set(name.split("/"))
+                ) or name.startswith("server/data/"):
+                    continue
+                if Path(name).suffix not in {
+                    ".ftl",
+                    ".xml",
+                    ".xliff",
+                    ".xlf",
+                    ".po",
+                    ".json",
+                    ".properties",
+                    ".dtd",
+                }:
+                    info["skipped_members"].append(name)
+                    continue
+            elif parser == "conllu_archive" and not name.endswith(".conllu"):
+                continue
+            elif parser == "flores_archive" and "scn_Latn" not in name:
+                continue
+            # Read members in place: no archive path traversal or code execution.
+            data = archive.extractfile(member).read()
+            info["members"][name] = hashlib.sha256(data).hexdigest()
+            text = data.decode("utf-8-sig")
+            if parser == "localization_archive":
+                for (
+                    location,
+                    cleaned,
+                    original,
+                    kind,
+                ) in localization_records(name, text):
+                    emit(name, location, cleaned, original, kind)
+            elif parser == "conllu_archive":
+                for doc, location, sentence, meta in conllu_records(text):
+                    emit(name + ":" + doc, location, sentence, metadata=meta)
+            else:
+                for i, line in enumerate(text.splitlines()):
+                    emit(name + ":" + str(i), i, line)
+
+
+def extract_wikipedia_parquet(path, spec, emit, info):
+    import pyarrow.parquet as pq
+
+    for batch in pq.ParquetFile(path).iter_batches(batch_size=256):
+        for row in batch.to_pylist():
+            for i, sentence in enumerate(sentences(row["text"])):
+                emit(
+                    str(row["id"]),
+                    i,
+                    sentence,
+                    metadata={"url": row["url"], "title": row["title"]},
+                )
+
+
+def extract_napizia_csv(path, spec, emit, info):
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        field = next(
+            (
+                x
+                for x in reader.fieldnames
+                if x.lower() in {"scn", "sicilian", "sicilianu"}
+            ),
+            None,
+        )
+        if field is None:
+            raise ResourceError(
+                f"Unrecognized Sicilian CSV column: {reader.fieldnames}"
+            )
+        for i, row in enumerate(reader):
+            emit(
+                str(i),
+                i,
+                row[field],
+                metadata={k: v for k, v in row.items() if k != field},
+            )
+
+
+def extract_toponyms_csv(path, spec, emit, info):
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        for i, row in enumerate(csv.DictReader(handle)):
+            for field in ("SCN", "LUCALI", "ABBITANTI"):
+                for j, form in enumerate(row[field].split(",")):
+                    emit(
+                        str(i),
+                        f"{field}:{j}",
+                        form.strip(),
+                        kind="lexical_entry",
+                        metadata=row,
+                    )
+
+
+def extract_smol_jsonl(path, spec, emit, info):
+    for i, line in enumerate(path.read_text().splitlines()):
+        row = json.loads(line)
+        targets = row.get("trgs")
+        if (
+            row.get("tl") != "scn"
+            or not isinstance(targets, list)
+            or not all(isinstance(t, str) for t in targets)
+        ):
+            raise ResourceError(f"Unrecognized Google translation record: {list(row)}")
+        for j, part in enumerate(targets):
+            emit(
+                str(row.get("id", i)),
+                j,
+                part,
+                kind="lexical_entry" if spec["data_role"] == "lexicon" else "sentence",
+                metadata={
+                    "source_row": i,
+                    "target_index": j,
+                    "human_translation": True,
+                },
+            )
+
+
+def extract_ipa_tsv(path, spec, emit, info):
+    for i, line in enumerate(path.read_text().splitlines()):
+        word, ipa = line.split("\t")
+        emit(
+            str(i),
+            i,
+            word,
+            kind="lexical_entry",
+            metadata={
+                "source_ipa": ipa,
+                "validation": "crowdsourced_unvalidated",
+            },
+        )
+
+
+def extract_hf_rows(path, spec, emit, info):
+    payload = json.loads(path.read_text())
+    if payload.get("partial"):
+        raise ResourceError("Incomplete dataset viewer response")
+    for item in payload["rows"]:
+        row = item["row"]
+        if item.get("truncated_cells") or row["language"] != "scn_Latn":
+            raise ResourceError("Truncated or wrong-language transcript row")
+        urls = [a["src"] for a in row["audio"]]
+        if not urls or any(spec["revision"] not in u for u in urls):
+            raise ResourceError(
+                "Transcript viewer revision differs from pinned upstream revision"
+            )
+        for j, sentence in enumerate(sentences(row["raw_text"])):
+            emit(
+                row["speaker_id"] + ":" + row["prompt_id"],
+                f"{item['row_idx']}:{j}",
+                sentence,
+                metadata={
+                    k: v for k, v in row.items() if k not in {"audio", "raw_text"}
+                },
+            )
+
+
+def extract_perl_lexicon(path, spec, emit, info):
+    text = path.read_text()
+    for i, match in enumerate(
+        re.finditer(r'display_as\s*=>\s*([\'"])((?:\\.|(?!\1)[^\n])*)\1', text)
+    ):
+        form = re.sub(r"\\([\'\"\\])", r"\1", match[2])
+        emit(
+            str(i),
+            match.start(),
+            form,
+            original=match[2],
+            kind="lexical_entry",
+        )
+
+
+def extract_text_lines(path, spec, emit, info):
+    for i, line in enumerate(path.read_text().splitlines()):
+        emit(str(i), i, line)
+
+
+def extract_tatoeba_bz2(path, spec, emit, info):
+    import bz2
+
+    with bz2.open(path, "rt", encoding="utf-8") as handle:
+        for row in csv.reader(handle, delimiter="\t"):
+            if len(row) >= 3 and row[1] == "scn":
+                emit(
+                    row[0],
+                    row[0],
+                    row[2],
+                    metadata={"attribution": row[3:]},
+                )
+
+
+def extract_pdf(path, spec, emit, info):
+    from pypdf import PdfReader
+
+    for i, page in enumerate(PdfReader(path).pages):
+        text = page.extract_text(extraction_mode="layout") or ""
+        for j, part in enumerate(sentences(text)):
+            emit(
+                "issue",
+                f"page-{i + 1}:{j}",
+                part,
+                metadata={
+                    "page": i + 1,
+                    "quality": "pdf_layout_unreviewed",
+                },
+            )
+
+
+EXTRACTORS = {
+    "conllu_archive": extract_archive,
+    "flores_archive": extract_archive,
+    "localization_archive": extract_archive,
+    "wikipedia_parquet": extract_wikipedia_parquet,
+    "napizia_csv": extract_napizia_csv,
+    "toponyms_csv": extract_toponyms_csv,
+    "smol_jsonl": extract_smol_jsonl,
+    "ipa_tsv": extract_ipa_tsv,
+    "hf_rows": extract_hf_rows,
+    "perl_lexicon": extract_perl_lexicon,
+    "text_lines": extract_text_lines,
+    "tatoeba_bz2": extract_tatoeba_bz2,
+    "pdf": extract_pdf,
+}
+
+
 def extract(root):
     catalog = load_catalog(root)
     output = root / ".cache/scn/corpus/records.jsonl"
@@ -240,9 +472,7 @@ def extract(root):
         "rules": RULES,
         "sources": {},
         "errors": [],
-        "catalog_sha256": fingerprints(
-            root / "src/asr/scn/resources/sources/catalog.json"
-        )["sha256"],
+        "catalog_sha256": fingerprints(root / SCN_CATALOG)["sha256"],
     }
     count = 0
     with temporary.open("w", encoding="utf-8") as stream:
@@ -297,217 +527,13 @@ def extract(root):
                 info["records"] += 1
 
             parser = spec["extractor"]
-            if parser in {"localization_archive", "conllu_archive", "flores_archive"}:
-                with tarfile.open(path, "r:gz") as archive:
-                    for member in archive:
-                        if not member.isfile():
-                            continue
-                        name = member.name.split("/", 1)[-1]
-                        if parser == "localization_archive":
-                            if not (
-                                {"scn", "values-scn"} & set(name.split("/"))
-                            ) or name.startswith("server/data/"):
-                                continue
-                            if Path(name).suffix not in {
-                                ".ftl",
-                                ".xml",
-                                ".xliff",
-                                ".xlf",
-                                ".po",
-                                ".json",
-                                ".properties",
-                                ".dtd",
-                            }:
-                                info["skipped_members"].append(name)
-                                continue
-                        elif parser == "conllu_archive" and not name.endswith(
-                            ".conllu"
-                        ):
-                            continue
-                        elif parser == "flores_archive" and "scn_Latn" not in name:
-                            continue
-                        # Read members in place: no archive path traversal or code execution.
-                        data = archive.extractfile(member).read()
-                        info["members"][name] = hashlib.sha256(data).hexdigest()
-                        text = data.decode("utf-8-sig")
-                        if parser == "localization_archive":
-                            for (
-                                location,
-                                cleaned,
-                                original,
-                                kind,
-                            ) in localization_records(name, text):
-                                emit(name, location, cleaned, original, kind)
-                        elif parser == "conllu_archive":
-                            for doc, location, sentence, meta in conllu_records(text):
-                                emit(
-                                    name + ":" + doc, location, sentence, metadata=meta
-                                )
-                        else:
-                            for i, line in enumerate(text.splitlines()):
-                                emit(name + ":" + str(i), i, line)
-            elif parser == "wikipedia_parquet":
-                import pyarrow.parquet as pq
-
-                for batch in pq.ParquetFile(path).iter_batches(batch_size=256):
-                    for row in batch.to_pylist():
-                        for i, sentence in enumerate(sentences(row["text"])):
-                            emit(
-                                str(row["id"]),
-                                i,
-                                sentence,
-                                metadata={"url": row["url"], "title": row["title"]},
-                            )
-            elif parser == "napizia_csv":
-                with path.open(encoding="utf-8-sig", newline="") as handle:
-                    reader = csv.DictReader(handle)
-                    field = next(
-                        (
-                            x
-                            for x in reader.fieldnames
-                            if x.lower() in {"scn", "sicilian", "sicilianu"}
-                        ),
-                        None,
-                    )
-                    if field is None:
-                        raise ResourceError(
-                            f"Unrecognized Sicilian CSV column: {reader.fieldnames}"
-                        )
-                    for i, row in enumerate(reader):
-                        emit(
-                            str(i),
-                            i,
-                            row[field],
-                            metadata={k: v for k, v in row.items() if k != field},
-                        )
-            elif parser == "toponyms_csv":
-                with path.open(encoding="utf-8-sig", newline="") as handle:
-                    for i, row in enumerate(csv.DictReader(handle)):
-                        for field in ("SCN", "LUCALI", "ABBITANTI"):
-                            for j, form in enumerate(row[field].split(",")):
-                                emit(
-                                    str(i),
-                                    f"{field}:{j}",
-                                    form.strip(),
-                                    kind="lexical_entry",
-                                    metadata=row,
-                                )
-            elif parser == "smol_jsonl":
-                for i, line in enumerate(path.read_text().splitlines()):
-                    row = json.loads(line)
-                    targets = row.get("trgs")
-                    if (
-                        row.get("tl") != "scn"
-                        or not isinstance(targets, list)
-                        or not all(isinstance(t, str) for t in targets)
-                    ):
-                        raise ResourceError(
-                            f"Unrecognized Google translation record: {list(row)}"
-                        )
-                    for j, part in enumerate(targets):
-                        emit(
-                            str(row.get("id", i)),
-                            j,
-                            part,
-                            kind="lexical_entry"
-                            if spec["data_role"] == "lexicon"
-                            else "sentence",
-                            metadata={
-                                "source_row": i,
-                                "target_index": j,
-                                "human_translation": True,
-                            },
-                        )
-            elif parser == "ipa_tsv":
-                for i, line in enumerate(path.read_text().splitlines()):
-                    word, ipa = line.split("\t")
-                    emit(
-                        str(i),
-                        i,
-                        word,
-                        kind="lexical_entry",
-                        metadata={
-                            "source_ipa": ipa,
-                            "validation": "crowdsourced_unvalidated",
-                        },
-                    )
-            elif parser == "hf_rows":
-                payload = json.loads(path.read_text())
-                if payload.get("partial"):
-                    raise ResourceError("Incomplete dataset viewer response")
-                for item in payload["rows"]:
-                    row = item["row"]
-                    if item.get("truncated_cells") or row["language"] != "scn_Latn":
-                        raise ResourceError(
-                            "Truncated or wrong-language transcript row"
-                        )
-                    urls = [a["src"] for a in row["audio"]]
-                    if not urls or any(spec["revision"] not in u for u in urls):
-                        raise ResourceError(
-                            "Transcript viewer revision differs from pinned upstream revision"
-                        )
-                    for j, sentence in enumerate(sentences(row["raw_text"])):
-                        emit(
-                            row["speaker_id"] + ":" + row["prompt_id"],
-                            f"{item['row_idx']}:{j}",
-                            sentence,
-                            metadata={
-                                k: v
-                                for k, v in row.items()
-                                if k not in {"audio", "raw_text"}
-                            },
-                        )
-            elif parser == "perl_lexicon":
-                text = path.read_text()
-                for i, match in enumerate(
-                    re.finditer(
-                        r'display_as\s*=>\s*([\'"])((?:\\.|(?!\1)[^\n])*)\1', text
-                    )
-                ):
-                    form = re.sub(r"\\([\'\"\\])", r"\1", match[2])
-                    emit(
-                        str(i),
-                        match.start(),
-                        form,
-                        original=match[2],
-                        kind="lexical_entry",
-                    )
-            elif parser == "text_lines":
-                for i, line in enumerate(path.read_text().splitlines()):
-                    emit(str(i), i, line)
-            elif parser == "tatoeba_bz2":
-                import bz2
-
-                with bz2.open(path, "rt", encoding="utf-8") as handle:
-                    for row in csv.reader(handle, delimiter="\t"):
-                        if len(row) >= 3 and row[1] == "scn":
-                            emit(
-                                row[0],
-                                row[0],
-                                row[2],
-                                metadata={"attribution": row[3:]},
-                            )
-            elif parser == "pdf":
-                from pypdf import PdfReader
-
-                for i, page in enumerate(PdfReader(path).pages):
-                    text = page.extract_text(extraction_mode="layout") or ""
-                    for j, part in enumerate(sentences(text)):
-                        emit(
-                            "issue",
-                            f"page-{i + 1}:{j}",
-                            part,
-                            metadata={
-                                "page": i + 1,
-                                "quality": "pdf_layout_unreviewed",
-                            },
-                        )
-            else:
+            if parser not in EXTRACTORS:
                 raise ResourceError(f"Unknown SCN extractor: {parser}")
+            EXTRACTORS[parser](path, spec, emit, info)
             print(f"EXTRACTED {source_id}: {info['records']} records", flush=True)
     temporary.replace(output)
     report.update(records=count, records_sha256=fingerprints(output)["sha256"])
-    write_json(root / "src/asr/scn/resources/corpus/extraction.json", report)
+    write_json(root / SCN_EVIDENCE / "corpus/extraction.json", report)
 
 
 ITALIAN_MARKERS = set(
@@ -614,7 +640,7 @@ def summary(rows):
 def analyze(root):
     path = root / ".cache/scn/corpus/records.jsonl"
     extraction = json.loads(
-        (root / "src/asr/scn/resources/corpus/extraction.json").read_text()
+        (root / SCN_EVIDENCE / "corpus/extraction.json").read_text()
     )
     if fingerprints(path)["sha256"] != extraction["records_sha256"]:
         raise ResourceError("Extracted records differ from their receipt")
@@ -661,7 +687,7 @@ def analyze(root):
                     )
                 }
             )
-    out = root / "src/asr/scn/resources/corpus"
+    out = root / SCN_EVIDENCE / "corpus"
     write_json(
         out / "statistics.json",
         {
@@ -798,7 +824,7 @@ def inventory_ipa(root):
             "validated_authoritative_pairs": 0,
         }
     write_json(
-        root / "src/asr/scn/resources/lexicon/ipa-compatibility.json",
+        root / SCN_EVIDENCE / "lexicon/ipa-compatibility.json",
         {
             "labels_sha256": fingerprints(base / "tokens.txt")["sha256"],
             "candidate_inventory": rows,
