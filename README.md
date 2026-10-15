@@ -4,6 +4,14 @@ A local speech pipeline: **media → audio segments → IPA probabilities → WF
 
 Italian and Sicilian decode on CPU through separate language resources and graphs. Italian uses PhonItalia and the pretrained MLS trigram; the [Sicilian POC](src/asr/scn/README.md) trains a small KenLM model from reviewed text and channel captions. The combined Italian–Sicilian graph remains future work.
 
+## Pipeline architecture
+
+Italian and Sicilian share the ZIPA acoustic model and WFST decoding engine, with separate pronunciation resources, language models, and decoding graphs.
+
+![Pipeline architecture showing shared ZIPA acoustic processing and separate Italian and Sicilian decoding paths](docs/images/pipeline-architecture.png)
+
+See the [architecture documentation](docs/architecture.md) for implementation details.
+
 ## Pipeline performance
 
 Measured on **2026-10-12** using CPU on macOS ARM64. Word error rate (WER) and character error rate (CER) measure transcription errors; lower is better.
