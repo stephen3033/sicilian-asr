@@ -8,19 +8,11 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 
-import numpy as np
-import torch
-
-from asr.wfst.cache import load_graph, verify_cache
-from asr.wfst.compact import decode
-from audio.segmentation import segment_audio
 from common.environment import package_versions
 from common.errors import ResourceError
 from common.settings import SAMPLE_RATE
 from common.text import TEXT_RULES
 from common.utils import fingerprints, local_path, write_json
-from ipa.diagnostics import greedy_ctc
-from ipa.zipa import ZipaAcoustic
 from media_input.media import extract_audio
 from media_input.reference import read_reference
 from pipeline.languages import backend, text_policy
@@ -29,6 +21,12 @@ from pipeline.languages import backend, text_policy
 def transcribe_segments(
     samples, segments, model, graph, words, config, output, metadata, stage
 ):
+    import numpy as np
+    import torch
+
+    from asr.wfst.compact import decode
+    from ipa.diagnostics import greedy_ctc
+
     hypotheses, greedy = [], []
     for segment in segments:
         print(
@@ -102,6 +100,12 @@ def transcribe(
     reference: Path | None,
     output: Path,
 ) -> dict:
+    import torch
+
+    from asr.wfst.cache import load_graph, verify_cache
+    from audio.segmentation import segment_audio
+    from ipa.zipa import ZipaAcoustic
+
     output.mkdir(parents=True, exist_ok=True)
     if any(output.iterdir()):
         raise ResourceError(

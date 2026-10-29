@@ -6,13 +6,14 @@ import unicodedata
 from common.errors import ResourceError
 from common.text import APOSTROPHES
 
-RULES = "scn-dos24-nfc-apostrophes-preserve-edge-elisions-v1"
+RULES = "scn-dos24-nfc-single-token-quotes-preserve-edge-elisions-v2"
 WORD = re.compile(r"<unk>|'?[^\W\d_]+(?:'[^\W\d_]+)*'?|\d+", re.UNICODE)
 
 
 def normalize(text: str) -> str:
     text = unicodedata.normalize("NFC", text).lower().translate(APOSTROPHES)
-    text = re.sub(r"(?<!\w)'([^'\n]+)'(?!\w)", r"\1", text)
+    # Never pair elisions across words, e.g. 'n Sicilia su'.
+    text = re.sub(r"(?<!\w)'([^\W\d_]+)'(?!\w)", r"\1", text)
     # Apostrophes at lexical edges are significant in Sicilian ('n, 'na, po').
     return " ".join(WORD.findall(text))
 

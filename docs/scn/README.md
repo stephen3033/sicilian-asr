@@ -1,6 +1,22 @@
 # Sicilian pipeline
 
-A CPU proof of concept: **ZIPA → Sicilian pronunciations → KenLM → Compact CTC WFST**. Output targets DOS24. Pronunciations and contextual reviews remain provisional project judgments. [Resources](resources.md) documents their evidence and limitations.
+The [accuracy improvement workflow](improvement.md) tests programmatic DOS24
+conversion, matched KenLM controls and channel-grounded pronunciation mappings.
+Its comparison baseline is 44.53% WER / 16.72% CER. Targets remain WER below 10%
+and CER below 5%; independent acceptance requires fresh recordings.
+
+The [residual-error investigation](residual-diagnosis.md) classifies all 1,184
+known-word errors in that baseline, records unresolved attribution explicitly,
+and tests LM construction, pronunciation costs, and segmentation with ZIPA
+frozen. Its research candidate does not change production selection.
+
+A CPU proof of concept: **ZIPA → DOS24 word lexicon → KenLM → Compact CTC WFST**.
+The lexicon maps acoustic labels to written words. Wikipedia-derived phonology
+provides initial hypotheses and fallbacks; repeated ZIPA observations paired
+with DOS24 training text guide label choices and costs. Success is measured by
+DOS24 WER/CER, not linguistic IPA agreement. The [training-label audit and
+empirical mapping experiments](improvement.md#execution) retain per-recording
+and word-position evidence. [Resources](resources.md) documents source limits.
 
 ## Run
 
@@ -27,6 +43,49 @@ For a new study, install the [environment](../usage.md) and acquire/screen the [
 Stages resume from verified artifacts. `--output` selects a study directory; the default is `outputs/scn_poc`. Final scores freeze that directory's corpus/training/development stages. The selected model receipt and acoustic scale live in `.cache/scn/selected.json`; models, graphs, source media and acoustic outputs remain in their respective `.cache` folders.
 
 ## Training and evaluation
+
+### Reproduce the expansion experiments
+
+```sh
+.venv/bin/python -m pipeline scn-improve --stage all
+```
+
+The [workflow](improvement.md) describes individual stages, receipts, corpus review
+queues and the final experimental transcription configuration. Earlier diagnosis
+results below are historical evidence; their one-off driver has been retired.
+
+Run the residual investigation through the same workflow:
+
+```sh
+.venv/bin/python -m pipeline scn-improve --config configs/scn-residual.json --stage all
+```
+
+The stages are `residual-prepare`, `residual-score`, `residual-models`,
+`residual-calibrate`, `residual-audio`, `residual-repairs`, `residual-tests`,
+`residual-cleanup`, `residual-validate`, and `residual-report`. The report links
+the per-error evidence ledger, missing-facts review queue, controlled outcomes,
+and experimental transcription configuration. Development-constrained paths
+never become training evidence.
+
+#### Diagnostic results — 2026-10-19
+
+The [tracked diagnosis](diagnosis-results.json) records 28 configurations on the existing development and two final recordings. Separate interventions produced these combined final-video scores:
+
+| Configuration | WER |
+| --- | ---: |
+| Frozen production baseline | 71.60% |
+| Exploratory final-vowel pronunciation alternatives | 63.44% |
+| Soft-C/G gemination repair | 69.76% |
+| Rule pronunciations with seed fallback | 69.76% |
+| Shorter audio segments | 69.86% |
+| Elision-preserving training normalization, original scoring | 71.46% |
+| Doubled search beams and active-state limit | 71.65% |
+
+The final-vowel probe had the largest measured effect with vocabulary and LM fixed. It indicates a ZIPA/pronunciation interface mismatch; it does not distinguish inaccurate acoustic labels from unmodeled speech variation. The normalization defect is real but small here. The existing trigram at LM weight 1 remained best on development data; unigram and bigram controls scored 76.13% and 71.84% on final videos. Only 4.29% of final-caption trigrams occur in training.
+
+Coverage is independently limiting: 377 of 382 OOV reference tokens are absent from training text, while five were present but rejected by pronunciation generation. Another 1,035 substitutions/deletions involve words already in vocabulary. Adding 322 supported reference word types to a flat-grammar control reduced its WER from 86.18% to 81.13%; that pair uses identical word costs and is not a learned-LM result. Ignoring vowel accents and apostrophes alone scores 69.53%. These effects overlap and are not additive. The production model remains unchanged.
+
+### Corpus and model selection
 
 The [recipe](../../configs/scn-poc.json) fixes six uploaded Sicilian caption tracks from Sicilian with Nick for training, one for development, and two for testing. Uploaded captions do not establish authorship or linguistic correctness. Only reviewed background passages enter training. [Training reviews](../../resources/scn/poc_reviews.json) bind corrections to exact source text; [final reviews](../../resources/scn/poc_test_reviews.json) are separate.
 

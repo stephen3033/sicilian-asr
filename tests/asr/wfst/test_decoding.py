@@ -1,7 +1,4 @@
-from tests.support import ROOT
-
 """Synthetic distributions and a controlled trigram: no checkpoint or real speech."""
-
 
 import itertools
 import math
@@ -13,9 +10,10 @@ import pytest
 import torch
 
 from asr.wfst.compact import compact_frames, compact_topology, decode
-from asr.wfst.graph import compile_graph
+from asr.wfst.graph import compile_graph, lexicon_fst
 from common.errors import ResourceError
 from ipa.types import AcousticOutput
+from tests.support import ROOT
 
 TOKENS = ["<blk>", "<sos/eos>", "<unk>", "▁", "a", "b"]
 
@@ -38,6 +36,43 @@ def acoustic(ids):
 
 def load(path):
     return k2.Fsa.from_dict(torch.load(path, weights_only=False))
+
+
+def test_compressed_compilation_preserves_graph_scores_and_decoding(tmp_path):
+    from asr.wfst.cache import load_graph
+    from asr.wfst.storage import load_tensor, tensor_path
+    from common.utils import fingerprints
+
+    directories = [tmp_path / "plain", tmp_path / "compressed"]
+    results = []
+    for directory, compressed in zip(directories, (False, True)):
+        directory.mkdir()
+        shutil.copyfile(
+            ROOT / "tests/fixtures/tiny.arpa", directory / "restricted.arpa"
+        )
+        report = compile_graph(
+            directory,
+            {"<unk>": [[2]], "uno": [[4]], "una": [[4]], "due": [[5]]},
+            TOKENS,
+            {**SETTINGS, "lm_order": 3, "compress_artifacts": compressed},
+        )
+        assert report["status"] == "complete"
+        assert all(
+            fingerprints(directory / name)["sha256"] == value
+            for name, value in report["artifacts"].items()
+        )
+        graph, words = load_graph(directory)
+        results.append(decode(graph, acoustic([3, 4, 0, 5]), words, SETTINGS))
+    assert results[0]["text"] == results[1]["text"]
+    assert results[0]["score"] == results[1]["score"]
+    for stage in ("T", "L", "G", "LG", "TLG"):
+        values = [
+            load_tensor(tensor_path(directory, stage)) for directory in directories
+        ]
+        graphs = [k2.Fsa.from_dict(value) for value in values]
+        assert torch.equal(graphs[0].arcs.values(), graphs[1].arcs.values())
+        assert torch.equal(graphs[0].scores, graphs[1].scores)
+        assert graphs[0].aux_labels.tolist() == graphs[1].aux_labels.tolist()
 
 
 @pytest.fixture(params=[2, 3])
@@ -145,6 +180,195 @@ def test_decoder_uses_full_distribution_and_lm_scale(compiled):
     assert decode(graph, output, words, SETTINGS)["text"] == "due"
     graph.scores = graph.scores * 20
     assert decode(graph, output, words, SETTINGS)["text"] == "uno"
+
+
+@pytest.mark.parametrize("word_bonus", [-1.5, 1.5])
+def test_word_bonus_scores_words_without_rewarding_backoff_or_boundaries(
+    tmp_path, word_bonus
+):
+    shutil.copyfile(ROOT / "tests/fixtures/tiny.arpa", tmp_path / "restricted.arpa")
+    lexicon = {"<unk>": [[2]], "uno": [[4]], "una": [[4]], "due": [[5]]}
+    settings = {**SETTINGS, "lm_order": 3, "lm_scale": 0.5, "word_bonus": word_bonus}
+    compile_graph(tmp_path, lexicon, TOKENS, settings)
+    graph = load(tmp_path / "TLG.pt")
+    words = {
+        int(i): w
+        for w, i in (
+            line.split() for line in (tmp_path / "words.txt").read_text().splitlines()
+        )
+    }
+    lm = kenlm.Model(str(tmp_path / "restricted.arpa"))
+    # Includes a known bigram, a backoff sequence, and the unknown-word route.
+    for phones in ([4], [4, 0, 5], [5, 0, 5], [2]):
+        result = decode(graph, acoustic(phones), words, settings)
+        expected = 0.5 * lm.score(result["text"]) * math.log(10)
+        expected += word_bonus * len(result["text"].split())
+        assert result["grammar_score"] == pytest.approx(expected, abs=3e-5)
+
+
+@pytest.mark.parametrize("seed_cost,alternate_cost", [(0.0, 0.5), (1.5, 0.0)])
+def test_penalized_phone_alternatives_preserve_words_and_new_homophones(
+    tmp_path, seed_cost, alternate_cost
+):
+    shutil.copyfile(ROOT / "tests/fixtures/tiny.arpa", tmp_path / "restricted.arpa")
+    lexicon = {"<unk>": [[2]], "uno": [[4]], "una": [[4]], "due": [[5]]}
+    settings = {
+        **SETTINGS,
+        "lm_order": 3,
+        "phone_alternatives": {"4": [{"token": 5, "cost": alternate_cost}]},
+        "phone_seed_costs": {"4": seed_cost},
+    }
+    compile_graph(tmp_path, lexicon, TOKENS, settings)
+    graph = load(tmp_path / "TLG.pt")
+    words = {
+        int(i): w
+        for w, i in (
+            line.split() for line in (tmp_path / "words.txt").read_text().splitlines()
+        )
+    }
+    lm = kenlm.Model(str(tmp_path / "restricted.arpa"))
+    result = decode(graph, acoustic([5]), words, settings)
+    assert result["text"] == "uno"
+    assert result["grammar_score"] == pytest.approx(
+        lm.score("uno") * math.log(10) - alternate_cost, abs=3e-5
+    )
+    canonical = decode(graph, acoustic([4]), words, settings)
+    assert canonical["text"] == "uno"
+    assert canonical["grammar_score"] == pytest.approx(
+        lm.score("uno") * math.log(10) - seed_cost, abs=3e-5
+    )
+    pair = decode(graph, acoustic([5, 0, 5]), words, settings)
+    assert pair["text"] == "uno due"
+    assert pair["grammar_score"] == pytest.approx(
+        lm.score("uno due") * math.log(10) - alternate_cost, abs=3e-5
+    )
+
+
+def test_position_costs_distinguish_word_ending_before_disambiguation(tmp_path):
+    shutil.copyfile(ROOT / "tests/fixtures/tiny.arpa", tmp_path / "restricted.arpa")
+    lexicon = {"<unk>": [[2]], "uno": [[4, 4]], "una": [[4, 4]], "due": [[5]]}
+    settings = {
+        **SETTINGS,
+        "lm_order": 3,
+        "phone_alternatives": {"4": [{"token": 5, "cost": 7.0}]},
+        "phone_position_costs": {
+            "final": {"4": [{"token": 4, "cost": 1.0}, {"token": 5, "cost": 0.0}]},
+            "nonfinal": {"4": [{"token": 4, "cost": 0.0}, {"token": 5, "cost": 2.0}]},
+        },
+    }
+    compile_graph(tmp_path, lexicon, TOKENS, settings)
+    graph = load(tmp_path / "TLG.pt")
+    words = {
+        int(i): w
+        for w, i in (
+            line.split() for line in (tmp_path / "words.txt").read_text().splitlines()
+        )
+    }
+    lm = kenlm.Model(str(tmp_path / "restricted.arpa"))
+    for phones, cost in [([4, 0, 5], 0), ([4, 0, 4], 1), ([5, 0, 4], 3)]:
+        result = decode(graph, acoustic(phones), words, settings)
+        assert result["text"] == "uno"
+        assert result["grammar_score"] == pytest.approx(
+            lm.score("uno") * math.log(10) - cost, abs=3e-5
+        )
+
+
+def test_optional_label_preserves_word_scores_and_creates_new_homophones(tmp_path):
+    shutil.copyfile(ROOT / "tests/fixtures/tiny.arpa", tmp_path / "restricted.arpa")
+    lexicon = {"<unk>": [[2]], "uno": [[4, 5]], "una": [[4]], "due": [[5, 4]]}
+    settings = {**SETTINGS, "lm_order": 3, "phone_optional_costs": {"5": 0.5}}
+    compile_graph(tmp_path, lexicon, TOKENS, settings)
+    graph = load(tmp_path / "TLG.pt")
+    words = {
+        int(i): w
+        for w, i in (
+            line.split() for line in (tmp_path / "words.txt").read_text().splitlines()
+        )
+    }
+    lm = kenlm.Model(str(tmp_path / "restricted.arpa"))
+    for phones, expected, cost in [
+        ([4], "uno", 0.5),
+        ([4, 5], "uno", 0),
+        ([5, 4], "due", 0),
+        ([4, 0, 4], "uno due", 1.0),
+    ]:
+        result = decode(graph, acoustic(phones), words, settings)
+        assert result["text"] == expected
+        assert result["grammar_score"] == pytest.approx(
+            lm.score(expected) * math.log(10) - cost, abs=3e-5
+        )
+
+
+def test_optional_labels_cannot_form_epsilon_word_cycles():
+    with pytest.raises(ResourceError, match="nonoptional acoustic label"):
+        lexicon_fst(
+            {"word": [[4, 5]]},
+            {"word": 1, "#0": 2},
+            len(TOKENS),
+            phone_optional_costs={"4": 0.5, "5": 1.0},
+        )
+
+
+def test_word_context_costs_change_only_the_named_written_word(tmp_path):
+    shutil.copyfile(ROOT / "tests/fixtures/tiny.arpa", tmp_path / "restricted.arpa")
+    lexicon = {"<unk>": [[2]], "uno": [[4]], "una": [[4]], "due": [[5]]}
+    settings = {
+        **SETTINGS,
+        "lm_order": 3,
+        "phone_context_costs": {
+            "una": {"1:0:4": [{"token": 4, "cost": 20}, {"token": 5, "cost": 0}]}
+        },
+    }
+    compile_graph(tmp_path, lexicon, TOKENS, settings)
+    words = {
+        int(i): w
+        for w, i in (
+            line.split() for line in (tmp_path / "words.txt").read_text().splitlines()
+        )
+    }
+    graph = load(tmp_path / "TLG.pt")
+    assert decode(graph, acoustic([4]), words, SETTINGS)["text"] == "uno"
+    assert torch.isfinite(graph.scores).all()
+    with pytest.raises(ResourceError, match="does not match"):
+        lexicon_fst(
+            lexicon,
+            {"<unk>": 1, "uno": 2, "una": 3, "due": 4, "#0": 5},
+            len(TOKENS),
+            phone_context_costs={"una": {"2:1:4": [{"token": 4, "cost": 0}]}},
+        )
+
+
+def test_exact_observed_paths_bypass_seed_mappings_and_pay_prior_once(tmp_path):
+    shutil.copyfile(ROOT / "tests/fixtures/tiny.arpa", tmp_path / "restricted.arpa")
+    lexicon = {"<unk>": [[2]], "uno": [[4, 4]], "una": [[4, 4]], "due": [[5]]}
+    settings = {
+        **SETTINGS,
+        "lm_order": 3,
+        "phone_alternatives": {"4": [{"token": 5, "cost": 0}]},
+        "phone_seed_costs": {"4": 2.0},
+        "phone_position_costs": {"final": {"4": [{"token": 4, "cost": 3.0}]}},
+        "phone_optional_costs": {"4": 0},
+        "pronunciation_settings": {
+            "uno": [{"cost": 0.7, "exact": True}],
+            "una": [{"cost": 0.9, "exact": True}],
+        },
+    }
+    compile_graph(tmp_path, lexicon, TOKENS, settings)
+    graph = load(tmp_path / "TLG.pt")
+    words = {
+        int(i): w
+        for w, i in (
+            line.split() for line in (tmp_path / "words.txt").read_text().splitlines()
+        )
+    }
+    lm = kenlm.Model(str(tmp_path / "restricted.arpa"))
+    result = decode(graph, acoustic([4, 0, 4]), words, settings)
+    assert result["text"] == "uno"
+    assert result["grammar_score"] == pytest.approx(
+        lm.score("uno") * math.log(10) - 0.7, abs=3e-5
+    )
+    # Neither substitution nor omission applies to empirical exact-label paths.
+    assert decode(graph, acoustic([5, 0, 5]), words, settings)["text"] == "due due"
 
 
 def test_diagnostics_explain_scores_and_preserve_decoding(compiled):

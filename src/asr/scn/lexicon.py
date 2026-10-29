@@ -28,7 +28,7 @@ def project(ipa, tokens, tokenizer):
     return ids
 
 
-def g2p(word: str) -> list[str]:
+def g2p(word: str, *, repair_soft_geminates: bool = False) -> list[str]:
     """Broad default plus bounded z/length alternatives; not a gold transcription."""
     if not re.fullmatch(r"[a-zàèìòùâêîôûḍ']+", word) or any(c in word for c in "kwxy"):
         return []
@@ -48,6 +48,18 @@ def g2p(word: str) -> list[str]:
     output, i = [], 0
     while i < len(base):
         rest = base[i:]
+        # Diagnostic opt-in: look beyond the doubled consonant before choosing
+        # velar versus affricate. The frozen production recipe remains unchanged.
+        if (
+            repair_soft_geminates
+            and rest[:2] in {"cc", "gg"}
+            and rest[2:3] in {"e", "i"}
+        ):
+            output.append("tʃː" if rest[0] == "c" else "dʒː")
+            i += 2
+            if base[i : i + 1] == "i" and base[i + 1 : i + 2] in {"a", "o", "u"}:
+                i += 1
+            continue
         matched = False
         for spelling, phone in (
             ("ḍḍ", "ɖː"),

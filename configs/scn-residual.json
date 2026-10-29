@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "architecture_scope": "zipa_wfst",
+  "workflow": "residual-diagnosis",
+  "output_directory": "outputs/scn_residual",
+  "baseline_bundle": "outputs/scn_dos24/baseline",
+  "corpus_study": "outputs/scn_dos24",
+  "calibration": {"lm_scales": [0.2, 0.4, 0.6, 0.8], "word_bonuses": [0, 0.5, 1.0]},
+  "lm": {"floor_masses": [0.0001, 0.001, 0.01], "maximum_context_ngrams": 250000, "order": 3},
+  "pronunciation": {"minimum_count": 20, "minimum_fraction": 0.1, "minimum_recordings": 3, "whole_word_fraction": 0.4},
+  "segmentation": {"target_seconds": 30.0, "max_seconds": 36.0, "search_seconds": 4.0, "silence_seconds": 0.3, "silence_dbfs": -40.0},
+  "policy": {"zipa_frozen": true, "production_unchanged": true, "development_constraints_are_training_evidence": false}
+}

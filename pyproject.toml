@@ -60,6 +60,9 @@ exclude = ["**/__pycache__/**", "**/*.pyc", "**/.DS_Store", "**/*.arpa", "**/*.p
 [tool.hatch.build.targets.sdist]
 include = ["/src", "/configs", "/resources", "/docs", "/tests", "/scripts", "/README.md", "/LICENSE", "/pyproject.toml", "/uv.lock", "/.python-version"]
 
+[tool.hatch.build.targets.wheel.force-include]
+"resources/native/lattice_trie_scores.cpp" = "sicilian_asr_native/lattice_trie_scores.cpp"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra --import-mode=importlib"

@@ -14,8 +14,9 @@ import torch
 from asr.scn.dataset import digest, reviewed_text, video_record
 from asr.scn.evaluation import evaluate
 from asr.scn.prepare import prepare
-from asr.wfst.cache import load_graph, verify_cache
-from asr.wfst.compact import decode
+from asr.wfst.cache import verify_cache
+from asr.wfst.cached import decode_video
+from asr.wfst.storage import tensor_path
 from audio.segmentation import segment_audio
 from common.environment import package_versions
 from common.errors import ResourceError
@@ -23,7 +24,6 @@ from common.resources import load_resources
 from common.settings import SAMPLE_RATE, SCN_RESOURCES
 from common.utils import fingerprints, write_json
 from ipa.diagnostics import greedy_ctc
-from ipa.types import AcousticOutput
 from ipa.zipa import ZipaAcoustic
 from media_input.media import extract_audio
 from pipeline.config import load_config
@@ -162,28 +162,6 @@ def posteriors(root, video, config, manifest):
     return directory, receipt
 
 
-def decode_video(directory, acoustic_dir, acoustic, settings):
-    started = time.perf_counter()
-    graph, words = load_graph(directory)
-    results = []
-    for segment in acoustic["segments"]:
-        with np.load(acoustic_dir / segment["path"], allow_pickle=False) as saved:
-            values = torch.from_numpy(saved["log_probs"].copy()).unsqueeze(0)
-            output = AcousticOutput(
-                saved["tokens"].tolist(), 0, {}, values, torch.tensor([values.shape[1]])
-            )
-        result = decode(graph, output, words, settings)
-        results.append({**segment, **result})
-    del graph
-    gc.collect()
-    return {
-        "text": " ".join(r["text"] for r in results),
-        "segments": results,
-        "decode_seconds": time.perf_counter() - started,
-        "process_peak_rss_bytes": peak_rss_bytes(),
-    }
-
-
 def evaluate_candidate(root, output, config, manifest, candidate, references, scales):
     config = deepcopy(config)
     config["resources"]["scn"]["model_receipt_path"] = candidate["receipt"]
@@ -302,7 +280,7 @@ def evaluate_candidate(root, output, config, manifest, candidate, references, sc
                 }
                 for r in reports
             ],
-            "graph_bytes": (directory / "TLG.pt").stat().st_size,
+            "graph_bytes": tensor_path(directory).stat().st_size,
         }
         print({k: v for k, v in trial.items() if k != "results"}, flush=True)
         trials.append(trial)
@@ -457,9 +435,11 @@ def report_study(root, output, recipe, config, manifest):
         f"Development coverage target met: **{selection['coverage_target_met']}**.",
         f"Selected: {selection['candidate']['tokens']:,} training tokens, order {selection['candidate']['order']}, {selection['candidate']['vocabulary_size']:,} words; acoustic scale {selection['acoustic_scale']}.",
         "",
-        f"Largest evaluated training slice: {max(r['tokens'] for r in results):,} tokens. "
-        f"Recipe checkpoints reached: {sum(n <= max(r['tokens'] for r in results) for n in recipe['checkpoints'])}/{len(recipe['checkpoints'])}. "
-        f"Development OOV target: {recipe['target_oov']:.0%}.",
+        (
+            f"Largest evaluated training slice: {max(r['tokens'] for r in results):,} tokens. "
+            f"Recipe checkpoints reached: {sum(n <= max(r['tokens'] for r in results) for n in recipe['checkpoints'])}/{len(recipe['checkpoints'])}. "
+            f"Development OOV target: {recipe['target_oov']:.0%}."
+        ),
         "",
         "The caption authorship and native-speaker representativeness are not independently established. Generated pronunciations remain provisional. DOS24 reviews are contextual project reviews, not external certification.",
     ]

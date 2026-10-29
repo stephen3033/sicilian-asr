@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+from asr.wfst.storage import load_tensor, tensor_path
 from common.errors import ResourceError
 from common.utils import fingerprints, local_path
 
@@ -8,11 +9,8 @@ from common.utils import fingerprints, local_path
 def load_graph(directory: Path):
     """Load a previously verified graph once as a reusable single-graph vector."""
     import k2
-    import torch
 
-    graph = k2.Fsa.from_dict(
-        torch.load(directory / "TLG.pt", map_location="cpu", weights_only=False)
-    )
+    graph = k2.Fsa.from_dict(load_tensor(tensor_path(directory)))
     words = {
         int(identifier): word
         for word, identifier in (

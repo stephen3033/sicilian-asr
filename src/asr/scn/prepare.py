@@ -38,6 +38,43 @@ def model_bundle(root, config):
 
 
 def identity(root, config, manifest):
+    candidate = config["resources"]["scn"].get("candidate_bundle_path")
+    if candidate:
+        from common.artifacts import read, sha, verified_files
+
+        directory = local_path(root, candidate)
+        receipt = read(directory / "candidate.json")
+        verified_files(directory, receipt)
+        graph_inputs = read(directory / "graph/compile_input.json")
+        settings = graph_inputs["settings"]
+        acoustic = config["acoustic"]
+        tokens, _ = inventory(
+            local_path(root, acoustic["vocabulary_path"]),
+            local_path(root, acoustic["tokenizer_path"]),
+        )
+        if graph_inputs["tokens"] != tokens:
+            raise ResourceError(
+                "Experimental graph and ZIPA label inventories disagree"
+            )
+        if settings["lm_scale"] != config["decoder"]["lm_scale"] or settings.get(
+            "word_bonus", 0
+        ) != config["decoder"].get("word_bonus", 0):
+            raise ResourceError("Experimental graph and decoder costs disagree")
+        payload = {
+            "language": "scn",
+            "candidate": sha(directory / "candidate.json"),
+            "compiler": sha(root / "src/asr/wfst/graph.py"),
+            "settings": settings,
+            "resources": {
+                name: verify_file(
+                    local_path(root, manifest["resources"][name]["path"]),
+                    manifest["resources"][name],
+                )["sha256"]
+                for name in required_resources(config)
+            },
+            "versions": package_versions(),
+        }
+        return digest(payload), payload
     directory, model = model_bundle(root, config)
     resources = {}
     for name in required_resources(config):
@@ -76,6 +113,48 @@ def prepare(root, config, manifest):
         actual = download_resource(root, spec)
         if spec.get("extract_to"):
             extract_source(root, spec, actual["sha256"])
+    candidate = config["resources"]["scn"].get("candidate_bundle_path")
+    if candidate:
+        from asr.wfst.build import compile_graph
+        from common.artifacts import read, seal
+
+        source = local_path(root, candidate) / "graph"
+        key, payload = identity(root, config, manifest)
+        directory = local_path(root, config["decoder"]["graph_path"]) / key
+        if (directory / "prepared.json").exists():
+            verify_cache(directory, key)
+            return directory
+        inputs = read(source / "compile_input.json")
+        compile_graph(
+            directory,
+            read(source / "lexicon_selected.json"),
+            source / "restricted.arpa",
+            inputs["tokens"],
+            inputs["settings"],
+        )
+        shutil.copyfile(
+            directory / "lexicon_selected.json", directory / "lexicon_full.json"
+        )
+        write_json(
+            directory / "vocabulary.json",
+            {
+                "words": sorted(read(directory / "lexicon_selected.json")),
+                "model_key": key,
+            },
+        )
+        receipt = seal(
+            directory,
+            "prepared.json",
+            payload,
+            [
+                p.name
+                for p in directory.iterdir()
+                if p.is_file() and p.name != "prepared.json"
+            ],
+        )
+        if receipt["key"] != key:
+            raise ResourceError("Experimental preparation identity mismatch")
+        return directory
     model_directory, model = model_bundle(root, config)
     key, payload = identity(root, config, manifest)
     directory = local_path(root, config["decoder"]["graph_path"]) / key

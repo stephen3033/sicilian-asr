@@ -98,6 +98,8 @@ def load_config(path: str | Path, root: Path, manifest: dict) -> dict:
                     raise ResourceError(
                         f"Configuration/manifest path mismatch for {value}: {path}"
                     )
+    if config.get("recognizer", {}).get("backend", "zipa_wfst") != "zipa_wfst":
+        raise ResourceError("Only ZIPA/WFST recognition is supported")
     decoder = config["decoder"]
     if decoder["device"] != "cpu" or config["acoustic"]["device"] != "cpu":
         raise ResourceError("Only CPU is supported on the pinned stack")

@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "measurement_date": "2026-10-19",
+  "study_key": "86c36e7e96afb5642de7e3cf983980542bcc968e8ef248a387e8733729ae647c",
+  "policy": "Previously scored final recordings are reused for diagnosis. Reference-informed vocabulary is restricted to flat-grammar probes; no reference sentences train an LM. No new generalization claims or production selection.",
+  "local_report": "outputs/scn_diagnosis/report.html",
+  "reproduction_command": ".venv/bin/python -m pipeline scn-diagnose --output outputs/scn_diagnosis",
+  "configuration_count": 28,
+  "invalid_configurations": {
+    "lm_o1_s2_dev": [
+      {
+        "video": "mDrR25umUpE",
+        "error": "Empty/nonfinite WFST lattice; no complete path within decoder beams"
+      }
+    ],
+    "lm_o2_s2_dev": [
+      {
+        "video": "mDrR25umUpE",
+        "error": "Empty/nonfinite WFST lattice; no complete path within decoder beams"
+      }
+    ],
+    "lm_o3_s2_dev": [
+      {
+        "video": "mDrR25umUpE",
+        "error": "Empty/nonfinite WFST lattice; no complete path within decoder beams"
+      }
+    ]
+  },
+  "training": {
+    "training_tokens": 11441,
+    "training_types": 3407,
+    "lexicon_types": 3318,
+    "hapax_types": 2339,
+    "training_cohort_tokens": {
+      "background": 6368,
+      "channel": 5073
+    },
+    "pronunciation_kinds": {
+      "observed_unvalidated": 469,
+      "rule_generated": 5003
+    }
+  },
+  "final_reference_coverage": {
+    "tokens_by_cause": {
+      "covered": 1738,
+      "absent_from_training": 377,
+      "pronunciation_rejected": 5
+    },
+    "in_vocabulary_substitutions_and_deletions": 1035
+  },
+  "experiments": [
+    {
+      "experiment": "baseline",
+      "development_wer": 0.5623268698060941,
+      "test_wer": 0.7160377358490566,
+      "test_wer_change_pp": 0.0,
+      "comparator": "baseline",
+      "same_vocabulary": true,
+      "vocabulary_size": 3318,
+      "development_cer": 0.23370964547435136,
+      "test_cer": 0.3220723040477907,
+      "corrected_reference_development_wer": 0.5614035087719298,
+      "corrected_reference_test_wer": 0.7179245283018868
+    },
+    {
+      "experiment": "rules_only",
+      "development_wer": 0.5521698984302862,
+      "test_wer": 0.6976415094339623,
+      "test_wer_change_pp": -1.8396226415094308,
+      "comparator": "baseline",
+      "same_vocabulary": true,
+      "vocabulary_size": 3318,
+      "development_cer": 0.23370964547435136,
+      "test_cer": 0.32433824286744256,
+      "corrected_reference_development_wer": 0.5521698984302862,
+      "corrected_reference_test_wer": 0.6990566037735849
+    },
+    {
+      "experiment": "soft_geminates",
+      "development_wer": 0.5650969529085873,
+      "test_wer": 0.6976415094339623,
+      "test_wer_change_pp": -1.8396226415094308,
+      "comparator": "baseline",
+      "same_vocabulary": true,
+      "vocabulary_size": 3318,
+      "development_cer": 0.23133293721529016,
+      "test_cer": 0.31424451539808423,
+      "corrected_reference_development_wer": 0.564173591874423,
+      "corrected_reference_test_wer": 0.6933962264150944
+    },
+    {
+      "experiment": "vowel_compatibility",
+      "development_wer": 0.541089566020314,
+      "test_wer": 0.6344339622641509,
+      "test_wer_change_pp": -8.160377358490567,
+      "comparator": "baseline",
+      "same_vocabulary": true,
+      "vocabulary_size": 3318,
+      "development_cer": 0.20994256288373936,
+      "test_cer": 0.28138840251313213,
+      "corrected_reference_development_wer": 0.5401662049861495,
+      "corrected_reference_test_wer": 0.6349056603773585
+    },
+    {
+      "experiment": "normalization",
+      "development_wer": 0.5623268698060941,
+      "test_wer": 0.714622641509434,
+      "test_wer_change_pp": -0.14150943396226134,
+      "comparator": "baseline",
+      "same_vocabulary": false,
+      "vocabulary_size": 3320,
+      "development_cer": 0.23370964547435136,
+      "test_cer": 0.32289628180039137,
+      "corrected_reference_development_wer": 0.5614035087719298,
+      "corrected_reference_test_wer": 0.710377358490566
+    },
+    {
+      "experiment": "normalization_soft_geminates",
+      "development_wer": 0.5660203139427517,
+      "test_wer": 0.6990566037735849,
+      "test_wer_change_pp": -1.6981132075471694,
+      "comparator": "baseline",
+      "same_vocabulary": false,
+      "vocabulary_size": 3320,
+      "development_cer": 0.2315309962368786,
+      "test_cer": 0.31517149036976,
+      "corrected_reference_development_wer": 0.5650969529085873,
+      "corrected_reference_test_wer": 0.6943396226415094
+    },
+    {
+      "experiment": "flat_baseline",
+      "development_wer": 0.7377654662973222,
+      "test_wer": 0.8617924528301887,
+      "test_wer_change_pp": 14.575471698113207,
+      "comparator": "baseline",
+      "same_vocabulary": true,
+      "vocabulary_size": 3318,
+      "development_cer": 0.3010497128144187,
+      "test_cer": 0.38665156040786897,
+      "corrected_reference_development_wer": 0.7377654662973222,
+      "corrected_reference_test_wer": 0.8622641509433963
+    },
+    {
+      "experiment": "flat_expanded",
+      "development_wer": 0.7146814404432132,
+      "test_wer": 0.8113207547169812,
+      "test_wer_change_pp": 9.528301886792455,
+      "comparator": "baseline",
+      "same_vocabulary": false,
+      "vocabulary_size": 3640,
+      "development_cer": 0.27708457120221824,
+      "test_cer": 0.34493768668245955,
+      "corrected_reference_development_wer": 0.7146814404432132,
+      "corrected_reference_test_wer": 0.8117924528301886
+    },
+    {
+      "experiment": "wide_search",
+      "development_wer": 0.5614035087719298,
+      "test_wer": 0.7165094339622642,
+      "test_wer_change_pp": 0.04716981132075748,
+      "comparator": "baseline",
+      "same_vocabulary": true,
+      "vocabulary_size": 3318,
+      "development_cer": 0.23351158645276293,
+      "test_cer": 0.3221753012668658,
+      "corrected_reference_development_wer": 0.5604801477377654,
+      "corrected_reference_test_wer": 0.7183962264150944
+    },
+    {
+      "experiment": "short_segments",
+      "development_wer": 0.5355493998153278,
+      "test_wer": 0.6985849056603773,
+      "test_wer_change_pp": -1.745283018867927,
+      "comparator": "baseline",
+      "same_vocabulary": true,
+      "vocabulary_size": 3318,
+      "development_cer": 0.21469597940186175,
+      "test_cer": 0.31074260994953135,
+      "corrected_reference_development_wer": 0.5346260387811634,
+      "corrected_reference_test_wer": 0.6990566037735849
+    }
+  ],
+  "ranked_measured_effects": [
+    {
+      "cause": "ZIPA/lexicon final-vowel compatibility",
+      "status": "controlled local comparison",
+      "wer_change_pp": -8.160377358490567,
+      "detail": "Negative percentage-point change means lower WER; observed effects overlap and must not be summed. The vowel arm adds exploratory unstressed-final u/o and i/e alternatives, preserving all original words and pronunciations. It tests acoustic/lexicon compatibility and does not establish correct regional pronunciations."
+    },
+    {
+      "cause": "wordlist expansion",
+      "status": "reference-informed flat-grammar intervention",
+      "wer_change_pp": -5.047169811320751,
+      "detail": "Compare flat_expanded only against flat_baseline: identical costs for existing words and identical existing pronunciations. This is not a learned-LM improvement or an accuracy upper bound."
+    },
+    {
+      "cause": "G2P soft geminates",
+      "status": "controlled local comparison",
+      "wer_change_pp": -1.8396226415094308,
+      "detail": "Negative percentage-point change means lower WER; observed effects overlap and must not be summed."
+    },
+    {
+      "cause": "seed pronunciation dependence",
+      "status": "controlled local comparison",
+      "wer_change_pp": -1.8396226415094308,
+      "detail": "Negative percentage-point change means lower WER; observed effects overlap and must not be summed."
+    },
+    {
+      "cause": "segmentation/context",
+      "status": "controlled local comparison",
+      "wer_change_pp": -1.745283018867927,
+      "detail": "Negative percentage-point change means lower WER; observed effects overlap and must not be summed."
+    },
+    {
+      "cause": "normalization/lexicon interaction",
+      "status": "controlled local comparison",
+      "wer_change_pp": -1.6981132075471694,
+      "detail": "Negative percentage-point change means lower WER; observed effects overlap and must not be summed."
+    },
+    {
+      "cause": "elision normalization",
+      "status": "controlled local comparison",
+      "wer_change_pp": -0.14150943396226134,
+      "detail": "Negative percentage-point change means lower WER; observed effects overlap and must not be summed."
+    },
+    {
+      "cause": "LM order and weight",
+      "status": "development-selected local comparison",
+      "order": 3,
+      "lm_scale": 1.0,
+      "wer_change_pp": 0.0,
+      "detail": "All LM arms have identical vocabulary and pronunciations; order/weight selected without final scores."
+    },
+    {
+      "cause": "pruned search",
+      "status": "controlled local comparison",
+      "wer_change_pp": 0.04716981132075748,
+      "detail": "Negative percentage-point change means lower WER; observed effects overlap and must not be summed."
+    }
+  ],
+  "lm_development_selection": {
+    "order": 3,
+    "lm_scale": 1.0
+  },
+  "lm_statistics": {
+    "1": {
+      "development": {
+        "perplexity": 816.0538013480452,
+        "vocabulary_sha256": "40000b25999883efb143d1b42b324f21e659b3fd7cc8f124dab223adf9b4efd2",
+        "ngram_types": {
+          "1": 3321
+        },
+        "exact_ngram_token_coverage": {
+          "1": 0.9391705069124424
+        },
+        "perplexity_policy": "Unigram marginal or KenLM BOS/EOS scoring on the identical baseline vocabulary; OOV maps to <unk>."
+      },
+      "test": {
+        "perplexity": 962.1708027796324,
+        "vocabulary_sha256": "40000b25999883efb143d1b42b324f21e659b3fd7cc8f124dab223adf9b4efd2",
+        "ngram_types": {
+          "1": 3321
+        },
+        "exact_ngram_token_coverage": {
+          "1": 0.82015065913371
+        },
+        "perplexity_policy": "Unigram marginal or KenLM BOS/EOS scoring on the identical baseline vocabulary; OOV maps to <unk>."
+      }
+    },
+    "2": {
+      "development": {
+        "perplexity": 553.9327930169052,
+        "vocabulary_sha256": "40000b25999883efb143d1b42b324f21e659b3fd7cc8f124dab223adf9b4efd2",
+        "ngram_types": {
+          "1": 3321,
+          "2": 9239
+        },
+        "exact_ngram_token_coverage": {
+          "1": 0.9391705069124424,
+          "2": 0.28413284132841327
+        },
+        "perplexity_policy": "Unigram marginal or KenLM BOS/EOS scoring on the identical baseline vocabulary; OOV maps to <unk>."
+      },
+      "test": {
+        "perplexity": 643.5243534987643,
+        "vocabulary_sha256": "40000b25999883efb143d1b42b324f21e659b3fd7cc8f124dab223adf9b4efd2",
+        "ngram_types": {
+          "1": 3321,
+          "2": 9239
+        },
+        "exact_ngram_token_coverage": {
+          "1": 0.82015065913371,
+          "2": 0.2596606974552309
+        },
+        "perplexity_policy": "Unigram marginal or KenLM BOS/EOS scoring on the identical baseline vocabulary; OOV maps to <unk>."
+      }
+    },
+    "3": {
+      "development": {
+        "perplexity": 537.6926059897506,
+        "vocabulary_sha256": "40000b25999883efb143d1b42b324f21e659b3fd7cc8f124dab223adf9b4efd2",
+        "ngram_types": {
+          "1": 3321,
+          "2": 9239,
+          "3": 10610
+        },
+        "exact_ngram_token_coverage": {
+          "1": 0.9391705069124424,
+          "2": 0.28413284132841327,
+          "3": 0.048938134810710986
+        },
+        "perplexity_policy": "Unigram marginal or KenLM BOS/EOS scoring on the identical baseline vocabulary; OOV maps to <unk>."
+      },
+      "test": {
+        "perplexity": 634.4047678960903,
+        "vocabulary_sha256": "40000b25999883efb143d1b42b324f21e659b3fd7cc8f124dab223adf9b4efd2",
+        "ngram_types": {
+          "1": 3321,
+          "2": 9239,
+          "3": 10610
+        },
+        "exact_ngram_token_coverage": {
+          "1": 0.82015065913371,
+          "2": 0.2596606974552309,
+          "3": 0.04292452830188679
+        },
+        "perplexity_policy": "Unigram marginal or KenLM BOS/EOS scoring on the identical baseline vocabulary; OOV maps to <unk>."
+      }
+    }
+  },
+  "limitations": [
+    "Three recordings from one channel; exploratory reused final set, not independent evaluation.",
+    "Flat-wordlist, normalization and pronunciation interventions have different comparators; effects are not additive.",
+    "Shorter segmentation changes boundary placement and acoustic context together.",
+    "Timestamps are cue approximations; sampled lattice paths are not exhaustive N-best."
+  ],
+  "validation": {
+    "baseline_reproduced_exactly": true,
+    "pytest_passed": 156,
+    "ruff_passed": true,
+    "all_stages_resume_from_verified_artifacts": true,
+    "all_original_input_and_source_hashes_verified": true,
+    "raw_training_parent_review_hashes_verified": 122,
+    "same_complete_waveform_in_segmentation_control": true
+  },
+  "production_model_changed": false,
+  "production_selection_sha256": "3f686726431b0504954b888b2c59c4046f8f4082f427c6cf64ce899387210916",
+  "artifacts": {
+    "results.json": "1946e9facdefda2fac7a1eb3c478cf18c300cde4b9fd7dd43a33925e4ff1da38",
+    "audit.json": "c1eb59c9f0dcdef9688c9620fe3fc7e0ae9583ebbfa1a9f32450d52156a34232",
+    "report.html": "c2b2c38764fb2f1c63337963f6de9e37b8f3e468db5d9b39abbd11faf3d3030e",
+    "errors.jsonl": "c3ecd882da029a314ab99962b0a421fb4df7e4618c24db33d8578507af73f494",
+    "study.json": "73657f022569e7f24dad88aac0444a067de5cea09e24b355de0ef5d1be56f0a5"
+  }
+}

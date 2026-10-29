@@ -22,6 +22,17 @@ def main() -> int:
         choices=["all", "acquire", "corpus", "train", "development", "test", "report"],
         default="all",
     )
+    from pipeline.scn_experiment import STAGES
+
+    improve = commands.add_parser(
+        "scn-improve", help="DOS24 corpus and ZIPA/WFST experiments"
+    )
+    improve.add_argument("--root", type=Path, default=Path.cwd())
+    improve.add_argument(
+        "--config", type=Path, default=Path("configs/scn-improve.json")
+    )
+    improve.add_argument("--output", type=Path)
+    improve.add_argument("--stage", choices=["all", *STAGES], default="all")
     for name in ("prepare", "transcribe"):
         command = commands.add_parser(name)
         command.add_argument(
@@ -44,6 +55,24 @@ def main() -> int:
     args = parser.parse_args()
     try:
         root = args.root.resolve()
+        if args.command == "scn-improve":
+            from pipeline.scn_experiment import main as improve_main
+
+            return improve_main(
+                [
+                    "--root",
+                    str(root),
+                    "--config",
+                    str(args.config),
+                    *(
+                        ["--output", str(args.output)]
+                        if args.output is not None
+                        else []
+                    ),
+                    "--stage",
+                    args.stage,
+                ]
+            )
         if args.command == "scn-poc":
             from pipeline.scn_poc import run
 

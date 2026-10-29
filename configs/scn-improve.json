@@ -1,0 +1,95 @@
+{
+  "schema_version": 2,
+  "architecture_scope": "zipa_wfst",
+  "channel_id": "UC8D6eDXH2p80wuJ28fTUDcg",
+  "splits": {
+    "train": [
+      "lWem78sOVh0",
+      "MeeT_-q_I-g",
+      "9QkFAt0Hr08",
+      "PmILQZ1ijkM",
+      "tNobRaYqerI",
+      "fIz5symu9jU"
+    ],
+    "development": [
+      "mDrR25umUpE",
+      "sctItzC2xgw",
+      "C2xRDIuT1Dw"
+    ]
+  },
+  "acceptance": {
+    "minimum_recordings": 5,
+    "minimum_seconds": 3600,
+    "minimum_words": 6000,
+    "wer_below": 0.1,
+    "cer_below": 0.05
+  },
+  "baseline_bundle": "outputs/scn_dos24/baseline",
+  "legacy_directory": "outputs/scn_improvement",
+  "corpus": {
+    "source_id": "scn_wikipedia_20261001",
+    "records": ".cache/scn/audit/records.jsonl",
+    "near_duplicate_threshold": 0.9,
+    "minimum_words": 4
+  },
+  "lm": {
+    "orders": [
+      2,
+      3
+    ],
+    "wikipedia_shares": [
+      0.05,
+      0.2,
+      0.5
+    ],
+    "lm_scales": [
+      0.6,
+      0.8,
+      1.0
+    ],
+    "maximum_context_ngrams": 250000,
+    "pruning_attempts": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        5
+      ],
+      [
+        0,
+        10,
+        20
+      ],
+      [
+        0,
+        30,
+        60
+      ]
+    ]
+  },
+  "vocabulary": {
+    "minimum_articles": 5,
+    "maximum_context_ngrams": 250000
+  },
+  "pronunciation": {
+    "minimum_count": 20,
+    "minimum_fraction": 0.1,
+    "minimum_recordings": 3
+  },
+  "retuning": {
+    "lm_scale_offsets": [
+      -0.1,
+      0,
+      0.1
+    ],
+    "word_bonus_offsets": [
+      -0.5,
+      0,
+      0.5
+    ]
+  }
+}
