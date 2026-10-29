@@ -6,6 +6,17 @@ Italian uses PhonItalia and the pretrained MLS trigram. Sicilian uses reviewed t
 
 ![Shared acoustic model and separate language decoders](docs/images/pipeline-architecture.png)
 
+## Current best recorded scores
+
+Overall strict word error rate (WER) and character error rate (CER) for each language's best selected configuration, verified against the saved evaluation reports on 2026-10-28. Rates aggregate edit counts across the stated evaluation set; lower is better.
+
+| Language | WER | CER | Evaluation set | Selected configuration / evidence |
+| --- | ---: | ---: | --- | --- |
+| Sicilian (`scn`) | **44.53%** | **16.72%** | 3 development recordings, 3,209 reference words | [`baseline-lm0.8-b0`](docs/scn/residual-diagnosis.md), retained research selection |
+| Italian (`ita`) | **17.47%** | **6.73%** | 202 held-out test recordings, 1,248 reference words | [Combined pronunciation alternatives and contractions](docs/ita/README.md#measured-results), acoustic/LM scales 1/1 |
+
+Italian's separate spoken-form scoring gives **16.35% WER / 6.03% CER** on the same test set. Sicilian's selected result uses development data and has not changed production defaults; independent acceptance requires fresh recordings. The Italian benchmark contains 18 repeated acted sentences. These scores describe different evaluation sets, not a directly comparable estimate of general accuracy.
+
 ## Run
 
 Requires macOS ARM64, Python 3.12, FFmpeg/FFprobe and Apple Command Line Tools.
